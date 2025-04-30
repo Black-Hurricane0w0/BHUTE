@@ -1,0 +1,1 @@
+Battle_TurnSet(obj_test_bone_1);

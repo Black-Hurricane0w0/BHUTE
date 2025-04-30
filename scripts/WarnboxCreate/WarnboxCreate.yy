@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"WarnboxCreate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"WarnboxCreate",
+  "parent":{
+    "name":"Bullet",
+    "path":"folders/脚本/Bullet.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

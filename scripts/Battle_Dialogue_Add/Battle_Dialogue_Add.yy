@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_Dialogue_Add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_Dialogue_Add",
+  "parent":{
+    "name":"Battle_Dialogue",
+    "path":"folders/脚本/Dialogue/Battle_Dialogue.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

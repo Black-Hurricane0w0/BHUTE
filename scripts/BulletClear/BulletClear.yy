@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BulletClear",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BulletClear",
+  "parent":{
+    "name":"Bullet",
+    "path":"folders/脚本/Bullet.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

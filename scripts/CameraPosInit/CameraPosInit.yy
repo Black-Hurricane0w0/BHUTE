@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"CameraPosInit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CameraPosInit",
+  "parent":{
+    "name":"Camera",
+    "path":"folders/脚本/Camera.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

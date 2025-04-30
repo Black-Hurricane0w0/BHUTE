@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Get_Faceusing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Get_Faceusing",
+  "parent":{
+    "name":"Other",
+    "path":"folders/脚本/Other.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

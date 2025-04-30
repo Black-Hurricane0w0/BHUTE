@@ -1,0 +1,9 @@
+image_xscale = 1;
+image_yscale = 1;
+image_alpha = 1;
+image_speed = 0;
+image_angle = 45;
+image_index = 1;
+state = -1;
+time = 0;
+finish = false

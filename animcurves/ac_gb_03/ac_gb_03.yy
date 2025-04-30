@@ -1,0 +1,23 @@
+{
+  "$GMAnimCurve":"",
+  "%Name":"ac_gb_03",
+  "channels":[
+    {"$GMAnimCurveChannel":"","%Name":"曲线1","colour":4290799884,"name":"曲线1","points":[
+        {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.19465649,"y":0.98440707,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.34160304,"y":0.9232819,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.49618322,"y":0.98338866,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.64312977,"y":0.9294652,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.79770994,"y":0.97587675,},
+        {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
+  ],
+  "function":1,
+  "name":"ac_gb_03",
+  "parent":{
+    "name":"gb",
+    "path":"folders/动画曲线/gb.yy",
+  },
+  "resourceType":"GMAnimCurve",
+  "resourceVersion":"2.0",
+}

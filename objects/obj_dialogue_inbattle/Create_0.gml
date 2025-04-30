@@ -1,0 +1,10 @@
+inst = noone
+time = 0;
+maxtime = -1;
+text = "";
+text_color = c_black;
+text_font = fnt_enemy_dialogue;
+can_destroy = false;
+text_size = 1;
+text_snd = snd_txtsans;
+text_speed = 2;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Create_Text",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Create_Text",
+  "parent":{
+    "name":"Text",
+    "path":"folders/脚本/Text.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

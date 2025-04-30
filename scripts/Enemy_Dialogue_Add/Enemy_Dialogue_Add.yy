@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Enemy_Dialogue_Add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Enemy_Dialogue_Add",
+  "parent":{
+    "name":"Enemy_Dialogue",
+    "path":"folders/脚本/Dialogue/Enemy_Dialogue.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Input_Delete",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Input_Delete",
+  "parent":{
+    "name":"Input",
+    "path":"folders/脚本/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

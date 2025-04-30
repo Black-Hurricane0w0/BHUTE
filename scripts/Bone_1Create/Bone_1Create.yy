@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Bone_1Create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Bone_1Create",
+  "parent":{
+    "name":"Bullet",
+    "path":"folders/脚本/Bullet.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

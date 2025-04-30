@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Part_Type_Create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Part_Type_Create",
+  "parent":{
+    "name":"Particles",
+    "path":"folders/脚本/Particles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

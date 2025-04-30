@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Enemy_Infor_Set",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Enemy_Infor_Set",
+  "parent":{
+    "name":"Enemy",
+    "path":"folders/脚本/Enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

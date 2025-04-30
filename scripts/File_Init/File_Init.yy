@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"File_Init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"File_Init",
+  "parent":{
+    "name":"File",
+    "path":"folders/脚本/File.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

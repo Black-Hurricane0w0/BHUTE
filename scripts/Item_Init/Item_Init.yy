@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Item_Init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Item_Init",
+  "parent":{
+    "name":"Item",
+    "path":"folders/脚本/Item.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

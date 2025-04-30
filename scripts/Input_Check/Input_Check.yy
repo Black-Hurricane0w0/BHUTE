@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Input_Check",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Input_Check",
+  "parent":{
+    "name":"Input",
+    "path":"folders/脚本/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

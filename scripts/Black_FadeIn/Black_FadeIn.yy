@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Black_FadeIn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Black_FadeIn",
+  "parent":{
+    "name":"Effect",
+    "path":"folders/脚本/Effect.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

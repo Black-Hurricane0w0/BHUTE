@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_gb_prepare",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.016,
+  "name":"snd_gb_prepare",
+  "parent":{
+    "name":"声音",
+    "path":"folders/声音.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"snd_gb_prepare.mp3",
+  "type":1,
+  "volume":0.85,
+}

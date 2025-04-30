@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"CameraPosTick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CameraPosTick",
+  "parent":{
+    "name":"Camera",
+    "path":"folders/脚本/Camera.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

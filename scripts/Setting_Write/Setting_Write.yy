@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Setting_Write",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Setting_Write",
+  "parent":{
+    "name":"Setting",
+    "path":"folders/脚本/Setting.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

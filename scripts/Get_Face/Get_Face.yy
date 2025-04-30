@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Get_Face",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Get_Face",
+  "parent":{
+    "name":"Other",
+    "path":"folders/脚本/Other.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

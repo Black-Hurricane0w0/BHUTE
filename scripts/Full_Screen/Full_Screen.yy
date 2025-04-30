@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Full_Screen",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Full_Screen",
+  "parent":{
+    "name":"脚本",
+    "path":"folders/脚本.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

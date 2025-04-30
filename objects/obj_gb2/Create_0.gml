@@ -1,0 +1,15 @@
+event_inherited();
+depth = DEPTH.BULLET_OUTSIDE;
+mask = false;
+facing = 0;
+fire_time = 0;
+time = 0;
+size = 1;
+keep_time = 60;
+visible = false;
+back_speed = 0;
+image_speed = 0;
+start_facing = 0;
+ready_time = true;
+flat_count = 1;
+ac_gb = ac_gb_default;

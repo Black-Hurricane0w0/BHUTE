@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Shook_Create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shook_Create",
+  "parent":{
+    "name":"Shook",
+    "path":"folders/脚本/Shook.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
