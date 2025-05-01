@@ -49,7 +49,7 @@ function vec2(_x = 0,_y = 0) constructor{
     */
     static getangle = function(_vec){
         var dotproduct = self.dotproduct(_vec);
-        var cosa = dotproduct / (self.model() * _vec.model());
+        var cosa = dotproduct / (self.magnitude() * _vec.magnitude());
         return arccos(cosa);
     }
     /**
@@ -59,7 +59,8 @@ function vec2(_x = 0,_y = 0) constructor{
     */
     static getdirection = function(){
         var dotproduct = self.dotproduct(new vec2(1,0));
-        var cosa = dotproduct / (self.model());
+        if self.magnitude() == 0 return NaN
+        var cosa = dotproduct / (self.magnitude());
         if y >= 0 {
             return arccos(cosa);
         }else{
@@ -78,7 +79,7 @@ function vec2(_x = 0,_y = 0) constructor{
     *  获取向量模长
     * @return {real}
     */
-    static model = function(){
+    static magnitude = function(){
         return sqrt(sqr(x)+sqr(y));
     }
     /**
@@ -86,8 +87,8 @@ function vec2(_x = 0,_y = 0) constructor{
     *@return {Struct.vec2}
     */
     static normalize = function(){
-        var tx = x / self.model();
-        var ty = y / self.model();
+        var tx = x / self.magnitude();
+        var ty = y / self.magnitude();
         return new vec2(tx,ty);
     }
     /**
@@ -237,7 +238,7 @@ function compare_smaller_vector(_vec1,_vec2,index){
  */
 function point_distance_vec(_vec1,_vec2){
     var vec = get_vector(_vec1,_vec2);
-    return vec.model();
+    return vec.magnitude();
 }
 /**
 * 获取两点间方向
@@ -271,7 +272,7 @@ function draw_vector(pos,vec) {
     var gm_vec = vec.toGameMakerCoords();
     var end_x = pos.x + gm_vec.x;
     var end_y = pos.y + gm_vec.y;
-    draw_set_color(c_red);
+    draw_set_color(c_blue);
     draw_arrow(pos.x, pos.y, end_x, end_y,10);
     draw_set_color(c_white);
 }
@@ -284,8 +285,8 @@ function get_endpos(pos,vec) {
     var end_y = pos.y + gm_vec.y;
     return new vec2(end_x,end_y);
 }
-function triangle_vec(rot,model) {
-    return new vec2(model*cos(rot),model*sin(rot));
+function triangle_vec(rot,magnitude) {
+    return new vec2(magnitude*cos(rot),magnitude*sin(rot));
 }
 
 

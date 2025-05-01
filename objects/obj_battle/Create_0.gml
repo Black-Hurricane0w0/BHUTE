@@ -59,3 +59,4 @@ fadein_inst = Black_FadeIn(320,240,10,0.05);
 Part_System_Create();
 Part_Type_Create();
 
+global.debug_surface = -1;

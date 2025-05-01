@@ -1,3 +1,12 @@
+//调试屏幕
+if not surface_exists(global.debug_surface) {
+	global.debug_surface = surface_create(640,480);
+}
+surface_set_target(global.debug_surface);
+draw_clear_alpha(c_white,0);
+surface_reset_target();
+
+
 //淡入
 if instance_exists(fadein_inst) == true {
 	if battle_state == BATTLE_STATE.PLAYER {
@@ -146,6 +155,8 @@ if battle_state == BATTLE_STATE.ENEMY {
 }else {
 	Battle_TurnSetTime(Enemy_Infor_Get("id").turn_max_time);
 }
+
+
 
 
 

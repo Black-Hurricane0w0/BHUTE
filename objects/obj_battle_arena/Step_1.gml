@@ -38,8 +38,8 @@ if (distance >= 1) {
 	y += lengthdir_y(distance / 5,dir);
 }
 if movesoul == true and instance_exists(obj_move_soul) {
-	obj_move_soul.x = x;
-	obj_move_soul.y = y;
+	obj_move_soul.pos.x = x;
+	obj_move_soul.pos.y = y;
 }
 if distance <= 1{
 	x = target_x;

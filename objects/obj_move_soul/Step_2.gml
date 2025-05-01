@@ -41,21 +41,21 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 			image_index = 1;
 			//检查是否碰到平台
 			if dir == 270 || dir == 90 {
-				if position_meeting(x,bboxside + (dir == 90?-0.001:0),obj_platform) {
-					var inst = instance_place(x,bboxside + (dir == 90?-0.001:0),obj_platform);
-					var bboxdistance = abs(y - bboxside);
+				if position_meeting(pos.x,bboxside + (dir == 90?-0.001:0),obj_platform) {
+					var inst = instance_place(pos.x,bboxside + (dir == 90?-0.001:0),obj_platform);
+					var bboxdistance = abs(pos.y - bboxside);
 					if jump_state == 2  {
 						onplatform = true;
-						y = inst.bboxside + (dir == 270?-1:1) * bboxdistance;
-						x += lengthdir_x(inst.move_speed,inst.dir);
-						y += lengthdir_y(inst.move_speed,inst.dir);
+						pos.y = inst.bboxside + (dir == 270?-1:1) * bboxdistance;
+						pos.x += lengthdir_x(inst.move_speed,inst.dir);
+						pos.y += lengthdir_y(inst.move_speed,inst.dir);
 						jump_state = 0;
 						gmove = 0;
 					}else if bboxside == inst.bboxside {
 						onplatform = true
-						y = inst.bboxside + (dir == 270?-1:1) * bboxdistance;
-						x += lengthdir_x(inst.move_speed,inst.dir);
-						y += lengthdir_y(inst.move_speed,inst.dir);
+						pos.y = inst.bboxside + (dir == 270?-1:1) * bboxdistance;
+						pos.x += lengthdir_x(inst.move_speed,inst.dir);
+						pos.y += lengthdir_y(inst.move_speed,inst.dir);
 						jump_state = 0;
 						gmove = 0;
 					}
@@ -64,21 +64,21 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 				}
 			}
 			if dir == 180 || dir == 0 {
-				if position_meeting(bboxside + (dir == 180?-0.001:0),y,obj_platform) {
-					var inst = instance_place(bboxside + (dir == 180?-0.001:0),y,obj_platform);
-					var bboxdistance = abs(x - bboxside);
+				if position_meeting(bboxside + (dir == 180?-0.001:0),pos.y,obj_platform) {
+					var inst = instance_place(bboxside + (dir == 180?-0.001:0),pos.y,obj_platform);
+					var bboxdistance = abs(pos.x - bboxside);
 					if jump_state == 2  {
 						onplatform = true;
-						x = inst.bboxside + (dir == 0?-1:1) * bboxdistance;
-						x += lengthdir_x(inst.move_speed,inst.dir);
-						y += lengthdir_y(inst.move_speed,inst.dir);
+						pos.x = inst.bboxside + (dir == 0?-1:1) * bboxdistance;
+						pos.x += lengthdir_x(inst.move_speed,inst.dir);
+						pos.y += lengthdir_y(inst.move_speed,inst.dir);
 						jump_state = 0;
 						gmove = 0;
 					}else if bboxside == inst.bboxside {
 						onplatform = true;
-						x = inst.bboxside + (dir == 0?-1:1) * abs(x-bboxside);
-						x += lengthdir_x(inst.move_speed,inst.dir);
-						y += lengthdir_y(inst.move_speed,inst.dir);
+						pos.x = inst.bboxside + (dir == 0?-1:1) * abs(x-bboxside);
+						pos.x += lengthdir_x(inst.move_speed,inst.dir);
+						pos.y += lengthdir_y(inst.move_speed,inst.dir);
 						jump_state = 0;
 						gmove = 0;
 					}
@@ -124,19 +124,19 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 			}
 			switch (dir) {
 				case 270 : {
-					y += gmove;
+					pos.y += gmove;
 					break;
 				}
 				case 0 : {
-					x += gmove;
+					pos.x += gmove;
 					break;
 				}
 				case 90 : {
-					y -= gmove;
+					pos.y -= gmove;
 					break;
 				}
 				case 180 : {
-					x -= gmove;
+					pos.x -= gmove;
 					break;
 				}
 			}
@@ -162,32 +162,32 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 		if dir == 270 || dir == 90 {
 				if Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP) {
 					if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-						x -= move_speed * 0.5;
+						pos.x -= move_speed * 0.5;
 					}else {
-						x -= move_speed;
+						pos.x -= move_speed;
 					}
 				}
 				if Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) {
 					if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-						x += move_speed * 0.5;
+						pos.x += move_speed * 0.5;
 					}else {
-						x += move_speed;
+						pos.x += move_speed;
 					}
 				}
 			}
 		if dir == 0 || dir == 180 {
 				if Input_Check(INPUT.UP,INPUT_STEAT.KEEP) {
 					if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-						y -= move_speed * 0.5;
+						pos.y -= move_speed * 0.5;
 					}else {
-						y -= move_speed;
+						pos.y -= move_speed;
 					}
 				}
 				if Input_Check(INPUT.DOWN,INPUT_STEAT.KEEP) {
 					if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-						y += move_speed * 0.5;
+						pos.y += move_speed * 0.5;
 					}else {
-						y += move_speed;
+						pos.y += move_speed;
 					}
 				}
 			}
@@ -197,14 +197,14 @@ var leftnomove = false;
 var rightnomove = false;
 var upnomove = false;
 var downnomove = false;
-pos = new vec2(x,y);
+
 {
-	if x - sprite_width/2 <= point_left {
-		var outside_distance = abs((x - sprite_width/2) - point_left);
-		if x - sprite_width/2 < point_left {
+	if pos.x - sprite_width/2 <= point_left {
+		var outside_distance = abs((pos.x - sprite_width/2) - point_left);
+		if pos.x - sprite_width/2 < point_left {
 			leftnomove = true;
 		}
-		x += outside_distance;
+		pos.x += outside_distance;
 		if is_gravity == true and dir == 180 and jump_state != 0 {
 			player_drop_event(180);
 		}
@@ -213,12 +213,12 @@ pos = new vec2(x,y);
 			jump_state = 2;
 		}
 	}
-	if x + sprite_width/2 >= point_right {
-		var outside_distance = abs((x + sprite_width/2) - point_right);
-		if x + sprite_width/2 > point_right {
+	if pos.x + sprite_width/2 >= point_right {
+		var outside_distance = abs((pos.x + sprite_width/2) - point_right);
+		if pos.x + sprite_width/2 > point_right {
 			rightnomove = true;
 		}
-		x -= outside_distance;
+		pos.x -= outside_distance;
 		if is_gravity == true and dir == 0 and jump_state != 0 {
 			player_drop_event(0);	
 		}
@@ -227,12 +227,12 @@ pos = new vec2(x,y);
 			jump_state = 2;
 		}
 	}
-	if y - sprite_height/2 <= point_up {
-		var outside_distance = abs((y - sprite_height/2) - point_up);
-		if y - sprite_height/2 < point_up {
+	if pos.y - sprite_height/2 <= point_up {
+		var outside_distance = abs((pos.y - sprite_height/2) - point_up);
+		if pos.y - sprite_height/2 < point_up {
 			upnomove = true;
 		}
-		y += outside_distance;
+		pos.y += outside_distance;
 		if is_gravity == true and dir == 90 and jump_state != 0 {
 			player_drop_event(90);
 		}
@@ -241,12 +241,12 @@ pos = new vec2(x,y);
 			jump_state = 2;
 		}
 	}
-	if y + sprite_height/2 >= point_down {
-		var outside_distance = abs((y + sprite_height/2) - point_down);
-		if y + sprite_height/2 > point_down {
+	if pos.y + sprite_height/2 >= point_down {
+		var outside_distance = abs((pos.y + sprite_height/2) - point_down);
+		if pos.y + sprite_height/2 > point_down {
 			downnomove = true;
 		}
-		y -= outside_distance;
+		pos.y -= outside_distance;
 		if is_gravity == true and dir == 270 and jump_state != 0 {
 			player_drop_event(270);
 		}
@@ -259,14 +259,14 @@ pos = new vec2(x,y);
 
 
 
-if x == xprevious and y == yprevious {
+if pos.x == xprevious and pos.y == yprevious {
 	is_moved = false;
 }else {
 	is_moved = true;
 }
 if downnomove || upnomove {
 	is_moved = false;
-	if leftnomove == false and rightnomove == false and x != xprevious {
+	if leftnomove == false and rightnomove == false and pos.x != xprevious {
 		is_moved = true;
 	}
 }
@@ -283,3 +283,6 @@ File_Set(PLAYER_INFO.Y,obj_move_soul.y);
 if File_Get(PLAYER_INFO.HP) <= 0 || obj_battle.player_target_health <= 0 {
 	room_goto(Room_BadEnd);
 }
+
+x = pos.x;
+y = pos.y;
