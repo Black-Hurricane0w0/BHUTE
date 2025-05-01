@@ -186,10 +186,6 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 		}	
 }
 
-
-
-
-
 //是否移动？
 if Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP) || Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) || Input_Check(INPUT.UP,INPUT_STEAT.KEEP) || Input_Check(INPUT.DOWN,INPUT_STEAT.KEEP) {
 	is_moved = true;

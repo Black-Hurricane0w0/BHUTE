@@ -48,4 +48,3 @@ if invulnerable > 0 {
 }else {
 	image_alpha = 1;
 }
-//y -= move_speed
