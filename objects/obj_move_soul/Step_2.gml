@@ -187,64 +187,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 }
 
 
-{
-	if pos.x - sprite_width/2 <= point_left {
-		var outside_distance = abs((pos.x - sprite_width/2) - point_left);
-		if pos.x - sprite_width/2 < point_left {
-			leftnomove = true;
-		}
-		pos.x += outside_distance;
-		if is_gravity == true and dir == 180 and jump_state != 0 {
-			player_drop_event(180);
-		}
-		if is_gravity == true and dir == 0 and drop == false {
-			gmove = 1;
-			jump_state = 2;
-		}
-	}
-	if pos.x + sprite_width/2 >= point_right {
-		var outside_distance = abs((pos.x + sprite_width/2) - point_right);
-		if pos.x + sprite_width/2 > point_right {
-			rightnomove = true;
-		}
-		pos.x -= outside_distance;
-		if is_gravity == true and dir == 0 and jump_state != 0 {
-			player_drop_event(0);	
-		}
-		if is_gravity == true and dir == 180 and drop == false {
-			gmove = 1;
-			jump_state = 2;
-		}
-	}
-	if pos.y - sprite_height/2 <= point_up {
-		var outside_distance = abs((pos.y - sprite_height/2) - point_up);
-		if pos.y - sprite_height/2 < point_up {
-			upnomove = true;
-		}
-		pos.y += outside_distance;
-		if is_gravity == true and dir == 90 and jump_state != 0 {
-			player_drop_event(90);
-		}
-		if is_gravity == true and dir == 270 and drop == false {
-			gmove = 1;
-			jump_state = 2;
-		}
-	}
-	if pos.y + sprite_height/2 >= point_down {
-		var outside_distance = abs((pos.y + sprite_height/2) - point_down);
-		if pos.y + sprite_height/2 > point_down {
-			downnomove = true;
-		}
-		pos.y -= outside_distance;
-		if is_gravity == true and dir == 270 and jump_state != 0 {
-			player_drop_event(270);
-		}
-		if is_gravity == true and dir == 90 and drop == false {
-			gmove = 1;
-			jump_state = 2;
-		}
-	}
-}
+
 
 
 //是否移动？
