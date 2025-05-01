@@ -5,7 +5,7 @@ var rot = degtorad(rotation);
     //长方形边数为4，共4个顶点
     var point_count = 4;
     //记录所有顶点的数组
-    var point_array = array_create(0);
+    point_array = array_create(0);
     var a = arctan(target_height/target_width);
     var p1 = new vec2(target_x + len*cos(rot-a),target_y - len*sin(rot-a));
     var p2 = new vec2(target_x + len*cos(rot+a),target_y - len*sin(rot+a));
@@ -13,7 +13,7 @@ var rot = degtorad(rotation);
     var p4 = new vec2(target_x + len*cos(rot+a+pi),target_y - len*sin(rot+a+pi));
     array_push(point_array,p1,p2,p3,p4);
     
-    var vec_array = array_create(point_count);
+    vec_array = array_create(point_count);
     //获取向量
     for (var i=0;i<point_count;i++){
         var vec = new vec2();

@@ -143,8 +143,8 @@ function vec2(_x = 0,_y = 0) constructor{
 }
 /**
  *  用于获取坐标间的向量
- * @param {Struct.vec2} _pos1  起始坐标
- * @param {Struct.vec2} _pos2  终止坐标
+ * @param {Struct.vec2} _pos1 起始坐标
+ * @param {Struct.vec2} _pos2 终止坐标
  * @return {Struct.vec2}
  */
 function get_vector(_pos1,_pos2){
@@ -152,7 +152,7 @@ function get_vector(_pos1,_pos2){
 }
 /**
  *  获取向量中x/y值最小的向量
- * @param {Array<Struct.vec2>} array  存放vec2的数组
+ * @param {Array<Struct.vec2>} array 存放vec2的数组
  * @param {real} index 判断x/y
  * @returns {struct}
  */
@@ -174,7 +174,7 @@ function get_min_vector(array,index){
 }
 /**
  *  获取向量中x/y值最大的向量
- * @param {array<struct.vec2>} array  存放vec2的数组
+ * @param {array<struct.vec2>} array 存放vec2的数组
  * @param {Vector2} index 判断x/y
  * @returns {struct}
  */
@@ -265,13 +265,12 @@ function application_vec(array,func){
 function reservey(vec){
     return new vec2(vec.x,-vec.y)
 }
-/// @desc  绘制向量箭头（适配 GameMaker 坐标系）
+/// @desc  绘制向量箭头
 /// @param {Struct.vec2} pos 
 /// @param {Struct.vec2} vec 
 function draw_vector(pos,vec) {
-    var gm_vec = vec.toGameMakerCoords();
-    var end_x = pos.x + gm_vec.x;
-    var end_y = pos.y + gm_vec.y;
+    var end_x = pos.x + vec.x;
+    var end_y = pos.y + vec.y;
     draw_set_color(c_blue);
     draw_arrow(pos.x, pos.y, end_x, end_y,10);
     draw_set_color(c_white);
@@ -287,6 +286,13 @@ function get_endpos(pos,vec) {
 }
 function triangle_vec(rot,magnitude) {
     return new vec2(magnitude*cos(rot),magnitude*sin(rot));
+}
+/// @desc  绘制坐标
+/// @param {Struct.vec2} pos 
+function draw_pos(pos) {
+    draw_set_color(c_blue);
+    draw_circle(pos.x, pos.y,3,false);
+    draw_set_color(c_white);
 }
 
 

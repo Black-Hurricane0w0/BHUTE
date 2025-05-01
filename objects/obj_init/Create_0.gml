@@ -55,7 +55,7 @@ enum Vector2 {
 //用法:log(message)
 #macro elif else if
 
-math_set_epsilon(0.00001)
+math_set_epsilon(0.000001)
 
 Init();
 

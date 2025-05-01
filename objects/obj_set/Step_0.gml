@@ -3,7 +3,7 @@ CameraPosTick();
 Shook_Tick();
 
 
-//DEBUG
+//debug
 if debug == true {
 	if instance_exists(obj_battle){
 		obj_battle.player_target_health = PLAYER_INFO.MAX_HP;
