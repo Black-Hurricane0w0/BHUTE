@@ -36,7 +36,6 @@ var rot = degtorad(rotation);
     var posy = obj_move_soul.pos.y;
     //获取玩家顶点
     var player_points = array_create(0);
-    var posxx = posx;var posyy = posy;
     array_push(player_points,new vec2(posx+7,posy-7));
     array_push(player_points,new vec2(posx-7,posy-7));
     array_push(player_points,new vec2(posx,posy+8));
@@ -59,12 +58,16 @@ var rot = degtorad(rotation);
                 var vec_4 = triangle_vec(rotj,hw/2);
                 var end_pos = get_endpos(pos,vec_3.add(vec_4));
                 var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
-                surface_set_target(global.debug_surface);
-                draw_vector(obj_move_soul.pos,vec_5);
-                surface_reset_target()
-                
                 obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5);
-                //show_message(obj_move_soul.pos)
+                posx = obj_move_soul.pos.x;
+                posy = obj_move_soul.pos.y;
+                player_points = array_create(0);
+                array_push(player_points,new vec2(posx+7,posy-7));
+                array_push(player_points,new vec2(posx-7,posy-7));
+                array_push(player_points,new vec2(posx,posy+8));
+                array_push(player_points,new vec2(posx-8,posy+1));
+                array_push(player_points,new vec2(posx+8,posy+1));
             }
         }
     }
+    
