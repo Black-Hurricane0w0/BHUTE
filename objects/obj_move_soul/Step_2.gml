@@ -1,37 +1,29 @@
 
 
 //灵魂方向
+var bboxside = -1
 if is_gravity == true {
 	if dir == 270 {
 		image_angle = 0;
-		var jump_input = INPUT.UP;
-		var bboxside = bbox_bottom;
+		var jump_input = INPUT.UP; 
+        bboxside = bbox_bottom;
 	}
 	if dir == 0 {
 		image_angle = 90;
 		var jump_input = INPUT.LEFT;
-		var bboxside = bbox_right;
+		bboxside = bbox_right;
 	} 
 	if dir == 90 {
 		image_angle = 180;
 		var jump_input = INPUT.DOWN;
-		var bboxside = bbox_top;
+		bboxside = bbox_top;
 	} 
 	if dir == 180 {
 		image_angle = 270;
 		var jump_input = INPUT.RIGHT;
-		var bboxside = bbox_left;
+		bboxside = bbox_left;
 	} 	
 }
-
-var point_up = -infinity;
-var point_down = infinity;
-var point_left = -infinity;
-var point_right = infinity;
-
-
-
-
 
 
 
@@ -193,10 +185,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 			}
 		}	
 }
-var leftnomove = false;
-var rightnomove = false;
-var upnomove = false;
-var downnomove = false;
+
 
 {
 	if pos.x - sprite_width/2 <= point_left {
@@ -258,31 +247,22 @@ var downnomove = false;
 }
 
 
-
-if pos.x == xprevious and pos.y == yprevious {
-	is_moved = false;
-}else {
+//是否移动？
+if Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP) || Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) || Input_Check(INPUT.UP,INPUT_STEAT.KEEP) || Input_Check(INPUT.DOWN,INPUT_STEAT.KEEP) {
 	is_moved = true;
-}
-if downnomove || upnomove {
+}else {
 	is_moved = false;
-	if leftnomove == false and rightnomove == false and pos.x != xprevious {
-		is_moved = true;
-	}
-}
-if leftnomove || rightnomove {
-	is_moved = false;
-	if upnomove == false and downnomove == false and y != yprevious {
-		is_moved = true;
-	}
 }
 
+//同步xy
 File_Set(PLAYER_INFO.X,obj_move_soul.x);
 File_Set(PLAYER_INFO.Y,obj_move_soul.y);
 
+//死亡检测
 if File_Get(PLAYER_INFO.HP) <= 0 || obj_battle.player_target_health <= 0 {
 	room_goto(Room_BadEnd);
 }
 
+//应用改变坐标
 x = pos.x;
 y = pos.y;

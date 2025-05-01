@@ -43,6 +43,17 @@ var rot = degtorad(rotation);
     array_push(player_points,new vec2(posx+8,posy+1));
     for (var j=0;j<4;j++){
         for(var i=0;i<array_length(player_points);i++){
+            //对灵魂数据更新
+                //获取玩家顶点
+                posx = obj_move_soul.pos.x;
+                posy = obj_move_soul.pos.y;
+                //获取各个限制点坐标
+                player_points = array_create(0);
+                array_push(player_points,new vec2(posx+7,posy-7));
+                array_push(player_points,new vec2(posx-7,posy-7));
+                array_push(player_points,new vec2(posx,posy+8));
+                array_push(player_points,new vec2(posx-8,posy+1));
+                array_push(player_points,new vec2(posx+8,posy+1));
             //选择高或宽
             var hw = (j mod 2 == 0?width:height) - 8;
             var rotj = rot + j*pi/2;
@@ -59,14 +70,6 @@ var rot = degtorad(rotation);
                 var end_pos = get_endpos(pos,vec_3.add(vec_4));
                 var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
                 obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5);
-                posx = obj_move_soul.pos.x;
-                posy = obj_move_soul.pos.y;
-                player_points = array_create(0);
-                array_push(player_points,new vec2(posx+7,posy-7));
-                array_push(player_points,new vec2(posx-7,posy-7));
-                array_push(player_points,new vec2(posx,posy+8));
-                array_push(player_points,new vec2(posx-8,posy+1));
-                array_push(player_points,new vec2(posx+8,posy+1));
             }
         }
     }
