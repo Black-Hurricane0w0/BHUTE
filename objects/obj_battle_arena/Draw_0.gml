@@ -35,12 +35,12 @@ if obj_battle.ui_enable == true {
         var _up = get_max_vector(uppoint_array,Vector2.Y);
         var _down = get_min_vector(downpoint_array,Vector2.Y);
         //绘制
+        surface_set_target(mask_surface);
+        draw_rectangle_color(0,0,mouse_x,mouse_y,c_white,c_white,c_white,c_white,false);
+        surface_reset_target();
 	    draw_surface_part(mask_surface,_up.x,_up.y,1,_down.y-_up.y,_up.x,_up.y);
+        
     }
-    
-        
-        
-        
 }
 
 

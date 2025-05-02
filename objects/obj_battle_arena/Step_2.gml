@@ -1,7 +1,7 @@
 var rot = degtorad(rotation);
 //应用表面,长方形
 	//计算坐标
-    var len = sqrt(sqr((target_height-8)/2) + sqr((target_width-8)/2));
+    var len = sqrt(sqr((target_height)/2) + sqr((target_width)/2));
     //长方形边数为4，共4个顶点
     var point_count = 4;
     //记录所有顶点的数组
