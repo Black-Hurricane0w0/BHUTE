@@ -16,3 +16,4 @@ mask_index = spr_battle_edge;
 
 mask_surface = -1;
 arena_surface = -1; 
+

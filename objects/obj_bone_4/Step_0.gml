@@ -1,4 +1,5 @@
 // Inherit the parent event
+event_inherited();
 
 if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 	instance_destroy();

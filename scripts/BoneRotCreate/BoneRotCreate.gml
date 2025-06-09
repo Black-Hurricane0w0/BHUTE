@@ -55,3 +55,27 @@ function BoneNoAnimCreate(pos,move_speed = 1,dir = 0,long = 10,max_long = 10,col
 		inst.tag = tag;
 	}
 }
+
+/// @desc 创建一个自定义骨头
+/// @param {Struct.vec2} pos 骨头的生成坐标
+/// @param {Constant.Color} [color]=c_white 骨头颜色（影响damage_func）
+/// @param {bool} [is_mask]=true 是否收到战斗框遮罩影响
+/// @param {function} [step_func] 骨头的步执行函数（覆盖原函数）
+/// @param {function} [damage_func] 骨头的伤害执行函数（覆盖原函数）
+/// @param {string} [tag]="" 骨头的标签
+/// @returns {id.Instance} 骨头的id
+function BoneCustomCreate(pos,color = c_white,is_mask = true,step_func = undefined,damage_func = undefined,tag = ""){
+	inst = instance_create_depth(0,0,0,obj_bone_4){
+		inst.pos = pos;
+		inst.color = color;
+		inst.mask = is_mask;
+        inst.tag = tag;
+		if step_func != undefined {
+			inst.step_func = step_func;
+		}
+        if damage_func != undefined {
+            inst.damage_func = damage_func;
+        }
+	}
+	return inst;
+}

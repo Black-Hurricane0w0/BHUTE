@@ -180,6 +180,7 @@
     {"name":"WarnboxCreate","order":3,"path":"scripts/WarnboxCreate/WarnboxCreate.yy",},
     {"name":"WarnlineCreate","order":10,"path":"scripts/WarnlineCreate/WarnlineCreate.yy",},
     {"name":"Won","order":11,"path":"scripts/Won/Won.yy",},
+    {"name":"sh_mask","order":1,"path":"shaders/sh_mask/sh_mask.yy",},
     {"name":"mus_armstrong_state1","order":17,"path":"sounds/mus_armstrong_state1/mus_armstrong_state1.yy",},
     {"name":"mus_scare","order":18,"path":"sounds/mus_scare/mus_scare.yy",},
     {"name":"snd_bell","order":4,"path":"sounds/snd_bell/snd_bell.yy",},

@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-
+damage = Enemy_Infor_Get("id").attack_damage;
 movedir = 0;
 rot = 0;
 rotspeed = 0;
@@ -22,6 +22,33 @@ offest_point = 0.5;
 pos = new vec2();
 tag = "";
 
+draw_bone = function() {
+    //绘制
+        var _color = color
+        if color == c_blue {
+    		_color = make_color_rgb(0,125,255);
+    	} 
+    	var start_x = pos.x - lengthdir_x((bone_long + 12) * offest_point,rot + 90);
+    	var start_y = pos.y - lengthdir_y((bone_long + 12) * offest_point,rot + 90);
+    	draw_sprite_ext(spr_bottom_bone,0,start_x,start_y,1,1,rot,_color,1);
+    	var xx = start_x;
+    	var yy = start_y;
+    	for (i = 0;i < bone_long;i++){
+    		xx += lengthdir_x(6 + i,rot + 90);
+    		yy += lengthdir_y(6 + i,rot + 90);
+    		draw_sprite_ext(spr_bone_pixel,0,xx,yy,1,1,rot,_color,1);
+    		xx = start_x;
+    		yy = start_y;
+    	}
+    	xx += lengthdir_x(6 + bone_long,rot + 90);
+    	yy += lengthdir_y(6 + bone_long,rot + 90);
+    	draw_sprite_ext(spr_top_bone,0,xx,yy,1,1,rot,_color,1);
+}
+
+
+draw_function = function(){
+    draw_bone();
+}
 step_func = undefined;
 damage_func = function(){
     //伤害判定

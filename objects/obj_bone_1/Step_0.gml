@@ -1,4 +1,13 @@
 // Inherit the parent event
+if place_meeting(x,y,obj_move_soul) and obj_move_soul.is_moved == true{
+	Player_Damage(damage);
+} 
+if obj_battle.battle_state != BATTLE_STATE.ENEMY {
+	instance_destroy();
+}
+if distance_to_object(obj_battle_arena) >= 1900 {
+	instance_destroy();
+}
 
 time ++;
 

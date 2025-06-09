@@ -245,6 +245,7 @@
     {"id":{"name":"Won","path":"scripts/Won/Won.yy",},},
     {"id":{"name":"Sequence1","path":"sequences/Sequence1/Sequence1.yy",},},
     {"id":{"name":"sh_gray","path":"shaders/sh_gray/sh_gray.yy",},},
+    {"id":{"name":"sh_mask","path":"shaders/sh_mask/sh_mask.yy",},},
     {"id":{"name":"mus_armstrong_state1","path":"sounds/mus_armstrong_state1/mus_armstrong_state1.yy",},},
     {"id":{"name":"mus_scare","path":"sounds/mus_scare/mus_scare.yy",},},
     {"id":{"name":"snd_bell","path":"sounds/snd_bell/snd_bell.yy",},},
