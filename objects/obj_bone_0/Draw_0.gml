@@ -36,8 +36,9 @@ var draw_bone = function () {
 	
 }
 
+surface_set_target(obj_battle_arena.mask_surface);
 if mask == true {
-	surface_set_target(obj_battle_arena.mask_surface);
+    gpu_set_blendmode_ext_sepalpha(bm_src_color,bm_zero,bm_zero,bm_dest_alpha);
 	if bone_long >= 0 {
 		draw_bone();
 	}
@@ -47,3 +48,4 @@ if mask == true {
 		draw_bone();
 	}
 }
+surface_reset_target();

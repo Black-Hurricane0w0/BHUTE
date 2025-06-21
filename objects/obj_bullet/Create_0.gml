@@ -3,7 +3,4 @@ time = 0;
 depth = DEPTH.BULLET;
 mask = false;
 
-draw_function = function(){
-    draw_self();
-}
 

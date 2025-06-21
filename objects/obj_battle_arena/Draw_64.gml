@@ -1,0 +1,1 @@
+draw_surface(mask_surface,0,0);

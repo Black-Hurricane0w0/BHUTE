@@ -15,6 +15,8 @@ if mask == false {
 }
 x = pos.x;
 y = pos.y;
+image_yscale = (bone_long + 12) / 40;
+image_angle = rot;
 //每刻执行事件
 if step_func != undefined {
 	step_func();
@@ -41,9 +43,7 @@ if step_func != undefined {
 		if t >= 1 {
 			instance_destroy();
 		}
-	}
-	image_yscale = (bone_long + 12) / 40;
-	image_angle = rot;
+    }
 }
 damage_func();
 
