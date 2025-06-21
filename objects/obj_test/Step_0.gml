@@ -9,7 +9,7 @@ if time == 1 {
 if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 	ArenaSet(200,300,30);
 	if time mod 60 == 0 {
-		BoneRotCreate(new vec2(100,400),2,0,300,300,0,0,c_blue,0.5,ac_bone_default,ac_bone_default,0,0,true,infinity,);
+		BoneRotCreate(100,400,2,0,300,300,0,0,c_white,0.5,ac_bone_default,ac_bone_default,0,0,true,infinity,);
 	}
 
 }

@@ -19,6 +19,7 @@ mask = false;
 keep_time = 0;
 time = 0;
 offest_point = 0.5;
+alpha = 1;
 pos = new vec2();
 tag = "";
 
@@ -26,9 +27,9 @@ tag = "";
 step_func = undefined;
 damage_func = function(){
     //伤害判定
-    for (i=0;i<=1;i+=0.1) {
-        var xx = lerp(pos.x,xprevious,i);
-        var yy = lerp(pos.y,yprevious,i);
+    for (var i=0;i<=1;i+=0.1) {
+        var xx = lerp(x,xprevious,i);
+        var yy = lerp(y,yprevious,i);
         if place_meeting(xx,yy,obj_move_soul){
             if color == c_orange and obj_move_soul.is_moved == false {
                 Player_Damage(damage,1);

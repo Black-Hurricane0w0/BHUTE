@@ -55,6 +55,8 @@ enum Vector2 {
 //用法:log(message)
 #macro elif else if
 
+#macro buttle_range 500 
+
 math_set_epsilon(0.000001)
 
 Init();

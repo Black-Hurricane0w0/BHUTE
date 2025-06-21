@@ -2,13 +2,12 @@
 
 var draw_bone = function() {
     //绘制
-        var alpha = 1;
         var _color = color
         if color == c_blue {
     		_color = #0AFCF0;
     	} 
-    	var start_x = pos.x - lengthdir_x((bone_long + 12) * offest_point,rot + 90);
-    	var start_y = pos.y - lengthdir_y((bone_long + 12) * offest_point,rot + 90);
+    	var start_x = x - lengthdir_x((bone_long + 12) * offest_point,rot + 90);
+    	var start_y = y - lengthdir_y((bone_long + 12) * offest_point,rot + 90);
     	draw_sprite_ext(spr_bottom_bone,0,start_x,start_y,1,1,rot,_color,alpha);
     	var xx = start_x;
     	var yy = start_y;

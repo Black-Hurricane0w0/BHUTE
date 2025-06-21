@@ -1,5 +1,6 @@
 /// @desc 创建一个可以旋转的骨头
-/// @param {Struct.vec2} pos 骨头的生成坐标
+/// @param {real} x 骨头的生成坐标x
+/// @param {real} y 骨头的生成坐标y
 /// @param {real} [move_speed]=1 骨头的移动速度
 /// @param {real} [dir]=0 骨头的移动方向（0为正右）
 /// @param {real} [long]=10 骨头初始长度
@@ -18,10 +19,9 @@
 /// @param {function} [damage_func] 骨头的伤害执行函数（覆盖原函数）
 /// @param {string} [tag]="" 骨头的标签
 /// @returns {id.Instance} 骨头的id
-function BoneRotCreate(pos,move_speed = 1,dir = 0,long = 10,max_long = 10,default_rot = 0,rotspeed = 0,color = c_white,point = 0,ac_bone_long = ac_bone_default,ac_bone_rot = ac_bone_default,cost_time = 0,target_rot = default_rot,is_mask = true,keep_time=0,step_func = undefined,damage_func = undefined,tag = ""){
-	inst = instance_create_depth(0,0,0,obj_bone_4){
+function BoneRotCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,default_rot = 0,rotspeed = 0,color = c_white,point = 0,ac_bone_long = ac_bone_default,ac_bone_rot = ac_bone_default,cost_time = 0,target_rot = default_rot,is_mask = true,keep_time=0,step_func = undefined,damage_func = undefined,tag = ""){
+	inst = instance_create_depth(x,y,0,obj_bone_4){
 		inst.move_speed = move_speed;
-		inst.pos = pos;
 		inst.bone_default_long = long;
 		inst.default_rot = default_rot;
 		inst.rotspeed = rotspeed;

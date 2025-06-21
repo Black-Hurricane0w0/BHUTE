@@ -4,7 +4,7 @@ event_inherited();
 if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 	instance_destroy();
 }
-if pos.x <= -30 || pos.x >= room_width + 30 || pos.y < -30 || pos.y >= room_height + 30 {
+if x <= -buttle_range || x >= room_width + buttle_range || y < -buttle_range || y >= room_height + buttle_range {
 	instance_destroy();
 }
 //基础设置
@@ -13,8 +13,6 @@ sprite_set_offset(spr_bone_0,6,40 * (1 -offest_point));
 if mask == false {
     depth = DEPTH.BULLET_OUTSIDE;
 }
-x = pos.x;
-y = pos.y;
 image_yscale = (bone_long + 12) / 40;
 image_angle = rot;
 //每刻执行事件
@@ -34,8 +32,8 @@ if step_func != undefined {
 	}else if time >= cost_time and time <= keep_time  {
 		rot += rotspeed;
 		bone_long = bone_max_long;
-		pos.x += lengthdir_x(move_speed,movedir);
-		pos.y += lengthdir_y(move_speed,movedir);
+		x += lengthdir_x(move_speed,movedir);
+		y += lengthdir_y(move_speed,movedir);
 	}else if time >= keep_time {
 		var t = (time - keep_time) / cost_time;
 		bone_long = animcurve_channel_evaluate(animcurve_get_channel(ac_bone_long,0),1-t) * (bone_max_long - bone_default_long) + bone_default_long;
