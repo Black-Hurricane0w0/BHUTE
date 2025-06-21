@@ -29,7 +29,6 @@ battle_action_choice = 0;
 battle_item_soul = 0;
 battle_item_choice = 0;
 alarm[0] = 900;
-alarm[1] = 1;
 turn_time = 0;
 turn_inst = noone;
 battle_won = false;

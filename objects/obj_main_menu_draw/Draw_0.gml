@@ -26,5 +26,5 @@ if time > 220 {
 	draw_sprite_ext(spr_menu_light,0,0,0,1,1,0,c_white,sin(degtorad(time)));
 	
 	draw_set_color(c_white);
-	draw_text_transformed(440,220,"By Black_Hurricane",0.5,0.5,0);
+	draw_text_transformed(440,220,"By Black_Hurricane",0.75,0.75,0);
 }

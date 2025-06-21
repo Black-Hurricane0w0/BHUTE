@@ -332,6 +332,6 @@
   ],
   "templateType":"game",
   "TextureGroups":[
-    {"$GMTextureGroup":"","%Name":"Default","autocrop":false,"border":8,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":-1,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":false,"border":8,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }
