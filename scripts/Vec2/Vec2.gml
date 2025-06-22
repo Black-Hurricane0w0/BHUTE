@@ -111,7 +111,7 @@ function vec2(_x = 0,_y = 0) constructor{
         }
     }
     /**
-    *  反转y值
+    * @desc 反转y值
     * @return {Struct.vec2}
     */
     static reservey = function(){
@@ -252,10 +252,10 @@ function point_direction_vec(_vec1,_vec2){
 }
 
 /**
- * 对一个vec2列表应用函数,返回对应的vec2/vec2列表
- * @param {Array<Struct.vec2>} array vec2列表
- * @param {Function} func 应用函数
- * @return {Array<Struct.vec2>,Struct.vec2}
+ * @description 对一个vec2列表应用函数,返回对应的vec2/vec2列表
+ * @param {array<struct.vec2>} array  vec2列表
+ * @param {function} func  应用函数
+ * @returns {array<struct.vec2>, struct.vec2} Description
  */
 function application_vec(array,func){
     return_value = undefined;
@@ -266,8 +266,8 @@ function reservey(vec){
     return new vec2(vec.x,-vec.y)
 }
 /// @desc  绘制向量箭头
-/// @param {Struct.vec2} pos 
-/// @param {Struct.vec2} vec 
+/// @param {struct.vec2} pos 起始坐标
+/// @param {struct.vec2} vec 向量
 function draw_vector(pos,vec) {
     var end_x = pos.x + vec.x;
     var end_y = pos.y + vec.y;
@@ -275,32 +275,47 @@ function draw_vector(pos,vec) {
     draw_arrow(pos.x, pos.y, end_x, end_y,10);
     draw_set_color(c_white);
 }
-/// @desc  获取终点坐标
-/// @param {Struct.vec2} pos 
-/// @param {Struct.vec2} vec 
+/// @desc  获取终点坐标（将数学坐标系转至GMS坐标系）
+/// @param {struct.vec2} pos 起始坐标
+/// @param {struct.vec2} vec 向量
+/// @returns {struct}
 function get_endpos(pos,vec) {
     var gm_vec = vec.toGameMakerCoords();
     var end_x = pos.x + gm_vec.x;
     var end_y = pos.y + gm_vec.y;
     return new vec2(end_x,end_y);
 }
-function triangle_vec(rot,magnitude) {
-    return new vec2(magnitude*cos(rot),magnitude*sin(rot));
+
+/**
+ * @description 使用极坐标创建向量
+ * @param {real} rot 旋转角度
+ * @param {real} model 模长
+ * @returns {struct}
+ */
+function triangle_vec(rot,model) {
+    return new vec2(model*cos(rot),model*sin(rot));
 }
-/// @desc  绘制坐标
-/// @param {Struct.vec2} pos 
+/**
+    @description 绘制坐标
+    @param {struct.vec2} pos 绘制的坐标
+ */
 function draw_pos(pos) {
     draw_set_color(c_blue);
     draw_circle(pos.x, pos.y,3,false);
     draw_set_color(c_white);
 }
-
-
-
-// 类型检查函数
+/// @desc 类型检查函数
+/// @param {any} obj Description
+/// @returns {bool} Description
 function is_vec2(obj) {
     return is_struct(obj) && variable_struct_exists(obj, "type") && obj.type == "vec2";
 }
+
+
+
+
+
+
 
 
 
