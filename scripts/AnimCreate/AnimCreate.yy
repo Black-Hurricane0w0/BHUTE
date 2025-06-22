@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"AnimCreate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AnimCreate",
+  "parent":{
+    "name":"AnimController",
+    "path":"folders/脚本/AnimController.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

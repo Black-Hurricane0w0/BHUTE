@@ -255,11 +255,12 @@ function point_direction_vec(_vec1,_vec2){
  * @description 对一个vec2列表应用函数,返回对应的vec2/vec2列表
  * @param {array<struct.vec2>} array  vec2列表
  * @param {function} func  应用函数
- * @returns {array<struct.vec2>, struct.vec2} Description
+ * @returns {array<struct.vec2>, struct.vec2}
  */
 function application_vec(array,func){
     return_value = undefined;
     func(array);
+    if !is_vec2(return_value) and !is_array(return_value) throw ("application_vec should return a vec2 or an array")
     return return_value;
 }
 function reservey(vec){

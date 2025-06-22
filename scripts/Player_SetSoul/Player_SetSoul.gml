@@ -5,10 +5,10 @@ function Player_SetSoul(is_grav,dir,is_effect){
 	if is_grav == true {
 		obj_move_soul.is_gravity = true;
 		obj_move_soul.dir = dir;
-		global.soul_color = c_blue;
+		global.soul_color = SOUL_STATE.BLUE;
 	}else if is_grav == false {
 		obj_move_soul.is_gravity = false;
-		global.soul_color = c_red;
+		global.soul_color = SOUL_STATE.RED;
 	}
 	if is_grav != state_before and is_effect == true {
 		instance_create_depth(obj_move_soul.pos.x,obj_move_soul.pos.y,DEPTH.SOUL,obj_soul_image);

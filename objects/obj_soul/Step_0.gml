@@ -13,7 +13,7 @@ if distance <= 1{
 	y = target_y;
 }
 
-if global.soul_color == c_red {
+if global.soul_color == SOUL_STATE.RED {
 	image_index = 0;
 }else {
 	image_index = 1;

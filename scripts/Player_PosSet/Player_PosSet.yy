@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Player_PosSet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Player_PosSet",
+  "parent":{
+    "name":"Player",
+    "path":"folders/脚本/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

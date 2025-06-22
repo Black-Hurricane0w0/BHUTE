@@ -48,14 +48,21 @@ enum Vector2 {
     X,
     Y,
 }
+//决心状态
+enum SOUL_STATE {
+    RED,
+    BLUE
+}
 	
 
 //宏定义
 #macro log show_debug_message
 //用法:log(message)
 #macro elif else if
-
+//弹幕清除范围
 #macro buttle_range 500 
+//动画曲线集合
+#macro AllAnim AnimController 
 
 math_set_epsilon(0.000001)
 
