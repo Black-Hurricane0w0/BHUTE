@@ -1,17 +1,24 @@
-//获取方向
-dir = point_direction(x,y,target_x,target_y);
-//获取距离
-distance = point_distance(x,y,target_x,target_y);
+
+if x != target_x or !is_anim(bm1) {
+    bm1 = CreateAnim().add(120,x,target_x).anim("speeddown");
+    bm1.execute(function(t){
+        x = t;
+        if target_x != bm1.b {
+            bm1 = -1;
+        }
+    }).run();
+}
+if y != target_y or !is_anim(bm2) {
+    bm2 = CreateAnim().add(120,y,target_y).anim("speeddown");
+    bm2.execute(function(t){
+        y = t;
+        if target_y != bm2.b {
+            bm2 = -1;
+        }
+    }).run();
+}
 
 
-if (distance >= 1) {
-	x += lengthdir_x(distance / 5,dir);
-	y += lengthdir_y(distance / 5,dir);
-}
-if distance <= 1{
-	x = target_x;
-	y = target_y;
-}
 
 if global.soul_color == SOUL_STATE.RED {
 	image_index = 0;

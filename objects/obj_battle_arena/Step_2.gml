@@ -1,3 +1,5 @@
+//不在战斗状态时不判定
+if obj_battle.battle_state != BATTLE_STATE.ENEMY exit
 var rot = degtorad(rotation);
 //应用表面,长方形
 	//计算坐标

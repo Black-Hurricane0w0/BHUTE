@@ -1,3 +1,4 @@
+
 if text != "&" {
 	draw_set_color(text_color);
 	draw_set_font(text_font);

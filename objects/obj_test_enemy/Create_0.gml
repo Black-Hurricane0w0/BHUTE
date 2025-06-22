@@ -12,7 +12,7 @@ mercy = 0;
 fast_die = true;
 turn = 0;
 turn_max_time = infinity;
-start_state = BATTLE_STATE.ENEMY;
+start_state = BATTLE_STATE.PLAYER;
 obj_battle.ui_enable = true;
 obj_battle.buttom_enable = true;
 

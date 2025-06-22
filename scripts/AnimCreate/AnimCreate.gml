@@ -1,3 +1,5 @@
+/// @desc 创建一个animcontroller
+/// @returns {Struct.anim} 
 function CreateAnim(){
     return new anim();
 }
@@ -15,7 +17,7 @@ function anim() constructor {
      * @param {real} maxtime
      * @param {real} a
      * @param {real} b
-     * @return {struct.anim}
+     * @return {Struct.anim}
     */
     static add = function(maxtime,a,b){
         self.maxtime = maxtime;
@@ -24,18 +26,18 @@ function anim() constructor {
         return self;
     }
     /**
-     * @return {struct.anim}
+     * @return {Struct.anim}
     */
     static run = function(){
         time++;
-        value = animcurve_channel_evaluate(_anim,time/maxtime);
+        value = a + (b - a) * animcurve_channel_evaluate(_anim,time/maxtime);
         f(value);
         return self;
     }
     /**
      * 执行一个函数,参数为real
      * @param {Function} f
-     * @return {struct.anim}
+     * @return {Struct.anim}
     */
     static execute = function(f){
         self.f = f;
@@ -43,7 +45,7 @@ function anim() constructor {
     }
     /**
      * @param {string} animname
-     * @return {struct.anim}
+     * @return {Struct.anim}
     */
     static anim = function(animname){
         if animcurve_get_channel_index(animcurve_get(AllAnim),animname) >= 0{
@@ -63,3 +65,4 @@ function anim() constructor {
 function is_anim(obj) {
     return is_struct(obj) && variable_struct_exists(obj, "type") && obj.type == "animcontroller";
 }
+
