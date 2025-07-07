@@ -6,8 +6,11 @@ image_yscale = 1;
 image_speed = 0;
 image_index = 0;
 
-x=320;
-y=240;
 
-bm1 = -1;
-bm2 = -1
+
+bm = CreateAnim().add(20,[x,y],[target_x,target_y]).anim(ac_speedupanddown).execute(function(t){
+    x = t[0];
+    y = t[1];
+}).listener(,,true)
+
+

@@ -61,8 +61,7 @@ enum SOUL_STATE {
 #macro elif else if
 //弹幕清除范围
 #macro buttle_range 500 
-//动画曲线集合
-#macro AllAnim AnimController 
+
 
 math_set_epsilon(0.000001)
 

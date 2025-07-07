@@ -15,7 +15,7 @@ instance_create_depth(555,620,DEPTH.BULLET,obj_mercy_buttom);
 arena = instance_create_depth(320,320,DEPTH.ARENA,obj_battle_arena);
 
 //选择器创建
-instance_create_depth(0,0,DEPTH.SOUL,obj_soul)
+instance_create_depth(87-39,620,DEPTH.SOUL,obj_soul)
 //主角创建
 instance_create_depth(320,240,DEPTH.SOUL,obj_move_soul)
 

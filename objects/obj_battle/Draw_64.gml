@@ -12,7 +12,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 			draw_healthbar(400,280,500,290,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
 		}
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 285;
+		obj_soul.target_y = 282;
 		//返回
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){
 			if battle_buttom_state = MENU.FIGHT_MENU {
@@ -24,8 +24,8 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			
 		}
-	}
-			//确认
+	} 
+    //确认
 	if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and battle_buttom_state == MENU.FIGHT_MENU and choice_time < 0 {
 		audio_play_sound(snd_buttom_select,0,false);
 		if battle_buttom_state == MENU.FIGHT_MENU {//FIGHT
@@ -43,7 +43,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		//act
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
-		for (i=0;i<array_length(Enemy_Infor_Get("id").action);i++) {
+		for (var i=0;i<array_length(Enemy_Infor_Get("id").action);i++) {
 			draw_text(90,265 + i *30,"* " + string(Enemy_Infor_Get("id").action[i]));
 		}
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){//退出
@@ -68,22 +68,22 @@ if battle_state == BATTLE_STATE.PLAYER {
 		switch(battle_action_choice){//灵魂显示act菜单
 			case 0:{
 				obj_soul.target_x = 70;
-				obj_soul.target_y = 280;
+				obj_soul.target_y = 282;
 				break;
 			}
 			case 1:{
 				obj_soul.target_x = 70;
-				obj_soul.target_y = 280 + 30;
+				obj_soul.target_y = 282 + 30;
 				break;
 			}
 			case 2:{
 				obj_soul.target_x = 70;
-				obj_soul.target_y = 280 + 60;
+				obj_soul.target_y = 282 + 60;
 				break;
 			}
 			case 3:{
 				obj_soul.target_x = 70;
-				obj_soul.target_y = 280 + 90;
+				obj_soul.target_y = 282 + 90;
 				break;
 			}
 		}
@@ -103,7 +103,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		
 	}else if battle_buttom_state == MENU.ITEM_MENU {///物品菜单
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 280 + battle_item_soul * 30;
+		obj_soul.target_y = 282 + battle_item_soul * 30;
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
 		var battle_item_print = 0;//打印变量
