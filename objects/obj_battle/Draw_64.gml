@@ -43,7 +43,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		//act
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
-		for (var i=0;i<array_length(Enemy_Infor_Get("id").action);i++) {
+		for (i=0;i<array_length(Enemy_Infor_Get("id").action);i++) {
 			draw_text(90,265 + i *30,"* " + string(Enemy_Infor_Get("id").action[i]));
 		}
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){//退出
@@ -103,7 +103,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		
 	}else if battle_buttom_state == MENU.ITEM_MENU {///物品菜单
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 282 + battle_item_soul * 30;
+		obj_soul.target_y = 278 + battle_item_soul * 30;
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
 		var battle_item_print = 0;//打印变量
@@ -125,21 +125,26 @@ if battle_state == BATTLE_STATE.PLAYER {
 		}
 		draw_set_alpha(1);
 		battle_item_soul = clamp(battle_item_soul,0,3);
+        var battle_item_changed = false;
 		if Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) and battle_item_choice < Item_Number() - 1 {//向上按键和向下按键
-			if battle_item_soul = 3 {
+			last_item_choice = battle_item_choice;//获取上一次的item_choice，并将更新item_choice
+            if battle_item_soul = 3 {
 				battle_item_choice ++;
 			}else if battle_item_soul < 3 {
 				battle_item_soul ++;
 				battle_item_choice ++;
 			}
+            battle_item_changed = true;
 			audio_play_sound(snd_buttom_choice,0,false);
 		}else if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) and battle_item_choice > 0 {
-			if battle_item_soul = 0 {
+			last_item_choice = battle_item_choice;//获取上一次的item_choice，并将更新item_choice
+            if battle_item_soul = 0 {
 				battle_item_choice --;
 			}else if battle_item_soul > 0 {
 				battle_item_choice --;
 				battle_item_soul --;
 			}
+            battle_item_changed = true;
 			audio_play_sound(snd_buttom_choice,0,false);
 		}
 		
@@ -149,13 +154,22 @@ if battle_state == BATTLE_STATE.PLAYER {
 		}
 		for (i=0;i<Item_Number();i++){
 			if i = battle_item_choice {
-				draw_set_color(c_yellow);
-				draw_set_alpha(1);
-				draw_circle(580,270 + i * 15,3,false);
+                //按下了按键，重新刷新动画
+                if battle_item_changed {
+                    bm.reset();
+                }
+                bm.run();
 			}else {
-				draw_set_color(c_white);
-				draw_set_alpha(0.5);
-				draw_circle(580,270 + i * 15,2,false);	
+                //如果是被按走的槽位，重新刷新动画
+                if last_item_choice == i {
+                    if battle_item_changed {
+                        bm2.reset();
+                    }
+                    bm2.run();
+                }else{
+                    draw_sprite_ext(spr_battle_edge,0,580,267.5 + i *15,2,2,0,c_white,0.5);
+                }
+                
 			}
 		}
 		draw_set_alpha(1);
@@ -179,7 +193,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		draw_set_font(fnt_mono);
 		draw_text(90,270,"* " + string(Enemy_Infor_Get("enemy_name")));
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 285;
+		obj_soul.target_y = 282;
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{
 			battle_buttom_choice = 4;
 			battle_buttom_state = MENU.BUTTOM_CHOICE;

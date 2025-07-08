@@ -37,6 +37,13 @@ global.music = noone;
 player_target_health = File_Get(PLAYER_INFO.MAX_HP);
 ui_enable = false
 buttom_enable = false;
+bm = CreateAnim().add(20,0,1).anim(ac_speedupanddown).execute(function(t){ 
+    draw_sprite_ext(spr_battle_edge,0,580,267.5 + i *15,t+2,t+2,0,make_color_rgb(255,255,255-255*t),0.5+t*0.5);
+})
+bm2 = CreateAnim().add(20,1,0).anim(ac_speedupanddown).execute(function(t){ 
+    draw_sprite_ext(spr_battle_edge,0,580,267.5 + i *15,t+2,t+2,0,make_color_rgb(255,255,255-255*t),0.5+t*0.5);
+})
+last_item_choice = 0;
 
 //怪物
 Enemy_Add(320,160,obj_test_enemy);
@@ -59,3 +66,4 @@ Part_System_Create();
 Part_Type_Create();
 
 global.debug_surface = -1;
+

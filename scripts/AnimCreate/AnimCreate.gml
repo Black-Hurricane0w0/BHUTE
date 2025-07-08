@@ -42,15 +42,12 @@ function anim() constructor {
     */
     static run = function(){
         time++;
-        if time > maxtime{
-            value = b;
-            return self;
-        }
+        var t = time > maxtime?1:animcurve_channel_evaluate(_anim,time/maxtime);
         if data_type == "int" {
-            value = a + (b - a) * animcurve_channel_evaluate(_anim,time/maxtime);
+            value = a + (b - a) * t;
         }else{
             for (var i = 0; i < array_length(self.a); i++) {
-            	value[i] = a[i] + (b[i] - a[i]) * animcurve_channel_evaluate(_anim,time/maxtime);
+            	value[i] = a[i] + (b[i] - a[i]) * t;
             }
         }
         
@@ -121,6 +118,15 @@ function anim() constructor {
     */
     static listener = function(maxtime = false,a = false,b = false,_anim = false){
         listen_bool = [maxtime,a,b,_anim];
+        return self;
+    }
+    static reset = function(){
+        self.time = 0;
+        if data_type = "int" {
+            self.value = a;
+        }else {
+            array_copy(self.a,0,self.value,0,array_length(self.a));
+        }
         return self;
     }
 }

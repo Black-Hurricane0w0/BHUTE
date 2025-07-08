@@ -38,10 +38,10 @@ if time >= 220  {
 		}
 		//没有灵魂创建灵魂
 		if not instance_exists(obj_soul) {
-			instance_create_depth(200,290,DEPTH.SOUL,obj_soul);
+			instance_create_depth(-20,292+12,DEPTH.SOUL,obj_soul);
 		}
 		obj_soul.target_x = 245;
-		obj_soul.target_y = 295 + menu_choice * 50 + 12;
+		obj_soul.target_y = 292 + menu_choice * 50 + 12;
 	}
 }
 if goto_setting = true {
