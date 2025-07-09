@@ -11,12 +11,12 @@ surface_reset_target();
 if instance_exists(fadein_inst) == true {
 	if battle_state == BATTLE_STATE.PLAYER {
 		instance_activate_object(obj_soul);
-		instance_deactivate_object(obj_move_soul);
+		Player_Hide();
 	}else if battle_state == BATTLE_STATE.ENEMY {
 		instance_deactivate_object(obj_soul);
-		instance_activate_object(obj_move_soul);
+		Player_Show();
 		if ui_enable == false {
-			instance_deactivate_object(obj_move_soul);
+			Player_Hide();
 		}
 	}
 	return;
@@ -29,7 +29,7 @@ if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 	ArenaSet(140,575,0,320,320)
 	if battle_buttom_state = MENU.BUTTOM_CHOICE{//是按钮选择阶段
 		instance_activate_object(obj_soul);
-		instance_deactivate_object(obj_move_soul);
+		Player_Hide();
 		if Input_Check(INPUT.RIGHT,INPUT_STEAT.PRESSED){
 			battle_buttom_choice += 1;
 			if battle_buttom_choice > 4{
@@ -93,6 +93,7 @@ if battle_state = BATTLE_STATE.PLAYER{
 	}
 }
 if battle_state = BATTLE_STATE.ENCOUNTER_TEXT {
+    Player_PosSet(obj_battle_arena.x,obj_battle_arena.y);
 	if not instance_exists(battle_ui_dialogue) {
 		if Battle_Dialogue_Size() > 0 {
 			battle_ui_dialogue = Create_Text(70,270,DEPTH.UI_TOP,"* " + Battle_Dialogue_Get());
@@ -120,10 +121,6 @@ Replay();
 
 //怪物对话阶段
 if battle_state == BATTLE_STATE.ENEMY_DIALOGUE {
-	instance_activate_object(obj_move_soul);
-	obj_move_soul.invulnerable = 0;
-	obj_move_soul.x = obj_battle_arena.x;
-	obj_move_soul.y = obj_battle_arena.y;
 	obj_move_soul.dir = 270;
 	if Enemy_Dialogue_Size() > 0  {
 		if not instance_exists(obj_dialogue) {
@@ -132,9 +129,7 @@ if battle_state == BATTLE_STATE.ENEMY_DIALOGUE {
 	}else {
 		if not instance_exists(obj_dialogue){
 			battle_state = BATTLE_STATE.ENEMY;
-			with (Enemy_Infor_Get("id")) {
-				event_user(1);
-			}
+        	obj_move_soul.invulnerable = 0;
 		}
 		if not instance_exists(obj_dialogue) and Enemy_Infor_Get("hp") <= 0{
 			Won();

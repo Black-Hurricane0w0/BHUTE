@@ -197,7 +197,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{
 			battle_buttom_choice = 4;
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
-			instance_deactivate_object(obj_soul);
+			instance_deactivate_object(obj_soul); 
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
 			if Enemy_Infor_Get("id").mercy >= 80 {
 				audio_play_sound(snd_cloud,0,false);
@@ -245,7 +245,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			}else {//miss了
 				battle_buttom_state = MENU.BUTTOM_CHOICE;
 				battle_state = BATTLE_STATE.ENEMY_DIALOGUE;
-				instance_activate_object(obj_move_soul);
 				instance_destroy(obj_target_choice);
 				instance_destroy(obj_target);
 				instance_destroy(obj_damage_num);
@@ -286,7 +285,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			battle_buttom_choice = 1;
 			battle_state = BATTLE_STATE.ENEMY_DIALOGUE;
-			instance_activate_object(obj_move_soul);
 			instance_destroy(obj_target_choice);
 			instance_destroy(obj_target);
 			instance_destroy(obj_damage_num);

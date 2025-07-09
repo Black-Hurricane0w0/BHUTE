@@ -27,3 +27,5 @@ jump_speed = 4.6;
 max_speed = 20;
 gmove = 0;
 air_time = 0;
+
+is_active = true;
