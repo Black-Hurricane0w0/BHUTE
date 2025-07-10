@@ -95,6 +95,7 @@
   },
   "name":"Underalloy",
   "resources":[
+    {"id":{"name":"ac_arena_move","path":"animcurves/ac_arena_move/ac_arena_move.yy",},},
     {"id":{"name":"ac_bone_default","path":"animcurves/ac_bone_default/ac_bone_default.yy",},},
     {"id":{"name":"ac_bone_speeddown","path":"animcurves/ac_bone_speeddown/ac_bone_speeddown.yy",},},
     {"id":{"name":"ac_bone_speedup","path":"animcurves/ac_bone_speedup/ac_bone_speedup.yy",},},
@@ -107,6 +108,7 @@
     {"id":{"name":"ac_gb_default","path":"animcurves/ac_gb_default/ac_gb_default.yy",},},
     {"id":{"name":"ac_gb_left","path":"animcurves/ac_gb_left/ac_gb_left.yy",},},
     {"id":{"name":"ac_gb_prepare","path":"animcurves/ac_gb_prepare/ac_gb_prepare.yy",},},
+    {"id":{"name":"ac_soul_move","path":"animcurves/ac_soul_move/ac_soul_move.yy",},},
     {"id":{"name":"ac_speeddown","path":"animcurves/ac_speeddown/ac_speeddown.yy",},},
     {"id":{"name":"ac_speedup","path":"animcurves/ac_speedup/ac_speedup.yy",},},
     {"id":{"name":"ac_speedupanddown","path":"animcurves/ac_speedupanddown/ac_speedupanddown.yy",},},

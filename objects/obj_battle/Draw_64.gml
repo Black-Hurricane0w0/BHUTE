@@ -103,7 +103,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		
 	}else if battle_buttom_state == MENU.ITEM_MENU {///物品菜单
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 278 + battle_item_soul * 30;
+		obj_soul.target_y = 277 + battle_item_soul * 30;
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
 		var battle_item_print = 0;//打印变量
@@ -183,7 +183,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
 		}
-		
 	}else if battle_buttom_state == MENU.MERCY_MENU {//仁慈菜单
 		if Enemy_mercy() {
 			draw_set_color(c_yellow);
@@ -210,7 +209,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 		}
 	}
-	
 	if battle_buttom_state == MENU.FIGHT_TARGET {//转到FIGHT.攻击
 		instance_deactivate_object(obj_soul);
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and obj_target_choice.time >= 21 {

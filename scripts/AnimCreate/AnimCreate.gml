@@ -11,6 +11,7 @@ function anim() constructor {
     b = 0;
     value = 0;
     f = undefined;
+    ef = undefined;
     _anim = animcurve_get_channel(animcurve_get(ac_default),0)
     static type = "animcontroller";
     data_type = "int";
@@ -50,8 +51,10 @@ function anim() constructor {
             	value[i] = a[i] + (b[i] - a[i]) * t;
             }
         }
-        
         f(value);
+        if time == maxtime and ef != undefined {
+            ef(value);
+        }
         return self;
     }
     /**
@@ -127,6 +130,15 @@ function anim() constructor {
         }else {
             array_copy(self.a,0,self.value,0,array_length(self.a));
         }
+        return self;
+    }
+    /**
+     * 计时器结束时执行函数,参数为real
+     * @param {Function} f
+     * @return {Struct.anim}
+    */
+    static endfunction = function(f){
+        self.ef = f
         return self;
     }
 }

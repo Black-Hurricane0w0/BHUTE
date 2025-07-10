@@ -30,24 +30,12 @@ if obj_battle.ui_enable == false {
 	width = 0;
 	height = 0;
 }
-var distance = point_distance(x,y,target_x,target_y);
-var dir = point_direction(x,y,target_x,target_y)
 
-if (distance >= 1) {
-	x += lengthdir_x(distance / 5,dir);
-	y += lengthdir_y(distance / 5,dir);
-}
-if movesoul == true and instance_exists(obj_move_soul) {
-	obj_move_soul.pos.x = x;
-	obj_move_soul.pos.y = y;
-}
-if distance <= 1{
-	x = target_x;
-	y = target_y;
-	movesoul = false;
-}
 
-pos = new vec2(target_x,target_y)
+
+bm.update(,,[target_x,target_y],).run();
+
+pos = new vec2(x,y)
 
 
 	

@@ -70,6 +70,7 @@
     {"name":"路径","order":5,"path":"folders/路径.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"ac_arena_move","order":5,"path":"animcurves/ac_arena_move/ac_arena_move.yy",},
     {"name":"ac_bone_speeddown","order":2,"path":"animcurves/ac_bone_speeddown/ac_bone_speeddown.yy",},
     {"name":"ac_bone_speedup","order":1,"path":"animcurves/ac_bone_speedup/ac_bone_speedup.yy",},
     {"name":"ac_gb_01","order":1,"path":"animcurves/ac_gb_01/ac_gb_01.yy",},
@@ -78,6 +79,7 @@
     {"name":"ac_gb_04","order":5,"path":"animcurves/ac_gb_04/ac_gb_04.yy",},
     {"name":"ac_gb_alpha","order":2,"path":"animcurves/ac_gb_alpha/ac_gb_alpha.yy",},
     {"name":"ac_gb_left","order":1,"path":"animcurves/ac_gb_left/ac_gb_left.yy",},
+    {"name":"ac_soul_move","order":4,"path":"animcurves/ac_soul_move/ac_soul_move.yy",},
     {"name":"ac_speeddown","order":1,"path":"animcurves/ac_speeddown/ac_speeddown.yy",},
     {"name":"ac_speedup","order":2,"path":"animcurves/ac_speedup/ac_speedup.yy",},
     {"name":"ac_speedupanddown","order":3,"path":"animcurves/ac_speedupanddown/ac_speedupanddown.yy",},

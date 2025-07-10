@@ -8,7 +8,7 @@ image_index = 0;
 
 
 
-bm = CreateAnim().add(20,[x,y],[target_x,target_y]).anim(ac_speedupanddown).execute(function(t){
+bm = CreateAnim().add(20,[x,y],[target_x,target_y]).anim(ac_soul_move).execute(function(t){
     x = t[0];
     y = t[1];
 }).listener(,,true)

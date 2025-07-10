@@ -1,0 +1,18 @@
+{
+  "$GMAnimCurve":"",
+  "%Name":"ac_soul_move",
+  "channels":[
+    {"$GMAnimCurveChannel":"","%Name":"曲线1","colour":4290799884,"name":"曲线1","points":[
+        {"th0":-0.1,"th1":0.0,"tv0":0.0,"tv1":0.6976745,"x":0.0,"y":0.0,},
+        {"th0":-0.10381687,"th1":0.1,"tv0":-0.0066446066,"tv1":0.0,"x":1.0,"y":1.0,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
+  ],
+  "function":2,
+  "name":"ac_soul_move",
+  "parent":{
+    "name":"AnimController",
+    "path":"folders/动画曲线/AnimController.yy",
+  },
+  "resourceType":"GMAnimCurve",
+  "resourceVersion":"2.0",
+}

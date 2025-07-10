@@ -1,0 +1,20 @@
+{
+  "$GMAnimCurve":"",
+  "%Name":"ac_arena_move",
+  "channels":[
+    {"$GMAnimCurveChannel":"","%Name":"曲线1","colour":4290799884,"name":"曲线1","points":[
+        {"th0":-0.1,"th1":0.017363166,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
+        {"th0":-0.13733546,"th1":0.153099,"tv0":-0.06644811,"tv1":0.0740751,"x":0.3282443,"y":0.20157105,},
+        {"th0":-0.041033745,"th1":0.057492614,"tv0":-0.08373034,"tv1":0.11731506,"x":0.79198474,"y":0.6113938,},
+        {"th0":-0.06769258,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":1.0,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
+  ],
+  "function":2,
+  "name":"ac_arena_move",
+  "parent":{
+    "name":"AnimController",
+    "path":"folders/动画曲线/AnimController.yy",
+  },
+  "resourceType":"GMAnimCurve",
+  "resourceVersion":"2.0",
+}

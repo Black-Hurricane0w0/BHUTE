@@ -1,4 +1,4 @@
-log(is_active)
+
 image_alpha = is_active;
 if !is_active exit;
 

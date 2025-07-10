@@ -3,16 +3,16 @@ if obj_battle.battle_state != BATTLE_STATE.ENEMY exit
 var rot = degtorad(rotation);
 //应用表面,长方形
 	//计算坐标
-    var len = sqrt(sqr((target_height)/2) + sqr((target_width)/2));
+    var len = sqrt(sqr((height)/2) + sqr((width)/2));
     //长方形边数为4，共4个顶点
     var point_count = 4;
     //记录所有顶点的数组
     point_array = array_create(0);
-    var a = arctan(target_height/target_width);
-    var p1 = new vec2(target_x + len*cos(rot-a),target_y - len*sin(rot-a));
-    var p2 = new vec2(target_x + len*cos(rot+a),target_y - len*sin(rot+a));
-    var p3 = new vec2(target_x + len*cos(rot-a+pi),target_y - len*sin(rot-a+pi));
-    var p4 = new vec2(target_x + len*cos(rot+a+pi),target_y - len*sin(rot+a+pi));
+    var a = arctan(height/width);
+    var p1 = new vec2(x + len*cos(rot-a),y - len*sin(rot-a));
+    var p2 = new vec2(x + len*cos(rot+a),y - len*sin(rot+a));
+    var p3 = new vec2(x + len*cos(rot-a+pi),y - len*sin(rot-a+pi));
+    var p4 = new vec2(x + len*cos(rot+a+pi),y - len*sin(rot+a+pi));
     array_push(point_array,p1,p2,p3,p4);
     
     vec_array = array_create(point_count);
