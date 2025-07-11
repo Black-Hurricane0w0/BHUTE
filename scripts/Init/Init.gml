@@ -10,7 +10,7 @@ function Init(){
 	CameraPosInit();
 
 	Key();
-
+    
 	//存储
 	File_Set(PLAYER_INFO.NAME,"Frisk");
 	File_Set(PLAYER_INFO.LV,19);
@@ -21,6 +21,7 @@ function Init(){
 	File_Set(PLAYER_INFO.DAMAGE,19);
 
 	window_set_caption("BHUTE");
+
 	global.soul_color = SOUL_STATE.RED;
 	
 	//声音设置

@@ -44,7 +44,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
 		for (i=0;i<array_length(Enemy_Infor_Get("id").action);i++) {
-			draw_text(90,265 + i *30,"* " + string(Enemy_Infor_Get("id").action[i]));
+			draw_text(90,270 + i *30,"* " + string(Enemy_Infor_Get("id").action[i]));
 		}
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){//退出
 			battle_buttom_state = MENU.ACT_MENU;
@@ -298,3 +298,4 @@ if battle_state == BATTLE_STATE.PLAYER {
 	}
 	
 }
+

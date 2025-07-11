@@ -4,7 +4,7 @@ randomise();
 instance_create_depth(0,0,DEPTH.UI_BUTTOM,obj_draw_ui)
 //战斗选择 1:battle 2:act 3:item 4:mercy
 battle_buttom_choice = 1;
-
+background = -1;
 
 //战斗按钮创建
 instance_create_depth(87,620,DEPTH.BULLET,obj_fight_buttom);

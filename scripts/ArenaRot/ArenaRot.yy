@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ArenaSet",
+  "%Name":"ArenaRot",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ArenaSet",
+  "name":"ArenaRot",
   "parent":{
     "name":"Arena",
     "path":"folders/脚本/Arena.yy",
