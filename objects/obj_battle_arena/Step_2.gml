@@ -32,6 +32,7 @@ var rot = degtorad(rotation);
         var posy = obj_move_soul.pos.y;
         //获取各个限制点坐标
         player_points = array_create(0);
+        array_push(player_points,new vec2(posx,posy));
         array_push(player_points,new vec2(posx+7,posy-7));
         array_push(player_points,new vec2(posx-7,posy-7));
         array_push(player_points,new vec2(posx,posy+8));
@@ -51,20 +52,56 @@ var rot = degtorad(rotation);
             var hw = (j mod 2 == 0?width:height) - 10;
             var rotj = rot + j*pi/2;
             //获得向量
-            var vec = get_vector(pos,player_points[i]);
+            var vec = get_vector(pos,player_points[i]).fromGameMakerCoords();
+            if vec.equal(new vec2(0,0)) exit
             //获取旋转角
-            var s = vec.toGameMakerCoords().getdirection() - rotj;
+            var s = vec.getdirection() - rotj;
             //获取平行向量
-            var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s))
-            //判断向量长度cos越界
+            var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s));
+            
+            
+            //计算重力
+            var f = 0;var xx = 0;
+            if obj_move_soul.is_gravity == true {
+                //定义重力的向量
+                var grav = new vec2();
+                switch (obj_move_soul.dir) {
+                	case 0: grav = new vec2(1,0);
+                    case 90: grav = new vec2(0,1);
+                    case 180: grav = new vec2(-1,0);
+                    case 270: grav = new vec2(0,-1);
+                }
+                //获取摩擦u
+                var u = tan(degtorad(obj_move_soul.friction_coefficent));
+                //获取重力方向与平行向量间角度
+                var s2 = vec_2.getangle(grav);
+                //获取摩擦力
+                f = grav.magnitude() * cos(s2) * u;
+                //获取下滑力
+                xx = grav.magnitude() * sin(s2);
+            }
+
+            
+            
+
+            
+            //判断向量长度cos越界,完成位置修正
             if (vec.magnitude()*cos(s)>hw/2){
                 var vec_3 = triangle_vec(rotj + pi/2 ,vec.magnitude()*sin(s))
                 var vec_4 = triangle_vec(rotj,hw/2);
                 var end_pos = get_endpos(pos,vec_3.add(vec_4));
                 var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
-                obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5);
-            }
+                obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
+                //对比下滑力和摩擦力
+                if xx <= f {
+                    with(obj_move_soul){
+                        is_onground = true;
+                        friction_resistance = 0;
+                    }
+                }
+            } 
         }
     }
+
     
     

@@ -10,7 +10,6 @@ pos = new vec2(target_x,target_y)
 movesoul = false;
 surface_wide = 600;
 
-
 target_width = 575;
 target_height = 140;
 depth = DEPTH.ARENA;

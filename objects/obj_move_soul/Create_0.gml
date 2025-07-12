@@ -20,6 +20,8 @@ max_speed = 3;
 drop = false;
 onplatform = false;
 outside = false;
+friction_coefficent = 45;//摩擦临界角度(角度制)
+friction_resistance = 0;//摩擦对重力的阻碍作用
 
 gravity_jump = 0.15;
 gravity_fall = 0.15;

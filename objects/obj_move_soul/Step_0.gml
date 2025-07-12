@@ -7,34 +7,37 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 	if is_gravity == false {
 		image_angle = 0;
 		image_index = 0;
+        var x_axis = 0;
+        var y_axis = 0;
 		if Input_Check(INPUT.UP,INPUT_STEAT.KEEP) {
 			if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-				pos.y -= move_speed * 0.5;
+				y_axis -= 0.5;
 			}else {
-				pos.y -= move_speed;
+				y_axis -= 1;
 			}
 		}
 		if Input_Check(INPUT.DOWN,INPUT_STEAT.KEEP) {
 			if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-				pos.y += move_speed * 0.5;
+				y_axis += 0.5;
 			}else {
-				pos.y += move_speed;
+				y_axis += 1;
 			}
 		}
 		if Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP) {
 			if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-				pos.x -= move_speed * 0.5;
+				x_axis -= 0.5;
 			}else {
-				pos.x -= move_speed;
+				x_axis -= 1;
 			}
 		}
 		if Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) {
 			if Input_Check(INPUT.BACK,INPUT_STEAT.KEEP) {
-				pos.x += move_speed * 0.5;
+				x_axis += 0.5;
 			}else {
-				pos.x += move_speed;
+				x_axis += 1;
 			}
-		}
+		} 
+        pos = pos.add(new vec2(x_axis,y_axis));
 		is_onground = false;
 		onplatform = false;
 	}

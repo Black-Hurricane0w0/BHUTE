@@ -6,6 +6,7 @@ dir = 0;
 xsize = 1;
 ysize = 1;
 tag = "";
+spr = object_get_sprite(self.object_index);
 
 
 

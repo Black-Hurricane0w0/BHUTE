@@ -13,10 +13,4 @@ if dir == 270 {
 image_angle = dir;
 image_xscale = xsize;
 image_yscale = ysize;
-if is_mask == true {
-	mask = true;
-	depth = DEPTH.BULLET;
-}else {
-	mask = false
-	depth = DEPTH.BULLET_OUTSIDE;
-}
+

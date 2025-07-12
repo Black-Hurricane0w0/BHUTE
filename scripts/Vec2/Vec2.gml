@@ -137,12 +137,12 @@ function vec2(_x = 0,_y = 0) constructor{
         return new vec2(self.x, -self.y); // 反转 Y 轴
     }
     
-    static fromGameMakerCoords = function(gm_x, gm_y) {
-        return new vec2(gm_x, -gm_y);    // 恢复数学坐标系
+    static fromGameMakerCoords = function() {
+        return new vec2(self.x, -self.y);    // 恢复数学坐标系
     }
 }
 /**
- *  用于获取坐标间的向量
+ *  用于获取坐标间的向量(gms坐标系)
  * @param {Struct.vec2} _pos1 起始坐标
  * @param {Struct.vec2} _pos2 终止坐标
  * @return {Struct.vec2}
@@ -291,7 +291,7 @@ function get_endpos(pos,vec) {
  * @description 使用极坐标创建向量
  * @param {real} rot 旋转角度
  * @param {real} model 模长
- * @returns {struct}
+ * @returns {struct.vec2}
  */
 function triangle_vec(rot,model) {
     return new vec2(model*cos(rot),model*sin(rot));
