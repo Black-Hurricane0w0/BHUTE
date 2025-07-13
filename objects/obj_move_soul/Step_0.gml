@@ -174,7 +174,6 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 			}else if (!onplatform and !is_onground) and jump_state = 0 {
 				jump_state = 2;
 			} 
-            //log(jump_state)
 			switch (dir) {
 				case 270 : {
 					pos.y += gmove;

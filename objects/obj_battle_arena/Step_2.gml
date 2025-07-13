@@ -33,43 +33,14 @@ var rot = degtorad(rotation);
         //获取各个限制点坐标
         player_points = array_create(0);
         array_push(player_points,new vec2(posx,posy));
-        //array_push(player_points,new vec2(posx+7,posy-7));
-        //array_push(player_points,new vec2(posx-7,posy-7));
-        //array_push(player_points,new vec2(posx,posy+8));
-        //array_push(player_points,new vec2(posx-8,posy+1));
-        //array_push(player_points,new vec2(posx+8,posy+1));
-        //array_push(player_points,new vec2(posx+5,posy-8));
-        //array_push(player_points,new vec2(posx-5,posy-8));
+        array_push(player_points,new vec2(posx+7,posy-7));
+        array_push(player_points,new vec2(posx-7,posy-7));
+        array_push(player_points,new vec2(posx,posy+8));
+        array_push(player_points,new vec2(posx-8,posy+1));
+        array_push(player_points,new vec2(posx+8,posy+1));
+        array_push(player_points,new vec2(posx+5,posy-8));
+        array_push(player_points,new vec2(posx-5,posy-8));
     }
-    
-    /**
-     * @param {Struct.vec2} pos
-     * @return {bool}
-     */
-    var testpoint = function(pos){
-        var isin = true
-        for (var j=0;j<4;j++){
-            //选择高或宽
-            var hw = (j mod 2 == 0?width:height) - 10;
-            var rot = degtorad(rotation);
-            var rotj = rot + j * pi/2;
-            //获得向量
-            var vec = get_vector(new vec2(obj_battle_arena.x,obj_battle_arena.y),pos).fromGameMakerCoords();
-            if vec.equal(new vec2(0,0)) return false;
-             
-            //获取旋转角
-            var s = vec.getdirection() - rotj;
-            //获取平行向量
-            var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s));
-            
-            if (vec.magnitude()*cos(s)>hw/2){
-                isin = false;
-            }
-        }
-        return isin;
-    }    
-
-
     player_points = array_create(0);
     getpoints();
     for (var j=0;j<4;j++){
@@ -114,16 +85,15 @@ var rot = degtorad(rotation);
                 obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
 
             }
-            if !testpoint(obj_move_soul.pos.add(grav.toGameMakerCoords())) {
-                //对比下滑力和摩擦力,舍去大于45°
-                log(s2)
-                if xx <= f and abs(s2) <= pi / 2{
-                    with(obj_move_soul){
-                        is_onground = true;
-                        friction_resistance = 0;
-                        jump_state = 0;
-                        gmove = 0;
-                    }
+            //对比下滑力和摩擦力,舍去大于45°
+            vec = get_vector(pos,player_points[i].add(grav.toGameMakerCoords())).fromGameMakerCoords();
+            if vec.equal(new vec2(0,0)) exit; 
+            if xx <= f and vec.magnitude()*cos(s)>hw/2 {
+                with(obj_move_soul){
+                    is_onground = true;
+                    friction_resistance = 0;
+                    jump_state = 0;
+                    gmove = 0;
                 }
             }
         }
