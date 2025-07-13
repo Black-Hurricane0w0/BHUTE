@@ -26,7 +26,7 @@ friction_resistance = 0;//摩擦对重力的阻碍作用
 gravity_jump = 0.15;
 gravity_fall = 0.15;
 jump_speed = 4.6;
-max_speed = 20;
+max_speed = 8;
 gmove = 0;
 air_time = 0;
 

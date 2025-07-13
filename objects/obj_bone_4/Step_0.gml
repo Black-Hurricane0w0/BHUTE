@@ -4,6 +4,9 @@ event_inherited();
 if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 	instance_destroy();
 }
+if x <= -buttle_range || x >= room_width + buttle_range || y < -buttle_range || y >= room_height + buttle_range {
+	instance_destroy();
+}
 //基础设置
 time ++;
 sprite_set_offset(spr_bone_0,6,40 * (1 -offest_point));

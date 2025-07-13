@@ -25,14 +25,14 @@ function vec2(_x = 0,_y = 0) constructor{
         return self;
     }
     static add = function(_vec){
-        x += _vec.get(Vector2.X);
-        y += _vec.get(Vector2.Y);
-        return self;
+        var xx = x + _vec.get(Vector2.X);
+        var yy = y + _vec.get(Vector2.Y);
+        return new vec2(xx,yy);
     }
     static minus = function(_vec){
-        x -= _vec.get(Vector2.X);
-        y -= _vec.get(Vector2.Y);
-        return self;
+        var xx = x - _vec.get(Vector2.X);
+        var yy = y - _vec.get(Vector2.Y);
+        return new vec2(xx,yy);
     }
     /**
     *  获取向量与另一向量的数量积

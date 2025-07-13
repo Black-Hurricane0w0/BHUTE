@@ -137,6 +137,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 					onplatform = false;
 				}
 			}
+            
 			if Input_Check(jump_input,INPUT_STEAT.KEEP) {
 				if gmove < 0 {
 					gmove += gravity_jump;
@@ -148,7 +149,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 				}
 			}
 			if jump_state == 1 {
-				if Input_Check(jump_input,INPUT_STEAT.RELEASED) {
+				if !Input_Check(jump_input,INPUT_STEAT.KEEP) {
 					jump_state = 2;
 				}
 				if gmove >= 0 {
@@ -167,12 +168,13 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 					}
 				}
 			}
-			if (onplatform == true || is_onground == true) and jump_state = 2 and drop == false {
+			if (onplatform == true || is_onground == true) and jump_state == 2 and drop == false {
 				gmove = 0;
 				jump_state = 0;
-			}else if (!onplatform || !is_onground) and jump_state = 0 {
+			}else if (!onplatform and !is_onground) and jump_state = 0 {
 				jump_state = 2;
-			}
+			} 
+            //log(jump_state)
 			switch (dir) {
 				case 270 : {
 					pos.y += gmove;
