@@ -37,7 +37,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 				x_axis += 1;
 			}
 		} 
-        pos = pos.add(new vec2(x_axis,y_axis));
+        pos = pos.add(new vec2(x_axis * move_speed,y_axis * move_speed));
 		is_onground = false;
 		onplatform = false;
 	}
@@ -65,21 +65,25 @@ if is_gravity == true {
 	if dir == 270 {
 		image_angle = 0;
 		var jump_input = INPUT.UP; 
+        var opp_jump_input = INPUT.DOWN; 
         bboxside = bbox_bottom;
 	}
 	if dir == 0 {
 		image_angle = 90;
 		var jump_input = INPUT.LEFT;
+        var opp_jump_input = INPUT.RIGHT; 
 		bboxside = bbox_right;
 	} 
 	if dir == 90 {
 		image_angle = 180;
 		var jump_input = INPUT.DOWN;
+        var opp_jump_input = INPUT.UP; 
 		bboxside = bbox_top;
 	} 
 	if dir == 180 {
 		image_angle = 270;
 		var jump_input = INPUT.RIGHT;
+        var opp_jump_input = INPUT.LEFT; 
 		bboxside = bbox_left;
 	} 	
 }
@@ -138,7 +142,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 				}
 			}
             
-			if Input_Check(jump_input,INPUT_STEAT.KEEP) {
+			if (Input_Check(jump_input,INPUT_STEAT.KEEP) - Input_Check(opp_jump_input,INPUT_STEAT.KEEP)) == 1 {
 				if gmove < 0 {
 					gmove += gravity_jump;
 				}
@@ -149,7 +153,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 				}
 			}
 			if jump_state == 1 {
-				if !Input_Check(jump_input,INPUT_STEAT.KEEP) {
+				if (Input_Check(jump_input,INPUT_STEAT.KEEP)- Input_Check(opp_jump_input,INPUT_STEAT.KEEP)) != 1 {
 					jump_state = 2;
 				}
 				if gmove >= 0 {

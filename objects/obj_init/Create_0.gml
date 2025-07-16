@@ -53,6 +53,12 @@ enum SOUL_STATE {
     RED,
     BLUE
 }
+//战斗框状态
+enum ARENA_STATE {
+    INSIDE,
+    OUTSIDE,
+    NOHIT
+}
 	
 
 //宏定义
