@@ -20,7 +20,7 @@ if step_func != undefined {
 	step_func(self);
 }else {
 	image_xscale = 1;
-	visible = true;
+	visible = false;
 	if time <= cost_time {
 		var t = time / cost_time;
 		if bone_max_long <= bone_default_long {
@@ -44,6 +44,7 @@ if step_func != undefined {
     }
 }
 damage_func(self);
+
 
 
 

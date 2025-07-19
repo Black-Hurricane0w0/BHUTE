@@ -30,7 +30,7 @@ with(obj_arena){
 }
 gpu_set_blendmode(bm_normal);
 with(obj_bullet){
-    event_perform(ev_draw,0)
+    if time > 0 event_perform(ev_draw,0)
 }
 
 surface_reset_target();
