@@ -39,5 +39,5 @@
     "path":"sprites/spr_bone_0/spr_bone_0.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

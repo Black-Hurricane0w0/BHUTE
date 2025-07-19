@@ -20,7 +20,7 @@
 /// @param {string} [tag]="" 骨头的标签
 /// @returns {id.Instance} 骨头的id
 function BoneRotCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,default_rot = 0,rotspeed = 0,color = c_white,point = 0,ac_bone_long = ac_bone_default,ac_bone_rot = ac_bone_default,cost_time = 0,target_rot = default_rot,is_mask = true,keep_time=0,step_func = undefined,damage_func = undefined,tag = ""){
-	inst = instance_create_depth(x,y,0,obj_bone_4){
+	var inst = instance_create_depth(x,y,0,obj_bone_4){
 		inst.move_speed = move_speed;
 		inst.bone_default_long = long;
 		inst.default_rot = default_rot;
@@ -46,12 +46,12 @@ function BoneRotCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,defaul
 	return inst;
 }
 function BoneNoRotCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,color = c_white,point = 0,ac_bone_long = ac_bone_default,cost_time = 0,is_mask = true,keep_time,tag = "") {
-	inst = BoneRotCreate(x,y,move_speed,dir,long,max_long,dir,0,c_white,point,ac_bone_long,,cost_time,,is_mask,keep_time){
+	var inst = BoneRotCreate(x,y,move_speed,dir,long,max_long,dir,0,c_white,point,ac_bone_long,,cost_time,,is_mask,keep_time){
 		inst.tag = tag;
 	}
 }
 function BoneNoAnimCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,color = c_white,point = 0,is_mask = true,keep_time,tag = ""){
-	inst = BoneRotCreate(x,y,move_speed,dir,long,max_long,dir,0,c_white,point,,,0,,is_mask,keep_time){
+	var inst = BoneRotCreate(x,y,move_speed,dir,long,max_long,dir,0,c_white,point,,,0,,is_mask,keep_time){
 		inst.tag = tag;
 	}
 }
@@ -66,7 +66,7 @@ function BoneNoAnimCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,col
 /// @param {string} [tag]="" 骨头的标签
 /// @returns {id.Instance} 骨头的id
 function BoneCustomCreate(x,y,color = c_white,is_mask = true,step_func = undefined,damage_func = undefined,tag = ""){
-	inst = instance_create_depth(0,0,0,obj_bone_4){
+	var inst = instance_create_depth(0,0,0,obj_bone_4){
 		inst.x = x;
         inst.y = y;
 		inst.color = color;

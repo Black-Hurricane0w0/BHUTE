@@ -25,7 +25,7 @@ tag = "";
 
 
 step_func = undefined;
-damage_func = function(){
+damage_func = function(self){
     //伤害判定
     for (var i=0;i<=1;i+=0.1) {
         var xx = lerp(x,xprevious,i);

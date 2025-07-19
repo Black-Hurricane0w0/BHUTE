@@ -17,7 +17,7 @@ image_yscale = (bone_long + 12) / 40;
 image_angle = rot;
 //每刻执行事件
 if step_func != undefined {
-	step_func();
+	step_func(self);
 }else {
 	image_xscale = 1;
 	visible = true;
@@ -43,7 +43,7 @@ if step_func != undefined {
 		}
     }
 }
-damage_func();
+damage_func(self);
 
 
 

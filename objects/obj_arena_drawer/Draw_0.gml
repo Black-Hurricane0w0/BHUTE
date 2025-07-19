@@ -13,6 +13,7 @@ with(obj_arena){
      	draw_sprite_ext(spr_battle_edge,false,x+surface_wide,y+surface_wide,width / 2 - 5,height / 2 - 5,rotation,c_black,1);
     }
 }
+
 gpu_set_blendmode_ext(bm_dest_alpha,bm_inv_src_color);
 with(obj_arena){
     if state == ARENA_STATE.OUTSIDE {
@@ -28,6 +29,10 @@ with(obj_arena){
     }
 }
 gpu_set_blendmode(bm_normal);
+with(obj_bullet){
+    event_perform(ev_draw,0)
+}
+
 surface_reset_target();
 
 //mask表面应用
