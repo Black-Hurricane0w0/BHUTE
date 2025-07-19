@@ -45,28 +45,30 @@ function BoneRotCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,defaul
 	}
 	return inst;
 }
-function BoneNoRotCreate(pos,move_speed = 1,dir = 0,long = 10,max_long = 10,color = c_white,point = 0,ac_bone_long = ac_bone_default,cost_time = 0,is_mask = true,keep_time,tag = "") {
-	inst = BoneRotCreate(pos,move_speed,dir,long,max_long,dir,0,c_white,point,ac_bone_long,,cost_time,,is_mask,keep_time){
+function BoneNoRotCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,color = c_white,point = 0,ac_bone_long = ac_bone_default,cost_time = 0,is_mask = true,keep_time,tag = "") {
+	inst = BoneRotCreate(x,y,move_speed,dir,long,max_long,dir,0,c_white,point,ac_bone_long,,cost_time,,is_mask,keep_time){
 		inst.tag = tag;
 	}
 }
-function BoneNoAnimCreate(pos,move_speed = 1,dir = 0,long = 10,max_long = 10,color = c_white,point = 0,is_mask = true,keep_time,tag = ""){
-	inst = BoneRotCreate(pos,move_speed,dir,long,max_long,dir,0,c_white,point,,,0,,is_mask,keep_time){
+function BoneNoAnimCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,color = c_white,point = 0,is_mask = true,keep_time,tag = ""){
+	inst = BoneRotCreate(x,y,move_speed,dir,long,max_long,dir,0,c_white,point,,,0,,is_mask,keep_time){
 		inst.tag = tag;
 	}
 }
 
 /// @desc 创建一个自定义骨头
-/// @param {Struct.vec2} pos 骨头的生成坐标
+/// @param {Real} x
+/// @param {y} y
 /// @param {Constant.Color} [color]=c_white 骨头颜色（影响damage_func）
 /// @param {bool} [is_mask]=true 是否收到战斗框遮罩影响
 /// @param {function} [step_func] 骨头的步执行函数（覆盖原函数）
 /// @param {function} [damage_func] 骨头的伤害执行函数（覆盖原函数）
 /// @param {string} [tag]="" 骨头的标签
 /// @returns {id.Instance} 骨头的id
-function BoneCustomCreate(pos,color = c_white,is_mask = true,step_func = undefined,damage_func = undefined,tag = ""){
+function BoneCustomCreate(x,y,color = c_white,is_mask = true,step_func = undefined,damage_func = undefined,tag = ""){
 	inst = instance_create_depth(0,0,0,obj_bone_4){
-		inst.pos = pos;
+		inst.x = x;
+        inst.y = y;
 		inst.color = color;
 		inst.mask = is_mask;
         inst.tag = tag;
