@@ -2,10 +2,11 @@
     //不在战斗状态时不判定
     if obj_battle.battle_state != BATTLE_STATE.ENEMY exit;
 
-var arena = -1;
 
 
-
+for (var i = 0; i < array_length(mask_points); i++) {
+	mask_points[i][0] = false;
+}
 
 with(obj_arena){
     if state == ARENA_STATE.NOHIT exit;
@@ -36,9 +37,9 @@ with(obj_arena){
             array_set(vec_array,i,vec);
         }
         getpoints();
-        var outside = false;
-        for (var j=0;j<4;j++){
-            for(var i=0;i<array_length(player_points);i++){
+        for (var i=0;i<array_length(player_points);i++){
+            var outside = false;
+            for(var j=0;j<4;j++){
                 //对灵魂数据更新
                 getpoints();
                 //选择高或宽
@@ -51,25 +52,24 @@ with(obj_arena){
                 var s = vec.getdirection() - rotj;
                 //获取平行向量
                 var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s)); 
-                if (vec.magnitude()*cos(s)>hw/2) outside = true;
+                if (vec.magnitude()*cos(s)>hw/2) {
+                    outside = true;
+                } 
+            }
+            if outside == false {
+                obj_arena_controller.mask_points[i][0] = true;
+                obj_arena_controller.mask_points[i][1] = id;
             }
         }
-        if outside == false arena = id;
-}
-if arena == -1 {
-    arena = obj_move_soul.arena;
-}else {
-	obj_move_soul.arena = arena;
+
 }
 
-log(obj_move_soul.pos)
-
-with(arena){
+with(obj_arena){
     //不判定
     if state == ARENA_STATE.NOHIT exit;
     var rot = degtorad(rotation);
-    for (var j=0;j<4;j++){
-        for(var i=0;i<array_length(player_points);i++){ 
+    for (var i=0;i<array_length(player_points);i++){ 
+        for(var j=0;j<4;j++){ 
             //对灵魂数据更新
             getpoints();
             //选择高或宽
@@ -101,6 +101,21 @@ with(arena){
                 //获取下滑力
                 xx = grav.magnitude() * sin(s2);
             }
+            //跳过不属于该框判定的点
+            if obj_arena_controller.mask_points[i][1] != id continue; 
+            //对比下滑力和摩擦力,舍去大于45°
+            var vecg = get_vector(pos,player_points[i].add(grav.toGameMakerCoords())).fromGameMakerCoords();
+            if vecg.equal(new vec2(0,0)) exit; 
+            if xx <= f and vecg.magnitude()*cos(s)>hw/2 {
+                with(obj_move_soul){
+                    is_onground = true;
+                    friction_resistance = 0;
+                    jump_state = 0;
+                    gmove = 0;
+                }
+            }
+            //跳过已经在框内的点
+            if obj_arena_controller.mask_points[i][0] == true continue; 
             //判断向量长度cos越界,完成位置修正
             if (vec.magnitude()*cos(s)>hw/2){
                 var vec_3 = triangle_vec(rotj + pi/2 ,vec.magnitude()*sin(s))
@@ -109,20 +124,6 @@ with(arena){
                 var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
                 obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
             }
-            
-            //对比下滑力和摩擦力,舍去大于45°
-            vec = get_vector(pos,player_points[i].add(grav.toGameMakerCoords())).fromGameMakerCoords();
-            if vec.equal(new vec2(0,0)) exit; 
-            if xx <= f and vec.magnitude()*cos(s)>hw/2 {
-                with(obj_move_soul){
-                    is_onground = true;
-                    friction_resistance = 0;
-                    jump_state = 0;
-                    gmove = 0;
-                }
-            }
         }
     }
 }
-
-log(obj_move_soul.pos)

@@ -11,8 +11,9 @@ instance_create_depth(240,620,DEPTH.BULLET,obj_act_buttom);
 instance_create_depth(400,620,DEPTH.BULLET,obj_item_buttom);
 instance_create_depth(555,620,DEPTH.BULLET,obj_mercy_buttom);
 //战斗框创建
-instance_create_depth(320,320,DEPTH.ARENA,obj_arena_controller);
+
 arena = instance_create_depth(320,320,DEPTH.ARENA,obj_battle_arena);
+instance_create_depth(320,320,DEPTH.ARENA,obj_arena_controller);
 
 //选择器创建
 instance_create_depth(87-39,620,DEPTH.SOUL,obj_soul)

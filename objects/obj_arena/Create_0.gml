@@ -28,3 +28,6 @@ bm2 = CreateAnim().add(30,[width,height],[target_width,target_height]).anim(ac_a
 bm3 = CreateAnim().add(30,rotation,target_rotation).anim(ac_arena_move).execute(function(t){ 
     rotation = t;
 }).listener(false,false,true,false);
+
+
+player_points = array_create(0);
