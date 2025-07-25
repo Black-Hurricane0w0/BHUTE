@@ -119,7 +119,7 @@
     {"id":{"name":"fnt_mono","path":"fonts/fnt_mono/fnt_mono.yy",},},
     {"id":{"name":"obj_act_buttom","path":"objects/obj_act_buttom/obj_act_buttom.yy",},},
     {"id":{"name":"obj_add_arena","path":"objects/obj_add_arena/obj_add_arena.yy",},},
-    {"id":{"name":"obj_arena_drawer","path":"objects/obj_arena_drawer/obj_arena_drawer.yy",},},
+    {"id":{"name":"obj_arena_controller","path":"objects/obj_arena_controller/obj_arena_controller.yy",},},
     {"id":{"name":"obj_arena","path":"objects/obj_arena/obj_arena.yy",},},
     {"id":{"name":"obj_attack","path":"objects/obj_attack/obj_attack.yy",},},
     {"id":{"name":"obj_badend","path":"objects/obj_badend/obj_badend.yy",},},

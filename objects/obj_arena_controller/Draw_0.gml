@@ -30,10 +30,13 @@ with(obj_arena){
 }
 gpu_set_blendmode(bm_normal);
 with(obj_bullet){
-    if time > 0 event_perform(ev_draw,0)
+    if time > 0 event_perform(ev_draw,0);
 }
 
 surface_reset_target();
 
 //mask表面应用
 draw_surface_part(mask_surface,0,0,640+2*surface_wide,480+2*surface_wide,-surface_wide,-surface_wide);
+
+
+

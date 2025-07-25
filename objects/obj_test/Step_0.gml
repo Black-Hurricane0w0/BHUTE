@@ -10,8 +10,7 @@ if time == 1 {
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY { 
 	if time mod 60 == 0 {
-		BoneRotCreate(100,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,false,infinity)
-    }
-    ArenaSetAddition(inst,200,200,0,ARENA_STATE.OUTSIDE,mouse_x,mouse_y)
+		//BoneRotCreate(100,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,false,infinity)
+    } ArenaSetAddition(inst,200,200,0,ARENA_STATE.INSIDE,mouse_x,mouse_y)
 }
     

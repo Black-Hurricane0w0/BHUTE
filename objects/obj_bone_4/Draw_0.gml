@@ -23,7 +23,7 @@ var draw_bone = function() {
     	draw_sprite_ext(spr_top_bone,0,xx,yy,1,1,rot,_color,alpha);
 }
 
-surface_set_target(obj_arena_drawer.mask_surface);
+surface_set_target(obj_arena_controller.mask_surface);
 if (mask) {
     gpu_set_blendmode_ext_sepalpha(bm_src_alpha,bm_zero,bm_zero,bm_one);
     draw_bone();

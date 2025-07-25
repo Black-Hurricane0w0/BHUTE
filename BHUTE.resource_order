@@ -89,7 +89,7 @@
     {"name":"fnt_mono","order":2,"path":"fonts/fnt_mono/fnt_mono.yy",},
     {"name":"obj_act_buttom","order":1,"path":"objects/obj_act_buttom/obj_act_buttom.yy",},
     {"name":"obj_add_arena","order":1,"path":"objects/obj_add_arena/obj_add_arena.yy",},
-    {"name":"obj_arena_drawer","order":3,"path":"objects/obj_arena_drawer/obj_arena_drawer.yy",},
+    {"name":"obj_arena_controller","order":3,"path":"objects/obj_arena_controller/obj_arena_controller.yy",},
     {"name":"obj_arena","order":2,"path":"objects/obj_arena/obj_arena.yy",},
     {"name":"obj_attack","order":2,"path":"objects/obj_attack/obj_attack.yy",},
     {"name":"obj_badend","order":1,"path":"objects/obj_badend/obj_badend.yy",},
