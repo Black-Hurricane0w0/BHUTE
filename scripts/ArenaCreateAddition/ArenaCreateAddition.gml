@@ -1,5 +1,5 @@
 function ArenaCreateAddition(height,width,rot,_x = 320,_y = 320){
-    inst = instance_create_depth(_x,_y,DEPTH.ARENA,obj_add_arena){
+    var inst = instance_create_depth(_x,_y,DEPTH.ARENA,obj_add_arena){
         inst.target_x = _x;
     	inst.target_y = _y;
     	inst.target_height = height;

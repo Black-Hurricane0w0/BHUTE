@@ -2,13 +2,15 @@
     //不在战斗状态时不判定
     if obj_battle.battle_state != BATTLE_STATE.ENEMY exit;
 
-
-
 for (var i = 0; i < array_length(mask_points); i++) {
-	mask_points[i][0] = false;
+	mask_points[i] = false;
 }
+//是否在原框中
+var isInOrigin = false;
+//原框id
+var origin = mask;
 
-with(obj_arena){
+with(obj_arena){ 
     if state == ARENA_STATE.NOHIT exit;
     var rot = degtorad(rotation);
     //应用表面,长方形
@@ -56,19 +58,24 @@ with(obj_arena){
                     outside = true;
                 } 
             }
-            if outside == false {
-                obj_arena_controller.mask_points[i][0] = true;
-                obj_arena_controller.mask_points[i][1] = id;
+            if outside == false{
+                obj_arena_controller.mask_points[i] = true;
+                if i == 0 {
+                    if obj_arena_controller.mask == id isInOrigin = true;
+                    obj_arena_controller.mask = id; 
+                }
             }
         }
-
 }
+if isInOrigin == true mask = origin;
 
-with(obj_arena){
+
+with(mask){
     //不判定
     if state == ARENA_STATE.NOHIT exit;
     var rot = degtorad(rotation);
     for (var i=0;i<array_length(player_points);i++){ 
+        if obj_arena_controller.mask_points[i] == true continue;  
         for(var j=0;j<4;j++){ 
             //对灵魂数据更新
             getpoints();
@@ -101,8 +108,7 @@ with(obj_arena){
                 //获取下滑力
                 xx = grav.magnitude() * sin(s2);
             }
-            //跳过不属于该框判定的点
-            if obj_arena_controller.mask_points[i][1] != id continue; 
+
             //对比下滑力和摩擦力,舍去大于45°
             var vecg = get_vector(pos,player_points[i].add(grav.toGameMakerCoords())).fromGameMakerCoords();
             if vecg.equal(new vec2(0,0)) exit; 
@@ -115,7 +121,7 @@ with(obj_arena){
                 }
             }
             //跳过已经在框内的点
-            if obj_arena_controller.mask_points[i][0] == true continue; 
+            //if obj_arena_controller.mask[0] == true continue; 
             //判断向量长度cos越界,完成位置修正
             if (vec.magnitude()*cos(s)>hw/2){
                 var vec_3 = triangle_vec(rotj + pi/2 ,vec.magnitude()*sin(s))

@@ -19,4 +19,3 @@ bm2.update(,[width,height],[target_width,target_height]).run();
 bm3.update(,rotation,target_rotation).run();
 
 pos = new vec2(x,y);
-

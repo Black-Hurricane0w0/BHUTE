@@ -141,7 +141,6 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 					onplatform = false;
 				}
 			}
-            log(is_onground)
 			if (Input_Check(jump_input,INPUT_STEAT.KEEP) - Input_Check(opp_jump_input,INPUT_STEAT.KEEP)) == 1 {
 				if gmove < 0 {
 					gmove += gravity_jump;
