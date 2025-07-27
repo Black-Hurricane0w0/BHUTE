@@ -41,25 +41,15 @@ function getpoints(){
     player_points = array_create(0);
     var pos = new vec2(posx,posy)
     array_push(player_points,pos);
-    var dir = obj_move_soul.dir;
-    array_push(player_points,triangle_vec(dir,8).add(pos));
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    array_push(player_points,new vec2(posx+7,posy-7));
-    array_push(player_points,new vec2(posx-7,posy-7));
-    array_push(player_points,new vec2(posx+1,posy+8));
-    array_push(player_points,new vec2(posx-1,posy+8));
-    array_push(player_points,new vec2(posx-8,posy+1));
-    array_push(player_points,new vec2(posx+8,posy+1));
-    array_push(player_points,new vec2(posx+5,posy-8));
-    array_push(player_points,new vec2(posx-5,posy-8));
-    array_push(player_points,new vec2(posx+5,posy+3));
-    array_push(player_points,new vec2(posx-5,posy+3));
+    var dir = degtorad(obj_move_soul.dir);
+    array_push(player_points,triangle_vec(dir,8).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir + pi/2 + arctan2(7,7),sqrt(49+49)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir - pi/2 - arctan2(7,7),sqrt(49+49)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir + pi/2 + arctan2(-1,8),sqrt(50)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir - pi/2 - arctan2(-1,8),sqrt(50)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir + pi/2 + arctan2(-4,5),sqrt(25+20)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir - pi/2 - arctan2(-4,5),sqrt(25+20)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir + pi/2 + arctan2(5,3),sqrt(25+9)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir - pi/2 - arctan2(5,3),sqrt(25+9)).toGameMakerCoords().add(pos));
+
 }

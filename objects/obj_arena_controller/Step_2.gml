@@ -9,6 +9,8 @@ for (var i = 0; i < array_length(mask_points); i++) {
 var isInOrigin = false;
 //原框id
 var origin = mask;
+//重力遮罩初始化
+grav_mask = [];
 
 with(obj_arena){ 
     if state == ARENA_STATE.NOHIT exit;
@@ -42,7 +44,6 @@ with(obj_arena){
         for (var i=0;i<array_length(player_points);i++){
             var outside = false;
             for(var j=0;j<4;j++){
-                //对灵魂数据更新
                 getpoints();
                 //选择高或宽
                 var hw = (j mod 2 == 0?width:height) - 10;
@@ -60,6 +61,9 @@ with(obj_arena){
             }
             if outside == false{
                 obj_arena_controller.mask_points[i] = true;
+                if !array_contains_ext(obj_arena_controller.grav_mask,[id],true) {
+                    array_push(obj_arena_controller.grav_mask,id); 
+                }
                 if i == 0 {
                     if obj_arena_controller.mask == id isInOrigin = true;
                     obj_arena_controller.mask = id; 
@@ -85,6 +89,38 @@ with(mask){
             //获得向量
             var vec = get_vector(pos,player_points[i]).fromGameMakerCoords();
             if vec.equal(new vec2(0,0)) exit; 
+            //获取旋转角    
+            var s = vec.getdirection() - rotj;
+
+            //判断向量长度cos越界,完成位置修正
+            if (vec.magnitude()*cos(s)>hw/2){
+                var vec_3 = triangle_vec(rotj + pi/2 ,vec.magnitude()*sin(s))
+                var vec_4 = triangle_vec(rotj,hw/2);
+                var end_pos = get_endpos(pos,vec_3.add(vec_4));
+                var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
+                obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
+            }
+        }
+    }
+}
+//判断重力模块
+if obj_move_soul.is_gravity == false exit;
+var onground = true;
+var boolarray = [];
+
+for (var i = 0; i < array_length(grav_mask);i++) {
+    with(grav_mask[i]){
+        //对灵魂数据更新
+        getpoints();
+        boolarray[i] = false;   
+        for (var j = 0; j < 4; j++) { 
+            var rot = degtorad(rotation);
+            //选择高或宽
+            var hw = (j mod 2 == 0?width:height) - 10;
+            var rotj = rot + j*pi/2;
+            //获得向量
+            var vec = get_vector(pos,player_points[1]).fromGameMakerCoords();
+            if vec.equal(new vec2(0,0)) exit; 
             //获取旋转角
             var s = vec.getdirection() - rotj;
             //获取平行向量
@@ -108,28 +144,29 @@ with(mask){
                 //获取下滑力
                 xx = grav.magnitude() * sin(s2);
             }
-
             //对比下滑力和摩擦力,舍去大于45°
-            var vecg = get_vector(pos,player_points[i].add(grav.toGameMakerCoords())).fromGameMakerCoords();
-            if vecg.equal(new vec2(0,0)) exit; 
+            var vecg = get_vector(pos,player_points[1].add(grav.toGameMakerCoords())).fromGameMakerCoords();
+            if vecg.equal(new vec2(0,0)) exit;
             if xx <= f and vecg.magnitude()*cos(s)>hw/2 {
-                with(obj_move_soul){
-                    is_onground = true;
-                    friction_resistance = 0;
-                    jump_state = 0;
-                    gmove = 0;
-                }
-            }
-            //跳过已经在框内的点
-            //if obj_arena_controller.mask[0] == true continue; 
-            //判断向量长度cos越界,完成位置修正
-            if (vec.magnitude()*cos(s)>hw/2){
-                var vec_3 = triangle_vec(rotj + pi/2 ,vec.magnitude()*sin(s))
-                var vec_4 = triangle_vec(rotj,hw/2);
-                var end_pos = get_endpos(pos,vec_3.add(vec_4));
-                var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
-                obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
+                boolarray[i] = true;
             }
         }
     }
 }
+for (var i = 0; i < array_length(boolarray); i++) {
+	if boolarray[i] != true{
+        onground = false; 
+        break;
+    } 
+}
+
+with(obj_move_soul){
+    if onground == true {
+        is_onground = true;
+        jump_state = 0;
+        gmove = 0;
+    }
+}
+log(boolarray)
+
+
