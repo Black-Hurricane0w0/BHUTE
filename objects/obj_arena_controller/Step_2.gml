@@ -108,11 +108,28 @@ if obj_move_soul.is_gravity == false exit;
 var onground = true;
 var boolarray = [];
 
+//对灵魂数据更新
+obj_arena.getpoints();
 for (var i = 0; i < array_length(grav_mask);i++) {
     with(grav_mask[i]){
-        //对灵魂数据更新
-        getpoints();
         boolarray[i] = false;   
+        //定义重力的向量
+        var grav = new vec2();
+        switch (obj_move_soul.dir) { 
+            case 0: 
+                grav = new vec2(1,0);
+                break;
+            case 90: 
+                grav = new vec2(0,1);
+                break;
+            case 180: 
+                grav = new vec2(-1,0);
+                break;
+            case 270: 
+                grav = new vec2(0,-1);
+                break;
+        }
+        
         for (var j = 0; j < 4; j++) { 
             var rot = degtorad(rotation);
             //选择高或宽
@@ -126,15 +143,8 @@ for (var i = 0; i < array_length(grav_mask);i++) {
             //获取平行向量
             var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s));
             //计算重力
-            var f = 0;var xx = 0;var s2 = 0;var grav = new vec2();
+            var f = 0;var xx = 0;var s2 = 0;
             if obj_move_soul.is_gravity == true {
-                //定义重力的向量
-                switch (obj_move_soul.dir) { 
-                    case 0: grav = new vec2(1,0);
-                    case 90: grav = new vec2(0,1);
-                    case 180: grav = new vec2(-1,0);
-                    case 270: grav = new vec2(0,-1);
-                }
                 //获取摩擦u
                 var u = tan(degtorad(obj_move_soul.friction_coefficent)); 
                 //获取重力方向与平行向量间角度
@@ -167,6 +177,6 @@ with(obj_move_soul){
         gmove = 0;
     }
 }
-log(boolarray)
+//log(boolarray)
 
 

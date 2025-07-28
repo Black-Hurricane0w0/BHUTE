@@ -1,7 +1,7 @@
 time ++
 if time == 1 {
 	Player_SetSoul(true,90,true);
-	ArenaSet(200,200,30);
+	ArenaSet(200,200,0);
     Player_PosSet(220,320);
     Player_Show();
     //PlatformCreate(320,400,0,0,1,1,false)
