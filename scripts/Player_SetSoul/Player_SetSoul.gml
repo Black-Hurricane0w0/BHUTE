@@ -1,16 +1,17 @@
 
 function Player_SetSoul(is_grav,dir,is_effect){
-	var state_before = obj_move_soul.is_gravity;//0红1蓝
+	var state_before = obj_move_soul.is_gravity;
+    var dir_before = obj_move_soul.dir;
 	
 	if is_grav == true {
 		obj_move_soul.is_gravity = true;
-		obj_move_soul.dir = dir;
+		obj_move_soul.dir = dir mod 360;
 		global.soul_color = SOUL_STATE.BLUE;
 	}else if is_grav == false {
 		obj_move_soul.is_gravity = false;
 		global.soul_color = SOUL_STATE.RED;
 	}
-	if is_grav != state_before and is_effect == true {
+	if (is_grav != state_before || dir != dir_before) and is_effect == true {
 		instance_create_depth(obj_move_soul.pos.x,obj_move_soul.pos.y,DEPTH.SOUL,obj_soul_image);
 	}
 	obj_move_soul.vspeed = 0;

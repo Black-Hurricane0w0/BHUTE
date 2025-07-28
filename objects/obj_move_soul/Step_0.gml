@@ -1,4 +1,7 @@
-
+dir = dir mod 360;
+if dir != 0 and dir != 90 and dir != 180 and dir != 270{
+    dir = 270;
+}
 image_alpha = is_active;
 if !is_active exit;
 

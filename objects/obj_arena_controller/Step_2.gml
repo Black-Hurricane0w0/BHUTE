@@ -128,6 +128,8 @@ for (var i = 0; i < array_length(grav_mask);i++) {
             case 270: 
                 grav = new vec2(0,-1);
                 break;
+            default:
+                grav = new vec2(0,-1);
         }
         
         for (var j = 0; j < 4; j++) { 
