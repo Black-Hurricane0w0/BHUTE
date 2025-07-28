@@ -1,5 +1,5 @@
 
 Shook_Create();
 
-debug = false;
+debug = true;
 esc = 0;
