@@ -6,7 +6,7 @@ target_x = 320;
 target_y = 320;
 x = 320;
 y = 320;
-pos = new vec2(target_x,target_y)
+pos = new vec2(x,y)
 surface_wide = 600;
 state = ARENA_STATE.INSIDE;
 

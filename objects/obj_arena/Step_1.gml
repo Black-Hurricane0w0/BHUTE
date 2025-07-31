@@ -1,3 +1,4 @@
+
 //碰撞遮罩长宽随战斗框大小变化而变化
 image_xscale = target_width / 2;
 image_yscale = target_height / 2;

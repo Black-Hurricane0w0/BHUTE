@@ -5,4 +5,5 @@ function ArenaSet(height,width,rot,_x = 320,_y = 320,is_movesoul = false){
 	obj_battle_arena.target_width = width
 	obj_battle_arena.target_rotation = rot;
 	obj_battle_arena.movesoul = is_movesoul;
+    obj_battle_arena.pos = new vec2(_x,_y);
 }

@@ -21,7 +21,7 @@ function Init(){
 	File_Set(PLAYER_INFO.DAMAGE,19);
 
 	window_set_caption("BHUTE");
-
+    
 	global.soul_color = SOUL_STATE.RED;
 	
 	//声音设置

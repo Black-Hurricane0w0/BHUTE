@@ -12,8 +12,8 @@ var origin = mask;
 //重力遮罩初始化
 grav_mask = [];
 
-with(obj_arena){ 
-    if state == ARENA_STATE.NOHIT exit;
+//所有框初始化
+with(obj_arena){
     var rot = degtorad(rotation);
     //应用表面,长方形
     	//计算坐标
@@ -40,6 +40,72 @@ with(obj_arena){
             }
             array_set(vec_array,i,vec);
         }
+}
+
+//outside框排除
+with(obj_arena){
+    if state != ARENA_STATE.OUTSIDE continue; 
+        
+    var rot = degtorad(rotation);
+    getpoints();
+    for (var i=0;i<array_length(player_points);i++){ 
+            var maxlen = new vec2(0,0);
+            var rott = rot;
+            var hwt = 0;
+            var inside = true;
+            var maxlenm = 0;
+            for(var j=0;j<4;j++){ 
+                //选择高或宽
+                var hw = (j mod 2 == 0?width:height);
+                var rotj = rot + j*pi/2;
+                //获得向量
+                var vec = get_vector(pos,player_points[i]).fromGameMakerCoords();
+
+                if vec.equal(new vec2(0,0)) {
+                    rott = rotj;
+                    hwt = hw;
+                    inside = true;
+                    
+                    break;
+                }
+                //获取旋转角    
+                var s = vec.getdirection() - rotj;
+                if j == 1 log(s);
+                var vecm = vec.magnitude()*cos(s);
+                //判断是否在内
+                if (vecm >= hw/2){
+                    inside = false;
+                    break;
+                }
+                //判断向量长度cos越界,完成位置修正
+                if (vecm < hw/2) and (vecm > 0) and (vecm > maxlenm){
+                    maxlen = vec;
+                    rott = rotj;
+                    hwt = hw;
+                    maxlenm = maxlen.magnitude()*cos(s)
+                }
+            }
+            if inside == false break;
+            var s = 0;
+            
+            if maxlen.equal(new vec2(0,0)) {
+                s = random_range(0,2*pi);
+            }else{
+                s = maxlen.getdirection() - rott;
+            }
+            var vec_3 = triangle_vec(rott + pi/2 ,maxlen.magnitude()*sin(s))
+            var vec_4 = triangle_vec(rott,hwt/2);
+            var end_pos = get_endpos(pos,vec_3.add(vec_4));
+            var vec_5 = get_vector(player_points[i],end_pos).toGameMakerCoords();
+            obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
+    }
+}
+
+
+//inside框判断
+with(obj_arena){ 
+    var rot = degtorad(rotation);
+        if state != ARENA_STATE.INSIDE continue;
         getpoints();
         for (var i=0;i<array_length(player_points);i++){
             var outside = false;
@@ -50,14 +116,18 @@ with(obj_arena){
                 var rotj = rot + j*pi/2;
                 //获得向量
                 var vec = get_vector(pos,player_points[i]).fromGameMakerCoords();
-                if vec.equal(new vec2(0,0)) exit;
+                if vec.equal(new vec2(0,0)) {
+                    outside = false;
+                    break;
+                }
                 //获取旋转角
                 var s = vec.getdirection() - rotj;
                 //获取平行向量
                 var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s)); 
                 if (vec.magnitude()*cos(s)>hw/2) {
                     outside = true;
-                } 
+                    break;
+                }
             }
             if outside == false{
                 obj_arena_controller.mask_points[i] = true;
@@ -71,14 +141,13 @@ with(obj_arena){
             }
         }
 }
-if isInOrigin == true mask = origin;
 
+if isInOrigin == true mask = origin;
+//log(mask_points);
 
 with(mask){
-    //不判定
-    if state == ARENA_STATE.NOHIT exit;
     var rot = degtorad(rotation);
-    for (var i=0;i<array_length(player_points);i++){ 
+    for (var i=0;i<array_length(player_points);i++){
         if obj_arena_controller.mask_points[i] == true continue;  
         for(var j=0;j<4;j++){ 
             //对灵魂数据更新
@@ -88,10 +157,10 @@ with(mask){
             var rotj = rot + j*pi/2;
             //获得向量
             var vec = get_vector(pos,player_points[i]).fromGameMakerCoords();
-            if vec.equal(new vec2(0,0)) exit; 
+            if vec.equal(new vec2(0,0)) break; 
             //获取旋转角    
             var s = vec.getdirection() - rotj;
-
+    
             //判断向量长度cos越界,完成位置修正
             if (vec.magnitude()*cos(s)>hw/2){
                 var vec_3 = triangle_vec(rotj + pi/2 ,vec.magnitude()*sin(s))
@@ -101,7 +170,7 @@ with(mask){
                 obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_5); 
             }
         }
-    }
+    } 
 }
 //判断重力模块
 if obj_move_soul.is_gravity == false exit;
@@ -179,6 +248,5 @@ with(obj_move_soul){
         gmove = 0;
     }
 }
-//log(boolarray)
 
 
