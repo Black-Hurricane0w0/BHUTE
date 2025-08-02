@@ -43,8 +43,8 @@ function getpoints(){
     array_push(player_points,pos);
     var dir = degtorad(obj_move_soul.dir);
     array_push(player_points,triangle_vec(dir,8).toGameMakerCoords().add(pos));
-    array_push(player_points,triangle_vec(dir + pi/2 + arctan2(7,7),sqrt(49+49)).toGameMakerCoords().add(pos));
-    array_push(player_points,triangle_vec(dir - pi/2 - arctan2(7,7),sqrt(49+49)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir + pi/2 + arctan2(8,7),sqrt(64+49)).toGameMakerCoords().add(pos));
+    array_push(player_points,triangle_vec(dir - pi/2 - arctan2(8,7),sqrt(64+49)).toGameMakerCoords().add(pos));
     array_push(player_points,triangle_vec(dir + pi/2 + arctan2(-1,8),sqrt(65)).toGameMakerCoords().add(pos));
     array_push(player_points,triangle_vec(dir - pi/2 - arctan2(-1,8),sqrt(65)).toGameMakerCoords().add(pos));
     array_push(player_points,triangle_vec(dir + pi/2 + arctan2(-4,5),sqrt(25+20)).toGameMakerCoords().add(pos));

@@ -49,6 +49,7 @@ with(obj_arena){
     var rot = degtorad(rotation);
     getpoints();
     for (var i=0;i<array_length(player_points);i++){ 
+            getpoints();
             var maxlen = new vec2(0,0);
             var rott = rot;
             var hwt = 0;
@@ -70,7 +71,6 @@ with(obj_arena){
                 }
                 //获取旋转角    
                 var s = vec.getdirection() - rotj;
-                if j == 1 log(s);
                 var vecm = vec.magnitude()*cos(s);
                 //判断是否在内
                 if (vecm >= hw/2){
@@ -85,7 +85,7 @@ with(obj_arena){
                     maxlenm = maxlen.magnitude()*cos(s)
                 }
             }
-            if inside == false break;
+            if inside == false continue;
             var s = 0;
             
             if maxlen.equal(new vec2(0,0)) {
@@ -174,6 +174,8 @@ with(mask){
 }
 //判断重力模块
 if obj_move_soul.is_gravity == false exit;
+    
+if obj_move_soul.is_onground == true exit;
 var onground = true;
 var boolarray = [];
 
