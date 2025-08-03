@@ -9,10 +9,10 @@ if time == 1 {
 } 
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY { 
-	if time mod 360 == 0 {
-		//BoneRotCreate(100,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,false,infinity)
+	if time mod 2 == 0 {
+		BoneRotCreate(100,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,false,infinity)
         //Player_SetSoul(true,obj_move_soul.dir + 90,true);
     } 
-    ArenaSetAddition(inst,100,100,30,ARENA_STATE.OUTSIDE,320,420)
+    ArenaSetAddition(inst,100,100,0,ARENA_STATE.OUTSIDE,320,420)
 }
     
