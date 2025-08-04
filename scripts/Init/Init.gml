@@ -23,6 +23,10 @@ function Init(){
 	window_set_caption("BHUTE");
     
 	global.soul_color = SOUL_STATE.RED;
+    //弹幕清除范围
+    global.buttle_range = 500;
+    //遮罩延申范围
+    global.surface_wide = 0;
 	
 	//声音设置
 	audio_master_gain(Setting_Read(real,"Volume")/100);

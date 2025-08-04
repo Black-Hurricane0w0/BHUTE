@@ -18,6 +18,10 @@ if target_width < 26 target_width = 26;
 bm.update(,[x,y],[target_x,target_y]).run();
 bm2.update(,[width,height],[target_width,target_height]).run();
 bm3.update(,rotation,target_rotation).run();
+bm4.update(,radius,target_radius).run();
+
+
+
 
 pos = new vec2(x,y);
 

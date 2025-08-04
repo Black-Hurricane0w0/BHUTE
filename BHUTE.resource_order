@@ -132,6 +132,7 @@
     {"name":"Room_Main_Menu","order":3,"path":"rooms/Room_Main_Menu/Room_Main_Menu.yy",},
     {"name":"Room_Replay","order":2,"path":"rooms/Room_Replay/Room_Replay.yy",},
     {"name":"Room_Setting","order":5,"path":"rooms/Room_Setting/Room_Setting.yy",},
+    {"name":"ArenaCircle","order":4,"path":"scripts/ArenaCircle/ArenaCircle.yy",},
     {"name":"ArenaCreateAddition","order":2,"path":"scripts/ArenaCreateAddition/ArenaCreateAddition.yy",},
     {"name":"ArenaRot","order":1,"path":"scripts/ArenaRot/ArenaRot.yy",},
     {"name":"ArenaSetAddition","order":3,"path":"scripts/ArenaSetAddition/ArenaSetAddition.yy",},

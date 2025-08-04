@@ -65,8 +65,8 @@ enum ARENA_STATE {
 #macro log show_debug_message
 //用法:log(message)
 #macro elif else if
-//弹幕清除范围
-#macro buttle_range 500 
+
+
 
 
 math_set_epsilon(0.000001)

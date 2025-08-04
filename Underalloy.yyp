@@ -182,6 +182,7 @@
     {"id":{"name":"Room_Replay","path":"rooms/Room_Replay/Room_Replay.yy",},},
     {"id":{"name":"Room_Setting","path":"rooms/Room_Setting/Room_Setting.yy",},},
     {"id":{"name":"AnimCreate","path":"scripts/AnimCreate/AnimCreate.yy",},},
+    {"id":{"name":"ArenaCircle","path":"scripts/ArenaCircle/ArenaCircle.yy",},},
     {"id":{"name":"ArenaCreateAddition","path":"scripts/ArenaCreateAddition/ArenaCreateAddition.yy",},},
     {"id":{"name":"ArenaRot","path":"scripts/ArenaRot/ArenaRot.yy",},},
     {"id":{"name":"ArenaSet","path":"scripts/ArenaSet/ArenaSet.yy",},},

@@ -17,6 +17,6 @@ if place_meeting(x,y,obj_move_soul) and obj_move_soul.is_moved == true{
 if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 	instance_destroy();
 }
-if x <= -buttle_range || x >= room_width + buttle_range || y < -buttle_range || y >= room_height + buttle_range {
+if x <= -global.buttle_range || x >= room_width + global.buttle_range || y < -global.buttle_range || y >= room_height + global.buttle_range {
 	instance_destroy();
 }

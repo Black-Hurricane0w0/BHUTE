@@ -7,8 +7,11 @@ target_y = 320;
 x = 320;
 y = 320;
 pos = new vec2(x,y)
-surface_wide = 600;
+surface_wide = global.surface_wide;
 state = ARENA_STATE.INSIDE;
+is_circle = false;
+radius = 100;
+target_radius = 320;
 
 target_width = 200;
 target_height = 200;
@@ -27,6 +30,10 @@ bm2 = CreateAnim().add(30,[width,height],[target_width,target_height]).anim(ac_a
 }).listener(false,false,true,false);
 bm3 = CreateAnim().add(30,rotation,target_rotation).anim(ac_arena_move).execute(function(t){ 
     rotation = t;
+}).listener(false,false,true,false);
+//圆的大小曲线
+bm4 = CreateAnim().add(30,radius,target_radius).anim(ac_arena_move).execute(function(t){ 
+    radius = t;
 }).listener(false,false,true,false);
 
 

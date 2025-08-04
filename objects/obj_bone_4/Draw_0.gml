@@ -6,8 +6,8 @@ var draw_bone = function() {
         if color == c_blue {
     		_color = #0AFCF0;
     	} 
-    	var start_x = x + obj_battle_arena.surface_wide - lengthdir_x((bone_long + 12) * offest_point,rot + 90);
-    	var start_y = y + obj_battle_arena.surface_wide - lengthdir_y((bone_long + 12) * offest_point,rot + 90);
+    	var start_x = x + global.surface_wide - lengthdir_x((bone_long + 12) * offest_point,rot + 90);
+    	var start_y = y + global.surface_wide - lengthdir_y((bone_long + 12) * offest_point,rot + 90);
     	draw_sprite_ext(spr_bottom_bone,0,start_x,start_y,1,1,rot,_color,alpha);
     	var xx = start_x;
     	var yy = start_y;
