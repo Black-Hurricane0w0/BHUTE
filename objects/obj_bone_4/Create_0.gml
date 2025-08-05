@@ -19,7 +19,7 @@ mask = false;
 keep_time = 0;
 time = 0;
 offest_point = 0.5;
-alpha = 0.5;
+alpha = 1;
 pos = new vec2();
 tag = "";
 

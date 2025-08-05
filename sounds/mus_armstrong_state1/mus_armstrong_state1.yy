@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":152.37224,
+  "duration":152.3397,
   "name":"mus_armstrong_state1",
   "parent":{
     "name":"声音",

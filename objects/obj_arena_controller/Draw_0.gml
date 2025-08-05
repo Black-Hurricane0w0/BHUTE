@@ -116,7 +116,6 @@ gpu_set_blendmode_ext_sepalpha(bm_one,bm_one,bm_zero,bm_dest_alpha)
 draw_surface(mask_surface,0,0)
 gpu_set_blendmode(bm_normal);
 surface_reset_target();
-RGBtest(mask_surface,mouse_x+surface_wide,mouse_y+surface_wide)
 
 //arena表面应用
 draw_surface(arena_surface,-surface_wide,-surface_wide);
