@@ -8,7 +8,6 @@ if x <= -global.buttle_range|| x >= room_width + global.buttle_range || y < -glo
 	instance_destroy();
 }
 //基础设置
-time ++;
 sprite_set_offset(spr_bone_0,6,40 * (1 -offest_point));
 if mask == false {
     depth = DEPTH.BULLET_OUTSIDE;
@@ -44,7 +43,9 @@ if step_func != undefined {
     }
 }
 damage_func(self);
-
+if mask == false {
+    depth = DEPTH.BULLET_TOP
+}
 
 
 

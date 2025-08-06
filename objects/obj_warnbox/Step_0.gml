@@ -1,9 +1,4 @@
-if obj_battle.battle_state != BATTLE_STATE.ENEMY {
-	instance_destroy();
-}
-
-
-time ++;
+event_inherited();
 
 if time >= keep_time {
 	instance_destroy();

@@ -101,9 +101,21 @@ surface_reset_target()
 
 
 
-with(obj_bullet){
-    if time > 0 event_perform(ev_draw,0);
+with(obj_bullet){ 
+    if time <= 0 continue;
+    if mask == true {
+        surface_set_target(obj_arena_controller.mask_surface);
+        gpu_set_blendmode_ext_sepalpha(bm_src_alpha,bm_zero,bm_zero,bm_one);
+    	event_perform(ev_draw,0);
+        gpu_set_blendmode(bm_normal);
+        surface_reset_target();
+    }else{
+        surface_set_target(obj_arena_controller.arena_surface);
+    	event_perform(ev_draw,0);
+        surface_reset_target();
+    }
 }
+
 
 
 
@@ -119,3 +131,4 @@ surface_reset_target();
 
 //arena表面应用
 draw_surface(arena_surface,-surface_wide,-surface_wide);
+

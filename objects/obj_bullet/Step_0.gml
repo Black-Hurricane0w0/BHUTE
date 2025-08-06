@@ -1,4 +1,4 @@
-
+time ++
 {//if place_meeting(x,y,obj_move_soul){
 	//Player_Damage(damage);
 //} 

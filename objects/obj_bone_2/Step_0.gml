@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-time ++;
+
 
 image_xscale = 1;
 image_yscale = (bone_long + 12) / 40;

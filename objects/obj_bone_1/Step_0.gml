@@ -9,7 +9,6 @@ if x <= -global.buttle_range || x >= room_width + global.buttle_range || y < -gl
 	instance_destroy();
 }
 
-time ++;
 
 if bone_long < bone_max_long and keep_time > 0 {
 	bone_long += bone_long_speed;

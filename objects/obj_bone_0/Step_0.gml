@@ -9,7 +9,6 @@ if x <= -global.buttle_range || x >= room_width + global.buttle_range || y < -gl
 	instance_destroy();
 }
 
-time ++;
 sprite_set_offset(spr_bone_0,6,40);
 image_xscale = 1;
 image_yscale = (bone_long + 12) / 40;

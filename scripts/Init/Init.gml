@@ -26,7 +26,7 @@ function Init(){
     //弹幕清除范围
     global.buttle_range = 500;
     //遮罩延申范围
-    global.surface_wide = 0;
+    global.surface_wide = 300;
 	
 	//声音设置
 	audio_master_gain(Setting_Read(real,"Volume")/100);
