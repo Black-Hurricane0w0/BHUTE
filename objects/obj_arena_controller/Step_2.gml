@@ -169,7 +169,8 @@ with(obj_arena){
                 if vecg.equal(new vec2(0,0)) break;
                     
                 var vecgcos = vecg.magnitude()*cos(s);
-                if xx <= f and vecgcos < hw/2 and vecgcos > 0 and abs(vec.magnitude()*sin(s)) < hw/2 {//s作为近似角度
+                var wh = (j mod 2 == 0?height:width);
+                if xx <= f and vecgcos < hw/2 and vecgcos > 0 and abs(vec.magnitude()*sin(s)) < wh/2 {//s作为近似角度
                     obj_move_soul.is_onground = true;
                     obj_move_soul.jump_state = 0;
                     obj_move_soul.gmove = 0;
