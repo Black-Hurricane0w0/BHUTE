@@ -9,5 +9,8 @@ function ArenaSet(height,width,rot,_x = 320,_y = 320,is_movesoul = false,with_an
     if with_anim = false {
         obj_battle_arena.x = _x;
         obj_battle_arena.y = _y;
+        obj_battle_arena.height = height;
+    	obj_battle_arena.width = width
+        obj_battle_arena.rotation = rot;
     }
 }

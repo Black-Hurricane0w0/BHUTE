@@ -9,6 +9,9 @@ function ArenaSetAddition(inst,height,width,rot,state = ARENA_STATE.INSIDE,_x = 
     if with_anim == false {
         inst.x = _x;
 	    inst.y = _y;
+        inst.height = height;
+    	inst.width = width
+        inst.rotation = rot;
     }
     return inst;
 }

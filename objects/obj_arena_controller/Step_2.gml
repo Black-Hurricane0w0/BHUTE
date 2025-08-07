@@ -73,7 +73,7 @@ with(obj_arena){
                 var inside = true;
                 var maxlen = new vec2(0,0);
                 var rott = rot;
-                var hwt = 0;
+                var hwt = width;
                 var maxlenm = 0;
                 for(var j=0;j<4;j++){ 
                     //选择高或宽
@@ -98,7 +98,7 @@ with(obj_arena){
                         break;
                     }
                     //判断向量长度cos越界,完成位置修正
-                    if (vecm < hw/2) and (vecm > 0) and (vecm > maxlenm){
+                    if (vecm < hw/2) and (vecm > 0) and (vecm/hw > maxlenm/hwt){
                         maxlen = vec;
                         rott = rotj;
                         hwt = hw;
@@ -184,7 +184,6 @@ with(obj_arena){
            
            var vecg = get_vector(pos,player_points[i].add(grav.normalize().toGameMakerCoords())).fromGameMakerCoords(); 
            if vecg.equal(new vec2(0,0)) break;
-           if i == 1 log(vecg.magnitude())
            //判断
            if vecg.magnitude() < radius and abs(s) <= degtorad(obj_move_soul.friction_coefficent) {
                 obj_move_soul.is_onground = true;
