@@ -267,15 +267,14 @@ if battle_state == BATTLE_STATE.PLAYER {
 				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection")/100));
 				event_user(0);
 			}
-			
-			
+			bm3 = CreateAnim().add(20,Enemy_Infor_Get("hp"),target_health).anim(ac_default).execute(function(t){ 
+                var point_hp = t / Enemy_Infor_Get("max_hp") * 100;
+                draw_healthbar(200,160,440,170,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
+            })
+			Enemy_Infor_Set("hp",target_health);
 		}
-		Enemy_Infor_Set("hp",Enemy_Infor_Get("hp") - (Enemy_Infor_Get("hp") - target_health) / 4)
-		var point_hp = Enemy_Infor_Get("hp") / Enemy_Infor_Get("max_hp") * 100;
-		draw_healthbar(200,160,440,170,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
-		
-		
-		
+        bm3.run();
+        
 		battle_fight_over_time --;
 		//切换状态
 		if battle_fight_over_time < 0 {

@@ -28,4 +28,4 @@ Enemy_Infor_Set("miss",miss);
 Enemy_Infor_Set("id",enemy_id);
 Enemy_Infor_Set("start_state",start_state);
 
-File_Set(PLAYER_INFO.DAMAGE,1024412);
+File_Set(PLAYER_INFO.DAMAGE,30244120);

@@ -101,6 +101,7 @@
     {"id":{"name":"ac_bone_speeddown","path":"animcurves/ac_bone_speeddown/ac_bone_speeddown.yy",},},
     {"id":{"name":"ac_bone_speedup","path":"animcurves/ac_bone_speedup/ac_bone_speedup.yy",},},
     {"id":{"name":"ac_default","path":"animcurves/ac_default/ac_default.yy",},},
+    {"id":{"name":"ac_fight_healthbar","path":"animcurves/ac_fight_healthbar/ac_fight_healthbar.yy",},},
     {"id":{"name":"ac_gb_01","path":"animcurves/ac_gb_01/ac_gb_01.yy",},},
     {"id":{"name":"ac_gb_02","path":"animcurves/ac_gb_02/ac_gb_02.yy",},},
     {"id":{"name":"ac_gb_03","path":"animcurves/ac_gb_03/ac_gb_03.yy",},},

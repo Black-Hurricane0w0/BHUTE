@@ -74,6 +74,7 @@
     {"name":"ac_arena_move","order":5,"path":"animcurves/ac_arena_move/ac_arena_move.yy",},
     {"name":"ac_bone_speeddown","order":2,"path":"animcurves/ac_bone_speeddown/ac_bone_speeddown.yy",},
     {"name":"ac_bone_speedup","order":1,"path":"animcurves/ac_bone_speedup/ac_bone_speedup.yy",},
+    {"name":"ac_fight_healthbar","order":6,"path":"animcurves/ac_fight_healthbar/ac_fight_healthbar.yy",},
     {"name":"ac_gb_01","order":1,"path":"animcurves/ac_gb_01/ac_gb_01.yy",},
     {"name":"ac_gb_02","order":3,"path":"animcurves/ac_gb_02/ac_gb_02.yy",},
     {"name":"ac_gb_03","order":4,"path":"animcurves/ac_gb_03/ac_gb_03.yy",},
