@@ -65,7 +65,6 @@ with(obj_arena){
 with(obj_arena){
     if state != ARENA_STATE.OUTSIDE continue; 
         
-    enable_collision = true;
     var rot = degtorad(rotation);
     getpoints();
     for (var i=0;i<array_length(player_points);i++){ 
@@ -127,9 +126,6 @@ with(obj_arena){
                 }
                 //判断
                 if vec.magnitude() >= radius {
-                    if vec.magnitude() >= radius + 15{
-                        enable_collision = false;
-                    }
                     continue;
                 }
                 
@@ -139,7 +135,7 @@ with(obj_arena){
                 obj_move_soul.pos = get_endpos(obj_move_soul.pos,vec_3); 
             }
     }
-    if obj_move_soul.is_gravity == false || enable_collision == false continue;
+    if obj_move_soul.is_gravity == false continue;
     for (var i=0;i<array_length(player_points);i++){ 
         if is_circle == false{
             for(var j=0;j<4;j++){
@@ -207,7 +203,6 @@ with(obj_arena){
     for (var i=0;i<array_length(player_points);i++){
         var outside = false;
         if is_circle == false{ //矩形判断
-            var inrange = false;
             for(var j=0;j<4;j++){
                 getpoints();
                 //选择高或宽
@@ -224,28 +219,15 @@ with(obj_arena){
                 //获取平行向量
                 var vec_2 = triangle_vec(rotj,vec.magnitude()*cos(s)); 
                 if (vec.magnitude()*cos(s)>hw/2) {
-                    if (vec.magnitude()*cos(s)>hw/2 + 15) {
-                        inrange = true;
-                    }
                     outside = true;
                     break;
                 }
-            }
-            if inrange = false {
-                enable_collision = false;
-            }else{
-                enable_collision = true;
             }
         }else{//圆形判断
             //获得向量 
             var vec = get_vector(pos,player_points[i]).fromGameMakerCoords(); 
             //判断
             if vec.magnitude() > radius-5 {
-                if vec.magnitude() > radius + 10 {
-                    enable_collision = false;
-                }else{
-                    enable_collision = true;
-                }
                 outside = true;
             }
         }
@@ -262,7 +244,7 @@ with(obj_arena){
 
 
 if array_length(mask) <= 0 mask = origin_mask;
-//inside碰撞
+
 for (var i=0;i<array_length(obj_arena.player_points);i++){
     var move_vec_array = [];
     for (var k = 0; k < array_length(mask); k++) {
@@ -329,10 +311,8 @@ var onground = false;
 //对灵魂数据更新
 obj_arena.getpoints();
 with(obj_arena){ 
-    if enable_collision = false continue;
-        
-    if state != ARENA_STATE.INSIDE continue;
     var rot = degtorad(rotation);
+        if state != ARENA_STATE.INSIDE continue;
         getpoints();
         if is_circle == false { 
             for (var i=0;i<array_length(player_points);i++){
