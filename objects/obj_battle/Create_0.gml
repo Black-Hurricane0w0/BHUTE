@@ -44,6 +44,9 @@ bm = CreateAnim().add(20,0,1).anim(ac_speeddown).execute(function(t){
 bm2 = CreateAnim().add(20,1,0).anim(ac_speeddown).execute(function(t){ 
     draw_sprite_ext(spr_battle_edge,0,580,267.5 + i *15,t+2,t+2,0,make_color_rgb(255,255,255-255*t),0.5+t*0.5);
 });
+bm4 = CreateAnim().add(20,File_Get(PLAYER_INFO.HP),player_target_health).anim(ac_speeddown).execute(function(t){ 
+    File_Set(PLAYER_INFO.HP,t);
+}).listener(,,true);
 
 last_item_choice = 0;
 
