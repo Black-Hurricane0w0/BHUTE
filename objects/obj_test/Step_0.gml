@@ -15,7 +15,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
             with(other){
                 draw_set_color(c_red);
     	        draw_set_font(fnt_mono);
-                draw_text_transformed(x + sin(time),y + cos(time),self.text,self.text_size,self.text_size,0);
+                draw_text_transformed(x + sin(time),y + cos(time),self.text,self.text_size,self.text_size,random_range(-5,5));
                 if time >= 60 {
                     instance_destroy(self.text_printer);
                 }

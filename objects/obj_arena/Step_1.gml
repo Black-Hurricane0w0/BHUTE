@@ -20,6 +20,7 @@ bm2.update(,[width,height],[target_width,target_height]).run();
 bm3.update(,rotation,target_rotation).run();
 bm4.update(,radius,target_radius).run();
 
+if state == ARENA_STATE.NOHIT enable_collision = false;
 
 
 

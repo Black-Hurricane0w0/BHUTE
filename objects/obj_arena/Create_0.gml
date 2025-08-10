@@ -12,6 +12,7 @@ state = ARENA_STATE.INSIDE;
 is_circle = false;
 radius = 100;
 target_radius = 320;
+enable_collision = true;
 
 target_width = 200;
 target_height = 200;
