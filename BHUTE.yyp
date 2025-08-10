@@ -205,7 +205,7 @@
     {"id":{"name":"CameraPosInit","path":"scripts/CameraPosInit/CameraPosInit.yy",},},
     {"id":{"name":"CameraPosSet","path":"scripts/CameraPosSet/CameraPosSet.yy",},},
     {"id":{"name":"CameraPosTick","path":"scripts/CameraPosTick/CameraPosTick.yy",},},
-    {"id":{"name":"Create_Text","path":"scripts/Create_Text/Create_Text.yy",},},
+    {"id":{"name":"CreateText","path":"scripts/CreateText/CreateText.yy",},},
     {"id":{"name":"Enemy_Add","path":"scripts/Enemy_Add/Enemy_Add.yy",},},
     {"id":{"name":"Enemy_Dialogue_Add","path":"scripts/Enemy_Dialogue_Add/Enemy_Dialogue_Add.yy",},},
     {"id":{"name":"Enemy_Dialogue_Get","path":"scripts/Enemy_Dialogue_Get/Enemy_Dialogue_Get.yy",},},

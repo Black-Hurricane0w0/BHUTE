@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Create_Text",
+  "%Name":"CreateText",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Create_Text",
+  "name":"CreateText",
   "parent":{
     "name":"Text",
     "path":"folders/脚本/Text.yy",

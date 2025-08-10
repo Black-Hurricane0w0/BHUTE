@@ -110,7 +110,7 @@
     "9647":{"character":9647,"h":25,"offset":5,"shift":23,"w":13,"x":30,"y":137,},
   },
   "hinting":0,
-  "includeTTF":false,
+  "includeTTF":true,
   "interpreter":0,
   "italic":false,
   "kerningPairs":[],
@@ -168,7 +168,10 @@
   "sdfSpread":8,
   "size":18.0,
   "styleName":"Regular",
-  "textureGroupId":null,
-  "TTFName":"",
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "TTFName":"E:\\s\\BH_undertale\\BHUTE\\fonts\\fnt_mars_nc\\Mars Needs Cunnilingus.ttf",
   "usesSDF":false,
 }

@@ -1,4 +1,11 @@
+time ++;
 
+
+
+if text_func != undefined {
+    text_func();
+    exit;
+}
 if text != "&" {
 	draw_set_color(text_color);
 	draw_set_font(text_font);
@@ -9,4 +16,5 @@ if text != "&" {
 		draw_text_transformed(x,y,text,text_size,text_size,0);
 	}
 }
+
 

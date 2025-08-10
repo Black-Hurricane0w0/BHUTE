@@ -20,3 +20,6 @@ text_font = fnt_mono;
 text_color = c_white;
 text_size = 1;
 text_snd = snd_text_sound;
+text_func = undefined;
+
+x_newline = 560;

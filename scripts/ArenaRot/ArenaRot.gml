@@ -1,3 +1,4 @@
-function ArenaRot(rot){
-    obj_battle_arena.target_rotation += rot;
+function ArenaRot(inst,rot){
+    if inst.object_index != obj_add_arena and inst.object_index != obj_battle_arena return;
+    inst.target_rotation += rot;
 }

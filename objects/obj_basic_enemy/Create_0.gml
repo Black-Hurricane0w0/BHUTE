@@ -28,5 +28,4 @@ Enemy_Infor_Set("miss",miss);
 Enemy_Infor_Set("id",enemy_id);
 Enemy_Infor_Set("start_state",start_state);
 
-Enemy_Dialogue_Add("Hello!");
-Enemy_Dialogue_Add("Do you want to play with me?");
+Enemy_Dialogue_Add("你好^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");

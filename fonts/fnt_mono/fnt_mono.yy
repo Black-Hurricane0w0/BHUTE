@@ -436,7 +436,7 @@
     "65311":{"character":65311,"h":25,"offset":2,"shift":24,"w":12,"x":266,"y":461,},
   },
   "hinting":0,
-  "includeTTF":false,
+  "includeTTF":true,
   "interpreter":0,
   "italic":false,
   "kerningPairs":[],
@@ -768,7 +768,10 @@
   "sdfSpread":8,
   "size":18.0,
   "styleName":"Regular",
-  "textureGroupId":null,
-  "TTFName":"",
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "TTFName":"E:\\s\\BH_undertale\\BHUTE\\fonts\\fnt_mono\\Determination Mono.otf",
   "usesSDF":false,
 }
