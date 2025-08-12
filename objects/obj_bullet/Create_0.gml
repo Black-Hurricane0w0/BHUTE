@@ -1,4 +1,4 @@
-damage = Enemy_Infor_Get("id").attack_damage;
+damage = Enemy_Infor_Get("id",0).attack_damage;
 time = 0;
 depth = DEPTH.BULLET;
 mask = false;

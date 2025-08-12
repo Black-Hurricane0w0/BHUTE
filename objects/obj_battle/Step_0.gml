@@ -52,11 +52,13 @@ if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 			case 1:{
 				battle_buttom_state = MENU.FIGHT_MENU;
 				choice_time = 2;
+                battle_target_choice = 0;
 				break
 			}
 			case 2:{
 				battle_buttom_state = MENU.ACT_MENU;
 				choice_time = 2;
+                battle_target_choice = 0;
 				break
 			}
 			case 3:{
@@ -74,6 +76,7 @@ if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 			case 4:{
 				battle_buttom_state = MENU.MERCY_MENU;
 				choice_time = 2;
+                battle_target_choice= 0;
 				break
 			}
 		}
@@ -131,7 +134,7 @@ if battle_state == BATTLE_STATE.ENEMY_DIALOGUE {
 			battle_state = BATTLE_STATE.ENEMY;
         	obj_move_soul.invulnerable = 0;
 		}
-		if not instance_exists(obj_dialogue) and Enemy_Infor_Get("hp") <= 0{
+		if not instance_exists(obj_dialogue) and Enemy_Infor_Get("hp",0) <= 0{
 			Won();
 		}
 	}
@@ -150,7 +153,7 @@ if battle_state == BATTLE_STATE.ENEMY {
 		turn_time --;
 	}
 }else {
-	Battle_TurnSetTime(Enemy_Infor_Get("id").turn_max_time);
+	Battle_TurnSetTime(Enemy_Infor_Get("id",0).turn_max_time);
 }
 
 

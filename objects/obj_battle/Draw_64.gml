@@ -1,18 +1,22 @@
 if battle_state == BATTLE_STATE.PLAYER {
 	if battle_buttom_state == MENU.FIGHT_MENU || battle_buttom_state == MENU.ACT_MENU {//FIGHT和ACT菜单
-		if Enemy_mercy() {
-			draw_set_color(c_yellow);
-		}else {
-			draw_set_color(c_white);
-		}
 		draw_set_font(fnt_mono);
-		draw_text(90,270,"* " + string(Enemy_Infor_Get("enemy_name")));
-		if battle_buttom_state == MENU.FIGHT_MENU {
-			var point_hp = (Enemy_Infor_Get("hp") / Enemy_Infor_Get("max_hp")) * 100
-			draw_healthbar(400,280,500,290,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
-		}
+        draw_set_valign(fa_middle);
+        for (var i = 0; i < array_length(global._enemy); i++) {
+            if Enemy_mercy(i) {
+    			draw_set_color(c_yellow);
+    		}else {
+    			draw_set_color(c_white);
+    		}
+        	draw_text(90,285 + i * 30,"* " + string(Enemy_Infor_Get("enemy_name",i)));
+            if battle_buttom_state == MENU.FIGHT_MENU {
+			    var point_hp = (Enemy_Infor_Get("hp",i) / Enemy_Infor_Get("max_hp",i)) * 100
+			    draw_healthbar(400,280,500,290,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
+	    	}
+        }
+        draw_set_valign(fa_top);
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 282;
+		obj_soul.target_y = 287;
 		//返回
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){
 			if battle_buttom_state = MENU.FIGHT_MENU {
@@ -24,6 +28,8 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			
 		}
+        //选择
+        
 	} 
     //确认
 	if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and battle_buttom_state == MENU.FIGHT_MENU and choice_time < 0 {
@@ -40,61 +46,64 @@ if battle_state == BATTLE_STATE.PLAYER {
 			}
 		}
 	}else if battle_buttom_state == MENU.ACT_CHOICE {
-		//act
+        //act菜单选择
+        battle_action_soul = clamp(battle_action_soul,0,3);
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
-		for (i=0;i<array_length(Enemy_Infor_Get("id").action);i++) {
-			draw_text(90,270 + i *30,"* " + string(Enemy_Infor_Get("id").action[i]));
+        draw_set_valign(fa_middle);
+		var battle_action_print = 0;//打印变量
+        var action_length = array_length(Enemy_Infor_Get("id",0).action);
+		for (var i = battle_action_choice;i < battle_action_choice + 4;i++) {//循环i为当前选择
+			if battle_action_print < 4 { //打印
+				if battle_action_print = battle_action_soul and i - battle_action_soul < action_length {
+					draw_set_color(c_yellow);
+					draw_set_alpha(1);
+					draw_text(90,275 +battle_action_print * 30,"*" + Enemy_Infor_Get("id",0).action[i - battle_action_soul]);	
+				}else if i - battle_action_soul < action_length {
+					draw_set_color(c_white);
+					draw_set_alpha(0.6 - 0.05 * battle_action_print);
+					draw_text(90,275 +battle_action_print * 30,"*" + Enemy_Infor_Get("id",0).action[i - battle_action_soul]);
+				}
+                battle_action_print ++;
+			}
 		}
+        draw_set_valign(fa_top);
+		draw_set_alpha(1);
+		//act
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){//退出
 			battle_buttom_state = MENU.ACT_MENU;
 			battle_action_choice = 0;
+            battle_action_soul = 0;
 			audio_play_sound(snd_buttom_select,0,false);
 		}
-		//act菜单选择
-		if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) {
-			battle_action_choice --;
+        obj_soul.target_x = 70;
+		obj_soul.target_y = 277 + battle_action_soul * 30;
+        if Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) and battle_action_choice < action_length - 1 {//向上按键和向下按键
+            if battle_action_soul = 3 {
+				battle_action_choice ++;
+			}else if battle_action_soul < 3 {
+				battle_action_soul ++;
+				battle_action_choice ++;
+			}
 			audio_play_sound(snd_buttom_choice,0,false);
-			if battle_action_choice < 0 {
-				battle_action_choice = array_length(Enemy_Infor_Get("id").action) -1;
+		}else if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) and battle_action_choice > 0 {
+            if battle_action_soul = 0 {
+				battle_action_choice --;
+			}else if battle_action_soul > 0 {
+				battle_action_choice --;
+				battle_action_soul --;
 			}
-		}else if Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) {
-			battle_action_choice ++;
 			audio_play_sound(snd_buttom_choice,0,false);
-			if battle_action_choice > array_length(Enemy_Infor_Get("id").action) -1 {
-				battle_action_choice = 0;
-			}
-		}
-		switch(battle_action_choice){//灵魂显示act菜单
-			case 0:{
-				obj_soul.target_x = 70;
-				obj_soul.target_y = 282;
-				break;
-			}
-			case 1:{
-				obj_soul.target_x = 70;
-				obj_soul.target_y = 282 + 30;
-				break;
-			}
-			case 2:{
-				obj_soul.target_x = 70;
-				obj_soul.target_y = 282 + 60;
-				break;
-			}
-			case 3:{
-				obj_soul.target_x = 70;
-				obj_soul.target_y = 282 + 90;
-				break;
-			}
 		}
 		//确认
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED){
-			Enemy_Infor_Get("id").action_index = battle_action_choice;
-			with(Enemy_Infor_Get("id")) {
+			Enemy_Infor_Get("id",0).action_index = battle_action_choice;
+			with(Enemy_Infor_Get("id",0)) {
 				event_user(0);
 			}
 			instance_deactivate_object(obj_soul);
 			battle_action_choice = 0;
+            battle_action_soul = 0;
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
 			battle_buttom_choice = 2;
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
@@ -106,23 +115,23 @@ if battle_state == BATTLE_STATE.PLAYER {
 		obj_soul.target_y = 277 + battle_item_soul * 30;
 		draw_set_color(c_white);
 		draw_set_font(fnt_mono);
+        draw_set_valign(fa_middle);
 		var battle_item_print = 0;//打印变量
-		for (i = battle_item_choice;i < battle_item_choice + 4;i++) {//循环i为当前选择
+		for (var i = battle_item_choice;i < battle_item_choice + 4;i++) {//循环i为当前选择
 			if battle_item_print < 4 {
-				if i - 4 < Item_Number() {//打印
-					if battle_item_print = battle_item_soul and i - battle_item_soul < Item_Number() {
-						draw_set_color(c_yellow);
-						draw_set_alpha(1);
-						draw_text(90,265 +battle_item_print * 30,"*" + string(Item_GetName(i - battle_item_soul)));	
-					}else if i - battle_item_soul < Item_Number() {
-						draw_set_color(c_white);
-						draw_set_alpha(0.6 - 0.05 * battle_item_print);
-						draw_text(90,265 +battle_item_print * 30,"*" + string(Item_GetName(i - battle_item_soul)));
-					}
+				if battle_item_print = battle_item_soul and i - battle_item_soul < Item_Number() {
+					draw_set_color(c_yellow);
+					draw_set_alpha(1);
+					draw_text(90,275 +battle_item_print * 30,"*" + string(Item_GetName(i - battle_item_soul)));	
+				}else if i - battle_item_soul < Item_Number() {
+					draw_set_color(c_white);
+					draw_set_alpha(0.6 - 0.05 * battle_item_print);
+					draw_text(90,275 +battle_item_print * 30,"*" + string(Item_GetName(i - battle_item_soul)));
 				}
 				 battle_item_print ++;
 			}
 		}
+        draw_set_valign(fa_top);
 		draw_set_alpha(1);
 		battle_item_soul = clamp(battle_item_soul,0,3);
         var battle_item_changed = false;
@@ -152,8 +161,8 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_choice = 3;
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 		}
-		for (i=0;i<Item_Number();i++){
-			if i = battle_item_choice {
+		for (j=0;j<Item_Number();j++){
+			if j = battle_item_choice {
                 //按下了按键，重新刷新动画
                 if battle_item_changed {
                     bm.reset();
@@ -161,13 +170,13 @@ if battle_state == BATTLE_STATE.PLAYER {
                 bm.run();
 			}else {
                 //如果是被按走的槽位，重新刷新动画
-                if last_item_choice == i {
+                if last_item_choice == j {
                     if battle_item_changed {
                         bm2.reset();
                     }
                     bm2.run();
                 }else{
-                    draw_sprite_ext(spr_battle_edge,0,580,267.5 + i *15,2,2,0,c_white,0.5);
+                    draw_sprite_ext(spr_battle_edge,0,580,267.5 + j *15,2,2,0,c_white,0.5);
                 }
                 
 			}
@@ -184,13 +193,13 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
 		}
 	}else if battle_buttom_state == MENU.MERCY_MENU {//仁慈菜单
-		if Enemy_mercy() {
+		if Enemy_mercy(0) {
 			draw_set_color(c_yellow);
 		}else {
 			draw_set_color(c_white);
 		} 
 		draw_set_font(fnt_mono);
-		draw_text(90,270,"* " + string(Enemy_Infor_Get("enemy_name")));
+		draw_text(90,270,"* " + string(Enemy_Infor_Get("enemy_name",0)));
 		obj_soul.target_x = 70;
 		obj_soul.target_y = 282;
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{
@@ -198,7 +207,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			instance_deactivate_object(obj_soul); 
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
-			if Enemy_Infor_Get("id").mercy >= 80 {
+			if Enemy_Infor_Get("id",0).mercy >= 80 {
 				audio_play_sound(snd_cloud,0,false);
 				Battle_Dialogue_Add("You won.");
 				battle_won = true;
@@ -232,12 +241,12 @@ if battle_state == BATTLE_STATE.PLAYER {
 		}
 	}else if battle_buttom_state == MENU.FIGHT_ANIM {//转到FIGHT.攻击完成
 		battle_fight_over_time -= 1;
-		if battle_fight_over_time == 50 and (Enemy_Infor_Get("miss") == true || failed_attack == true) {
+		if battle_fight_over_time == 50 and (Enemy_Infor_Get("miss",0) == true || failed_attack == true) {
 			//miss
 			instance_create_depth(320,100,DEPTH.UI_TOP,obj_miss);
 		}
 		if battle_fight_over_time <= 0 {//时间为0
-			if Enemy_Infor_Get("miss") == false and failed_attack == false {//没miss
+			if Enemy_Infor_Get("miss",0) == false and failed_attack == false {//没miss
 				battle_buttom_state = MENU.FIGHT_DAMAGE;
 				battle_fight_over_time = 60;
 			}else {//miss了
@@ -259,16 +268,16 @@ if battle_state == BATTLE_STATE.PLAYER {
 					attack_distance *= 1.5;
 				}
 			}
-			target_health = Enemy_Infor_Get("hp") - round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection")/100));
-			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp"));
+			target_health = Enemy_Infor_Get("hp",0) - round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",0)/100));
+			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",0));
 			audio_play_sound(snd_damage,0,false);
 			instance_create_depth(0,0,DEPTH.UI_TOP,obj_damage_num)
 			with(obj_damage_num){
-				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection")/100));
+				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",0)/100));
 				event_user(0);
 			}
-			bm3 = CreateAnim().add(20,Enemy_Infor_Get("hp"),target_health).anim(ac_fight_healthbar).execute(function(t){ 
-                var point_hp = t / Enemy_Infor_Get("max_hp") * 100;
+			bm3 = CreateAnim().add(20,Enemy_Infor_Get("hp",0),target_health).anim(ac_fight_healthbar).execute(function(t){ 
+                var point_hp = t / Enemy_Infor_Get("max_hp",0) * 100;
                 draw_healthbar(200,160,440,170,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
             })
 			Enemy_Infor_Set("hp",target_health);

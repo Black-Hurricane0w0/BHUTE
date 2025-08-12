@@ -22,5 +22,8 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
             }
         })
     }
+    if time == 120 {
+        Battle_TurnEnd();
+    }
 }
     

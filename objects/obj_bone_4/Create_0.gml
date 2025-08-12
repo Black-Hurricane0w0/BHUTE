@@ -1,6 +1,6 @@
 // Inherit the parent event
 event_inherited();
-damage = Enemy_Infor_Get("id").attack_damage;
+damage = Enemy_Infor_Get("id",0).attack_damage;
 movedir = 0;
 rot = 0;
 rotspeed = 0;

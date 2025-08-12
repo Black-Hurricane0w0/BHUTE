@@ -1,6 +1,5 @@
 
 //删除系统
-ds_map_destroy(global._enemy);
 ds_map_destroy(global._input_map);
 ds_map_destroy(global._save_map);
 ds_queue_destroy(global._battle_dialogue);

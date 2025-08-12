@@ -1,5 +1,5 @@
-function Enemy_mercy(){
-	if Enemy_Infor_Get("id").mercy >= 80 {
+function Enemy_mercy(enemy){
+	if Enemy_Infor_Get("id",enemy).mercy >= 80 {
 		return true;
 	}
 }

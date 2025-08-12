@@ -15,6 +15,7 @@ turn_max_time = 600;
 start_state = BATTLE_STATE.PLAYER;
 obj_battle.ui_enable = true;
 obj_battle.buttom_enable = true;
+enemy = -1;
 
 Battle_TurnSet(obj_turn);
 Battle_TurnSetTime(turn_max_time);

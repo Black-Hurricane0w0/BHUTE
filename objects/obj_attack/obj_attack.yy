@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_attack",
-    "path":"sprites/spr_attack/spr_attack.yy",
+    "name":"spr_attack2",
+    "path":"sprites/spr_attack2/spr_attack2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

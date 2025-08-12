@@ -6,7 +6,7 @@ max_hp = 10000000;
 miss = false;
 enemy_id = id;
 change_dialogue = false;
-action = ["Check"]
+action = ["Check","Test1","Test2","Test3","Test4","Test5","Test6"]
 action_index = -1;
 mercy = 0;
 fast_die = true;
@@ -15,6 +15,7 @@ turn_max_time = infinity;
 start_state = BATTLE_STATE.PLAYER;
 obj_battle.ui_enable = true;
 obj_battle.buttom_enable = true;
+enemy = -1;
 
 Battle_TurnSet(obj_test);
 Battle_TurnSetTime(turn_max_time);
@@ -29,3 +30,5 @@ Enemy_Infor_Set("id",enemy_id);
 Enemy_Infor_Set("start_state",start_state);
 
 File_Set(PLAYER_INFO.DAMAGE,30244120);
+
+Enemy_Dialogue_Add("你好");
