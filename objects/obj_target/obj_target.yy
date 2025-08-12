@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Fight",
-    "path":"folders/物体/UI/Fight.yy",
+    "path":"folders/物体/UI/Damage/Fight.yy",
   },
   "parentObjectId":null,
   "persistent":false,

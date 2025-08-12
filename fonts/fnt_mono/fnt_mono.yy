@@ -769,7 +769,10 @@
   "sdfSpread":8,
   "size":18.0,
   "styleName":"Regular",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"E:\\s\\BH_undertale\\BHUTE\\fonts\\fnt_mono\\方正基础像素体.ttf",
   "usesSDF":false,
 }

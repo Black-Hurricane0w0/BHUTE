@@ -31,4 +31,4 @@ Enemy_Infor_Set("start_state",start_state);
 
 File_Set(PLAYER_INFO.DAMAGE,30244120);
 
-Enemy_Dialogue_Add("你好");
+Enemy_Dialogue_Add("你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好");

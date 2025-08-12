@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Enemy_Mercy",
+  "%Name":"Enemy_Number",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Enemy_Mercy",
+  "name":"Enemy_Number",
   "parent":{
     "name":"Enemy",
     "path":"folders/脚本/Enemy.yy",

@@ -4,6 +4,7 @@ if action_index == 0 {
 }
 if action_index == 1 {
 	Battle_Dialogue_Add("It is used to test you.");
+    mercy += 80;
 }
 if action_index == 2 {
 	Battle_Dialogue_Add("^^^^  &^&^^");

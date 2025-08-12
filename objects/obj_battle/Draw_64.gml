@@ -1,9 +1,9 @@
 if battle_state == BATTLE_STATE.PLAYER {
-	if battle_buttom_state == MENU.FIGHT_MENU || battle_buttom_state == MENU.ACT_MENU {//FIGHT和ACT菜单
+	if battle_buttom_state == MENU.FIGHT_MENU || battle_buttom_state == MENU.ACT_MENU || battle_buttom_state == MENU.MERCY_MENU {//FIGHT和ACT菜单
 		draw_set_font(fnt_mono);
         draw_set_valign(fa_middle);
-        for (var i = 0; i < array_length(global._enemy); i++) {
-            if Enemy_mercy(i) {
+        for (var i = 0; i < Enemy_Number(); i++) {
+            if Enemy_Mercy(i) {
     			draw_set_color(c_yellow);
     		}else {
     			draw_set_color(c_white);
@@ -11,12 +11,12 @@ if battle_state == BATTLE_STATE.PLAYER {
         	draw_text(90,285 + i * 30,"* " + string(Enemy_Infor_Get("enemy_name",i)));
             if battle_buttom_state == MENU.FIGHT_MENU {
 			    var point_hp = (Enemy_Infor_Get("hp",i) / Enemy_Infor_Get("max_hp",i)) * 100
-			    draw_healthbar(400,280,500,290,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
+			    draw_healthbar(400,285 + i * 30,500,295 + i * 30,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
 	    	}
         }
         draw_set_valign(fa_top);
 		obj_soul.target_x = 70;
-		obj_soul.target_y = 287;
+		obj_soul.target_y = 287 + battle_target_choice * 30;
 		//返回
 		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED){
 			if battle_buttom_state = MENU.FIGHT_MENU {
@@ -25,11 +25,30 @@ if battle_state == BATTLE_STATE.PLAYER {
 			if battle_buttom_state = MENU.ACT_MENU {
 				battle_buttom_choice = 2;
 			}
+            if battle_buttom_state = MENU.MERCY_MENU {
+				battle_buttom_choice = 4;
+			}
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
-			
 		}
-        //选择
         
+        //选择
+        if Enemy_Number() > 1 { 
+            if Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED){//向上按键和向下按键
+                if battle_target_choice = Enemy_Number() - 1 {
+    				battle_target_choice = 0;
+    			}else{
+                    battle_target_choice ++;
+                }
+    			audio_play_sound(snd_buttom_choice,0,false);
+    		}else if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED){
+                if battle_target_choice = 0 {
+    				battle_target_choice = Enemy_Number() - 1;
+    			}else{
+                    battle_target_choice --;
+                }
+    			audio_play_sound(snd_buttom_choice,0,false);
+    		}
+        }
 	} 
     //确认
 	if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and battle_buttom_state == MENU.FIGHT_MENU and choice_time < 0 {
@@ -108,8 +127,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_choice = 2;
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 		}
-		
-		
 	}else if battle_buttom_state == MENU.ITEM_MENU {///物品菜单
 		obj_soul.target_x = 70;
 		obj_soul.target_y = 277 + battle_item_soul * 30;
@@ -192,31 +209,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
 		}
-	}else if battle_buttom_state == MENU.MERCY_MENU {//仁慈菜单
-		if Enemy_mercy(0) {
-			draw_set_color(c_yellow);
-		}else {
-			draw_set_color(c_white);
-		} 
-		draw_set_font(fnt_mono);
-		draw_text(90,270,"* " + string(Enemy_Infor_Get("enemy_name",0)));
-		obj_soul.target_x = 70;
-		obj_soul.target_y = 282;
-		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{
-			battle_buttom_choice = 4;
-			battle_buttom_state = MENU.BUTTOM_CHOICE;
-			instance_deactivate_object(obj_soul); 
-			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
-			if Enemy_Infor_Get("id",0).mercy >= 80 {
-				audio_play_sound(snd_cloud,0,false);
-				Battle_Dialogue_Add("You won.");
-				battle_won = true;
-			}
-		}
-		if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED) {
-			battle_buttom_choice = 4;
-			battle_buttom_state = MENU.BUTTOM_CHOICE;
-		}
 	}
 	if battle_buttom_state == MENU.FIGHT_TARGET {//转到FIGHT.攻击
 		instance_deactivate_object(obj_soul);
@@ -296,11 +288,22 @@ if battle_state == BATTLE_STATE.PLAYER {
 			instance_destroy(obj_damage_num);
 			instance_deactivate_object(obj_soul);
 		}
-		
-		
 	}else if battle_buttom_state == MENU.ACT_MENU {
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{
 			battle_buttom_state = MENU.ACT_CHOICE //切换状态
+			audio_play_sound(snd_buttom_select,0,false);
+		}
+	}else if battle_buttom_state == MENU.MERCY_MENU {
+		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{ 
+            battle_buttom_choice = 4;
+			battle_buttom_state = MENU.BUTTOM_CHOICE;
+			instance_deactivate_object(obj_soul); 
+			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
+			if Enemy_Infor_Get("id",0).mercy >= 80 {
+				audio_play_sound(snd_cloud,0,false);
+				Battle_Dialogue_Add("You won.");
+				battle_won = true;
+			}
 			audio_play_sound(snd_buttom_select,0,false);
 		}
 	}

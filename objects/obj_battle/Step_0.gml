@@ -53,13 +53,13 @@ if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 				battle_buttom_state = MENU.FIGHT_MENU;
 				choice_time = 2;
                 battle_target_choice = 0;
-				break
+				break;
 			}
 			case 2:{
 				battle_buttom_state = MENU.ACT_MENU;
 				choice_time = 2;
                 battle_target_choice = 0;
-				break
+				break;
 			}
 			case 3:{
 				if Item_Number() > 0 {
@@ -70,14 +70,13 @@ if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 				}else {
 					audio_stop_sound(snd_buttom_select);
 				}
-				
-				break
+				break;
 			}
 			case 4:{
 				battle_buttom_state = MENU.MERCY_MENU;
 				choice_time = 2;
                 battle_target_choice= 0;
-				break
+				break;
 			}
 		}
 	}
