@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Player_Kr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Player_Kr",
+  "parent":{
+    "name":"Player",
+    "path":"folders/脚本/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

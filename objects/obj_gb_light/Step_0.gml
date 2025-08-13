@@ -1,5 +1,10 @@
 if place_meeting(x,y,obj_move_soul) and image_alpha >= 0.2 {
 	Player_Damage(damage);
+    if !place_meeting(xprevious,yprevious,obj_move_soul){
+        Player_Kr(10);
+    }else{
+        Player_Kr(1);
+    }
 }
 if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 	instance_destroy();

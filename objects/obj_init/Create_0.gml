@@ -6,7 +6,8 @@ enum PLAYER_INFO{
 	MAX_HP,
 	X,
 	Y,
-	DAMAGE
+	DAMAGE,
+    KR
 }
 
 //定义回合

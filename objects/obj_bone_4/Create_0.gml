@@ -33,11 +33,27 @@ damage_func = function(self){
         if place_meeting(xx,yy,obj_move_soul){
             if color == c_orange and obj_move_soul.is_moved == false {
                 Player_Damage(damage,1);
+                if !place_meeting(xprevious,yprevious,obj_move_soul){
+                    Player_Kr(5);
+                }else{
+                    Player_Kr(1);
+                }
             }else if color == c_blue and obj_move_soul.is_moved == true {
                 Player_Damage(damage,1);
+                if !place_meeting(xprevious,yprevious,obj_move_soul){
+                    Player_Kr(5);
+                }else{
+                    Player_Kr(1);
+                }
             }else if color == c_white {
                 Player_Damage(damage,1);
+                if !place_meeting(xprevious,yprevious,obj_move_soul){
+                    Player_Kr(5);
+                }else{
+                    Player_Kr(1);
+                }
             }
+            break;
         } 
     }    
 };

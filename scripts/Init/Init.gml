@@ -19,6 +19,7 @@ function Init(){
 	File_Set(PLAYER_INFO.X,0);
 	File_Set(PLAYER_INFO.Y,0);
 	File_Set(PLAYER_INFO.DAMAGE,19);
+    File_Set(PLAYER_INFO.KR,0);
 
 	window_set_caption("BHUTE");
     
@@ -27,6 +28,8 @@ function Init(){
     global.buttle_range = 500;
     //遮罩延申范围
     global.surface_wide = 300;
+    //KR启用
+    global.kr_enable = true;
 	
 	//声音设置
 	audio_master_gain(Setting_Read(real,"Volume")/100);

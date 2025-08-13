@@ -286,6 +286,9 @@ if battle_state == BATTLE_STATE.PLAYER {
 			instance_destroy(obj_target);
 			instance_destroy(obj_damage_num);
 			instance_deactivate_object(obj_soul);
+            with(Enemy_Infor_Get("id",battle_target_choice)){
+                event_user(1);
+            }
 		}
 	}else if battle_buttom_state == MENU.ACT_MENU {
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0{
@@ -298,14 +301,14 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			instance_deactivate_object(obj_soul); 
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
-    		if Enemy_Infor_Get("id",battle_target_choice).mercy >= 80 {
-    			audio_play_sound(snd_cloud,0,false);
-               if Enemy_Number() <= 1 {
+    		if Enemy_Infor_Get("id",battle_target_choice).mercy >= 80 { 
+                audio_play_sound(snd_cloud,0,false);
+                if Enemy_Number() <= 1 {
                    Battle_Dialogue_Add("You won."); 
                    battle_won = true;
-               }else{
+                }else{
                    Enemy_Remove(battle_target_choice);
-               }
+                }
             }
 			audio_play_sound(snd_buttom_select,0,false);
 		}

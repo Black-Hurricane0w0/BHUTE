@@ -13,6 +13,11 @@ y += lengthdir_y(move_speed,direction);
 
 if place_meeting(x,y,obj_move_soul) and obj_move_soul.is_moved == false{
 	Player_Damage(damage);
+    if !place_meeting(xprevious,yprevious,obj_move_soul){
+        Player_Kr(5);
+    }else{
+        Player_Kr(1);
+    }
 } 
 if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 	instance_destroy();

@@ -9,8 +9,8 @@
   "name":"obj_draw_ui",
   "overriddenProperties":[],
   "parent":{
-    "name":"物体",
-    "path":"folders/物体.yy",
+    "name":"UI",
+    "path":"folders/物体/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

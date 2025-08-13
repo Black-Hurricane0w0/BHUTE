@@ -2,6 +2,28 @@ dir = dir mod 360;
 if dir != 0 and dir != 90 and dir != 180 and dir != 270{
     dir = 270;
 }
+
+//KR计算
+var kr = clamp(File_Get(PLAYER_INFO.KR),0,40);
+log(kr)
+if kr_time < 0 and kr > 0{
+    if kr >= 40 {
+        kr_time = 0;
+    }else if kr >= 30 and kr <= 39 {
+        kr_time = 1;
+    }else if kr >= 20 and kr <= 29 {
+        kr_time = 5;
+    }else if kr >= 10 and kr <= 19 {
+        kr_time = 15;
+    }else if kr >= 1 and kr <= 9 {
+        kr_time = 30;
+    }
+    obj_battle.player_target_health -= 1;
+    File_Set(PLAYER_INFO.KR,kr-1);
+}
+kr_time--
+
+
 image_alpha = is_active;
 if !is_active exit;
 
@@ -59,6 +81,8 @@ if invulnerable > 0 {
 }else {
 	image_alpha = 1;
 }
+
+
 
 
 

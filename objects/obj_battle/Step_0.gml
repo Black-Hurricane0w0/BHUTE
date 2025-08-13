@@ -1,3 +1,4 @@
+
 //调试屏幕
 if not surface_exists(global.debug_surface) {
 	global.debug_surface = surface_create(640,480);
