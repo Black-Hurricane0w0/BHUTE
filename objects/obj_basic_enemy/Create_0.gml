@@ -20,13 +20,13 @@ enemy = -1;
 Battle_TurnSet(obj_turn);
 Battle_TurnSetTime(turn_max_time);
 //创建dsmap
-Enemy_Infor_Set("enemy_name",enemy_name);
-Enemy_Infor_Set("hp",hp);
-Enemy_Infor_Set("protection",protection);
-Enemy_Infor_Set("attack_damage",attack_damage);
-Enemy_Infor_Set("max_hp",max_hp);
-Enemy_Infor_Set("miss",miss);
-Enemy_Infor_Set("id",enemy_id);
-Enemy_Infor_Set("start_state",start_state);
+Enemy_Infor_Init("enemy_name",enemy_name);
+Enemy_Infor_Init("hp",hp);
+Enemy_Infor_Init("protection",protection);
+Enemy_Infor_Init("attack_damage",attack_damage);
+Enemy_Infor_Init("max_hp",max_hp);
+Enemy_Infor_Init("miss",miss);
+Enemy_Infor_Init("id",enemy_id);
+Enemy_Infor_Init("start_state",start_state);
 
 Enemy_Dialogue_Add("你好^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");

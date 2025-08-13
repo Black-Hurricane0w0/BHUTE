@@ -10,7 +10,7 @@ if battle_state == BATTLE_STATE.PLAYER {
     		}
         	draw_text(90,285 + i * 30,"* " + string(Enemy_Infor_Get("enemy_name",i)));
             if battle_buttom_state == MENU.FIGHT_MENU {
-			    var point_hp = (Enemy_Infor_Get("hp",i) / Enemy_Infor_Get("max_hp",i)) * 100
+			    var point_hp = (Enemy_Infor_Get("hp",i) / Enemy_Infor_Get("max_hp",i)) * 100;
 			    draw_healthbar(400,285 + i * 30,500,295 + i * 30,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
 	    	}
         }
@@ -116,8 +116,8 @@ if battle_state == BATTLE_STATE.PLAYER {
 		}
 		//确认
 		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED){
-			Enemy_Infor_Get("id",0).action_index = battle_action_choice;
-			with(Enemy_Infor_Get("id",0)) {
+			Enemy_Infor_Get("id",battle_target_choice).action_index = battle_action_choice;
+			with(Enemy_Infor_Get("id",battle_target_choice)) {
 				event_user(0);
 			}
 			instance_deactivate_object(obj_soul);
@@ -233,12 +233,12 @@ if battle_state == BATTLE_STATE.PLAYER {
 		}
 	}else if battle_buttom_state == MENU.FIGHT_ANIM {//转到FIGHT.攻击完成
 		battle_fight_over_time -= 1;
-		if battle_fight_over_time == 50 and (Enemy_Infor_Get("miss",0) == true || failed_attack == true) {
+		if battle_fight_over_time == 50 and (Enemy_Infor_Get("miss",battle_target_choice) == true || failed_attack == true) {
 			//miss
 			instance_create_depth(320,100,DEPTH.UI_TOP,obj_miss);
 		}
 		if battle_fight_over_time <= 0 {//时间为0
-			if Enemy_Infor_Get("miss",0) == false and failed_attack == false {//没miss
+			if Enemy_Infor_Get("miss",battle_target_choice) == false and failed_attack == false {//没miss
 				battle_buttom_state = MENU.FIGHT_DAMAGE;
 				battle_fight_over_time = 60;
 			}else {//miss了
@@ -250,7 +250,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 			}
 			
 		}
-	
 	}else if battle_buttom_state == MENU.FIGHT_DAMAGE {
 		if battle_fight_over_time == 60 {
 			var attack_distance = 0
@@ -260,26 +259,26 @@ if battle_state == BATTLE_STATE.PLAYER {
 					attack_distance *= 1.5;
 				}
 			}
-			target_health = Enemy_Infor_Get("hp",0) - round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",0)/100));
-			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",0));
+			target_health = Enemy_Infor_Get("hp",battle_target_choice) - round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",battle_target_choice)/100));
+			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",battle_target_choice));
 			audio_play_sound(snd_damage,0,false);
 			instance_create_depth(0,0,DEPTH.UI_TOP,obj_damage_num)
 			with(obj_damage_num){
-				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",0)/100));
+				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",obj_battle.battle_target_choice)/100));
 				event_user(0);
 			}
-			bm3 = CreateAnim().add(20,Enemy_Infor_Get("hp",0),target_health).anim(ac_fight_healthbar).execute(function(t){ 
-                var point_hp = t / Enemy_Infor_Get("max_hp",0) * 100;
+			bm3 = CreateAnim().add(20,Enemy_Infor_Get("hp",battle_target_choice),target_health).anim(ac_fight_healthbar).execute(function(t){ 
+                var point_hp = t / Enemy_Infor_Get("max_hp",battle_target_choice) * 100;
                 draw_healthbar(200,160,440,170,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);
             })
-			Enemy_Infor_Set("hp",target_health);
+			Enemy_Infor_Set("hp",target_health,battle_target_choice);
 		}
         bm3.run();
         
 		battle_fight_over_time --;
 		//切换状态
 		if battle_fight_over_time < 0 {
-			Enemy_Infor_Set("hp",target_health);
+			Enemy_Infor_Set("hp",target_health,battle_target_choice);
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			battle_buttom_choice = 1;
 			battle_state = BATTLE_STATE.ENEMY_DIALOGUE;
@@ -299,11 +298,15 @@ if battle_state == BATTLE_STATE.PLAYER {
 			battle_buttom_state = MENU.BUTTOM_CHOICE;
 			instance_deactivate_object(obj_soul); 
 			battle_state = BATTLE_STATE.ENCOUNTER_TEXT;
-			if Enemy_Infor_Get("id",0).mercy >= 80 {
-				audio_play_sound(snd_cloud,0,false);
-				Battle_Dialogue_Add("You won.");
-				battle_won = true;
-			}
+    		if Enemy_Infor_Get("id",battle_target_choice).mercy >= 80 {
+    			audio_play_sound(snd_cloud,0,false);
+               if Enemy_Number() <= 1 {
+                   Battle_Dialogue_Add("You won."); 
+                   battle_won = true;
+               }else{
+                   Enemy_Remove(battle_target_choice);
+               }
+            }
 			audio_play_sound(snd_buttom_select,0,false);
 		}
 	}
