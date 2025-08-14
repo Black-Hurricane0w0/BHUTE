@@ -1,7 +1,7 @@
 time ++
 if time == 1 {
 	Player_SetSoul(false,270,true);
-	ArenaSet(200,200,0,,,,false);
+	ArenaSet(200,200,0,320,300,,false);
     Player_PosSet(320,320);
     Player_Show();
 
@@ -22,7 +22,7 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
             }
         })
     }
-    if time == 120 {
+    if time == 360 {
         Battle_TurnEnd();
     }
 }

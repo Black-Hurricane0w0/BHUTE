@@ -41,6 +41,7 @@
     {"name":"Enemy","order":4,"path":"folders/精灵/Enemy.yy",},
     {"name":"Armstrong","order":1,"path":"folders/精灵/Enemy/Armstrong.yy",},
     {"name":"head","order":3,"path":"folders/精灵/Enemy/Armstrong/head.yy",},
+    {"name":"TestEnemy","order":2,"path":"folders/精灵/Enemy/TestEnemy.yy",},
     {"name":"UI","order":1,"path":"folders/精灵/UI.yy",},
     {"name":"Arena","order":3,"path":"folders/精灵/UI/Arena.yy",},
     {"name":"Buttom","order":1,"path":"folders/精灵/UI/Buttom.yy",},

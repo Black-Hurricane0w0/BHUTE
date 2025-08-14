@@ -52,6 +52,7 @@
     {"$GMFolder":"","%Name":"Enemy","folderPath":"folders/精灵/Enemy.yy","name":"Enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Armstrong","folderPath":"folders/精灵/Enemy/Armstrong.yy","name":"Armstrong","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"head","folderPath":"folders/精灵/Enemy/Armstrong/head.yy","name":"head","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"TestEnemy","folderPath":"folders/精灵/Enemy/TestEnemy.yy","name":"TestEnemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"UI","folderPath":"folders/精灵/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Arena","folderPath":"folders/精灵/UI/Arena.yy","name":"Arena","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Buttom","folderPath":"folders/精灵/UI/Buttom.yy","name":"Buttom","resourceType":"GMFolder","resourceVersion":"2.0",},
