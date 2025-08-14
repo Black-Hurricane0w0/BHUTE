@@ -1,6 +1,3 @@
-
-
-
 //绘制
     var _color = color
     if color == c_blue {

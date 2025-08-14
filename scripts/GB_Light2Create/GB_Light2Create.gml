@@ -1,4 +1,4 @@
-function GB_Light2Create(_x,_y,facing = 0,size = 1,keep_time = 60,flat_count = 1,ac_gb = ac_gb_default){
+function GB_Light2Create(_x,_y,facing = 0,size = 1,keep_time = 60,flat_count = 1,ac_gb = ac_gb_default,glowing = true){
 	inst = instance_create_depth(0,0,0,obj_gb_light2){
 		inst.facing = facing;
 		inst.size = size;
@@ -7,6 +7,7 @@ function GB_Light2Create(_x,_y,facing = 0,size = 1,keep_time = 60,flat_count = 1
 		inst.keep_time = keep_time;
 		inst.flat_count = flat_count;
 		inst.ac_gb = ac_gb;
+        inst.glowing = glowing;
 	}
 	return inst;
 }

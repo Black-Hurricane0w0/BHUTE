@@ -324,6 +324,7 @@
     {"id":{"name":"spr_fight","path":"sprites/spr_fight/spr_fight.yy",},},
     {"id":{"name":"spr_gb_2","path":"sprites/spr_gb_2/spr_gb_2.yy",},},
     {"id":{"name":"spr_gb_light_2","path":"sprites/spr_gb_light_2/spr_gb_light_2.yy",},},
+    {"id":{"name":"spr_gb_light_growing","path":"sprites/spr_gb_light_growing/spr_gb_light_growing.yy",},},
     {"id":{"name":"spr_gb_light","path":"sprites/spr_gb_light/spr_gb_light.yy",},},
     {"id":{"name":"spr_gb","path":"sprites/spr_gb/spr_gb.yy",},},
     {"id":{"name":"spr_hp_bottom","path":"sprites/spr_hp_bottom/spr_hp_bottom.yy",},},

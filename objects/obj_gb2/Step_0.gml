@@ -42,7 +42,7 @@ if time == 27 + fire_time {
 	if not (audio_is_playing(snd_gb_fire2) && audio_sound_get_track_position(global.music) = 0) {
 		global.music = audio_play_sound(snd_gb_fire2,0,false);
 	}
-	gb_light = GB_Light2Create(x,y,facing,1.6 * size,keep_time,flat_count,ac_gb);
+	gb_light = GB_Light2Create(x,y,facing,1.6 * size,keep_time,flat_count,ac_gb,glowing);
 	back_speed = 0;
 	gb_light.state = 0;
 	image_speed = 1;

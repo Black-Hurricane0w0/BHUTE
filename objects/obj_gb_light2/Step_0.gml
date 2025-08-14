@@ -1,3 +1,6 @@
+
+visible = true;
+
 if place_meeting(x,y,obj_move_soul) and image_alpha >= 0.2 {
 	Player_Damage(1,1);
     if !place_meeting(xprevious,yprevious,obj_move_soul){

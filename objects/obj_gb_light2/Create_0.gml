@@ -7,6 +7,7 @@ size = 1;
 keep_time = 0;
 state = 0;
 time = 0;
+glowing = false;
 
 image_xscale = 0;
 flat_count = 1;

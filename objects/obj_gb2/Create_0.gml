@@ -13,3 +13,4 @@ start_facing = 0;
 ready_time = true;
 flat_count = 1;
 ac_gb = ac_gb_default;
+glowing = false;
