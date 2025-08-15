@@ -342,6 +342,7 @@
     {"id":{"name":"spr_miss","path":"sprites/spr_miss/spr_miss.yy",},},
     {"id":{"name":"spr_move_soul","path":"sprites/spr_move_soul/spr_move_soul.yy",},},
     {"id":{"name":"spr_platform","path":"sprites/spr_platform/spr_platform.yy",},},
+    {"id":{"name":"spr_sans","path":"sprites/spr_sans/spr_sans.yy",},},
     {"id":{"name":"spr_target_choice","path":"sprites/spr_target_choice/spr_target_choice.yy",},},
     {"id":{"name":"spr_target_choice2","path":"sprites/spr_target_choice2/spr_target_choice2.yy",},},
     {"id":{"name":"spr_target","path":"sprites/spr_target/spr_target.yy",},},

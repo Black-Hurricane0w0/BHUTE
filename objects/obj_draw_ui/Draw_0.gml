@@ -35,6 +35,6 @@ if obj_battle.ui_enable = true {
 	
 	//血量数字
 	draw_set_color(c_white);
-	draw_text(x + 251 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 30 + 30,y,string_format(File_Get(PLAYER_INFO.HP),0,0)+" / "+string(File_Get(PLAYER_INFO.MAX_HP)));
+	draw_text(x + 251 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 30 + 30,y,string(ceil(File_Get(PLAYER_INFO.HP)))+" / "+string(File_Get(PLAYER_INFO.MAX_HP)));
 }
 

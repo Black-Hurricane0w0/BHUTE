@@ -16,7 +16,7 @@ start_state = BATTLE_STATE.PLAYER;
 obj_battle.ui_enable = true;
 obj_battle.buttom_enable = true;
 enemy = -1;
-
+time = 0;
 Battle_TurnSet(obj_test);
 Battle_TurnSetTime(turn_max_time);
 //创建dsmap
