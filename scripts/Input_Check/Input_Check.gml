@@ -1,5 +1,5 @@
 function Input_Check(input,state){
-	bool_value = false;//返回值
+	var bool_value = false;//返回值
 	var buttom = ds_map_find_value(global._input_map,input)//将ds地图中对应的value付给buttom，用于后续检查
 	if ds_map_exists(global._input_map,input){
 			if gamepad_is_connected(0) == true {
@@ -60,5 +60,88 @@ function Input_Check(input,state){
 	}else{
 		return false;
 	}
+    //摇杆
+    if gamepad_is_connected(0) == true {
+        var lv = gamepad_axis_value(0,gp_axislv);
+        var lh = gamepad_axis_value(0,gp_axislh);
+        switch (state) { 
+            case INPUT_STEAT.KEEP:{
+				switch (input) {
+                    case INPUT.UP:
+                        if lv < -global.gamepad_value {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.DOWN:
+                        if lv > global.gamepad_value {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.LEFT:
+                        if lh < -global.gamepad_value {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.RIGHT:
+                        if lh > global.gamepad_value {
+                            bool_value = true;
+                        }
+                        break;
+                }
+				break;
+			}
+			case INPUT_STEAT.PRESSED:{
+				switch (input) {
+                    case INPUT.UP:
+                        if lv < -global.gamepad_value and obj_set.gamepad_axis.lv_up == false {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.DOWN:
+                        if lv > global.gamepad_value and obj_set.gamepad_axis.lv_down == false{
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.LEFT:
+                        if lh < -global.gamepad_value and obj_set.gamepad_axis.lh_left == false {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.RIGHT:
+                        if lh > global.gamepad_value and obj_set.gamepad_axis.lh_right == false {
+                            bool_value = true;
+                        }
+                        break;
+                }
+				break;
+			}
+			case INPUT_STEAT.RELEASED:{
+				switch (input) {
+                    case INPUT.UP:
+                        if lv > -global.gamepad_value and obj_set.gamepad_axis.lv_up == true {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.DOWN:
+                        if lv < global.gamepad_value and obj_set.gamepad_axis.lv_down == true {
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.LEFT:
+                        if lh > -global.gamepad_value and obj_set.gamepad_axis.lh_left == true { 
+                            bool_value = true;
+                        }
+                        break;
+                    case INPUT.RIGHT:
+                        if lh > global.gamepad_value and obj_set.gamepad_axis.lh_right == true { 
+                            bool_value = true;
+                        }
+                        break;
+                }
+				break;
+			}
+        }
+    }
+    log(obj_set.gamepad_axis.lv_down)
 	return bool_value;
 }

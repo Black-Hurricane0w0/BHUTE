@@ -8,6 +8,7 @@ draw_clear_alpha(c_white,0);
 surface_reset_target();
 
 
+
 //淡入
 if instance_exists(fadein_inst) == true {
 	if battle_state == BATTLE_STATE.PLAYER {

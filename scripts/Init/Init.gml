@@ -30,6 +30,8 @@ function Init(){
     global.surface_wide = 300;
     //KR启用
     global.kr_enable = true;
+    //手柄遥感触发阈值
+    global.gamepad_value = 0.1;
 	
 	//声音设置
 	audio_master_gain(Setting_Read(real,"Volume")/100);

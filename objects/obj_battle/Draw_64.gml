@@ -263,6 +263,7 @@ if battle_state == BATTLE_STATE.PLAYER {
 			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",battle_target_choice));
 			audio_play_sound(snd_damage,0,false);
 			instance_create_depth(0,0,DEPTH.UI_TOP,obj_damage_num)
+            Gamepad_Set_Vibration(15,1)
 			with(obj_damage_num){
 				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",obj_battle.battle_target_choice)/100));
 				event_user(0);

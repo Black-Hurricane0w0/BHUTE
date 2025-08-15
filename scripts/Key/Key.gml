@@ -13,7 +13,7 @@ function Key(){
 	//如果有游戏手柄
 	if gamepad_is_connected(0) {
 		Input_Set(INPUT.CONFIRM,gp_face1);
-		Input_Set(INPUT.BACK,gp_face3);
+		Input_Set(INPUT.BACK,gp_face2);
 		Input_Set(INPUT.MENU,gp_face4);
 		Input_Set(INPUT.UP,gp_padu);
 		Input_Set(INPUT.DOWN,gp_padd);

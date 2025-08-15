@@ -26,3 +26,12 @@ if keyboard_check(vk_escape) {
 }else {
 	esc = 0;
 }
+
+
+//手柄震动
+if vibration_time > 0{
+    vibration_time --;
+    gamepad_set_vibration(0,vibration_value,vibration_value);
+}else{
+    gamepad_set_vibration(0,0,0);
+}

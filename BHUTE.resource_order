@@ -165,6 +165,7 @@
     {"name":"File_Init","order":2,"path":"scripts/File_Init/File_Init.yy",},
     {"name":"File_Set","order":1,"path":"scripts/File_Set/File_Set.yy",},
     {"name":"Full_Screen","order":4,"path":"scripts/Full_Screen/Full_Screen.yy",},
+    {"name":"Gamepad_Set_Vibration","order":4,"path":"scripts/Gamepad_Set_Vibration/Gamepad_Set_Vibration.yy",},
     {"name":"GB_Light2Create","order":11,"path":"scripts/GB_Light2Create/GB_Light2Create.yy",},
     {"name":"GB_LightCreate","order":2,"path":"scripts/GB_LightCreate/GB_LightCreate.yy",},
     {"name":"GB2Create","order":12,"path":"scripts/GB2Create/GB2Create.yy",},

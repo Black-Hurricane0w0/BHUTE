@@ -1,6 +1,6 @@
 time ++
 if time == 1 {
-	Player_SetSoul(false,270,true);
+	Player_SetSoul(true,270,true);
 	ArenaSet(200,200,0,320,300,,false);
     Player_PosSet(320,320);
     Player_Show();

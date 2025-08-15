@@ -225,6 +225,7 @@
     {"id":{"name":"File_Init","path":"scripts/File_Init/File_Init.yy",},},
     {"id":{"name":"File_Set","path":"scripts/File_Set/File_Set.yy",},},
     {"id":{"name":"Full_Screen","path":"scripts/Full_Screen/Full_Screen.yy",},},
+    {"id":{"name":"Gamepad_Set_Vibration","path":"scripts/Gamepad_Set_Vibration/Gamepad_Set_Vibration.yy",},},
     {"id":{"name":"GB_Light2Create","path":"scripts/GB_Light2Create/GB_Light2Create.yy",},},
     {"id":{"name":"GB_LightCreate","path":"scripts/GB_LightCreate/GB_LightCreate.yy",},},
     {"id":{"name":"GB2Create","path":"scripts/GB2Create/GB2Create.yy",},},
