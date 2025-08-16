@@ -57,4 +57,4 @@ if goto_battle = true {
 
 Key();
 
-Full_Screen();
+

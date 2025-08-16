@@ -1,4 +1,4 @@
-Full_Screen();
+
 Replay();
 Key();
 time ++;

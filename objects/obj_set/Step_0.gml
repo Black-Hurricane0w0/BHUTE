@@ -1,6 +1,7 @@
 Key();
 CameraPosTick();
 Shook_Tick();
+Full_Screen();
 
 
 //debug
@@ -18,7 +19,7 @@ if debug == true {
 	
 }
 //退出
-if keyboard_check(vk_escape) {
+if keyboard_check(vk_escape) || gamepad_button_check(0,gp_select){
 	esc ++;
 	if esc >= 60 {
 		game_end(0);

@@ -123,4 +123,4 @@ if fadein == true {
 		}
 	}
 }
-Full_Screen();
+

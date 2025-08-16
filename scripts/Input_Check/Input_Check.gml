@@ -142,6 +142,5 @@ function Input_Check(input,state){
 			}
         }
     }
-    log(obj_set.gamepad_axis.lv_down)
 	return bool_value;
 }

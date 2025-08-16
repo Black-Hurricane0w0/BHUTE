@@ -111,8 +111,7 @@ if battle_state = BATTLE_STATE.ENCOUNTER_TEXT {
 	}
 }
 
-//全屏
-Full_Screen()
+
 //雨
 if Setting_Read(string,"Raining") == true {
 	effect_create_below(ef_rain,x,y,0,c_ltgray);
