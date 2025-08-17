@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.695011,
+  "duration":1.6950567,
   "name":"snd_gb_fire",
   "parent":{
     "name":"声音",

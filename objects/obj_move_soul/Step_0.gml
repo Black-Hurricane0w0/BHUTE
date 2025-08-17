@@ -289,7 +289,7 @@ File_Set(PLAYER_INFO.X,obj_move_soul.x);
 File_Set(PLAYER_INFO.Y,obj_move_soul.y);
 
 //死亡检测
-if File_Get(PLAYER_INFO.HP) <= 0 || obj_battle.player_target_health <= 0 {
+if obj_battle.player_target_health <= 0 {
 	room_goto(Room_BadEnd);
 }
 

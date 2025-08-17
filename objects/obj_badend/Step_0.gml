@@ -1,6 +1,5 @@
 
 Replay();
-Key();
 time ++;
 
 if time == 160 {

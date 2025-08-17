@@ -1,60 +1,57 @@
 time ++ ;
-if time == 220 {
+if time == 120 {
 	audio_play_sound(snd_logo,false,false);
 }
-if time >= 220  {
-	if goto_setting == false && goto_battle == false {
-		//确认
-		if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED){
-			switch (menu_choice) {
-				case 0 : {
-					audio_play_sound(snd_buttom_select,false,false);
-					inst = Black_FadeOut(320,240,10,0.05);
-					goto_battle = true;
-					break;
-				}
-				case 1 : {
-					audio_play_sound(snd_buttom_select,false,false);
-					inst = Black_FadeOut(320,240,10,0.01);
-					goto_setting = true;
-					break;
-				}
-			}
-		}
-		//选择
-		if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) {//上
-			menu_choice --;
-			if menu_choice < 0 {
-				menu_choice = 1;
-			}
-			audio_play_sound(snd_buttom_choice,0,false);
-		}
-		if Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) {//下
-			menu_choice ++;
-			if menu_choice > 1 {
-				menu_choice = 0;
-			}
-			audio_play_sound(snd_buttom_choice,0,false);
-		}
-		//没有灵魂创建灵魂
-		if not instance_exists(obj_soul) {
-			instance_create_depth(-20,292+12,DEPTH.SOUL,obj_soul);
-		}
-		obj_soul.target_x = 245;
-		obj_soul.target_y = 292 + menu_choice * 50 + 12;
-	}
-}
-if goto_setting = true {
-	if not instance_exists(inst) {
-		room_goto(Room_Setting);
-	}
-}
-if goto_battle = true {
-	if not instance_exists(inst) {
-		room_goto(Room_Battle);
-	}
+var choice = Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) - Input_Check(INPUT.UP,INPUT_STEAT.PRESSED);
+
+menu_choice += choice;
+if choice != 0 and menu_choice >= 0 and menu_choice <= 2 audio_play_sound(snd_buttom_choice,0,false);
+menu_choice = clamp(menu_choice,0,2);
+
+
+
+if goto_battle = true || goto_setting = true  {
+    fade ++;
+    if fade == 1 {
+        layer_sequence_create("seq",320,240,seq_main_line_out);
+        audio_play_sound(snd_buttom_select,0,false);
+        bm.add(30,[180,100,1],[-160,100,1]).reset();
+        bm3.add(30,170,-60).reset();
+        bm4.add(30,150,-60).reset();
+        bm5.add(30,130,-60).reset();
+        obj_soul.target_x = -100;
+    }
+    if fade == 2 {
+        layer_sequence_destroy(main_line);
+    }
+    if fade == 32 {
+        if goto_battle == true {
+            room_goto(Room_Battle);
+        }else if goto_setting {
+            room_goto(Room_Setting);
+        }
+    }
 }
 
-Key();
+if time > 290 and fade <= 0{
+    switch (menu_choice) {
+        case 0:
+            obj_soul.target_x = 100;
+            obj_soul.target_y = 220;
+            if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) goto_battle = true;
+            break;
+        case 1:
+            obj_soul.target_x = 80;
+            obj_soul.target_y = 280;
+            if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) goto_setting = true;
+            break;
+        case 2:
+            obj_soul.target_x = 60;
+            obj_soul.target_y = 340;
+            break;
+    }
+}
+
+
 
 

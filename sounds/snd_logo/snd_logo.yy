@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.352,
+  "duration":2.3159864,
   "name":"snd_logo",
   "parent":{
     "name":"声音",

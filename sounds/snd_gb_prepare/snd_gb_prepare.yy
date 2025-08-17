@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.016,
+  "duration":1.9733334,
   "name":"snd_gb_prepare",
   "parent":{
     "name":"声音",

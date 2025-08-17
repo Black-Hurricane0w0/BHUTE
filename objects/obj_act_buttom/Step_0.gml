@@ -34,3 +34,5 @@ if obj_battle.ui_enable == true && obj_battle.buttom_enable == true {
 		target_x = 240;
 		target_y = 620;
 }
+bm.update(,state,image_index).run();
+state = bm.value;

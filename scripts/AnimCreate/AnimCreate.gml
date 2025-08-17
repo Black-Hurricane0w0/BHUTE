@@ -51,7 +51,9 @@ function anim() constructor {
             	value[i] = a[i] + (b[i] - a[i]) * t;
             }
         }
-        f(value);
+        if f != undefined {
+            f(value); 
+        }
         if time == maxtime and ef != undefined {
             ef(value);
         }
@@ -80,8 +82,8 @@ function anim() constructor {
     }
     /**
      * @param {real} [maxtime]
-     * @param {real} [a] 
-     * @param {real} [b]
+     * @param {real,Array} [a] 
+     * @param {real,Array} [b]
      * @return {Struct.anim}
     */
     static update = function(maxtime = self.maxtime,a = self.a,b = self.b,_anim = self._anim){
@@ -128,7 +130,7 @@ function anim() constructor {
         if data_type = "int" {
             self.value = a;
         }else {
-            array_copy(self.a,0,self.value,0,array_length(self.a));
+            array_copy(self.value,0,self.a,0,array_length(self.a));
         }
         return self;
     }

@@ -5,3 +5,6 @@ image_yscale = 1;
 target_x = 555;
 target_y = 620;
 time = 0;
+
+state = 0;
+bm = CreateAnim().add(20,state,image_index).anim(ac_speeddown).listener(false,false,true,false);
