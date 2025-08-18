@@ -9,12 +9,12 @@ if time == 160 {
 if time >= 240 {
 	if not instance_exists(text_inst) {
 		if text_turn == 0 {
-			text_inst = CreateText(100,250,DEPTH.UI_BUTTOM,"不要丧失你的决心",c_white,fnt_mono);
+			text_inst = CreateText(100,250,DEPTH.UI_TOP,"不要丧失你的决心",c_white,fnt_mono);
 			text_inst.can_destroy = true;
 			text_inst.text_size = 2;
 		}
 		if text_turn == 1 {
-			text_inst = CreateText(100,250,DEPTH.UI_BUTTOM,"再尝试一次吧",c_white,fnt_mono);
+			text_inst = CreateText(100,250,DEPTH.UI_TOP,"再尝试一次吧",c_white,fnt_mono);
 			text_inst.can_destroy = true;
 			text_inst.text_size = 2;
 		}

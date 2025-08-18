@@ -8,4 +8,4 @@ time = 0;
 be_chosen = false;
 
 state = 0;
-bm = CreateAnim().add(20,state,image_index).anim(ac_speeddown).listener(false,false,true,false);
+bm = CreateAnim().add(40,state,image_index).anim(ac_speeddown).listener(false,false,true,false);

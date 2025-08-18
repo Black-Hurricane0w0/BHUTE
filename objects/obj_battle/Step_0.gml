@@ -7,6 +7,10 @@ surface_set_target(global.debug_surface);
 draw_clear_alpha(c_white,0);
 surface_reset_target();
 
+//模糊应用
+fx_set_parameter(layer_get_fx("Blur"),"g_intensity",is_blur);
+fx_set_parameter(layer_get_fx("Blur"),"g_numDownsamples",blur_fx);
+
 
 
 //淡入

@@ -10,8 +10,5 @@ void main()
     vec4 now_color = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
     
 
-    gl_FragColor = vec4(scr_color.r * (1.0-timer) + now_color.r * timer,
-                        scr_color.g * (1.0-timer) + now_color.g * timer,
-                        scr_color.b * (1.0-timer) + now_color.b * timer,
-                        1.0);
+    gl_FragColor = vec4(mix(scr_color.rgb,now_color.rgb,clamp(timer,0.0,1.0)),1.0);
 }

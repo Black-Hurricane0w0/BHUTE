@@ -1,15 +1,25 @@
 depth = DEPTH.UI_TOP;
 randomise();
+//图层创建
+global.layer_bg = layer_create(DEPTH.BG,"BG");
+global.layer_arena = layer_create(DEPTH.ARENA,"ARENA");
+global.layer_bullet = layer_create(DEPTH.BULLET,"BULLET");
+global.layer_bullet_outside = layer_create(DEPTH.BULLET_OUTSIDE,"BULLET_OUTSIDE");
+global.layer_enemy = layer_create(DEPTH.ENEMY,"ENEMY");
+global.layer_soul = layer_create(DEPTH.SOUL,"SOUL");
+global.layer_ui_top = layer_create(DEPTH.UI_TOP,"UI_TOP");
+
+
 //绘画obj
-instance_create_depth(0,0,DEPTH.UI_BUTTOM,obj_draw_ui)
+instance_create_depth(0,0,DEPTH.UI_TOP,obj_draw_ui)
 //战斗选择 1:battle 2:act 3:item 4:mercy
 battle_buttom_choice = 1;
 
 //战斗按钮创建
-instance_create_depth(87,620,DEPTH.BULLET,obj_fight_buttom);
-instance_create_depth(240,620,DEPTH.BULLET,obj_act_buttom);
-instance_create_depth(400,620,DEPTH.BULLET,obj_item_buttom);
-instance_create_depth(555,620,DEPTH.BULLET,obj_mercy_buttom);
+instance_create_depth(87,620,DEPTH.UI_TOP,obj_fight_buttom);
+instance_create_depth(240,620,DEPTH.UI_TOP,obj_act_buttom);
+instance_create_depth(400,620,DEPTH.UI_TOP,obj_item_buttom);
+instance_create_depth(555,620,DEPTH.UI_TOP,obj_mercy_buttom);
 //战斗框创建
 
 arena = instance_create_depth(320,320,DEPTH.ARENA,obj_battle_arena);
@@ -51,6 +61,9 @@ bm4 = CreateAnim().add(20,File_Get(PLAYER_INFO.HP),player_target_health).anim(ac
 }).listener(,,true);
 
 last_item_choice = 0;
+//模糊强度
+blur_fx = 1;
+is_blur = false;
 
 //怪物
 Enemy_Add(320,160,obj_test_enemy);

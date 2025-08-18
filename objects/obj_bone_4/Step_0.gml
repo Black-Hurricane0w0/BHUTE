@@ -44,7 +44,7 @@ if step_func != undefined {
 }
 damage_func(self);
 if mask == false {
-    depth = DEPTH.BULLET_TOP
+    depth = DEPTH.BULLET_OUTSIDE
 }
 
 

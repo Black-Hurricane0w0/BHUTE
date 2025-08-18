@@ -25,9 +25,11 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
     	var spawn_y = random_range(100,400);
     	var facing = point_direction(spawn_x,spawn_y,obj_move_soul.pos.x,obj_move_soul.pos.y);
     	GB2Create(spawn_x,spawn_y,facing,1,40,20);
+        Blur(true,2);
     }
     if time == 360 {
         Battle_TurnEnd();
+        Blur(false,2)
     }
 }
     

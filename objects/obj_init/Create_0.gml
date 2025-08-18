@@ -22,13 +22,11 @@ enum BATTLE_STATE{
 enum DEPTH{
 	BG = 0,
 	ENEMY = -100,
-	UI_BUTTOM = -200,
-	BULLET = -300,
-	ARENA = -400,
-	UI_TOP = -500,
-	BULLET_OUTSIDE = -600,//无遮罩
-	SOUL = -700,
-	BULLET_TOP = -800,//顶层子弹
+	BULLET = -200,
+	ARENA = -300,
+	UI_TOP = -400,
+	BULLET_OUTSIDE = -500,//无遮罩
+	SOUL = -600,
 }
 //菜单
 enum MENU{

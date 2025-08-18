@@ -316,4 +316,3 @@ if battle_state == BATTLE_STATE.PLAYER {
 	}
 	
 }
-

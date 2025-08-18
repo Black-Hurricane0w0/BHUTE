@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Blur",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Blur",
+  "parent":{
+    "name":"Effect",
+    "path":"folders/脚本/Effect.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
