@@ -32,6 +32,8 @@ function Init(){
     global.kr_enable = true;
     //手柄遥感触发阈值
     global.gamepad_value = 0.1;
+    //主菜单背景音乐
+    global.main_menu_music = mus_sanctuary;
 	
 	//声音设置
 	audio_master_gain(Setting_Read(real,"Volume")/100);

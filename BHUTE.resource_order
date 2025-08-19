@@ -209,7 +209,7 @@
     {"name":"seq_main_line","order":1,"path":"sequences/seq_main_line/seq_main_line.yy",},
     {"name":"sh_transit_color","order":1,"path":"shaders/sh_transit_color/sh_transit_color.yy",},
     {"name":"sh_white","order":2,"path":"shaders/sh_white/sh_white.yy",},
-    {"name":"mus_armstrong_state1","order":16,"path":"sounds/mus_armstrong_state1/mus_armstrong_state1.yy",},
+    {"name":"mus_sanctuary","order":24,"path":"sounds/mus_sanctuary/mus_sanctuary.yy",},
     {"name":"mus_scare","order":17,"path":"sounds/mus_scare/mus_scare.yy",},
     {"name":"mus_sfx_swipe","order":21,"path":"sounds/mus_sfx_swipe/mus_sfx_swipe.yy",},
     {"name":"snd_bell","order":4,"path":"sounds/snd_bell/snd_bell.yy",},

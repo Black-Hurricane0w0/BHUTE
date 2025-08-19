@@ -27,6 +27,7 @@ if goto_battle = true || goto_setting = true  {
     if fade == 32 {
         if goto_battle == true {
             room_goto(Room_Battle);
+            audio_stop_sound(global.main_menu_music);
         }else if goto_setting {
             room_goto(Room_Setting);
         }
@@ -51,7 +52,9 @@ if time > 290 and fade <= 0{
             break;
     }
 }
-
+if time == 480 and !audio_is_playing(global.main_menu_music) and Setting_Read(string,"Music") {
+    audio_play_sound(global.main_menu_music,0,true);
+}
 
 
 
