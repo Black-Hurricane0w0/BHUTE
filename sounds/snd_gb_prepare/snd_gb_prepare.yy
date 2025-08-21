@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_gb_prepare",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"sound_effect",
+    "path":"audiogroups/sound_effect",
   },
   "bitDepth":1,
   "bitRate":128,

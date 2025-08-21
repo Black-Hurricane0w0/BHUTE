@@ -113,7 +113,7 @@
     "9647":{"character":9647,"h":33,"offset":5,"shift":23,"w":13,"x":47,"y":177,},
   },
   "hinting":0,
-  "includeTTF":false,
+  "includeTTF":true,
   "interpreter":0,
   "italic":false,
   "kerningPairs":[],
@@ -444,6 +444,6 @@
   "size":18.0,
   "styleName":"Regular",
   "textureGroupId":null,
-  "TTFName":"",
+  "TTFName":"E:\\s\\BH_undertale\\BHUTE\\fonts\\fnt_comic_Sans_ms\\Comic Sans MS.ttf",
   "usesSDF":false,
 }

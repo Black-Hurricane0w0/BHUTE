@@ -766,13 +766,10 @@
   "resourceType":"GMFont",
   "resourceVersion":"2.0",
   "sampleText":"abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)\r\nin any way",
-  "sdfSpread":18,
+  "sdfSpread":8,
   "size":18.0,
   "styleName":"Regular",
-  "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
-  },
+  "textureGroupId":null,
   "TTFName":"E:\\s\\BH_undertale\\BHUTE\\fonts\\fnt_mono\\方正基础像素体.ttf",
   "usesSDF":false,
 }

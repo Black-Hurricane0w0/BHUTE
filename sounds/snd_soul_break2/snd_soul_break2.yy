@@ -2,14 +2,14 @@
   "$GMSound":"",
   "%Name":"snd_soul_break2",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"sound_effect",
+    "path":"audiogroups/sound_effect",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.710068,
+  "duration":0.71006805,
   "name":"snd_soul_break2",
   "parent":{
     "name":"soul",

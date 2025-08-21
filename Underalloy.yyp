@@ -275,6 +275,7 @@
     {"id":{"name":"seq_main_line_out","path":"sequences/seq_main_line_out/seq_main_line_out.yy",},},
     {"id":{"name":"seq_main_line","path":"sequences/seq_main_line/seq_main_line.yy",},},
     {"id":{"name":"sh_gray","path":"shaders/sh_gray/sh_gray.yy",},},
+    {"id":{"name":"sh_outline","path":"shaders/sh_outline/sh_outline.yy",},},
     {"id":{"name":"sh_transit_color","path":"shaders/sh_transit_color/sh_transit_color.yy",},},
     {"id":{"name":"sh_white","path":"shaders/sh_white/sh_white.yy",},},
     {"id":{"name":"mus_sanctuary","path":"sounds/mus_sanctuary/mus_sanctuary.yy",},},

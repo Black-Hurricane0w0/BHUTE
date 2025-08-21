@@ -4,9 +4,7 @@ if time == 120 {
 }
 var choice = Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) - Input_Check(INPUT.UP,INPUT_STEAT.PRESSED);
 
-menu_choice += choice;
-if choice != 0 and menu_choice >= 0 and menu_choice <= 2 audio_play_sound(snd_buttom_choice,0,false);
-menu_choice = clamp(menu_choice,0,2);
+
 
 
 
@@ -35,6 +33,9 @@ if goto_battle = true || goto_setting = true  {
 }
 
 if time > 290 and fade <= 0{
+    menu_choice += choice;
+    if choice != 0 and menu_choice >= 0 and menu_choice <= 2 audio_play_sound(snd_buttom_choice,0,false);
+    menu_choice = clamp(menu_choice,0,2);
     switch (menu_choice) {
         case 0:
             obj_soul.target_x = 100;
@@ -55,6 +56,6 @@ if time > 290 and fade <= 0{
 if time == 480 and !audio_is_playing(global.main_menu_music) and Setting_Read(string,"Music") {
     audio_play_sound(global.main_menu_music,0,true);
 }
-
+if audio_is_playing(global.main_menu_music) log(audio_sound_get_gain(mus_sanctuary))
 
 

@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"mus_sfx_swipe",
+  "%Name":"snd_sfx_swipe",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"sound_effect",
+    "path":"audiogroups/sound_effect",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
   "duration":0.5297052,
-  "name":"mus_sfx_swipe",
+  "name":"snd_sfx_swipe",
   "parent":{
     "name":"声音",
     "path":"folders/声音.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_sfx_swipe.wav",
+  "soundFile":"snd_sfx_swipe.wav",
   "type":0,
   "volume":1.0,
 }

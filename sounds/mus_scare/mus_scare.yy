@@ -2,14 +2,14 @@
   "$GMSound":"",
   "%Name":"mus_scare",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"music",
+    "path":"audiogroups/music",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":111.288,
+  "duration":111.25735,
   "name":"mus_scare",
   "parent":{
     "name":"声音",

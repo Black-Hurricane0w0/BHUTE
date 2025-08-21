@@ -1,8 +1,10 @@
 {
   "$GMProject":"v1",
-  "%Name":"Underalloy",
+  "%Name":"BHUTE",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"sound_effect","name":"sound_effect","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"music","name":"music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -95,7 +97,7 @@
   "MetaData":{
     "IDEVersion":"2024.13.1.193",
   },
-  "name":"Underalloy",
+  "name":"BHUTE",
   "resources":[
     {"id":{"name":"ac_arena_move","path":"animcurves/ac_arena_move/ac_arena_move.yy",},},
     {"id":{"name":"ac_bone_default","path":"animcurves/ac_bone_default/ac_bone_default.yy",},},
@@ -275,11 +277,11 @@
     {"id":{"name":"seq_main_line_out","path":"sequences/seq_main_line_out/seq_main_line_out.yy",},},
     {"id":{"name":"seq_main_line","path":"sequences/seq_main_line/seq_main_line.yy",},},
     {"id":{"name":"sh_gray","path":"shaders/sh_gray/sh_gray.yy",},},
+    {"id":{"name":"sh_outline","path":"shaders/sh_outline/sh_outline.yy",},},
     {"id":{"name":"sh_transit_color","path":"shaders/sh_transit_color/sh_transit_color.yy",},},
     {"id":{"name":"sh_white","path":"shaders/sh_white/sh_white.yy",},},
     {"id":{"name":"mus_sanctuary","path":"sounds/mus_sanctuary/mus_sanctuary.yy",},},
     {"id":{"name":"mus_scare","path":"sounds/mus_scare/mus_scare.yy",},},
-    {"id":{"name":"mus_sfx_swipe","path":"sounds/mus_sfx_swipe/mus_sfx_swipe.yy",},},
     {"id":{"name":"snd_bell","path":"sounds/snd_bell/snd_bell.yy",},},
     {"id":{"name":"snd_buttom_choice","path":"sounds/snd_buttom_choice/snd_buttom_choice.yy",},},
     {"id":{"name":"snd_buttom_select","path":"sounds/snd_buttom_select/snd_buttom_select.yy",},},
@@ -299,6 +301,7 @@
     {"id":{"name":"snd_lightning_bolt","path":"sounds/snd_lightning_bolt/snd_lightning_bolt.yy",},},
     {"id":{"name":"snd_logo","path":"sounds/snd_logo/snd_logo.yy",},},
     {"id":{"name":"snd_raining","path":"sounds/snd_raining/snd_raining.yy",},},
+    {"id":{"name":"snd_sfx_swipe","path":"sounds/snd_sfx_swipe/snd_sfx_swipe.yy",},},
     {"id":{"name":"snd_soul_break1","path":"sounds/snd_soul_break1/snd_soul_break1.yy",},},
     {"id":{"name":"snd_soul_break2","path":"sounds/snd_soul_break2/snd_soul_break2.yy",},},
     {"id":{"name":"snd_spearrise","path":"sounds/snd_spearrise/snd_spearrise.yy",},},

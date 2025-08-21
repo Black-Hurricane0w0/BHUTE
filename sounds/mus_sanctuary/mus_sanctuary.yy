@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"mus_sanctuary",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"music",
+    "path":"audiogroups/music",
   },
   "bitDepth":1,
   "bitRate":128,
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"mus_sanctuary.mp3",
   "type":0,
-  "volume":0.31,
+  "volume":0.7,
 }

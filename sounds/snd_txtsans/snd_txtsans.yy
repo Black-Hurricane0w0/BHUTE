@@ -2,14 +2,14 @@
   "$GMSound":"",
   "%Name":"snd_txtsans",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"sound_effect",
+    "path":"audiogroups/sound_effect",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.141179,
+  "duration":0.14117914,
   "name":"snd_txtsans",
   "parent":{
     "name":"声音",

@@ -8,7 +8,8 @@ global.layer_bullet_outside = layer_create(DEPTH.BULLET_OUTSIDE,"BULLET_OUTSIDE"
 global.layer_enemy = layer_create(DEPTH.ENEMY,"ENEMY");
 global.layer_soul = layer_create(DEPTH.SOUL,"SOUL");
 global.layer_ui_top = layer_create(DEPTH.UI_TOP,"UI_TOP");
-
+//相机重置
+CameraPosSet(320,240,640,480,0);
 
 //绘画obj
 instance_create_depth(0,0,DEPTH.UI_TOP,obj_draw_ui)

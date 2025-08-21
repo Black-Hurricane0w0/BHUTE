@@ -36,6 +36,10 @@ function Init(){
     global.main_menu_music = mus_sanctuary;
 	
 	//声音设置
-	audio_master_gain(Setting_Read(real,"Volume")/100);
+	audio_master_gain(clamp(Setting_Read(real,"Volume"),0,100)/100);
+    audio_group_set_gain(sound_effect,clamp(Setting_Read(real,"Sound Effect Volume"),0,100)/100,0);
+    audio_group_set_gain(music,clamp(Setting_Read(real,"Music Volume"),0,100)/100,0);
+    audio_group_load(music);
+    audio_group_load(sound_effect);
 
 }
