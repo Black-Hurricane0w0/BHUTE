@@ -33,6 +33,7 @@ if time >= 30 and fade < 1 {
 			detailed_setting = true;
 			choice_time = 10;
 			obj_soul.target_x = 100 + 350;
+            if setting_choice == 0 || setting_choice == 4 || setting_choice == 5 obj_soul.target_x = 100 + 350 - 80;
 			obj_soul.target_y = 100 + setting_choice * 60;
 			audio_play_sound(snd_buttom_select,0,false);
 		}
@@ -49,22 +50,9 @@ if time >= 30 and fade < 1 {
 		}
 		switch (setting_choice) {
 			case 0 :{//0选项：总音量
-				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.KEEP) and choice_time < 0 {
-					Setting_Write("Volume",Setting_Read(real,"Volume") + 1)
-					if Setting_Read(real,"Volume") > 100 {
-						Setting_Write("Volume",0)
-					}
-					keep_down_time ++;
-					if keep_down_time < 5 {
-						choice_time = 10;
-						audio_play_sound(snd_buttom_select,0,false);
-					}else {
-						choice_time = 0;
-					}
-					audio_master_gain(clamp(Setting_Read(real,"Volume"),0,100)/100);
-				}else if choice_time < 0 {
-					keep_down_time = 0;
-				}
+                var value = clamp(Setting_Read(real,"Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
+				Setting_Write("Volume",value)
+				audio_master_gain(clamp(Setting_Read(real,"Volume"),0,100)/100);
 				break;
 			}
 			case 1 :{//1选项：雨
@@ -93,39 +81,15 @@ if time >= 30 and fade < 1 {
                 break;
 			} 
             case 4 :{//4选项：音乐音量
-				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.KEEP) and choice_time < 0 { 
-                    Setting_Write("Music Volume",Setting_Read(real,"Music Volume") + 1)
-					if Setting_Read(real,"Music Volume") > 100 {
-						Setting_Write("Music Volume",0)
-					}
-					keep_down_time ++;
-					if keep_down_time < 5 {
-						choice_time = 10;
-						audio_play_sound(snd_buttom_select,0,false);
-					}else {
-						choice_time = 0;
-					}
-				    audio_group_set_gain(music,clamp(Setting_Read(real,"Music Volume"),0,100)/100,0);
-                    audio_play_sound(snd_buttom_select,0,false);
-				}
+                var value = clamp(Setting_Read(real,"Music Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
+	            Setting_Write("Music Volume",value)
+				audio_group_set_gain(music,clamp(Setting_Read(real,"Music Volume"),0,100)/100,0);
                 break;
 			}
             case 5 :{//5选项：音效音量
-				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.KEEP) and choice_time < 0 {
-                    Setting_Write("Sound Effect Volume",Setting_Read(real,"Sound Effect Volume") + 1)
-					if Setting_Read(real,"Sound Effect Volume") > 100 {
-						Setting_Write("Sound Effect Volume",0)
-					}
-					keep_down_time ++;
-					if keep_down_time < 5 {
-						choice_time = 10;
-						audio_play_sound(snd_buttom_select,0,false);
-					}else {
-						choice_time = 0;
-					}
-				    audio_group_set_gain(sound_effect,clamp(Setting_Read(real,"Sound Effect Volume"),0,100)/100,60);
-                    audio_play_sound(snd_buttom_select,0,false);
-				}
+                var value = clamp(Setting_Read(real,"Sound Effect Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
+	            Setting_Write("Sound Effect Volume",value)
+				audio_group_set_gain(sound_effect,clamp(Setting_Read(real,"Sound Effect Volume"),0,100)/100,60);
                 break;
 			} 
             case 6 :{//6选项：全屏启动

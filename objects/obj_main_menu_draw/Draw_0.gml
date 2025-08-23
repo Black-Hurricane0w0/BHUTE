@@ -29,6 +29,7 @@ if time >= 260 {
         main_line = layer_sequence_create("seq",320,240,seq_main_line);
         bm4 = CreateAnim();
         bm5 = CreateAnim();
+        bm6 = CreateAnim();
     }
     if time == 275 {
         //标题动画
@@ -46,10 +47,14 @@ if time >= 260 {
             draw_set_color(c_white);
         })
         instance_create_depth(-300,200,DEPTH.SOUL,obj_soul);
+        bm6 = CreateAnim().add(30,0,1).anim(ac_speeddown).execute(function(t){
+            layer_sprite_alpha(background,t);
+        })
     }
     bm3.run();
     bm4.run();
     bm5.run();
+    bm6.run();
 	draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }

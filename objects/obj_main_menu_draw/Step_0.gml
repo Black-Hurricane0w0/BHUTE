@@ -17,6 +17,7 @@ if goto_battle = true || goto_setting = true  {
         bm3.add(30,170,-60).reset();
         bm4.add(30,150,-60).reset();
         bm5.add(30,130,-60).reset();
+        bm6.add(30,1,0).reset();
         obj_soul.target_x = -100;
     }
     if fade == 2 {
