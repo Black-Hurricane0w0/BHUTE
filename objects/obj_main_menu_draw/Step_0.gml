@@ -57,6 +57,6 @@ if time > 290 and fade <= 0{
 if time == 480 and !audio_is_playing(global.main_menu_music) and Setting_Read(string,"Music") {
     audio_play_sound(global.main_menu_music,0,true);
 }
-if audio_is_playing(global.main_menu_music) log(audio_sound_get_gain(mus_sanctuary))
+
 
 

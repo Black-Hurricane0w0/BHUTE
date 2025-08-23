@@ -106,8 +106,8 @@ if time >= 30 and fade < 1 {
 if fade >= 1 {
     fade ++
     if fade == 2{
-        bm.add(30,120,-60).reset();
-        bm2.add(30,120 + 350,640 + 60).reset();
+        bm.add(30,120,-120).reset();
+        bm2.add(30,120 + 350,640 + 120).reset();
         obj_soul.target_x = -100;
     }
 

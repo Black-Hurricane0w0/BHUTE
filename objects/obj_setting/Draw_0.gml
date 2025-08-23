@@ -17,7 +17,7 @@ draw_text_transformed(bm2.value + 30,340,string(Setting_Read(real,"Music Volume"
 draw_healthbar(bm2.value - 80,340-5,bm2.value,340+7,Setting_Read(real,"Music Volume"),c_black,c_white,c_white,0,false,true);
 draw_text_transformed(bm2.value + 30,400,string(Setting_Read(real,"Sound Effect Volume")) + "%",1,1,0);
 draw_healthbar(bm2.value - 80,400-5,bm2.value,400+7,Setting_Read(real,"Sound Effect Volume"),c_black,c_white,c_white,0,false,true);
-draw_text_transformed(bm2.value,460,Setting_Read(string,"Full screen startup")?"开启":"关闭",1,1,0);
+draw_text_transformed(bm2.value,460,Setting_Read(string,"Full Screen Startup")?"开启":"关闭",1,1,0);
 
 var settinglist = ["总音量","雨","闪电","音乐","音乐音量","音效音量","启动游戏时全屏"]
 for (var i = 0; i < array_length(settinglist); i++) { 
