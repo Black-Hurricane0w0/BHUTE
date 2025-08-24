@@ -1,5 +1,5 @@
 function Shook_Set(shook){
-	if Setting_Read(string,"Vibration") == true {
+	if Setting_Read(real,"Vibration") == true {
 		global.shook = shook;
 		return true;
 	}else {

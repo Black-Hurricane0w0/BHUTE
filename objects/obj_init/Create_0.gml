@@ -65,11 +65,9 @@ enum ARENA_STATE {
 //用法:log(message)
 #macro elif else if
 
-if Setting_Read(string,"Full Screen Startup")  window_set_fullscreen(true);
-
-
 math_set_epsilon(0.000001)
-
 Init();
+if Setting_Read(real,"Full Screen Startup")  window_set_fullscreen(true);
+
 
 room_goto(Room_Main_Menu);	

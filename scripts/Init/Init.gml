@@ -6,7 +6,7 @@ function Init(){
 	Enemy_Init();
 	Battle_Dialogue_Init();
 	Item_Init();
-	Setting_Init();
+	
 	CameraPosInit();
     SaveLang();
     
@@ -38,8 +38,14 @@ function Init(){
     global.main_menu_music = mus_sanctuary;
     //语言选项
     global.language_list = ["en","zh"];
+    //设置初始化
+    Setting_Init();
+    
     global.lang_map = -1;
 	ReadLang();
+    
+    
+
 	//声音设置
 	audio_master_gain(clamp(Setting_Read(real,"Volume"),0,100)/100);
     audio_group_set_gain(sound_effect,clamp(Setting_Read(real,"Sound Effect Volume"),0,100)/100,0);
