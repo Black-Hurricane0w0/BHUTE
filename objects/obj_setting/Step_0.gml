@@ -57,7 +57,7 @@ if time >= 30 and fade < 1 {
 			}
 			case 1 :{//1选项：雨
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(string,"Raining");
+					var vb = Setting_Read(real,"Raining");
 				    Setting_Write("Raining",!vb);
 				    audio_play_sound(snd_buttom_select,0,false);
 				}
@@ -65,7 +65,7 @@ if time >= 30 and fade < 1 {
 			}
 			case 2 :{//2选项：雷
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(string,"Lightning");
+					var vb = Setting_Read(real,"Lightning");
 				    Setting_Write("Lightning",!vb);
 				    audio_play_sound(snd_buttom_select,0,false);
 				}
@@ -73,7 +73,7 @@ if time >= 30 and fade < 1 {
 			}
 			case 3 :{//3选项：音乐
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(string,"Music");
+					var vb = Setting_Read(real,"Music");
 				    Setting_Write("Music",!vb); 
                     audio_play_sound(snd_buttom_select,0,false);
                     audio_stop_sound(global.main_menu_music);
@@ -94,8 +94,20 @@ if time >= 30 and fade < 1 {
 			} 
             case 6 :{//6选项：全屏启动
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(string,"Full Screen Startup");
+					var vb = Setting_Read(real,"Full Screen Startup");
 				    Setting_Write("Full Screen Startup",!vb);
+                    audio_play_sound(snd_buttom_select,0,false);
+				}
+                break;
+			} 
+            case 7 :{//7选项：语言
+				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
+					var vb = array_get_index(global.language_list,Setting_Read(string,"Language")) + 1;
+                    if vb >= array_length(global.language_list) {
+                        vb = 0;
+                    }
+				    Setting_Write("Language",global.language_list[vb]);
+                    ReadLang();
                     audio_play_sound(snd_buttom_select,0,false);
 				}
                 break;
@@ -109,6 +121,7 @@ if fade >= 1 {
         bm.add(30,120,-120).reset();
         bm2.add(30,120 + 350,640 + 120).reset();
         obj_soul.target_x = -100;
+        CameraPosSet(320,240,640,480,30);
     }
 
     if fade >= 32 {

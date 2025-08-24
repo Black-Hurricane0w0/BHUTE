@@ -8,7 +8,9 @@ function Init(){
 	Item_Init();
 	Setting_Init();
 	CameraPosInit();
-
+    SaveLang();
+    
+    
 	Key();
     
 	//存储
@@ -26,7 +28,7 @@ function Init(){
 	global.soul_color = SOUL_STATE.RED;
     //弹幕清除范围
     global.buttle_range = 500;
-    //遮罩延申范围
+    //遮罩延伸范围
     global.surface_wide = 300;
     //KR启用
     global.kr_enable = true;
@@ -34,7 +36,10 @@ function Init(){
     global.gamepad_value = 0.1;
     //主菜单背景音乐
     global.main_menu_music = mus_sanctuary;
-	
+    //语言选项
+    global.language_list = ["en","zh"];
+    global.lang_map = -1;
+	ReadLang();
 	//声音设置
 	audio_master_gain(clamp(Setting_Read(real,"Volume"),0,100)/100);
     audio_group_set_gain(sound_effect,clamp(Setting_Read(real,"Sound Effect Volume"),0,100)/100,0);

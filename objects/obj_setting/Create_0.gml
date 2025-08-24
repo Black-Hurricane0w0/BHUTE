@@ -11,5 +11,5 @@ bm = -1;
 bm2 = -1;
 view_point = 0;
 view = 0;
-setting_last = 6;
+setting_last = 7;
 
