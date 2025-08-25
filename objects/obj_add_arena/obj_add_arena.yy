@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Arena",
-    "path":"folders/物体/UI/Arena.yy",
+    "path":"folders/物体/Arena.yy",
   },
   "parentObjectId":{
     "name":"obj_arena",

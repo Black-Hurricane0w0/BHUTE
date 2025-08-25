@@ -1,7 +1,7 @@
 //框体
 surface_set_target(arena_surface);
 with(obj_arena){
-    if state == ARENA_STATE.INSIDE {
+    if state == ARENA_STATE.INSIDE || state == ARENA_STATE.NOHIT {
         if is_circle == false{
             //白边 
             draw_sprite_ext(spr_battle_edge,false,x+surface_wide,y+surface_wide,width / 2,height / 2,rotation,c_white,1); 
@@ -15,7 +15,7 @@ with(obj_arena){
     }
 }
 with(obj_arena){
-    if state == ARENA_STATE.INSIDE {
+    if state == ARENA_STATE.INSIDE || state == ARENA_STATE.NOHIT{
         if is_circle == false{
          	//黑边虚假的
          	draw_sprite_ext(spr_battle_edge,false,x+surface_wide,y+surface_wide,width / 2 - 5,height / 2 - 5,rotation,c_black,1); 
@@ -31,7 +31,7 @@ surface_reset_target();
 surface_set_target(mask_surface);
 //弹幕
 with(obj_arena){
-    if state == ARENA_STATE.INSIDE {
+    if state == ARENA_STATE.INSIDE || state == ARENA_STATE.NOHIT {
         if is_circle == false{
          	//黑边虚假的
          	draw_sprite_ext(spr_battle_edge,false,x+surface_wide,y+surface_wide,width / 2 - 5,height / 2 - 5,rotation,c_black,1); 

@@ -58,7 +58,9 @@ enum ARENA_STATE {
     OUTSIDE,
     NOHIT
 }
-	
+
+
+
 
 //宏定义
 #macro log show_debug_message

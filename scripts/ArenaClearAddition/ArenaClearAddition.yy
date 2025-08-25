@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ArenaClearAddition",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ArenaClearAddition",
+  "parent":{
+    "name":"Arena",
+    "path":"folders/脚本/Arena.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

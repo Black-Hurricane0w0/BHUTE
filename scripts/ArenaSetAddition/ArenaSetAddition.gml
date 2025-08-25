@@ -1,4 +1,4 @@
-function ArenaSetAddition(inst,height,width,rot,state = ARENA_STATE.INSIDE,_x = 320,_y = 320,with_anim = true){
+function ArenaSetAddition(inst,height,width,rot,state,_x = 320,_y = 320,with_anim = true){
     if inst.object_index != obj_add_arena return;
 	inst.target_x = _x;
 	inst.target_y = _y;

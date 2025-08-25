@@ -8,5 +8,6 @@ function Battle_TurnEnd(){
 		with(obj_battle.turn_inst){
 			instance_destroy(self);
 		}
+        ArenaClearAddition();
 	}
 }
