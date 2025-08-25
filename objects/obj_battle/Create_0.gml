@@ -32,7 +32,7 @@ instance_create_depth(87-39,620,DEPTH.SOUL,obj_soul)
 instance_create_depth(320,240,DEPTH.SOUL,obj_move_soul)
 
 battle_ui_dialogue = noone
-battle_ui_dialogue_text = "大雨骤至"
+battle_ui_dialogue_text = GetTranslation("dialogue.1")
 battle_buttom_state = MENU.BUTTOM_CHOICE;
 choice_time = 0;
 battle_fight_over_time = 0;

@@ -1,9 +1,9 @@
 if action_index == 0 {
-	Battle_Dialogue_Add("Name : Test Enemy&* HP : ^^^^^^^^&* Attack Damage : 22&* Protition : 80");
-	Battle_Dialogue_Add("It is used to test you.");
+	Battle_Dialogue_Add(GetTranslation("enemy_action1.1"));
+	Battle_Dialogue_Add(GetTranslation("enemy_action1.2"));
 }
 if action_index == 1 {
-	Battle_Dialogue_Add("It is used to test you.");
+	Battle_Dialogue_Add(GetTranslation("enemy_action1.2"));
     mercy += 80;
 }
 if action_index == 2 {

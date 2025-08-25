@@ -14,7 +14,14 @@ function SaveLang(){
         "ui.sound_effect_volume" : "Sound Effect Volume",
         "ui.full_screen_startup" : "Full Screen Startup",
         "ui.enable" : "Enable",
-        "ui.disable" : "Disable"
+        "ui.disable" : "Disable",
+        "dialogue.1" : "Rain poured down",
+        "enemy_dialogue.1" : "All right......&You win.",
+        "enemy_action1.1" : "Name : Test Enemy&* HP : ^^^^^^^^&* Attack Damage : 22&* Protition : 80",
+        "enemy_action1.2" : "It is used to test you.",
+        "ui.original_author" : "Original Author",
+        "ui.template_author" : "Template Author",
+        "ui.au_author" : "AU Author"
     };
     var entxt = file_text_open_write("en.json");
     file_text_write_string(entxt,json_stringify(en))
@@ -34,7 +41,14 @@ function SaveLang(){
         "ui.sound_effect_volume" : "音效音量",
         "ui.full_screen_startup" : "全屏启动",
         "ui.enable" : "启用",
-        "ui.disable" : "禁用"
+        "ui.disable" : "禁用",
+        "dialogue.1" : "大雨骤至",
+        "enemy_dialogue.1" : "好吧......&你赢了.",
+        "enemy_action1.1" : "姓名 : Test Enemy&* HP : ^^^^^^^^&* 伤害 : 22&* 护甲 : 80",
+        "enemy_action1.2" : "测试用的东西",
+        "ui.original_author" : "原作作者",
+        "ui.template_author" : "模板作者",
+        "ui.au_author" : "AU作者"
     };
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))

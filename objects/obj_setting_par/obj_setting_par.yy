@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Setting",
-    "path":"folders/物体/UI/Setting.yy",
+    "path":"folders/物体/UI/Main_Menu/Setting.yy",
   },
   "parentObjectId":null,
   "persistent":false,

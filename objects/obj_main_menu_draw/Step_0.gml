@@ -8,7 +8,7 @@ var choice = Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) - Input_Check(INPUT.UP,
 
 
 
-if goto_battle = true || goto_setting = true  {
+if goto_battle || goto_setting || goto_about {
     fade ++;
     if fade == 1 {
         layer_sequence_create("seq",320,240,seq_main_line_out);
@@ -29,6 +29,8 @@ if goto_battle = true || goto_setting = true  {
             audio_stop_sound(global.main_menu_music);
         }else if goto_setting {
             room_goto(Room_Setting);
+        }else if goto_about {
+            room_goto(Room_About)
         }
     }
 }
@@ -51,6 +53,7 @@ if time > 290 and fade <= 0{
         case 2:
             obj_soul.target_x = 60;
             obj_soul.target_y = 340;
+            if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) goto_about = true;
             break;
     }
 }
