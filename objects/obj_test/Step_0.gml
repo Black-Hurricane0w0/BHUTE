@@ -9,7 +9,7 @@ if time == 1 {
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY { 
 	if time mod 30 == 0 {
-		//BoneRotCreate(200,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,true,infinity); 
+		BoneRotCreate(200,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,true,infinity); 
         //CreateFuncText(100,100,"a test for text",false,function(){
             //with(other){
                 //draw_set_color(c_red);

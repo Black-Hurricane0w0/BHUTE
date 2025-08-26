@@ -1,6 +1,6 @@
 
 player_target_health = clamp(player_target_health,0,File_Get(PLAYER_INFO.MAX_HP));
-if abs(player_target_health - File_Get(PLAYER_INFO.HP)) > 1 {
+if abs(player_target_health - File_Get(PLAYER_INFO.HP)) > 2 {
     bm4.update(,File_Get(PLAYER_INFO.HP),player_target_health).run();
 }else {
     File_Set(PLAYER_INFO.HP,player_target_health);

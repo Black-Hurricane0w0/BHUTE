@@ -1,7 +1,7 @@
 
 Shook_Create();
 
-debug = true;
+debug = false;
 esc = 0;
 vibration_time = 0;//手柄震动时间
 vibration_value = 0;//手柄震动强度
