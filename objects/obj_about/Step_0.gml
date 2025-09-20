@@ -40,7 +40,7 @@ if fade >= 1 {
     if fade == 2{
         bm.add(30,120,-120).reset();
         bm2.add(30,120 + 350,640 + 120).reset();
-        obj_soul.target_x = -100;
+        obj_soul.target_x = -200;
     }
     if fade >= 32 {
         room_goto(Room_Main_Menu);

@@ -12,8 +12,8 @@ state = ARENA_STATE.INSIDE;
 is_circle = false;
 radius = 100;
 target_radius = 320;
-global.arena_inside_color = #ff0000;
-global.arena_outside_color = #00ff00;
+global.arena_inside_color = #000000;
+global.arena_outside_color = #ffffff;
 
 target_width = 200;
 target_height = 200;

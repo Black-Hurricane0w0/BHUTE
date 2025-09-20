@@ -23,6 +23,7 @@ if time == 1 {
                 bm = CreateAnim().add(30,[x,y],[point.x,point.y]).anim(ac_bone_speeddown).execute(function(t){
                     x = t[0];
                     y = t[1];
+                    alpha = 1 - bm.time/30;
                 }).endfunction(function(t){
                     bm.add(30,[x,y],[point.x,point.y]);
                     bm.reset();
