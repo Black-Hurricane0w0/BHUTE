@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ArenaColorInside",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ArenaColorInside",
+  "parent":{
+    "name":"Arena",
+    "path":"folders/脚本/Arena.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

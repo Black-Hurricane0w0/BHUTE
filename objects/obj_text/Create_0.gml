@@ -2,7 +2,8 @@
 
 text = "";//字符串
 
-time = 0;//计时器
+ttime = 0;//计时器
+time = 0;
 
 char_x = 0;
 char_y = 0;

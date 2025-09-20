@@ -17,6 +17,6 @@
 	}
 	xx += lengthdir_x(6 + bone_long,rot + 90);
 	yy += lengthdir_y(6 + bone_long,rot + 90);
-	draw_sprite_ext(spr_top_bone,0,xx,yy,1,1,rot,_color,alpha);
+	draw_sprite_ext(spr_top_bone,0,xx,yy,1,1,rot,_color,alpha)
 
 

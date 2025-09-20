@@ -1,3 +1,4 @@
+time ++
 var summon_char = function(){
 	if (x + char_x) > x_newline{
 		char_y += string_height(string_char_at(text,char_index)) * text_size;
@@ -18,7 +19,7 @@ var summon_char = function(){
     char_x += string_width(string_char_at(text,char_index)) * text_size//加x
 	char_index ++;
 	if inst.text == " " {
-		time = text_speed;
+		ttime = text_speed;
 	}else if inst.text == "&" {
 		char_y += string_height(string_char_at(text,char_index)) * text_size;
 		char_x = 0;
@@ -33,12 +34,12 @@ if char_index <= string_length(text){
             summon_char();
 		}
 	}else{
-		time ++;
+		ttime ++;
 	}
-    if time >= text_speed {//正常显示 
+    if ttime >= text_speed {//正常显示 
         summon_char();
 		audio_play_sound(text_snd,0,false);
-		time = 0;	
+		ttime = 0;	
     }
 }else {//打字完成后
 	if can_destroy == true {//能被销毁
