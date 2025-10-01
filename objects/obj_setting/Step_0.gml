@@ -6,7 +6,7 @@ if time == 30 {
 }
 
 if time >= 30 and fade < 1 {
-    CameraPosSet(320,view * 60 + 240,640,480,30,30);
+    CameraPosSet(320,view * 60 + 240,640,480,0,30);
 	if detailed_setting == false {
 		//选择
 		if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) {//上

@@ -46,8 +46,9 @@ if time >= 260 {
             draw_set_color(c_white);
         })
         instance_create_depth(-300,200,DEPTH.SOUL,obj_soul);
+        instance_create_layer(0,0,"Assets_1",obj_main_background);
         bm6 = CreateAnim().add(30,0,1).anim(ac_speeddown).execute(function(t){
-            layer_sprite_alpha(background,t);
+            obj_main_background.alpha = t;
         })
     }
     bm3.run();
