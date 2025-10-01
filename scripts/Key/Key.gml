@@ -1,3 +1,4 @@
+/// @desc 初始化按键函数
 function Key(){
 	//绑键
 	Input_Set(INPUT.CONFIRM,ord("Z"));

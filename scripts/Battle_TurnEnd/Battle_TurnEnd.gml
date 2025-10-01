@@ -1,3 +1,4 @@
+/// @desc 结束本回合的战斗
 function Battle_TurnEnd(){
 	if obj_battle.battle_state == BATTLE_STATE.ENEMY{
 		obj_battle.battle_state = BATTLE_STATE.PLAYER;

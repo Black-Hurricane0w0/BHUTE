@@ -17,9 +17,9 @@ function anim() constructor {
     data_type = "int";
     listen_bool = [false,false,false,false];
     /**
-     * @param {real} maxtime
-     * @param {real,Array} a
-     * @param {real,Array} b
+     * @param {real} maxtime 最大时间
+     * @param {real,Array} a 初始值
+     * @param {real,Array} b 结束值
      * @return {Struct.anim}
     */
     static add = function(maxtime,a,b){
@@ -39,6 +39,7 @@ function anim() constructor {
         return self;
     }
     /**
+     * @description 运行动画
      * @return {Struct.anim}
     */
     static run = function(){
@@ -61,7 +62,7 @@ function anim() constructor {
     }
     /**
      * 执行一个函数,参数为real
-     * @param {Function} f
+     * @param {Function} f 要执行的函数（附带一个形参）
      * @return {Struct.anim}
     */
     static execute = function(f){
@@ -69,6 +70,7 @@ function anim() constructor {
         return self;
     }
     /**
+     * 设置动画类型
      * @param {GMAnimCurve} animname
      * @return {Struct.anim}
     */
@@ -81,9 +83,11 @@ function anim() constructor {
         return self;
     }
     /**
-     * @param {real} [maxtime]
-     * @param {real,Array} [a] 
-     * @param {real,Array} [b]
+     * 监听触发时更新数据
+     * @param {real} [maxtime] 最大时间
+     * @param {real,Array} [a] 初始值
+     * @param {real,Array} [b] 结束值
+     * @param {GMAnimCurve} _anim 动画类型
      * @return {Struct.anim}
     */
     static update = function(maxtime = self.maxtime,a = self.a,b = self.b,_anim = self._anim){
@@ -115,16 +119,22 @@ function anim() constructor {
         return self;
     }
     /**
-     * @param {bool} [maxtime]
-     * @param {bool} [a] 
-     * @param {bool} [b]
-     * @param {bool} [_anim]
+     * 监听数值是否改变，和update()函数一起使用
+     * @param {bool} [maxtime] 是否监听最大动画时间
+     * @param {bool} [a] 是否监听起始值
+     * @param {bool} [b] 是否监听结束值
+     * @param {bool} [_anim] 是否监听动画类型
      * @return {Struct.anim}
     */
     static listener = function(maxtime = false,a = false,b = false,_anim = false){
         listen_bool = [maxtime,a,b,_anim];
         return self;
     }
+    /**
+     * 重置动画
+     * @return {Struct.anim}
+     * @self CreateAnim
+     */
     static reset = function(){
         self.time = 0;
         if data_type = "int" {
@@ -136,8 +146,9 @@ function anim() constructor {
     }
     /**
      * 计时器结束时执行函数,参数为real
-     * @param {Function} f
+     * @param {Function} f 要执行的函数（附带一个形参）
      * @return {Struct.anim}
+     * @context CreateAnim
     */
     static endfunction = function(f){
         self.ef = f

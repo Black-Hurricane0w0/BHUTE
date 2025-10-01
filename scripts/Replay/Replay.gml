@@ -1,3 +1,4 @@
+/// @desc 这个函数将重置游戏战斗阶段
 function Replay(){
     if gamepad_is_connected(0) == true {
         if gamepad_button_check_pressed(0,gp_face4){

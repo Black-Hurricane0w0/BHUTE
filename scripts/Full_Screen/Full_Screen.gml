@@ -1,3 +1,4 @@
+/// @desc 这个函数将检测游戏按键以进入或退出全屏
 function Full_Screen(){
     var result = false;
     if gamepad_is_connected(0) {

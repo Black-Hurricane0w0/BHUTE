@@ -266,7 +266,7 @@ function application_vec(array,func){
 function reservey(vec){
     return new vec2(vec.x,-vec.y)
 }
-/// @desc  绘制向量箭头
+/// @desc  绘制测试向量箭头
 /// @param {struct.vec2} pos 起始坐标
 /// @param {struct.vec2} vec 向量
 function draw_vector(pos,vec) {
@@ -305,12 +305,13 @@ function draw_pos(pos) {
     draw_circle(pos.x, pos.y,3,false);
     draw_set_color(c_white);
 }
-/// @desc 类型检查函数
-/// @param {any} obj Description
-/// @returns {bool} Description
+/// @description 类型检查函数
+/// @param {any} obj 检查的对象
+/// @returns {bool} 是否为vec2类型
 function is_vec2(obj) {
     return is_struct(obj) && variable_struct_exists(obj, "type") && obj.type == "vec2";
 }
+
 
 
 
