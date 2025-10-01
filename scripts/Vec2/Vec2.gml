@@ -232,22 +232,22 @@ function compare_smaller_vector(_vec1,_vec2,index){
 }
 /**
  * 获取两点间距离
- * @param {Struct.vec2} _vec1 坐标1
- * @param {Struct.vec2} _vec2 坐标2
+ * @param {Struct.vec2} pos1 坐标1
+ * @param {Struct.vec2} pos2 坐标2
  * @return {real}
  */
-function point_distance_vec(_vec1,_vec2){
-    var vec = get_vector(_vec1,_vec2);
+function point_distance_vec(pos1,pos2){
+    var vec = get_vector(pos1,pos2);
     return vec.magnitude();
 }
 /**
-* 获取两点间方向
-* @param {Struct.vec2} _vec1 坐标1
-* @param {Struct.vec2} _vec2 坐标2
+* 获取两点间方向(GM)
+* @param {Struct.vec2} pos1 坐标1
+* @param {Struct.vec2} pos2 坐标2
 * @return {real}
 */
-function point_direction_vec(_vec1,_vec2){
-    var vec = get_vector(_vec1,_vec2);
+function point_direction_vec(pos1,pos2){
+    var vec = get_vector(pos1,pos2);
     return vec.getdirection();
 }
 
@@ -301,15 +301,30 @@ function triangle_vec(rot,model) {
     @param {struct.vec2} pos 绘制的坐标
  */
 function draw_pos(pos) {
+    surface_set_target(obj_set.debug_surface);
     draw_set_color(c_blue);
-    draw_circle(pos.x, pos.y,3,false);
+    draw_circle(pos.x, pos.y,2,false);
     draw_set_color(c_white);
+    surface_reset_target();
 }
 /// @description 类型检查函数
 /// @param {any} obj 检查的对象
 /// @returns {bool} 是否为vec2类型
 function is_vec2(obj) {
     return is_struct(obj) && variable_struct_exists(obj, "type") && obj.type == "vec2";
+}
+
+/**
+ * 取两点中的t比值点
+ * @param {struct.vec2} pos1 开始坐标
+ * @param {struct.vec2} pos2 结束坐标
+ * @param {real} t 取值
+ * @returns {struct} t比值点
+ */
+function point_lerp(pos1,pos2,t){
+    t = clamp(t,0,1);
+    var vec = get_vector(pos1,pos2).fromGameMakerCoords().multiple(t);
+    return get_endpos(pos1,vec);
 }
 
 

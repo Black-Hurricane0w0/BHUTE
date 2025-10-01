@@ -14,25 +14,26 @@ if time == 1 {
             //draw_text_transformed(text_printer.x + lengthdir_x(len,text_printer.time),text_printer.y + lengthdir_y(len,text_printer.time),self.text,self.text_size,self.text_size,text_printer.time);
         //}
     //})
-    BoneCustomCreate(320,180,c_white,true,function(){
-        with(other){
-            var dir = point_direction(x,y,obj_move_soul.x,obj_move_soul.y);
-            var dis = point_distance(x,y,obj_move_soul.x,obj_move_soul.y);
-            point = new vec2(x + lengthdir_x(dis + 80,dir),y + lengthdir_y(dis + 80,dir));
-            if time == 1 {
-                bm = CreateAnim().add(30,[x,y],[point.x,point.y]).anim(ac_bone_speeddown).execute(function(t){
-                    x = t[0];
-                    y = t[1];
-                    alpha = 1 - bm.time/30;
-                }).endfunction(function(t){
-                    bm.add(30,[x,y],[point.x,point.y]);
-                    bm.reset();
-                })
-            }
-            bm.run();
-            rot = dir;
-        }
-    })
+    //BoneCustomCreate(320,180,c_white,true,function(){
+        //with(other){
+            //var dir = point_direction(x,y,obj_move_soul.x,obj_move_soul.y);
+            //var dis = point_distance(x,y,obj_move_soul.x,obj_move_soul.y);
+            //point = new vec2(x + lengthdir_x(dis + 80,dir),y + lengthdir_y(dis + 80,dir));
+            //if time == 1 {
+                //bm = CreateAnim().add(30,[x,y],[point.x,point.y]).anim(ac_bone_speeddown).execute(function(t){
+                    //x = t[0];
+                    //y = t[1];
+                    //alpha = 1 - bm.time/30;
+                //}).endfunction(function(t){
+                    //bm.add(30,[x,y],[point.x,point.y]);
+                    //bm.reset();
+                //})
+            //}
+            //bm.run();
+            //rot = dir;
+        //}
+    //})
+    
 } 
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY { 
@@ -50,5 +51,11 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
     if time == 720 {
         Battle_TurnEnd();
     }
+    //log(bez.getpoint((time mod 60)/60))
+
 }
-    
+if time mod 10 == 0 {
+    DebugSurfaceClear()
+    bez = BezierCreate(new vec2(0,0),new vec2(600,400)).addcontroller(new vec2(mouse_x,mouse_y))
+    bez.draw();
+}

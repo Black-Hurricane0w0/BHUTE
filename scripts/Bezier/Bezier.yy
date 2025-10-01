@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Bezier",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Bezier",
+  "parent":{
+    "name":"Bezier",
+    "path":"folders/脚本/Bezier.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

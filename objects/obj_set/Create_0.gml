@@ -12,4 +12,4 @@ gamepad_axis = {
     lh_left : false,
     lh_right : false,
 }
-
+debug_surface = -1;
