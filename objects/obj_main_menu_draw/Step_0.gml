@@ -14,9 +14,9 @@ if goto_battle || goto_setting || goto_about {
         layer_sequence_create("seq",320,240,seq_main_line_out);
         audio_play_sound(snd_buttom_select,0,false);
         bm.add(30,[180,100,1],[-160,100,1]).reset();
-        bm3.add(30,170,-60).reset();
-        bm4.add(30,150,-60).reset();
-        bm5.add(30,130,-60).reset();
+        bm3.add(30,170,-120).reset();
+        bm4.add(30,150,-120).reset();
+        bm5.add(30,130,-120).reset();
         bm6.add(30,1,0).reset();
         obj_soul.target_x = -100;
     }
