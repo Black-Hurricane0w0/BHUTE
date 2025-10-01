@@ -12,7 +12,9 @@ function CameraPosTick(){
 	global.camera_y = dvalue(global.camera_y,global.camera_targety);
 	global.camera_width = dvalue(global.camera_width,global.camera_tar_width);
 	global.camera_height = dvalue(global.camera_height,global.camera_tar_height);
+    global.camera_angle = dvalue(global.camera_angle,global.camera_tar_angle);
 	camera_set_view_pos(camera,global.camera_x,global.camera_y);
 	camera_set_view_size(camera,global.camera_width,global.camera_height);
+    camera_set_view_angle(camera,global.camera_angle)
 	camera_apply(camera);
 }

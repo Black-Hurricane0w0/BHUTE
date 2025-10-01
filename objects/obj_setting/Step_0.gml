@@ -6,7 +6,7 @@ if time == 30 {
 }
 
 if time >= 30 and fade < 1 {
-    CameraPosSet(320,view * 60 + 240,640,480,30);
+    CameraPosSet(320,view * 60 + 240,640,480,30,30);
 	if detailed_setting == false {
 		//选择
 		if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) {//上
@@ -121,7 +121,7 @@ if fade >= 1 {
         bm.add(30,120,-120).reset();
         bm2.add(30,120 + 350,640 + 120).reset();
         obj_soul.target_x = -200;
-        CameraPosSet(320,240,640,480,30);
+        CameraPosSet(320,240,640,480,0,30);
     }
 
     if fade >= 32 {

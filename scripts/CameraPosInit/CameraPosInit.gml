@@ -7,5 +7,7 @@ function CameraPosInit(){
 	global.camera_height = 480;
 	global.camera_tar_width = 640;
 	global.camera_tar_height = 480;
+    global.camera_angle = 0;
+	global.camera_tar_angle = 0;
 	global.camera_speed = 1;
 }
