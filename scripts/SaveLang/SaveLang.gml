@@ -21,7 +21,8 @@ function SaveLang(){
         "enemy_action1.2" : "It is used to test you.",
         "ui.original_author" : "Original Author",
         "ui.template_author" : "Template Author",
-        "ui.au_author" : "AU Author"
+        "ui.au_author" : "AU Author",
+        "ui.donation" : "Donate Author"
     };
     var entxt = file_text_open_write("en.json");
     file_text_write_string(entxt,json_stringify(en))
@@ -48,7 +49,8 @@ function SaveLang(){
         "enemy_action1.2" : "测试用的东西",
         "ui.original_author" : "原作作者",
         "ui.template_author" : "模板作者",
-        "ui.au_author" : "AU作者"
+        "ui.au_author" : "AU作者",
+        "ui.donation" : "捐赠作者"
     };
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))

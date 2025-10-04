@@ -100,7 +100,7 @@ gpu_set_blendmode(bm_normal);
 surface_reset_target()
 
 
-
+//弹幕显示
 with(obj_bullet){ 
     if time <= 0 continue;
     if mask == true {
@@ -110,7 +110,7 @@ with(obj_bullet){
         gpu_set_blendmode(bm_normal);
         surface_reset_target();
     }else{
-        surface_set_target(obj_arena_controller.arena_surface);
+        surface_set_target(obj_arena_controller.mask_surface);
     	event_user(0);
         surface_reset_target();
     }

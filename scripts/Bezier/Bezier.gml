@@ -17,7 +17,7 @@ function bezier(_start_pos,_end_pos) constructor {
      * @param {Struct.vec2,Array<Struct.vec2>} pos 控制点坐标或包含控制点坐标的数组
      * @return {Struct.bezier}
      */
-    static addcontroller = function (pos){
+    static AddController = function (pos){
         if is_vec2(pos){
             array_push(controller,pos);
         }else if is_array(pos){
@@ -34,8 +34,9 @@ function bezier(_start_pos,_end_pos) constructor {
     }
     /**
      * 获取贝塞尔曲线上的点
+     * @param {real} t 比值
      */
-    static getpoint = function (t){
+    static GetPoint = function (t){
         t = clamp(t,0,1);
         var level = array_length(controller) + 1;
         //所有点的数组
@@ -44,6 +45,7 @@ function bezier(_start_pos,_end_pos) constructor {
         	array_push(allpoints,controller[i]);
         }
         array_push(allpoints,end_pos);
+        
         //按等次计算
         var resultpoints = [];
         while (level > 0) {
@@ -67,11 +69,62 @@ function bezier(_start_pos,_end_pos) constructor {
         self.end_pos = _end_pos;
         return self;
     }
-    static draw = function (){
-        var l = floor(point_distance_vec(start_pos,end_pos));
+    static Draw = function (){
+        var l = floor(point_distance_vec(start_pos,end_pos) / 10);
+        surface_set_target(obj_set.debug_surface);
+        draw_set_color(c_blue)
+        draw_primitive_begin(pr_linestrip);
         for (var i = 0; i < l; i++) {
-        	draw_pos(self.getpoint(i/l));
+            var point = self.getpoint(i/l)
+            draw_vertex(point.x,point.y);
         }
+        draw_primitive_end();
+        surface_reset_target();
+    }
+    /**
+     * 返回起点单位向量值(数学坐标系)
+     * @return {Struct.vec2} 相切向量值
+     */
+    static GetBeginDeriv = function (){
+        var pos = end_pos;
+        if !array_equals(controller,[]) {
+            pos = controller[0];
+        }
+        return new vec2(start_pos.x - pos.x,start_pos.y - pos.y).reservey().normalize();
+    }
+    /**
+     * 返回终点单位向量值(数学坐标系)
+     * @return {Struct.vec2} 相切向量值
+     */
+    static GetEndDeriv = function (){
+        var pos = start_pos;
+        var last = array_length(controller) - 1;
+        if !array_equals(controller,[]) {
+            pos = controller[last];
+        }
+        return new vec2(end_pos.x - pos.x,end_pos.y - pos.y).reservey().normalize();
+    }
+    /**
+     * 根据斜率和长度生成控制点
+     * @param {Struct.vec2} vec 切线向量
+     * @param {real} len 向量长度
+     * @return {Struct.bezier}
+     */
+    static SummonController = function (vec,len){
+        var pvec = vec.multiple(len);
+        array_push(controller,get_endpos(start_pos,pvec));
+        return self;
+    }
+    /**
+     * 根据斜率和长度生成结束点
+     * @param {Struct.vec2} vec 切线向量
+     * @param {real} len 向量长度
+     * @return {Struct.bezier}
+     */
+    static SummonEndPos = function (vec,len){
+        var pvec = vec.multiple(len);
+        end_pos = get_endpos(start_pos,pvec);
+        return self;
     }
 }
 
