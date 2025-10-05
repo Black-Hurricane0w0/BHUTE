@@ -75,7 +75,7 @@ function bezier(_start_pos,_end_pos) constructor {
         draw_set_color(c_blue)
         draw_primitive_begin(pr_linestrip);
         for (var i = 0; i < l; i++) {
-            var point = self.getpoint(i/l)
+            var point = self.GetPoint(i/l);
             draw_vertex(point.x,point.y);
         }
         draw_primitive_end();

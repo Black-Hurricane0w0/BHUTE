@@ -4,3 +4,4 @@ arena_surface = -1;//框体遮罩
 mask = [];
 grav_mask = [];
 mask_points = [];
+depth = DEPTH.ARENA;

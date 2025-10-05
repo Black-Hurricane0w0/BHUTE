@@ -12,15 +12,15 @@ global.layer_ui_top = layer_create(DEPTH.UI_TOP,"UI_TOP");
 CameraPosSet(320,240,640,480,0,0);
 
 //绘画obj
-instance_create_depth(0,0,DEPTH.UI_TOP,obj_draw_ui)
+instance_create_depth(0,0,DEPTH.UI,obj_draw_ui)
 //战斗选择 1:battle 2:act 3:item 4:mercy
 battle_buttom_choice = 1;
 
 //战斗按钮创建
-instance_create_depth(87,620,DEPTH.UI_TOP,obj_fight_buttom);
-instance_create_depth(240,620,DEPTH.UI_TOP,obj_act_buttom);
-instance_create_depth(400,620,DEPTH.UI_TOP,obj_item_buttom);
-instance_create_depth(555,620,DEPTH.UI_TOP,obj_mercy_buttom);
+instance_create_depth(87,620,DEPTH.UI,obj_fight_buttom);
+instance_create_depth(240,620,DEPTH.UI,obj_act_buttom);
+instance_create_depth(400,620,DEPTH.UI,obj_item_buttom);
+instance_create_depth(555,620,DEPTH.UI,obj_mercy_buttom);
 //战斗框创建
 
 arena = instance_create_depth(320,320,DEPTH.ARENA,obj_battle_arena);

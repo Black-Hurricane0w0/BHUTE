@@ -23,10 +23,11 @@ enum DEPTH{
 	BG = 0,
 	ENEMY = -100,
 	BULLET = -200,
-	ARENA = -300,
-	UI_TOP = -400,
-	BULLET_OUTSIDE = -500,//无遮罩
-	SOUL = -600,
+    UI = - 300,
+	ARENA = -400,
+	UI_TOP = -500,
+	BULLET_OUTSIDE = -600,//无遮罩
+	SOUL = -700,
 }
 //菜单
 enum MENU{
