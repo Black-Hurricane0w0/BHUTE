@@ -3,7 +3,7 @@ if time == 1 {
 	Player_SetSoul(true,270,true);
 	ArenaSet(200,200,0,320,300,,false);
     inst = ArenaCreateAddition(100,100,0,,ARENA_STATE.NOHIT);
-    inst2 = ArenaCreateAddition(100,100,0,,ARENA_STATE.NOHIT);
+    //inst2 = ArenaCreateAddition(100,100,0,,ARENA_STATE.NOHIT);
     Player_PosSet(320,320);
     Player_Show();
     //CreateFuncText(320,200,"a test for text",false,function(){
@@ -50,7 +50,8 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
         //})
     }
     ArenaSetAddition(inst,100,100,0,ARENA_STATE.INSIDE,mouse_x,mouse_y);
-    ArenaSetAddition(inst2,100,100,0,ARENA_STATE.OUTSIDE,room_width-mouse_x,room_height-mouse_y);
+    ArenaCircle(inst,true,100,false)
+    //ArenaSetAddition(inst2,100,100,0,ARENA_STATE.OUTSIDE,room_width-mouse_x,room_height-mouse_y);
     if time == 720 {
         Battle_TurnEnd();
     }

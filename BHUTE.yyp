@@ -261,6 +261,7 @@
     {"id":{"name":"Item_Set","path":"scripts/Item_Set/Item_Set.yy",},},
     {"id":{"name":"Item_Use","path":"scripts/Item_Use/Item_Use.yy",},},
     {"id":{"name":"Key","path":"scripts/Key/Key.yy",},},
+    {"id":{"name":"MainBackGroundSet","path":"scripts/MainBackGroundSet/MainBackGroundSet.yy",},},
     {"id":{"name":"Part_System_Create","path":"scripts/Part_System_Create/Part_System_Create.yy",},},
     {"id":{"name":"Part_Type_Create","path":"scripts/Part_Type_Create/Part_Type_Create.yy",},},
     {"id":{"name":"Part_Type_Set","path":"scripts/Part_Type_Set/Part_Type_Set.yy",},},

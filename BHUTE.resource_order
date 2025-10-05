@@ -195,6 +195,7 @@
     {"name":"Item_Set","order":1,"path":"scripts/Item_Set/Item_Set.yy",},
     {"name":"Item_Use","order":6,"path":"scripts/Item_Use/Item_Use.yy",},
     {"name":"Key","order":17,"path":"scripts/Key/Key.yy",},
+    {"name":"MainBackGroundSet","order":28,"path":"scripts/MainBackGroundSet/MainBackGroundSet.yy",},
     {"name":"Part_Type_Create","order":1,"path":"scripts/Part_Type_Create/Part_Type_Create.yy",},
     {"name":"Part_Type_Set","order":2,"path":"scripts/Part_Type_Set/Part_Type_Set.yy",},
     {"name":"PlatformCreate","order":8,"path":"scripts/PlatformCreate/PlatformCreate.yy",},
