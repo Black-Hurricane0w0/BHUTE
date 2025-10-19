@@ -84,7 +84,7 @@ Item_Add(obj_item);
 Item_Add(obj_item);
 
 
-fadein_inst = Black_FadeIn(320,240,10,0.05);
+fadein_inst = Black_FadeIn(320,240,10,60);
 
 Part_System_Create();
 Part_Type_Create();

@@ -15,9 +15,9 @@ function Init(){
     
 	//存储
 	File_Set(PLAYER_INFO.NAME,"Frisk");
-	File_Set(PLAYER_INFO.LV,19);
-	File_Set(PLAYER_INFO.HP,92);
-	File_Set(PLAYER_INFO.MAX_HP,92);
+	File_Set(PLAYER_INFO.LV,3);
+	File_Set(PLAYER_INFO.HP,28);
+	File_Set(PLAYER_INFO.MAX_HP,28);
 	File_Set(PLAYER_INFO.X,0);
 	File_Set(PLAYER_INFO.Y,0);
 	File_Set(PLAYER_INFO.DAMAGE,19);
@@ -31,7 +31,7 @@ function Init(){
     //遮罩延伸范围
     global.surface_wide = 300;
     //KR启用
-    global.kr_enable = true;
+    global.kr_enable = false;
     //手柄遥感触发阈值
     global.gamepad_value = 0.1;
     //主菜单背景音乐

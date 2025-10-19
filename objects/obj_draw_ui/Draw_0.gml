@@ -6,7 +6,7 @@ if obj_battle.ui_enable = true {
 	draw_text_transformed(x,y,string(File_Get(PLAYER_INFO.NAME)) + "   " + "LV" + string(File_Get(PLAYER_INFO.LV)),1,1,0);
 
 	//hp字体
-	draw_sprite(spr_hpname,0,x + 210,y + 10);
+	draw_sprite(spr_hpname,0,x + 225,y + 9);
 
 	//血条
 		////红底
@@ -24,17 +24,21 @@ if obj_battle.ui_enable = true {
 		////底部
 		//draw_sprite_ext(spr_hp_bottom,0,x + 251,y - 10,1.0,1,0,c_white,1);
 		draw_set_color(c_red);
-		draw_rectangle(x + 251,y,x + 251 + File_Get(PLAYER_INFO.MAX_HP) * 1.2,y + 20,false);
+		draw_rectangle(x + 245,y,x + 245 + File_Get(PLAYER_INFO.MAX_HP) * 1.2,y + 20,false);
 		draw_set_color(c_yellow);
-		draw_rectangle(x + 251,y,x + 251 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
+		draw_rectangle(x + 245,y,x + 245 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
         if global.kr_enable == true{
             draw_set_color(#FF00FF);
-            draw_rectangle(x + 252 + (File_Get(PLAYER_INFO.HP) - File_Get(PLAYER_INFO.KR)) * 1.2,y,x + 251 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
-            draw_sprite(spr_kr,0,x + 251 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 30,y+10)
+            draw_rectangle(x + 245 + (File_Get(PLAYER_INFO.HP) - File_Get(PLAYER_INFO.KR)) * 1.2,y,x + 245 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
+            
         }
 	
 	//血量数字
 	draw_set_color(c_white);
-	draw_text(x + 251 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 30 + 30,y,string(ceil(File_Get(PLAYER_INFO.HP)))+" / "+string(File_Get(PLAYER_INFO.MAX_HP)));
+    if global.kr_enable == true {
+        draw_sprite(spr_kr,0,x + 245 + File_Get(PLAYER_INFO.MAX_HP) + 30,y+10)
+    }else{
+        draw_text(x + 245 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 15,y + 1,string(ceil(File_Get(PLAYER_INFO.HP)))+" / "+string(File_Get(PLAYER_INFO.MAX_HP)));
+    }
 }
 

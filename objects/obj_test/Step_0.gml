@@ -1,8 +1,8 @@
 time ++
 if time == 1 {
-	Player_SetSoul(true,270,true);
+	Player_SetSoul(false,270,true);
 	ArenaSet(200,200,0,320,300,,false);
-    inst = ArenaCreateAddition(100,100,0,,ARENA_STATE.NOHIT);
+    //inst = ArenaCreateAddition(100,100,0,,ARENA_STATE.NOHIT);
     //inst2 = ArenaCreateAddition(100,100,0,,ARENA_STATE.NOHIT);
     Player_PosSet(320,320);
     Player_Show();
@@ -11,16 +11,24 @@ if time == 1 {
             //draw_set_color(c_red);
             //draw_set_font(fnt_mono);
             //var len = text_size * string_width(text) * (text_number - 7.5);
-            //draw_text_transformed(text_printer.x + lengthdir_x(len,text_printer.time),text_printer.y + lengthdir_y(len,text_printer.time),self.text,self.text_size,self.text_size,text_printer.time);
+            //draw_text_transformed(text_printer.x + lengthdir_x(len,text_printer.time),text_printer.y + 
+            //lengthdir_y(len,text_printer.time),self.text,self.text_size,self.text_size,text_printer.time);
         //}
     //})
-    
+    var is = CreateFuncText(320,200,"a test for text",false,function(){
+        with(other){
+            draw_set_color(c_red);
+            draw_set_font(fnt_mono);
+            draw_text_transformed(x + random_range(-4,4),y + random_range(-4,4),text,text_size,text_size,0);
+        }
+    })
+    is.text_size = 2
     
 } 
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY { 
 
-	if time mod 30 == 0 {
+	if time mod 15 == 0 {
 		//BoneRotCreate(200,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,true,infinity); 
 
         //var spawn_x = random_range(100,500);
@@ -35,22 +43,22 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
                     //bz = BezierCreate(new vec2(x,y),new vec2(obj_move_soul.x,obj_move_soul.y)).AddController(controller);
                     //bm = CreateAnim().add(60,0,1).anim(ac_bone_default).execute(function(t){
                         //x = bz.GetPoint(t).x;y = bz.GetPoint(t).y;
+                        //rot = radtodeg(bz.GetTan(t).getdirection()) + 90;
                         ////alpha = 1 - bm.time/30;
                     //}).endfunction(function(t){
-                        ////bz = BezierCreate(new vec2(x,y),new vec2(0,0)).SummonEndPos(bz.GetEndDeriv(),100);
-                        //bz = BezierCreate(new vec2(x,y),new vec2(0,0)).SummonEndPos(bz.GetEndDeriv(),400);
+                        //bz = BezierCreate(new vec2(x,y),new vec2(0,0)).SummonEndPos(bz.GetEndTan(),400);
                         //bm.reset();
                     //})
-                //}if time == 120 {
+                //}
+                //if time == 120 {
                     //instance_destroy(self);
                 //}
                 //bm.run();
-                //rot++;
             //}
         //})
     }
-    ArenaSetAddition(inst,100,100,0,ARENA_STATE.INSIDE,mouse_x,mouse_y);
-    ArenaCircle(inst,true,100,false)
+    //ArenaSetAddition(inst,100,100,0,ARENA_STATE.INSIDE,mouse_x,mouse_y);
+    //ArenaCircle(inst,true,100,false)
     //ArenaSetAddition(inst2,100,100,0,ARENA_STATE.OUTSIDE,room_width-mouse_x,room_height-mouse_y);
     if time == 720 {
         Battle_TurnEnd();

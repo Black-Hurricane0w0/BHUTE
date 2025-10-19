@@ -1,7 +1,7 @@
 time ++
 var summon_char = function(){
 	if (x + char_x) > x_newline{
-		char_y += string_height(string_char_at(text,char_index)) * text_size;
+		char_y += string_height(string_char_at(text,char_index)) * text_size + 8;
 		char_x = 0;
 	}
 	var inst = instance_create_depth(x + char_x,y + char_y,depth,obj_char);//创建字符实例，并将实例id用inst接受，inst代指该字符
@@ -16,12 +16,13 @@ var summon_char = function(){
 	//加入字符列表
 	ds_list_add(char_list,inst);
     
-    char_x += string_width(string_char_at(text,char_index)) * text_size//加x
+    char_x += string_width(string_char_at(text,char_index)) * text_size + 1//加x
 	char_index ++;
 	if inst.text == " " {
 		ttime = text_speed;
+        char_x += 6;
 	}else if inst.text == "&" {
-		char_y += string_height(string_char_at(text,char_index)) * text_size;
+		char_y += string_height(string_char_at(text,char_index)) * text_size + 8;
 		char_x = 0;
 	}
 }

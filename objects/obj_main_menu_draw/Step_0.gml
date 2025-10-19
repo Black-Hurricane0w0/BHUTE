@@ -1,4 +1,14 @@
 time ++ ;
+//跳过
+
+if time < 120 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
+    time = 120;
+}
+if time > 120 and time < 220 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
+    time = 220;
+}
+
+
 if time == 120 {
 	audio_play_sound(snd_logo,false,false);
 }

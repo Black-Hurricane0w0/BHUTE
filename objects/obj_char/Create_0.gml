@@ -8,5 +8,6 @@ text_size = 1;
 text_func = undefined;
 text_number = 0;
 text_printer = -1;
+pos = new vec2(x,y);
 
 time = 0;

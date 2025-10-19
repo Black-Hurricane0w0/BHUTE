@@ -7,19 +7,19 @@ fx_set_parameter(layer_get_fx("Blur"),"g_numDownsamples",blur_fx);
 
 
 //淡入
-if instance_exists(fadein_inst) == true {
-	if battle_state == BATTLE_STATE.PLAYER {
-		instance_activate_object(obj_soul);
-		Player_Hide();
-	}else if battle_state == BATTLE_STATE.ENEMY {
-		instance_deactivate_object(obj_soul);
-		Player_Show();
-		if ui_enable == false {
-			Player_Hide();
-		}
-	}
-	return;
-}
+//if instance_exists(fadein_inst) == true {
+	//if battle_state == BATTLE_STATE.PLAYER {
+		//instance_activate_object(obj_soul);
+		//Player_Hide();
+	//}else if battle_state == BATTLE_STATE.ENEMY {
+		//instance_deactivate_object(obj_soul);
+		//Player_Show();
+		//if ui_enable == false {
+			//Player_Hide();
+		//}
+	//}
+	//return;
+//}
 
 
 
@@ -87,7 +87,7 @@ if battle_state = BATTLE_STATE.PLAYER{
 	if battle_buttom_state = MENU.BUTTOM_CHOICE{
 		if not instance_exists(battle_ui_dialogue) {
 			//如果没有旁白实例，那么生成一个，并记录ID
-			battle_ui_dialogue = CreateText(70,280,DEPTH.UI_TOP,"* " + battle_ui_dialogue_text,battle_ui_dialogue_color);
+			battle_ui_dialogue = CreateText(52,270,DEPTH.UI_TOP,"* " + battle_ui_dialogue_text,battle_ui_dialogue_color);
 		}
 	}else{
 			instance_destroy(battle_ui_dialogue);//销毁旁白实例
@@ -97,7 +97,7 @@ if battle_state = BATTLE_STATE.ENCOUNTER_TEXT {
     Player_PosSet(obj_battle_arena.x,obj_battle_arena.y);
 	if not instance_exists(battle_ui_dialogue) {
 		if Battle_Dialogue_Size() > 0 {
-			battle_ui_dialogue = CreateText(70,270,DEPTH.UI_TOP,"* " + Battle_Dialogue_Get());
+			battle_ui_dialogue = CreateText(52,270,DEPTH.UI_TOP,"* " + Battle_Dialogue_Get());
 			battle_ui_dialogue.can_destroy = true;
 		}else {
 			battle_state = BATTLE_STATE.ENEMY_DIALOGUE;

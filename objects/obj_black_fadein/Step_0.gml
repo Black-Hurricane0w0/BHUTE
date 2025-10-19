@@ -1,8 +1,10 @@
+time ++;
 image_xscale = size;
 image_yscale = size;
+bm.run();
 
-if image_alpha >= 0 {
-	image_alpha -= alpha_speed;
+if time <= maxtime {
+	image_alpha = bm.getvalue();
 }else {
 	instance_destroy();
 }

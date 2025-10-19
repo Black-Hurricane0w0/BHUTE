@@ -1,6 +1,8 @@
 event_inherited();
 target_width = 575;
 target_height = 140;
+width = 0;
+height = 0;
 movesoul = true;
 bm = CreateAnim().add(30,[x,y],[target_x,target_y]).anim(ac_arena_move).execute(function(t){ 
     x = t[0];

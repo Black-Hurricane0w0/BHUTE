@@ -82,10 +82,10 @@ function bezier(_start_pos,_end_pos) constructor {
         surface_reset_target();
     }
     /**
-     * 返回起点单位向量值(数学坐标系)
+     * 返回起点切线单位向量值(数学坐标系)
      * @return {Struct.vec2} 相切向量值
      */
-    static GetBeginDeriv = function (){
+    static GetBeginTan = function (){
         var pos = end_pos;
         if !array_equals(controller,[]) {
             pos = controller[0];
@@ -93,16 +93,32 @@ function bezier(_start_pos,_end_pos) constructor {
         return new vec2(start_pos.x - pos.x,start_pos.y - pos.y).reservey().normalize();
     }
     /**
-     * 返回终点单位向量值(数学坐标系)
+     * 返回终点切线单位向量值(数学坐标系)
      * @return {Struct.vec2} 相切向量值
      */
-    static GetEndDeriv = function (){
+    static GetEndTan = function (){
         var pos = start_pos;
         var last = array_length(controller) - 1;
         if !array_equals(controller,[]) {
             pos = controller[last];
         }
         return new vec2(end_pos.x - pos.x,end_pos.y - pos.y).reservey().normalize();
+    }
+    /**
+     * 返回任意点切线单位向量值(数学坐标系)
+     * @param {real} t 点位
+     * @return {Struct.vec2} 相切向量值
+     */
+    static GetTan = function (t){
+        t = clamp(t,0,1);
+        if t == 0 {
+            return self.GetBeginTan();
+        }else if t == 1 {
+            return self.GetEndTan();
+        }
+        var tt = clamp(t+0.001,0,1);
+        var p1 = self.GetPoint(t);var p2 = self.GetPoint(tt);
+        return get_vector(p1,p2).fromGameMakerCoords();
     }
     /**
      * 根据斜率和长度生成控制点

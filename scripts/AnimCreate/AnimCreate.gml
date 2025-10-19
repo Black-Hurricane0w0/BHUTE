@@ -154,6 +154,14 @@ function anim() constructor {
         self.ef = f
         return self;
     }
+    /**
+     * 获取计时器值
+     * @return {real}
+     * @context CreateAnim
+    */
+    static getvalue = function(){
+        return value;
+    }
 }
 
 

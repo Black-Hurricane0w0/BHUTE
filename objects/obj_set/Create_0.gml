@@ -13,3 +13,4 @@ gamepad_axis = {
     lh_right : false,
 }
 debug_surface = -1;
+version = "v1.01"
