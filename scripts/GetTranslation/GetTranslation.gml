@@ -3,6 +3,13 @@ function GetTranslation(_string){
     if res == undefined {
         show_error("GetTranslation() unable to find a suitable key value pair",false);
     } else{
-        return res
+        if is_string(res){
+            return res
+        }else if is_struct(res){
+            if !variable_struct_exists(res,"text") {
+                show_error("GetTranslationDetailed() lack of necessary variables",false);
+            }
+            return res.text;
+        }
     }
 }

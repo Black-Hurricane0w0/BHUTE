@@ -2,6 +2,8 @@ function SaveLang(){
     if obj_set.debug == false exit;
     var en = {
         "language" : "en",
+        "font" : fnt_mono,
+        "size" : 1,
         "ui.start_game" : "Start game",
         "ui.language" : "Language",
         "ui.music" : "Music",
@@ -9,13 +11,16 @@ function SaveLang(){
         "ui.about_us" : "About us",
         "ui.volume" : "Volume",
         "ui.raining" : "Raining",
-        "ui.lightning" : "Lightning",
+        "ui.lightning" : {
+            text : "Lightning",
+            size : 0.8
+        },
         "ui.music_volume" : "Music Volume",
         "ui.sound_effect_volume" : "Sound Effect Volume",
         "ui.full_screen_startup" : "Full Screen Startup",
         "ui.enable" : "Enable",
         "ui.disable" : "Disable",
-        "dialogue.1" : "You feel like you're going to have a bad time",
+        "dialogue.1" : "You feel like you're going to&  have a bad time",
         "enemy_dialogue.1" : "All right......&You win.",
         "enemy_action1.1" : "Name : Test Enemy&* HP : ^^^^^^^^&* Attack Damage : 22&* Protition : 80",
         "enemy_action1.2" : "It is used to test you.",
@@ -30,6 +35,8 @@ function SaveLang(){
     
     var zh = {
         "language" : "zh",
+        "font" : fnt_chinese,
+        "size" : 1,
         "ui.start_game" : "开始游戏",
         "ui.language" : "语言",
         "ui.music" : "音乐",

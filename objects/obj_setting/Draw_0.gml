@@ -1,5 +1,5 @@
 
-draw_set_font(fnt_mono);
+draw_set_font(GetLangFont());
 draw_set_color(c_white);
 draw_set_valign(fa_middle);
 if time == 1 {
@@ -23,13 +23,14 @@ var index = array_get_index(global.language_list,Setting_Read(string,"Language")
 draw_text_transformed(bm2.value,520,language[index],1,1,0);
 
 
-var settinglist = [GetTranslation("ui.volume"),GetTranslation("ui.raining"),GetTranslation("ui.lightning"),GetTranslation("ui.music"),GetTranslation("ui.music_volume"),GetTranslation("ui.sound_effect_volume"),GetTranslation("ui.full_screen_startup"),GetTranslation("ui.language")]
+var settinglist = [GetTranslationDetailed("ui.volume"),GetTranslationDetailed("ui.raining"),GetTranslationDetailed("ui.lightning"),GetTranslationDetailed("ui.music"),GetTranslationDetailed("ui.music_volume"),GetTranslationDetailed("ui.sound_effect_volume"),GetTranslationDetailed("ui.full_screen_startup"),GetTranslationDetailed("ui.language")]
 for (var i = 0; i < array_length(settinglist); i++) { 
     draw_set_color(c_white);
     if setting_choice == i and detailed_setting == false {
         draw_set_color(c_yellow)
     }
-    draw_text_transformed(bm.value,100 + i * 60,settinglist[i],1,1,0); 
+    var size = settinglist[i].size
+    draw_text_transformed(bm.value,100 + i * 60,settinglist[i].text,size,size,0); 
 }
 
 draw_set_color(c_white);

@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"mus_scare",
   "audioGroupId":{
     "name":"music",
     "path":"audiogroups/music",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":111.25735,
+  "exportDir":"",
   "name":"mus_scare",
   "parent":{
     "name":"声音",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_scare.mp3",
-  "type":1,
   "volume":0.64,
 }

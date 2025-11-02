@@ -2,9 +2,9 @@
   "$GMProject":"v1",
   "%Name":"BHUTE",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"sound_effect","name":"sound_effect","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"music","name":"music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"sound_effect","exportDir":"","name":"sound_effect","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"music","exportDir":"","name":"music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -98,7 +98,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.0.207",
   },
   "name":"BHUTE",
   "resources":[
@@ -120,6 +120,7 @@
     {"id":{"name":"ac_speeddown","path":"animcurves/ac_speeddown/ac_speeddown.yy",},},
     {"id":{"name":"ac_speedup","path":"animcurves/ac_speedup/ac_speedup.yy",},},
     {"id":{"name":"ac_speedupanddown","path":"animcurves/ac_speedupanddown/ac_speedupanddown.yy",},},
+    {"id":{"name":"fnt_chinese","path":"fonts/fnt_chinese/fnt_chinese.yy",},},
     {"id":{"name":"fnt_comic_Sans_ms","path":"fonts/fnt_comic_Sans_ms/fnt_comic_Sans_ms.yy",},},
     {"id":{"name":"fnt_enemy_dialogue","path":"fonts/fnt_enemy_dialogue/fnt_enemy_dialogue.yy",},},
     {"id":{"name":"fnt_mars_nc","path":"fonts/fnt_mars_nc/fnt_mars_nc.yy",},},
@@ -247,7 +248,11 @@
     {"id":{"name":"GBCreate","path":"scripts/GBCreate/GBCreate.yy",},},
     {"id":{"name":"Get_Face","path":"scripts/Get_Face/Get_Face.yy",},},
     {"id":{"name":"Get_Faceusing","path":"scripts/Get_Faceusing/Get_Faceusing.yy",},},
+    {"id":{"name":"GetLangFont","path":"scripts/GetLangFont/GetLangFont.yy",},},
+    {"id":{"name":"GetLangSize","path":"scripts/GetLangSize/GetLangSize.yy",},},
+    {"id":{"name":"GetLangStruct","path":"scripts/GetLangStruct/GetLangStruct.yy",},},
     {"id":{"name":"GetTranslation","path":"scripts/GetTranslation/GetTranslation.yy",},},
+    {"id":{"name":"GetTranslationDetailed","path":"scripts/GetTranslationDetailed/GetTranslationDetailed.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
     {"id":{"name":"Input_Check","path":"scripts/Input_Check/Input_Check.yy",},},
     {"id":{"name":"Input_Delete","path":"scripts/Input_Delete/Input_Delete.yy",},},

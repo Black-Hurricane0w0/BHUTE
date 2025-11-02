@@ -15,7 +15,7 @@ if time >= 220 {
 
 
 if time >= 260 {
-	draw_set_font(fnt_mono);
+	draw_set_font(GetLangFont());
     draw_set_valign(fa_middle);
 
     if time == 260 {

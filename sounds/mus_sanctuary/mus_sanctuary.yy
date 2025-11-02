@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"mus_sanctuary",
   "audioGroupId":{
     "name":"music",
     "path":"audiogroups/music",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":289.29367,
+  "exportDir":"",
   "name":"mus_sanctuary",
   "parent":{
     "name":"声音",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_sanctuary.mp3",
-  "type":0,
   "volume":0.7,
 }

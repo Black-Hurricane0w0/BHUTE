@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GetLangFont",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GetLangFont",
+  "parent":{
+    "name":"Lang",
+    "path":"folders/脚本/Lang.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

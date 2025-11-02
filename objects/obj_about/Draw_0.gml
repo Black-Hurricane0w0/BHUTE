@@ -1,4 +1,4 @@
-draw_set_font(fnt_mono);
+draw_set_font(GetLangFont());
 draw_set_color(c_white);
 draw_set_valign(fa_middle);
 if time == 1 {

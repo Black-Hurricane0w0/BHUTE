@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_gb_prepare",
   "audioGroupId":{
     "name":"sound_effect",
     "path":"audiogroups/sound_effect",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":1.9733334,
+  "exportDir":"",
   "name":"snd_gb_prepare",
   "parent":{
     "name":"声音",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":48000,
   "soundFile":"snd_gb_prepare.mp3",
-  "type":1,
   "volume":0.85,
 }

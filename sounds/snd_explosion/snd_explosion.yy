@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_explosion",
   "audioGroupId":{
     "name":"sound_effect",
     "path":"audiogroups/sound_effect",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":4.009796,
+  "exportDir":"",
   "name":"snd_explosion",
   "parent":{
     "name":"声音",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_explosion.wav",
-  "type":0,
   "volume":0.5,
 }
