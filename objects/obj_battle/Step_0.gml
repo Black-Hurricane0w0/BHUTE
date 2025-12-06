@@ -1,8 +1,6 @@
 
+Blur(false,1)
 
-//模糊应用
-fx_set_parameter(layer_get_fx("Blur"),"g_intensity",is_blur);
-fx_set_parameter(layer_get_fx("Blur"),"g_numDownsamples",blur_fx);
 
 
 

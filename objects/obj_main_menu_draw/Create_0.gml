@@ -6,3 +6,4 @@ goto_about = false;
 fade = 0;
 alpha = 0;
 menu_choice = 0;
+Blur_Init();

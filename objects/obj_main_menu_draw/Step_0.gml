@@ -1,3 +1,4 @@
+
 time ++ ;
 //跳过
 
@@ -51,17 +52,17 @@ if time > 290 and fade <= 0{
     menu_choice = clamp(menu_choice,0,2);
     switch (menu_choice) {
         case 0:
-            obj_soul.target_x = 100;
+            obj_soul.target_x = 90;
             obj_soul.target_y = 220;
             if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) goto_battle = true;
             break;
         case 1:
-            obj_soul.target_x = 80;
+            obj_soul.target_x = 70;
             obj_soul.target_y = 280;
             if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) goto_setting = true;
             break;
         case 2:
-            obj_soul.target_x = 60;
+            obj_soul.target_x = 50;
             obj_soul.target_y = 340;
             if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) goto_about = true;
             break;

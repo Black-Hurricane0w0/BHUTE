@@ -36,3 +36,5 @@ if vibration_time > 0{
 }else{
     gamepad_set_vibration(0,0,0);
 }
+//Blur系统
+Blur_Tick();

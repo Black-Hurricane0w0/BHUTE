@@ -11,23 +11,28 @@ function SaveLang(){
         "ui.about_us" : "About us",
         "ui.volume" : "Volume",
         "ui.raining" : "Raining",
-        "ui.lightning" : {
-            text : "Lightning",
+        "ui.lightning" : "Lightning",
+        "ui.music_volume" : "Music Volume",
+
+        "ui.sound_effect_volume" : {
+            text : "Sound Effect Volume",
             size : 0.8
         },
-        "ui.music_volume" : "Music Volume",
-        "ui.sound_effect_volume" : "Sound Effect Volume",
-        "ui.full_screen_startup" : "Full Screen Startup",
+        "ui.full_screen_startup" : {
+            text : "Full Screen Startup",
+            size : 0.8
+        },
         "ui.enable" : "Enable",
         "ui.disable" : "Disable",
-        "dialogue.1" : "You feel like you're going to&  have a bad time",
+        "dialogue.1" : " You feel like you're going to&  have a bad time",
         "enemy_dialogue.1" : "All right......&You win.",
         "enemy_action1.1" : "Name : Test Enemy&* HP : ^^^^^^^^&* Attack Damage : 22&* Protition : 80",
         "enemy_action1.2" : "It is used to test you.",
         "ui.original_author" : "Original Author",
         "ui.template_author" : "Template Author",
         "ui.au_author" : "AU Author",
-        "ui.donation" : "Donate Author"
+        "ui.donation" : "Donate Author",
+        "ui.credits" : "Credits"
     };
     var entxt = file_text_open_write("en.json");
     file_text_write_string(entxt,json_stringify(en))
@@ -57,7 +62,8 @@ function SaveLang(){
         "ui.original_author" : "原作作者",
         "ui.template_author" : "模板作者",
         "ui.au_author" : "AU作者",
-        "ui.donation" : "捐赠作者"
+        "ui.donation" : "捐赠作者",
+        "ui.credits" : "贡献名单"
     };
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))

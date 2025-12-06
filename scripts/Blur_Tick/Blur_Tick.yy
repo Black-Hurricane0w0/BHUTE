@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Get_Face",
+  "%Name":"Blur_Tick",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Get_Face",
+  "name":"Blur_Tick",
   "parent":{
-    "name":"Other",
-    "path":"folders/脚本/Other.yy",
+    "name":"Blur",
+    "path":"folders/脚本/Effect/Blur.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

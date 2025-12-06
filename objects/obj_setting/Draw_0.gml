@@ -3,8 +3,8 @@ draw_set_font(GetLangFont());
 draw_set_color(c_white);
 draw_set_valign(fa_middle);
 if time == 1 {
-    bm = CreateAnim().add(30,-120,120).anim(ac_speeddown);
-    bm2 = CreateAnim().add(30,640 + 120,120 + 350).anim(ac_speeddown);
+    bm = CreateAnim().add(30,0,1).anim(ac_speeddown);
+    bm2 = CreateAnim().add(30,640 + 150,120 + 350).anim(ac_speeddown);
 };
 bm.run();
 bm2.run();
@@ -29,8 +29,9 @@ for (var i = 0; i < array_length(settinglist); i++) {
     if setting_choice == i and detailed_setting == false {
         draw_set_color(c_yellow)
     }
-    var size = settinglist[i].size
-    draw_text_transformed(bm.value,100 + i * 60,settinglist[i].text,size,size,0); 
+    var size = settinglist[i].size;
+    var textlen = string_width(settinglist[i].text) * size * (1 - bm.value);
+    draw_text_transformed(120 * bm.value - textlen,100 + i * 60,settinglist[i].text,size,size,0); 
 }
 
 draw_set_color(c_white);

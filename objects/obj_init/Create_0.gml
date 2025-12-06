@@ -72,5 +72,5 @@ math_set_epsilon(0.000001)
 Init();
 if Setting_Read(real,"Full Screen Startup")  window_set_fullscreen(true);
 
-
+log("Init finished...")
 room_goto(Room_Main_Menu);	

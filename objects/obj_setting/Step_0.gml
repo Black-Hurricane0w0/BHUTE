@@ -118,8 +118,8 @@ if time >= 30 and fade < 1 {
 if fade >= 1 {
     fade ++
     if fade == 2{
-        bm.add(30,120,-120).reset();
-        bm2.add(30,120 + 350,640 + 120).reset();
+        bm.add(30,1,0).reset();
+        bm2.add(30,120 + 350,640 + 150).reset();
         obj_soul.target_x = -200;
         CameraPosSet(320,240,640,480,0,30);
     }

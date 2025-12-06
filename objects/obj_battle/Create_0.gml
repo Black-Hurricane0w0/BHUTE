@@ -62,9 +62,7 @@ bm4 = CreateAnim().add(20,File_Get(PLAYER_INFO.HP),player_target_health).anim(ac
 }).listener(,,true);
 
 last_item_choice = 0;
-//模糊强度
-blur_fx = 1;
-is_blur = false;
+
 
 //怪物
 Enemy_Add(320,160,obj_test_enemy);
@@ -89,4 +87,6 @@ fadein_inst = Black_FadeIn(320,240,10,60);
 Part_System_Create();
 Part_Type_Create();
 
+Blur_Init();
 
+log("Battle Room Init finished...");

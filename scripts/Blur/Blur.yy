@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Blur",
   "parent":{
-    "name":"Effect",
-    "path":"folders/脚本/Effect.yy",
+    "name":"Blur",
+    "path":"folders/脚本/Effect/Blur.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

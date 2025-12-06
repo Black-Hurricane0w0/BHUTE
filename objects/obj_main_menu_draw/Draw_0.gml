@@ -20,9 +20,11 @@ if time >= 260 {
 
     if time == 260 {
         //标题动画
-        bm3 = CreateAnim().add(30,-30,125).anim(ac_speeddown).execute(function(t){
+        bm3 = CreateAnim().add(30,-30,110).anim(ac_speeddown).execute(function(t){
             if menu_choice == 0 draw_set_color(c_yellow);
-            draw_text_transformed(t,220,GetTranslation("ui.start_game"),1,1,0)
+                
+            var scale = GetTranslationDetailed("ui.start_game").size;
+            draw_text_transformed(t,220,GetTranslation("ui.start_game"),scale,scale,0)
             draw_set_color(c_white);
         })
         main_line = layer_sequence_create("seq",320,240,seq_main_line);
@@ -32,17 +34,21 @@ if time >= 260 {
     }
     if time == 275 {
         //标题动画
-        bm4 = CreateAnim().add(30,-30,105).anim(ac_speeddown).execute(function(t){
+        bm4 = CreateAnim().add(30,-30,90).anim(ac_speeddown).execute(function(t){
             if menu_choice == 1 draw_set_color(c_yellow);
-            draw_text_transformed(t,280,GetTranslation("ui.setting"),1,1,0);
+                
+            var scale = GetTranslationDetailed("ui.setting").size;
+            draw_text_transformed(t,280,GetTranslation("ui.setting"),scale,scale,0);
             draw_set_color(c_white);
         })
     }
     if time == 290 {
         //标题动画
-        bm5 = CreateAnim().add(30,-30,85).anim(ac_speeddown).execute(function(t){
+        bm5 = CreateAnim().add(30,-30,70).anim(ac_speeddown).execute(function(t){
             if menu_choice == 2 draw_set_color(c_yellow);
-            draw_text_transformed(t,340,GetTranslation("ui.about_us"),1,1,0);
+                
+            var scale = GetTranslationDetailed("ui.about_us").size;
+            draw_text_transformed(t,340,GetTranslation("ui.about_us"),scale,scale,0);
             draw_set_color(c_white);
         })
         instance_create_depth(-300,200,DEPTH.SOUL,obj_soul);
