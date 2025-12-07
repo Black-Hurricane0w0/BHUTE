@@ -1,5 +1,6 @@
+/// @desc 初始化输入系统
 function Input_lnit(){
-	global._input_map = ds_map_create()//日常创ds
+	global._input_map = ds_map_create()
 	
 	enum INPUT{
 		CONFIRM,
@@ -17,4 +18,5 @@ function Input_lnit(){
 		RELEASED,
 		NULL
 	}
+    log("Input system loaded...")
 }

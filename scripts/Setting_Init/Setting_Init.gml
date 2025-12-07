@@ -1,3 +1,4 @@
+/// @desc 初始化设置
 function Setting_Init(){
 	ini_open("setting");
 	if not ini_key_exists("setting","Vibration") {

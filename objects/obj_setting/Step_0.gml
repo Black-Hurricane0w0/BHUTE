@@ -50,14 +50,14 @@ if time >= 30 and fade < 1 {
 		}
 		switch (setting_choice) {
 			case 0 :{//0选项：总音量
-                var value = clamp(Setting_Read(real,"Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
+                var value = clamp(Setting_Read("real","Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
 				Setting_Write("Volume",value)
-				audio_master_gain(clamp(Setting_Read(real,"Volume"),0,100)/100);
+				audio_master_gain(clamp(Setting_Read("real","Volume"),0,100)/100);
 				break;
 			}
 			case 1 :{//1选项：雨
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(real,"Raining");
+					var vb = Setting_Read("real","Raining");
 				    Setting_Write("Raining",!vb);
 				    audio_play_sound(snd_buttom_select,0,false);
 				}
@@ -65,7 +65,7 @@ if time >= 30 and fade < 1 {
 			}
 			case 2 :{//2选项：雷
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(real,"Lightning");
+					var vb = Setting_Read("real","Lightning");
 				    Setting_Write("Lightning",!vb);
 				    audio_play_sound(snd_buttom_select,0,false);
 				}
@@ -73,7 +73,7 @@ if time >= 30 and fade < 1 {
 			}
 			case 3 :{//3选项：音乐
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(real,"Music");
+					var vb = Setting_Read("real","Music");
 				    Setting_Write("Music",!vb); 
                     audio_play_sound(snd_buttom_select,0,false);
                     audio_stop_sound(global.main_menu_music);
@@ -81,20 +81,20 @@ if time >= 30 and fade < 1 {
                 break;
 			} 
             case 4 :{//4选项：音乐音量
-                var value = clamp(Setting_Read(real,"Music Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
+                var value = clamp(Setting_Read("real","Music Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
 	            Setting_Write("Music Volume",value)
-				audio_group_set_gain(music,clamp(Setting_Read(real,"Music Volume"),0,100)/100,0);
+				audio_group_set_gain(music,clamp(Setting_Read("real","Music Volume"),0,100)/100,0);
                 break;
 			}
             case 5 :{//5选项：音效音量
-                var value = clamp(Setting_Read(real,"Sound Effect Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
+                var value = clamp(Setting_Read("real","Sound Effect Volume") + Input_Check(INPUT.RIGHT,INPUT_STEAT.KEEP) - Input_Check(INPUT.LEFT,INPUT_STEAT.KEEP),0,100)
 	            Setting_Write("Sound Effect Volume",value)
-				audio_group_set_gain(sound_effect,clamp(Setting_Read(real,"Sound Effect Volume"),0,100)/100,60);
+				audio_group_set_gain(sound_effect,clamp(Setting_Read("real","Sound Effect Volume"),0,100)/100,60);
                 break;
 			} 
             case 6 :{//6选项：全屏启动
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = Setting_Read(real,"Full Screen Startup");
+					var vb = Setting_Read("real","Full Screen Startup");
 				    Setting_Write("Full Screen Startup",!vb);
                     audio_play_sound(snd_buttom_select,0,false);
 				}
@@ -102,7 +102,7 @@ if time >= 30 and fade < 1 {
 			} 
             case 7 :{//7选项：语言
 				if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and choice_time < 0 {
-					var vb = array_get_index(global.language_list,Setting_Read(string,"Language")) + 1;
+					var vb = array_get_index(global.language_list,Setting_Read("string","Language")) + 1;
                     if vb >= array_length(global.language_list) {
                         vb = 0;
                     }

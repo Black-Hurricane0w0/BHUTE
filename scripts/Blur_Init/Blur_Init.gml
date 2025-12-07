@@ -5,5 +5,5 @@ function Blur_Init(){
     //模糊强度
     global.blur_fx = 1;
     global.is_blur = false;
-    log("Blur System finished...")
+    log("Blur System loaded...")
 }

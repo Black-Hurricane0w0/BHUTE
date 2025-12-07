@@ -1,3 +1,7 @@
+/// @desc 检查输入
+/// @param {any} input 输入值（使用INPUT中的常量）
+/// @param {any*} state 输入模式（使用INPUT_STATE中的常量）
+/// @returns {bool} 是否输入
 function Input_Check(input,state){
 	var bool_value = false;//返回值
 	var buttom = ds_map_find_value(global._input_map,input)//将ds地图中对应的value付给buttom，用于后续检查

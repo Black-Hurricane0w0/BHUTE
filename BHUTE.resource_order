@@ -61,6 +61,7 @@
     {"name":"Battle_Dialogue","order":2,"path":"folders/脚本/Dialogue/Battle_Dialogue.yy",},
     {"name":"Enemy_Dialogue","order":1,"path":"folders/脚本/Dialogue/Enemy_Dialogue.yy",},
     {"name":"Effect","order":15,"path":"folders/脚本/Effect.yy",},
+    {"name":"Blur","order":3,"path":"folders/脚本/Effect/Blur.yy",},
     {"name":"Enemy","order":3,"path":"folders/脚本/Enemy.yy",},
     {"name":"Input","order":2,"path":"folders/脚本/Input.yy",},
     {"name":"Item","order":6,"path":"folders/脚本/Item.yy",},
@@ -72,7 +73,6 @@
     {"name":"Shook","order":19,"path":"folders/脚本/Shook.yy",},
     {"name":"Text","order":1,"path":"folders/脚本/Text.yy",},
     {"name":"Turn","order":9,"path":"folders/脚本/Turn.yy",},
-    {"name":"Blur","order":3,"path":"folders/脚本/Effect/Blur.yy",},
     {"name":"路径","order":5,"path":"folders/路径.yy",},
   ],
   "ResourceOrderSettings":[

@@ -1,3 +1,5 @@
+/// @desc 获得翻译对应文本
+/// @param {string} _string 翻译的键
 function GetTranslation(_string){
     var res = global.lang_map[$_string];
     if res == undefined {

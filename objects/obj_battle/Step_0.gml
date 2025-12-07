@@ -108,7 +108,7 @@ if battle_state = BATTLE_STATE.ENCOUNTER_TEXT {
 
 
 //雨
-if Setting_Read(real,"Raining") == true {
+if Setting_Read("real","Raining") == true {
 	effect_create_below(ef_rain,x,y,0,c_ltgray);
     if audio_is_playing(snd_raining) == false {
         audio_play_sound(snd_raining,0,true);

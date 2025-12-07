@@ -1,3 +1,9 @@
+
+/**
+ * 对决心造成伤害
+ * @param {real} damage 伤害大小
+ * @param {real} [invulnerable] 无敌时间(默认1s)
+ */
 function Player_Damage(damage,invulnerable = 60){
 	if obj_move_soul.invulnerable == 0 {
 		obj_battle.player_target_health -= damage;

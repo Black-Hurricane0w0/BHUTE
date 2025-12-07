@@ -1,4 +1,10 @@
 
+/**
+ * 设置决心的重力模式，重力方向和动画
+ * @param {bool} is_grav 是否启用重力
+ * @param {real} dir 重力方向（仅限0，90，180，270）
+ * @param {bool} is_effect 启用转换动画
+ */
 function Player_SetSoul(is_grav,dir,is_effect){
 	var state_before = obj_move_soul.is_gravity;
     var dir_before = obj_move_soul.dir;

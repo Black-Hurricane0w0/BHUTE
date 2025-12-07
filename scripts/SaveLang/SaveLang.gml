@@ -1,3 +1,4 @@
+/// @desc 保存语言文件，可在此处写入翻译，仅在debug模式下运行
 function SaveLang(){
     if obj_set.debug == false exit;
     var en = {

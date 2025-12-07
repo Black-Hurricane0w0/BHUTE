@@ -1,6 +1,8 @@
+/// @desc 重新读取语言文件
 function ReadLang(){
-    var lang = Setting_Read(string,"Language");
+    var lang = Setting_Read("string","Language");
     var txt = file_text_open_read(lang + ".json");
     global.lang_map = json_parse(file_text_read_string(txt));
     file_text_close(txt);
+    log("Language file loaded...")
 }

@@ -89,4 +89,4 @@ Part_Type_Create();
 
 Blur_Init();
 
-log("Battle Room Init finished...");
+log("Battle Room init finished...");
