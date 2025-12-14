@@ -1,23 +1,10 @@
 
-Blur(false,1)
+Blur(false,0)
 
 
 
 
-//淡入
-//if instance_exists(fadein_inst) == true {
-	//if battle_state == BATTLE_STATE.PLAYER {
-		//instance_activate_object(obj_soul);
-		//Player_Hide();
-	//}else if battle_state == BATTLE_STATE.ENEMY {
-		//instance_deactivate_object(obj_soul);
-		//Player_Show();
-		//if ui_enable == false {
-			//Player_Hide();
-		//}
-	//}
-	//return;
-//}
+
 
 
 

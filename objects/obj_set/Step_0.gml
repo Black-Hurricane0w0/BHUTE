@@ -38,3 +38,5 @@ if vibration_time > 0{
 }
 //Blur系统
 Blur_Tick();
+//Glow系统
+Glow_Tick();

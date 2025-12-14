@@ -75,6 +75,7 @@
     {"$GMFolder":"","%Name":"Enemy_Dialogue","folderPath":"folders/脚本/Dialogue/Enemy_Dialogue.yy","name":"Enemy_Dialogue","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Effect","folderPath":"folders/脚本/Effect.yy","name":"Effect","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Blur","folderPath":"folders/脚本/Effect/Blur.yy","name":"Blur","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Glow","folderPath":"folders/脚本/Effect/Glow.yy","name":"Glow","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemy","folderPath":"folders/脚本/Enemy.yy","name":"Enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"File","folderPath":"folders/脚本/File.yy","name":"File","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Input","folderPath":"folders/脚本/Input.yy","name":"Input","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -104,7 +105,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.212",
   },
   "name":"BHUTE",
   "resources":[
@@ -259,6 +260,9 @@
     {"id":{"name":"GetLangStruct","path":"scripts/GetLangStruct/GetLangStruct.yy",},},
     {"id":{"name":"GetTranslation","path":"scripts/GetTranslation/GetTranslation.yy",},},
     {"id":{"name":"GetTranslationDetailed","path":"scripts/GetTranslationDetailed/GetTranslationDetailed.yy",},},
+    {"id":{"name":"Glow_Init","path":"scripts/Glow_Init/Glow_Init.yy",},},
+    {"id":{"name":"Glow_Tick","path":"scripts/Glow_Tick/Glow_Tick.yy",},},
+    {"id":{"name":"Glow","path":"scripts/Glow/Glow.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
     {"id":{"name":"Input_Check","path":"scripts/Input_Check/Input_Check.yy",},},
     {"id":{"name":"Input_Delete","path":"scripts/Input_Delete/Input_Delete.yy",},},

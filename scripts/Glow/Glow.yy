@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Glow",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Glow",
+  "parent":{
+    "name":"Glow",
+    "path":"folders/脚本/Effect/Glow.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
