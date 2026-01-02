@@ -10,16 +10,14 @@ function Full_Screen(){
             result = true;
     	}
     }
+    if obj_set.time_fullscreen != 0 {result = false;}
     if result == true {
-        var per_strength = global.glow_fx;
-        Glow(false,0);
         {
             window_center();
             window_set_size(640,480);
 
         }
         window_set_fullscreen(!window_get_fullscreen());
-        draw_flush();
         log("Display changes")
     }
 }

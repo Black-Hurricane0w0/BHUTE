@@ -1,4 +1,4 @@
-Glow(true,1)
+Glow(true,1);
 time ++ ;
 //跳过
 

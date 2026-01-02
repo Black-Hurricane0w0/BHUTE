@@ -230,6 +230,8 @@
     {"name":"Won","order":11,"path":"scripts/Won/Won.yy",},
     {"name":"seq_main_line","order":1,"path":"sequences/seq_main_line/seq_main_line.yy",},
     {"name":"sh_background","order":6,"path":"shaders/sh_background/sh_background.yy",},
+    {"name":"sh_blur","order":9,"path":"shaders/sh_blur/sh_blur.yy",},
+    {"name":"sh_circle","order":8,"path":"shaders/sh_circle/sh_circle.yy",},
     {"name":"sh_outline","order":3,"path":"shaders/sh_outline/sh_outline.yy",},
     {"name":"sh_transit_color","order":1,"path":"shaders/sh_transit_color/sh_transit_color.yy",},
     {"name":"sh_white","order":2,"path":"shaders/sh_white/sh_white.yy",},
