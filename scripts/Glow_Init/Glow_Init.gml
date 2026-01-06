@@ -5,6 +5,5 @@ function Glow_Init(){
     //模糊强度
     global.glow_fx = 1;
     global.is_glow = false;
-    log("Glow System loaded...")
-    log(fx_get_parameter_names(global.fx_glow))
+    log("Glow System loaded...");
 }

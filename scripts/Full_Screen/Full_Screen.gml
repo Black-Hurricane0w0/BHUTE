@@ -10,12 +10,10 @@ function Full_Screen(){
             result = true;
     	}
     }
-    if obj_set.time_fullscreen != 0 {result = false;}
     if result == true {
         {
             window_center();
             window_set_size(640,480);
-
         }
         window_set_fullscreen(!window_get_fullscreen());
         log("Display changes")

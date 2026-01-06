@@ -462,7 +462,10 @@
   "sdfSpread":8,
   "size":18.0,
   "styleName":"Regular",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"E:\\s\\BH_undertale\\BHUTE\\fonts\\fnt_comic_Sans_ms\\Comic Sans MS.ttf",
   "usesSDF":false,
 }

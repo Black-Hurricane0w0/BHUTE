@@ -14,7 +14,6 @@ function SaveLang(){
         "ui.raining" : "Raining",
         "ui.lightning" : "Lightning",
         "ui.music_volume" : "Music Volume",
-
         "ui.sound_effect_volume" : {
             text : "Sound Effect Volume",
             size : 0.8
@@ -27,8 +26,9 @@ function SaveLang(){
         "ui.disable" : "Disable",
         "dialogue.1" : " You feel like you're going to&  have a bad time",
         "enemy_dialogue.1" : "All right......&You win.",
-        "enemy_action1.1" : "Name : Test Enemy&* HP : ^^^^^^^^&* Attack Damage : 22&* Protition : 80",
+        "enemy_action1.1" : "SANS 1 ATK 1 DEF&* The easiest enemy.&* Can only deal 1 damage.",
         "enemy_action1.2" : "It is used to test you.",
+        "enemy_action_dial1.1" : "Do you see this heart? This is your soul, the essence of your&life!",
         "ui.original_author" : "Original Author",
         "ui.template_author" : "Template Author",
         "ui.au_author" : "AU Author",
@@ -58,8 +58,9 @@ function SaveLang(){
         "ui.disable" : "禁用",
         "dialogue.1" : "你感觉你将度过一段糟糕的时光",
         "enemy_dialogue.1" : "好吧......&你赢了.",
-        "enemy_action1.1" : "姓名 : Test Enemy&* HP : ^^^^^^^^&* 伤害 : 22&* 护甲 : 80",
+        "enemy_action1.1" : "SANS 1攻击 1防御&* 最简单的敌人&* 只能造成1点伤害",
         "enemy_action1.2" : "测试用的东西",
+        "enemy_action_dial1.1" : "看见这颗心了吗？这是你的灵魂，是你生命的精华所在！",
         "ui.original_author" : "原作作者",
         "ui.template_author" : "模板作者",
         "ui.au_author" : "AU作者",

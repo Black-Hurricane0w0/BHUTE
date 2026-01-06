@@ -10,7 +10,7 @@
 /// @param {asset.gmsound} [snd]=snd_text_sound 文本播放声音
 /// @param {bool} [candestory]=false 是否能被按键跳过
 /// @returns {Instance.id} 文本对象id
-function CreateText(x,y,depth,text,color = c_white,font = fnt_mono,size = 1,_speed = 2,snd = snd_text_sound,candestory = false){
+function CreateText(x,y,depth,text,color = c_white,font = GetLangFont(),size = 1,_speed = 2,snd = snd_text_sound,candestory = false){
 	var text_inst = instance_create_depth(x,y,depth,obj_text);//创建并接受id
 	text_inst.text = text;//传递
 	text_inst.text_color = color;

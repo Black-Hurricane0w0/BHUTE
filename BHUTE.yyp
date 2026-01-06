@@ -95,6 +95,7 @@
     {"link":"io.gamemaker.gm_effect_glow-1.0.0","name":"io.gamemaker.gm_effect_glow-1.0.0","path":"io.gamemaker.gm_effect_glow-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_edgedetect-1.0.0","name":"io.gamemaker.gm_filter_edgedetect-1.0.0","path":"io.gamemaker.gm_filter_edgedetect-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_linear_blur-1.0.0","name":"io.gamemaker.gm_filter_linear_blur-1.0.0","path":"io.gamemaker.gm_filter_linear_blur-1.0.0.yyp",},
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"Comic Sans MS.ttf","CopyToMask":-1,"filePath":"datafiles","name":"Comic Sans MS.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

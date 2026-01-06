@@ -82,14 +82,5 @@ if debug = true {
  //10. 最后，将处理好的离屏表面绘制到屏幕上
 //draw_surface(buffer_surface, 0, 0);
 
-time_fullscreen++;
-if window_get_fullscreen() != per_fullscreen {
-    if time_fullscreen >= 15{
-        surface_free(obj_set.buffer_surface);
-        obj_set.buffer_surface = -1;
-        draw_texture_flush();
-        per_fullscreen = window_get_fullscreen();
-        log("flush")
-    }
-}else { time_fullscreen = 0; } 
+
 

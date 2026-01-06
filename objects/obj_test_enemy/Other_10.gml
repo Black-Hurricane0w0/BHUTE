@@ -1,6 +1,7 @@
 if action_index == 0 {
 	Battle_Dialogue_Add(GetTranslation("enemy_action1.1"));
 	Battle_Dialogue_Add(GetTranslation("enemy_action1.2"));
+    Enemy_Dialogue_Add(GetTranslation("enemy_action_dial1.1"))
 }
 if action_index == 1 {
 	Battle_Dialogue_Add(GetTranslation("enemy_action1.2"));
