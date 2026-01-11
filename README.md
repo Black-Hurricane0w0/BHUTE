@@ -9,8 +9,8 @@ windows10及以上系统
 可运行steam的环境
 
 # 使用方法
-下载得到Gamemaker
-在release中获取最新版本的模板
+下载得到Gamemaker  
+在release中获取最新版本的模板  
 在打开Gamemaker后选择导入，选择BHUTE.yyz并导入
 
 # 许可证书
