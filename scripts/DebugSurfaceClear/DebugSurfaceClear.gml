@@ -6,3 +6,6 @@ function DebugSurfaceClear(){
     draw_clear_alpha(c_black,0);
     surface_reset_target();
 }
+function DebugSurfaceCheck(){
+    return surface_exists(obj_set.debug_surface);
+}

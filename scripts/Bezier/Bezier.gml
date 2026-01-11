@@ -70,6 +70,7 @@ function bezier(_start_pos,_end_pos) constructor {
         return self;
     }
     static Draw = function (){
+        if !DebugSurfaceCheck() return;
         var l = floor(point_distance_vec(start_pos,end_pos) / 10);
         surface_set_target(obj_set.debug_surface);
         draw_set_color(c_blue)

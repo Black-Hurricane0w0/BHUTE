@@ -64,6 +64,8 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
         Battle_TurnEnd();
     }
     //log(bez.getpoint((time mod 60)/60))
+    bz = BezierCreate(new vec2(0,0),new vec2(mouse_x,mouse_y)).AddController(new vec2(100,100)).Draw();
+
 }
 
 
