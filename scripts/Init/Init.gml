@@ -35,7 +35,7 @@ function Init(){
     //手柄遥感触发阈值
     global.gamepad_value = 0.1;
     //主菜单背景音乐
-    global.main_menu_music = mus_sanctuary;
+    global.main_menu_music = mus_waterfall;
     //语言选项
     global.language_list = ["en","zh"];
     //设置初始化

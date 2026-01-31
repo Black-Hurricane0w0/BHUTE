@@ -33,7 +33,10 @@ function SaveLang(){
         "ui.template_author" : "Template Author",
         "ui.au_author" : "AU Author",
         "ui.donation" : "Donate Author",
-        "ui.credits" : "Credits"
+        "ui.credits" : "Credits",
+        "ui.phase_1" : "Phase One",
+        "ui.phase_2" : "Phase Two",
+        "ui.phase_3" : "Phase Three"
     };
     var entxt = file_text_open_write("en.json");
     file_text_write_string(entxt,json_stringify(en))
@@ -65,7 +68,10 @@ function SaveLang(){
         "ui.template_author" : "模板作者",
         "ui.au_author" : "AU作者",
         "ui.donation" : "捐赠作者",
-        "ui.credits" : "贡献名单"
+        "ui.credits" : "贡献名单",
+        "ui.phase_1" : "第一阶段",
+        "ui.phase_2" : "第二阶段",
+        "ui.phase_3" : "最终阶段"
     };
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))

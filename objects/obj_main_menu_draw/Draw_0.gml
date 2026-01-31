@@ -11,7 +11,13 @@ if time >= 220 {
     }
     bm.run();
 }
-
+//获取当前菜单列表
+var choice_struct = choice;
+for(var i = 0;i<string_length(choice_layer);i++){
+    var str = "c"+ string_char_at(choice_layer,i + 1);
+    choice_struct = choice_struct[$str];
+}
+choice_arr = [choice_struct.c0.name,choice_struct.c1.name,choice_struct.c2.name];
 
 
 if time >= 260 {
@@ -23,8 +29,8 @@ if time >= 260 {
         bm3 = CreateAnim().add(30,-30,110).anim(ac_speeddown).execute(function(t){
             if menu_choice == 0 draw_set_color(c_yellow);
                 
-            var scale = GetTranslationDetailed("ui.start_game").size;
-            draw_text_transformed(t,220,GetTranslation("ui.start_game"),scale,scale,0)
+            var scale = choice_arr[0].size;
+            draw_text_transformed(t,220,choice_arr[0].text,scale,scale,0)
             draw_set_color(c_white);
         })
         main_line = layer_sequence_create("seq",320,240,seq_main_line);
@@ -37,8 +43,8 @@ if time >= 260 {
         bm4 = CreateAnim().add(30,-30,90).anim(ac_speeddown).execute(function(t){
             if menu_choice == 1 draw_set_color(c_yellow);
                 
-            var scale = GetTranslationDetailed("ui.setting").size;
-            draw_text_transformed(t,280,GetTranslation("ui.setting"),scale,scale,0);
+            var scale = choice_arr[1].size;
+            draw_text_transformed(t,280,choice_arr[1].text,scale,scale,0);
             draw_set_color(c_white);
         })
     }
@@ -47,8 +53,8 @@ if time >= 260 {
         bm5 = CreateAnim().add(30,-30,70).anim(ac_speeddown).execute(function(t){
             if menu_choice == 2 draw_set_color(c_yellow);
                 
-            var scale = GetTranslationDetailed("ui.about_us").size;
-            draw_text_transformed(t,340,GetTranslation("ui.about_us"),scale,scale,0);
+            var scale = choice_arr[2].size;
+            draw_text_transformed(t,340,choice_arr[2].text,scale,scale,0);
             draw_set_color(c_white);
         })
         instance_create_depth(-300,200,DEPTH.SOUL,obj_soul);

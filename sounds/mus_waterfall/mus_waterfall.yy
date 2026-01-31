@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_scare",
+  "%Name":"mus_waterfall",
   "audioGroupId":{
     "name":"music",
     "path":"audiogroups/music",
   },
   "bitDepth":1,
-  "channelFormat":1,
+  "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":111.25735,
+  "duration":123.49968,
   "exportDir":"",
-  "name":"mus_scare",
+  "name":"mus_waterfall",
   "parent":{
     "name":"声音",
     "path":"folders/声音.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_scare.mp3",
-  "volume":0.64,
+  "soundFile":"mus_waterfall.ogg",
+  "volume":0.5,
 }

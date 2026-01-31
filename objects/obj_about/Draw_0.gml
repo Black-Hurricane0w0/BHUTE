@@ -8,7 +8,7 @@ if time == 1 {
 bm.run();
 bm2.run();
 draw_text_transformed(bm2.value,100,"Toby Fox",1,1,0);
-draw_text_transformed(bm2.value,160,"Black Hurricane",0.8,0.8,0);
+draw_text_transformed(bm2.value,160,"Black Hurricane",1,1,0);
 draw_text_transformed(bm2.value,220,"Author",1,1,0);
 
 
