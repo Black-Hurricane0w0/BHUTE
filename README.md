@@ -119,7 +119,7 @@ BHUTE/
 - **爱发电**：[Black Hurricane](https://afdian.com/a/blackhurricane)
 
 ### 社区支持
-- **GitHub**：[项目仓库](https://github.com/Black-Hurricane0w0/BHUTE)（假设有）
+- **GitHub**：[项目仓库](https://github.com/Black-Hurricane0w0/BHUTE)
 
 ### 问题反馈
 - 对于bug报告和功能请求，请在GitHub Issues中提交
