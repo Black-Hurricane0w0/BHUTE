@@ -12,12 +12,22 @@ if time >= 30 and fade < 1 {
 		if Input_Check(INPUT.UP,INPUT_STEAT.PRESSED) {//上
 			setting_choice --;
             view_point --;
-			if setting_choice >= 0 audio_play_sound(snd_buttom_choice,0,false);
+			audio_play_sound(snd_buttom_choice,0,false);
+			if setting_choice < 0 {
+                setting_choice = setting_last;
+                view_point = setting_last>5?5:setting_last;
+				view = setting_last>5?setting_last-5:0;
+            }
 		}
 		if Input_Check(INPUT.DOWN,INPUT_STEAT.PRESSED) {//下
 			setting_choice ++;
             view_point ++;
-			if setting_choice <= setting_last audio_play_sound(snd_buttom_choice,0,false);
+			audio_play_sound(snd_buttom_choice,0,false);
+			if setting_choice > setting_last {
+                setting_choice = 0;
+                view_point = 0;
+				view = 0;
+            }
 		}
         if view_point < 0 and setting_choice >= 0 {
             view --;

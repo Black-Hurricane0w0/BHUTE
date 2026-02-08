@@ -11,13 +11,18 @@ if time >= 220 {
     }
     bm.run();
 }
-//获取当前菜单列表
-var choice_struct = choice;
-for(var i = 0;i<string_length(choice_layer);i++){
-    var str = "c"+ string_char_at(choice_layer,i + 1);
-    choice_struct = choice_struct[$str];
+//不在动画中或动画大于一半时
+if anim_choice_time == 0 or anim_choice_time <= floor(anim_choice_time_max / 2){
+    //获取当前菜单列表
+    var choice_struct = choice;
+    for(var i = 0;i<string_length(choice_layer);i++){
+        var str = "c"+ string_char_at(choice_layer,i + 1);
+        choice_struct = choice_struct[$str];
+    }
+    //菜单列表
+    choice_arr = [choice_struct.c0.name,choice_struct.c1.name,choice_struct.c2.name];
 }
-choice_arr = [choice_struct.c0.name,choice_struct.c1.name,choice_struct.c2.name];
+
 
 
 if time >= 260 {
@@ -25,6 +30,7 @@ if time >= 260 {
     draw_set_valign(fa_middle);
 
     if time == 260 {
+        draw_set_color(c_white);
         //标题动画
         bm3 = CreateAnim().add(30,-30,110).anim(ac_speeddown).execute(function(t){
             if menu_choice == 0 draw_set_color(c_yellow);
@@ -63,10 +69,49 @@ if time >= 260 {
             obj_main_background.alpha = t;
         })
     }
-    bm3.run();
-    bm4.run();
-    bm5.run();
-    bm6.run();
+    //触发过渡动画
+    if anim_choice_time > 0{
+        if anim_choice_time == anim_choice_time_max{
+            bma1 = CreateAnim().add(anim_choice_time_max,0,1).anim(ac_mainmenu_choice_alpha).execute(function(t){         
+                draw_set_alpha(t);
+            })
+            //过渡动画 220->250->190->220
+            bmm1 = CreateAnim().add(anim_choice_time_max,220,250).anim(ac_mainmenu_choice_move).execute(function(t){     
+                if menu_choice == 0 draw_set_color(c_yellow);    
+                var scale = choice_arr[0].size;
+                draw_text_transformed(110,t,choice_arr[0].text,scale,scale,0)
+                draw_set_color(c_white);
+            })
+            bmm2 = CreateAnim().add(anim_choice_time_max,280,310).anim(ac_mainmenu_choice_move).execute(function(t){  
+                if menu_choice == 1 draw_set_color(c_yellow);       
+                var scale = choice_arr[1].size;
+                draw_text_transformed(90,t,choice_arr[1].text,scale,scale,0)
+                draw_set_color(c_white);
+            })
+            bmm3 = CreateAnim().add(anim_choice_time_max,340,370).anim(ac_mainmenu_choice_move).execute(function(t){        
+                if menu_choice == 2 draw_set_color(c_yellow); 
+                var scale = choice_arr[2].size;
+                draw_text_transformed(70,t,choice_arr[2].text,scale,scale,0)
+                draw_set_color(c_white);
+            })
+
+        }
+        bma1.run();
+        bmm1.run();
+        bmm2.run();
+        bmm3.run();
+        draw_set_alpha(1);
+        anim_choice_time--;
+    }
+
+
+    //运行动画 在非动画情况下运行
+    if anim_choice_time == 0{
+        bm3.run();
+        bm4.run();
+        bm5.run();
+        bm6.run();
+    }
     draw_set_valign(fa_top);
 }
 

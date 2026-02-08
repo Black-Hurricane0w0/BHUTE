@@ -90,7 +90,7 @@ if time > 290 and anim_out == false{
     }
     
     // 子菜单导航逻辑
-    if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
+    if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and anim_choice_time == 0 {
         // 检查当前选中项是否有子菜单
         var current_choice = "c" + string(menu_choice);
         if variable_struct_exists(choice_struct[$current_choice], "c0") {
@@ -98,6 +98,7 @@ if time > 290 and anim_out == false{
             choice_layer += string(menu_choice);
             menu_choice = 0;
             audio_play_sound(snd_buttom_select,0,false);
+            anim_choice_time = anim_choice_time_max;
         } else {
             //进入过渡动画
             anim_out = true;
@@ -105,8 +106,9 @@ if time > 290 and anim_out == false{
     }
     
     // 返回上一级菜单
-    if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED) and string_length(choice_layer) > 0 {
+    if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED) and string_length(choice_layer) > 0 and anim_choice_time == 0 {
         // 移除最后一个字符，返回上一级
+        anim_choice_time = anim_choice_time_max;
         choice_layer = string_copy(choice_layer, 1, string_length(choice_layer) - 1);
         menu_choice = 0;
         audio_play_sound(snd_buttom_select,0,false);
@@ -118,6 +120,9 @@ if time > 290 and anim_out == false{
     obj_soul.target_x = 90 - (menu_choice * 20);
     obj_soul.target_y = base_y + y_offset;
 }
+
+
+
 
 if time == 480 and !audio_is_playing(global.main_menu_music) and Setting_Read("real","Music") {
     audio_play_sound(global.main_menu_music,0,true);
