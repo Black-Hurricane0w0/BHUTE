@@ -1,7 +1,7 @@
 
 Shook_Create();
 
-debug = true;
+debug = false;
 esc = 0;
 vibration_time = 0;//手柄震动时间
 vibration_value = 0;//手柄震动强度
@@ -13,7 +13,7 @@ gamepad_axis = {
     lh_right : false,
 }
 debug_surface = -1;
-version = "v1.01"
+version = "v1.02"
 buffer_surface = -1;
 per_fullscreen = window_get_fullscreen();
 time_fullscreen = 0;
