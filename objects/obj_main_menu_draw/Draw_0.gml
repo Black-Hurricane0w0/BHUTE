@@ -94,12 +94,14 @@ if time >= 260 {
                 draw_text_transformed(70,t,choice_arr[2].text,scale,scale,0)
                 draw_set_color(c_white);
             })
-
         }
         bma1.run();
         bmm1.run();
         bmm2.run();
         bmm3.run();
+        bm3.finish();
+        bm4.finish();
+        bm5.finish();
         draw_set_alpha(1);
         anim_choice_time--;
     }

@@ -248,7 +248,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 				instance_destroy(obj_target);
 				instance_destroy(obj_damage_num);
 			}
-			
 		}
 	}else if battle_buttom_state == MENU.FIGHT_DAMAGE {
 		if battle_fight_over_time == 60 {

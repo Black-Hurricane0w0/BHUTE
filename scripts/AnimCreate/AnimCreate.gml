@@ -145,6 +145,20 @@ function anim() constructor {
         return self;
     }
     /**
+     * 结束动画
+     * @return {Struct.anim}
+     * @self CreateAnim
+     */
+    static finish = function(){
+        self.time = maxtime;
+        if data_type = "int" {
+            self.value = b;
+        }else {
+            array_copy(self.value,0,self.b,0,array_length(self.b));
+        }
+        return self;
+    }
+    /**
      * 计时器结束时执行函数,参数为real
      * @param {Function} f 要执行的函数（附带一个形参）
      * @return {Struct.anim}
