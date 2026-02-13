@@ -96,13 +96,6 @@ BHUTE/
 1. 在语言文件中添加新语言的翻译
 2. 修改`scripts/GetTranslation/`相关脚本以支持新语言
 
-## 常见问题与解决方案
-
-### 导入问题
-- **问题**：导入模板时出现错误
-  **解决方案**：确保使用最新版本的GameMaker Studio 2，检查系统是否满足最低要求
-
-
 ## 贡献指南
 
 ### 如何贡献
@@ -117,6 +110,7 @@ BHUTE/
 ### 作者信息
 - **B站**：[Black Hurricane](https://space.bilibili.com/549607159?spm_id_from=333.788.0.0)
 - **爱发电**：[Black Hurricane](https://afdian.com/a/blackhurricane)
+- **相关教程** https://www.bilibili.com/video/BV1n6cwzoEBw/?spm_id_from=333.1387.homepage.video_card.click&vd_source=fa4026b88f6fbccac3017f8f22bb02ac
 
 ### 社区支持
 - **GitHub**：[项目仓库](https://github.com/Black-Hurricane0w0/BHUTE)
