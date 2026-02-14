@@ -15,21 +15,12 @@ if time == 1 {
             //lengthdir_y(len,text_printer.time),self.text,self.text_size,self.text_size,text_printer.time);
         //}
     //})
-    var is = CreateFuncText(320,200,"a test for text",false,function(){
-        with(other){
-            draw_set_color(c_red);
-            draw_set_font(fnt_mono);
-            draw_text_transformed(x + random_range(-4,4),y + random_range(-4,4),text,text_size,text_size,0);
-        }
-    })
-    is.text_size = 2
-    
 } 
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY { 
 
 	if time mod 15 == 0 {
-		//BoneRotCreate(200,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,true,infinity); 
+		BoneRotCreate(200,320,1,0,40,40,0,0,c_white,0.5,ac_default,,0,0,true,infinity); 
 
         //var spawn_x = random_range(100,500);
     	//var spawn_y = random_range(100,400);
@@ -63,8 +54,6 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
     if time == 720 {
         Battle_TurnEnd();
     }
-    //log(bez.getpoint((time mod 60)/60))
-    bz = BezierCreate(new vec2(0,0),new vec2(mouse_x,mouse_y)).AddController(new vec2(100,100)).Draw();
 
 }
 

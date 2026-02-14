@@ -11,16 +11,11 @@ if time >= 220 {
     }
     bm.run();
 }
+
+
 //不在动画中或动画大于一半时
 if anim_choice_time == 0 or anim_choice_time <= floor(anim_choice_time_max / 2){
-    //获取当前菜单列表
-    var choice_struct = choice;
-    for(var i = 0;i<string_length(choice_layer);i++){
-        var str = "c"+ string_char_at(choice_layer,i + 1);
-        choice_struct = choice_struct[$str];
-    }
-    //菜单列表
-    choice_arr = [choice_struct.c0.name,choice_struct.c1.name,choice_struct.c2.name];
+    getChoice();
 }
 
 
@@ -70,7 +65,7 @@ if time >= 260 {
         })
     }
     //触发过渡动画
-    if anim_choice_time > 0{
+    if anim_choice_time > 0 and anim_out == false{
         if anim_choice_time == anim_choice_time_max{
             bma1 = CreateAnim().add(anim_choice_time_max,0,1).anim(ac_mainmenu_choice_alpha).execute(function(t){         
                 draw_set_alpha(t);

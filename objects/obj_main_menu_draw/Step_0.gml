@@ -13,7 +13,16 @@ if time > 120 and time < 220 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) 
 if time == 120 {
 	audio_play_sound(snd_logo,false,false);
 }
-
+getChoice = function(){
+    //获取当前菜单列表
+    var choice_struct = choice;
+    for(var i = 0;i<string_length(choice_layer);i++){
+        var str = "c"+ string_char_at(choice_layer,i + 1);
+        choice_struct = choice_struct[$str];
+    }
+    //菜单列表
+    choice_arr = [choice_struct.c0.name,choice_struct.c1.name,choice_struct.c2.name];
+}
 if anim_out == true  {
     fade ++;
     if fade == 1 {
@@ -90,7 +99,9 @@ if time > 290 and anim_out == false{
     }
     
     // 子菜单导航逻辑
-    if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) and anim_choice_time == 0 {
+    if Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
+        //在动画中更新选项
+        getChoice();
         // 检查当前选中项是否有子菜单
         var current_choice = "c" + string(menu_choice);
         if variable_struct_exists(choice_struct[$current_choice], "c0") {
@@ -100,13 +111,17 @@ if time > 290 and anim_out == false{
             audio_play_sound(snd_buttom_select,0,false);
             anim_choice_time = anim_choice_time_max;
         } else {
-            //进入过渡动画
+            //进入淡出动画
             anim_out = true;
+            getChoice();
+            anim_choice_time = 0;
         }
     }
     
     // 返回上一级菜单
-    if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED) and string_length(choice_layer) > 0 and anim_choice_time == 0 {
+    if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED) and string_length(choice_layer) > 0 {
+        //在动画中更新选项
+        getChoice();
         // 移除最后一个字符，返回上一级
         anim_choice_time = anim_choice_time_max;
         choice_layer = string_copy(choice_layer, 1, string_length(choice_layer) - 1);

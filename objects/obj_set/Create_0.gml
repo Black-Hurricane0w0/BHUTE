@@ -13,7 +13,7 @@ gamepad_axis = {
     lh_right : false,
 }
 debug_surface = -1;
-version = "v1.02"
+version = "v1.03"
 buffer_surface = -1;
 per_fullscreen = window_get_fullscreen();
 time_fullscreen = 0;

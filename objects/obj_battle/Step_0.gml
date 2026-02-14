@@ -9,7 +9,7 @@ Blur(false,0)
 
 
 //Buttom选择
-if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
+if battle_state == BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 	ArenaSet(140,575,0,320,320)
 	if battle_buttom_state = MENU.BUTTOM_CHOICE{//是按钮选择阶段
 		instance_activate_object(obj_soul);
@@ -68,7 +68,7 @@ if battle_state = BATTLE_STATE.PLAYER and ui_enable = true{//是玩家回合
 }
 choice_time --;
 
-if battle_state = BATTLE_STATE.PLAYER{
+if battle_state == BATTLE_STATE.PLAYER{
 	if battle_buttom_state = MENU.BUTTOM_CHOICE{
 		if not instance_exists(battle_ui_dialogue) {
 			//如果没有旁白实例，那么生成一个，并记录ID
@@ -79,7 +79,9 @@ if battle_state = BATTLE_STATE.PLAYER{
 	}
 }
 if battle_state = BATTLE_STATE.ENCOUNTER_TEXT {
+    instance_deactivate_object(obj_soul);
     Player_PosSet(obj_battle_arena.x,obj_battle_arena.y);
+    Player_Hide();
 	if not instance_exists(battle_ui_dialogue) {
 		if Battle_Dialogue_Size() > 0 {
 			battle_ui_dialogue = CreateText(52,270,DEPTH.UI_TOP,"* " + Battle_Dialogue_Get());
@@ -106,6 +108,8 @@ Replay();
 
 //怪物对话阶段
 if battle_state == BATTLE_STATE.ENEMY_DIALOGUE {
+    instance_deactivate_object(obj_soul);
+    Player_Hide();
 	obj_move_soul.dir = 270;
 	if Enemy_Dialogue_Size() > 0  {
 		if not instance_exists(obj_dialogue) {
@@ -123,6 +127,8 @@ if battle_state == BATTLE_STATE.ENEMY_DIALOGUE {
 	
 }
 if battle_state == BATTLE_STATE.ENEMY {
+    instance_deactivate_object(obj_soul);
+    Player_Show();
 	if not instance_exists(turn_inst){
 		if not object_exists(turn_inst){
 			Battle_TurnEnd();
