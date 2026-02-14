@@ -9,14 +9,17 @@ if time == 160 {
 if time >= 240 {
 	if not instance_exists(text_inst) {
 		if text_turn == 0 {
-			text_inst = CreateText(100,250,DEPTH.UI_TOP,"不要丧失你的决心",c_white,fnt_mono);
+            text_inst = CreateLangText(200,250,DEPTH.UI_TOP,GetTranslationDetailed("ui.badend_dialogue_1"),c_white)
 			text_inst.can_destroy = true;
 			text_inst.text_size = 2;
+            text_inst.text_speed = 10;
 		}
 		if text_turn == 1 {
-			text_inst = CreateText(100,250,DEPTH.UI_TOP,"再尝试一次吧",c_white,fnt_mono);
+            var text = GetTranslationDetailed("ui.badend_dialogue_2");
+			text_inst = CreateText(200,250,DEPTH.UI_TOP,File_Get(PLAYER_INFO.NAME)+"&"+text.text,c_white,text.font);
 			text_inst.can_destroy = true;
 			text_inst.text_size = 2;
+            text_inst.text_speed = 10;
 		}
 		if text_turn >= 2 {
 			ds_queue_clear(global._enemy_dialogue);

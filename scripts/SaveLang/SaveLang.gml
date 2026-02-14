@@ -36,7 +36,9 @@ function SaveLang(){
         "ui.credits" : "Credits",
         "ui.phase_1" : "Phase One",
         "ui.phase_2" : "Phase Two",
-        "ui.phase_3" : "Phase Three"
+        "ui.phase_3" : "Phase Three",
+        "ui.badend_dialogue_1" : "Don't lose hope!",
+        "ui.badend_dialogue_2" : "Maintain your determination..."
     };
     var entxt = file_text_open_write("en.json");
     file_text_write_string(entxt,json_stringify(en))
@@ -71,7 +73,9 @@ function SaveLang(){
         "ui.credits" : "贡献名单",
         "ui.phase_1" : "第一阶段",
         "ui.phase_2" : "第二阶段",
-        "ui.phase_3" : "最终阶段"
+        "ui.phase_3" : "最终阶段",
+        "ui.badend_dialogue_1" : "别失去希望!",
+        "ui.badend_dialogue_2" : "保持你的决心..."
     };
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))

@@ -49,8 +49,8 @@ battle_won = false;
 global.soul_color = SOUL_STATE.RED;
 global.music = noone;
 player_target_health = File_Get(PLAYER_INFO.MAX_HP);
-ui_enable = false
-buttom_enable = false;
+ui_enable = true
+buttom_enable = true;
 bm = CreateAnim().add(20,0,1).anim(ac_speeddown).execute(function(t){ 
     draw_sprite_ext(spr_battle_edge,0,580,267.5 + j *15,t+2,t+2,0,make_color_rgb(255,255,255-255*t),0.5+t*0.5);
 });

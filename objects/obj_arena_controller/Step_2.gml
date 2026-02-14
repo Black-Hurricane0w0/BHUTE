@@ -1,7 +1,9 @@
 //碰撞事件
+
     //不在战斗状态时不判定
     if obj_battle.battle_state != BATTLE_STATE.ENEMY exit;
-
+    //ui隐藏不判定
+    if obj_battle.ui_enable == false exit;
 
 var origin_mask = mask; 
 //重力遮罩初始化
@@ -310,6 +312,7 @@ var onground = false;
 
 //对灵魂数据更新
 obj_arena.getpoints();
+//重力相关
 with(obj_arena){ 
     var rot = degtorad(rotation);
         if state != ARENA_STATE.INSIDE continue;

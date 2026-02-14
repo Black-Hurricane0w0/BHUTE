@@ -1,3 +1,5 @@
+//ui隐藏不绘制
+if obj_battle.ui_enable == false exit;
 //框体
 surface_set_target(arena_surface);
 with(obj_arena){
