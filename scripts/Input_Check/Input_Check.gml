@@ -1,7 +1,13 @@
-/// @desc 检查输入
-/// @param {any} input 输入值（使用INPUT中的常量）
-/// @param {any*} state 输入模式（使用INPUT_STATE中的常量）
-/// @returns {bool} 是否输入
+/**
+ * @function Input_Check
+ * @description 检查玩家输入状态，支持键盘和游戏手柄
+ * @param {any} input 输入值（使用INPUT中的常量）
+ * @param {any} state 输入模式（使用INPUT_STEAT中的常量）
+ * @returns {boolean} 是否检测到输入
+ * 支持键盘和游戏手柄输入，支持摇杆输入检测
+ * 当使用键盘时，会检查对应按键的状态
+ * 当使用游戏手柄时，会检查对应按钮或摇杆的状态
+ */
 function Input_Check(input,state){
 	var bool_value = false;//返回值
 	var buttom = ds_map_find_value(global._input_map,input)//将ds地图中对应的value付给buttom，用于后续检查
