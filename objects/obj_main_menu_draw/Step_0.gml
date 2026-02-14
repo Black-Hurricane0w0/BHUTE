@@ -7,6 +7,17 @@ if time < 120 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
 }
 if time > 120 and time < 220 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
     time = 220;
+    // 跳过标题动画
+    if variable_instance_exists(self, "bm") {
+        bm.skip(31);
+    }
+}
+if time >= 260 and time < 320 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
+    time = 320;
+    // 跳过菜单项动画
+    if variable_instance_exists(self, "bm3") bm3.skip(30);
+    if variable_instance_exists(self, "bm4") bm4.skip(30);
+    if variable_instance_exists(self, "bm5") bm5.skip(30);
 }
 
 
@@ -28,11 +39,11 @@ if anim_out == true  {
     if fade == 1 {
         layer_sequence_create("seq",320,240,seq_main_line_out);
         audio_play_sound(snd_buttom_select,0,false);
-        bm.add(30,[180,100,1],[-160,100,1]).reset();
-        bm3.add(30,170,-180).reset();
-        bm4.add(30,150,-180).reset();
-        bm5.add(30,130,-180).reset();
-        bm6.add(30,1,0).reset();
+        bm.add(30,[180,100,1],[-160,100,1]).delay(0).reset();
+        bm3.add(30,170,-180).delay(0).reset();
+        bm4.add(30,150,-180).delay(0).reset();
+        bm5.add(30,130,-180).delay(0).reset();
+        bm6.add(30,1,0).delay(0).reset();
         obj_soul.target_x = -100;
     }
     if fade == 2 {
@@ -71,7 +82,7 @@ if anim_out == true  {
     }
 }
 
-if time > 290 and anim_out == false{
+if time > 260 and anim_out == false{
     // 获取当前菜单结构
     var choice_struct = choice;
     for(var i = 0; i < string_length(choice_layer); i++){
@@ -104,7 +115,12 @@ if time > 290 and anim_out == false{
         getChoice();
         // 检查当前选中项是否有子菜单
         var current_choice = "c" + string(menu_choice);
-        if variable_struct_exists(choice_struct[$current_choice], "c0") {
+        if anim_choice_time > 0 {
+            anim_choice_time = 0;
+            bm3.skip(30);
+            bm4.skip(30);
+            bm5.skip(30);
+        }else if variable_struct_exists(choice_struct[$current_choice], "c0") {
             // 进入子菜单
             choice_layer += string(menu_choice);
             menu_choice = 0;
@@ -122,11 +138,19 @@ if time > 290 and anim_out == false{
     if Input_Check(INPUT.BACK,INPUT_STEAT.PRESSED) and string_length(choice_layer) > 0 {
         //在动画中更新选项
         getChoice();
-        // 移除最后一个字符，返回上一级
-        anim_choice_time = anim_choice_time_max;
-        choice_layer = string_copy(choice_layer, 1, string_length(choice_layer) - 1);
-        menu_choice = 0;
-        audio_play_sound(snd_buttom_select,0,false);
+        //跳过动画
+        if anim_choice_time > 0 {
+            anim_choice_time = 0;
+            bm3.skip(30);
+            bm4.skip(30);
+            bm5.skip(30);
+        }else {
+            // 移除最后一个字符，返回上一级
+            anim_choice_time = anim_choice_time_max;
+            choice_layer = string_copy(choice_layer, 1, string_length(choice_layer) - 1);
+            menu_choice = 0;
+            audio_play_sound(snd_buttom_select,0,false);
+        }
     }
     
     // 调整灵魂位置

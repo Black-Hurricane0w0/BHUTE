@@ -16,6 +16,9 @@ function anim() constructor {
     static type = "animcontroller";
     data_type = "int";
     listen_bool = [false,false,false,false];
+    is_paused = false;
+    _delay = 0;
+    _max_delay = 0;
     /**
      * @param {real} maxtime 最大时间
      * @param {real,Array} a 初始值
@@ -43,22 +46,78 @@ function anim() constructor {
      * @return {Struct.anim}
     */
     static run = function(){
-        time++;
-        var t = time > maxtime?1:animcurve_channel_evaluate(_anim,time/maxtime);
-        if data_type == "int" {
-            value = a + (b - a) * t;
-        }else{
-            for (var i = 0; i < array_length(self.a); i++) {
-            	value[i] = a[i] + (b[i] - a[i]) * t;
+        if !is_paused {
+            if _delay > 0 {
+                _delay--;
+                return self;
+            }
+            time++;
+            time = clamp(time, 0, self.maxtime);
+            var mt = animcurve_channel_evaluate(self._anim,1)
+            var t = time == self.maxtime?mt:animcurve_channel_evaluate(self._anim,time/self.maxtime);
+            if data_type == "int" {
+                self.value = self.a + (self.b - self.a) * t;
+            }else{
+                for (var i = 0; i < array_length(self.a); i++) {
+                	self.value[i] = self.a[i] + (self.b[i] - self.a[i]) * t;
+                }
+            }
+            if self.f != undefined {
+                self.f(self.value); 
+            }
+            if self.time == self.maxtime and self.ef != undefined {
+                self.ef(self.value);
             }
         }
-        if f != undefined {
-            f(value); 
+        return self;
+    }
+    /**
+     * @description 暂停动画
+     * @return {Struct.anim}
+    */
+    static pause = function(){
+        is_paused = true;
+        return self;
+    }
+    /**
+     * @description 恢复动画
+     * @return {Struct.anim}
+    */
+    static play = function(){
+        is_paused = false;
+        return self;
+    }
+    /**
+     * @description 跳过动画到指定时间
+     * @param {real} _time 要跳转到的时间
+     * @return {Struct.anim}
+    */
+    static skip = function(_time,delay = 0){
+        self.time = clamp(_time, 0, self.maxtime);
+        self._delay = clamp(delay, 0, self._max_delay);
+        mt = animcurve_channel_evaluate(self._anim,1);
+        var t = self.time == self.maxtime?mt:animcurve_channel_evaluate(self._anim,self.time/self.maxtime);
+        if data_type == "int" {
+            self.value = self.a + (self.b - self.a) * t;
+        }else{
+            for (var i = 0; i < array_length(self.a); i++) {
+            	self.value[i] = self.a[i] + (self.b[i] - self.a[i]) * t;
+            }
         }
-        if time == maxtime and ef != undefined {
-            ef(value);
+        if self.f != undefined {
+            self.f(self.value); 
+        }
+        if self.time == self.maxtime and self.ef != undefined {
+            self.ef(self.value);
         }
         return self;
+    }
+    /**
+     * @description 检查动画是否暂停
+     * @return {bool} 是否暂停
+    */
+    static isPaused = function(){
+        return is_paused;
     }
     /**
      * 执行一个函数,参数为real
@@ -76,9 +135,9 @@ function anim() constructor {
     */
     static anim = function(animname){
         if animcurve_exists(animname){
-            _anim = animcurve_get_channel(animname,0);
+            self._anim = animcurve_get_channel(animname,0);
         }else {
-            _anim = animcurve_get_channel(ac_default,0);
+            self._anim = animcurve_get_channel(ac_default,0);
         }
         return self;
     }
@@ -137,8 +196,9 @@ function anim() constructor {
      */
     static reset = function(){
         self.time = 0;
-        if data_type = "int" {
-            self.value = a;
+        self._delay = self._max_delay;
+        if data_type == "int" {
+            self.value = self.a;
         }else {
             array_copy(self.value,0,self.a,0,array_length(self.a));
         }
@@ -150,9 +210,10 @@ function anim() constructor {
      * @self CreateAnim
      */
     static finish = function(){
-        self.time = maxtime;
-        if data_type = "int" {
-            self.value = b;
+        self.time = self.maxtime;
+        self._delay = 0;
+        if data_type == "int" {
+            self.value = self.b;
         }else {
             array_copy(self.value,0,self.b,0,array_length(self.b));
         }
@@ -175,6 +236,17 @@ function anim() constructor {
     */
     static getvalue = function(){
         return value;
+    }
+    /**
+     * 添加延迟
+     * @param {real} delay 延迟时间
+     * @return {Struct.anim}
+     * @context CreateAnim
+    */
+    static delay = function(delay = 0){
+        self._max_delay = delay;
+        self._delay = delay;
+        return self;
     }
 }
 
