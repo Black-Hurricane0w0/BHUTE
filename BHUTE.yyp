@@ -159,6 +159,7 @@
     {"id":{"name":"obj_dialogue_inbattle","path":"objects/obj_dialogue_inbattle/obj_dialogue_inbattle.yy",},},
     {"id":{"name":"obj_dialogue","path":"objects/obj_dialogue/obj_dialogue.yy",},},
     {"id":{"name":"obj_draw_ui","path":"objects/obj_draw_ui/obj_draw_ui.yy",},},
+    {"id":{"name":"obj_example_enemy","path":"objects/obj_example_enemy/obj_example_enemy.yy",},},
     {"id":{"name":"obj_fight_buttom","path":"objects/obj_fight_buttom/obj_fight_buttom.yy",},},
     {"id":{"name":"obj_gb_light","path":"objects/obj_gb_light/obj_gb_light.yy",},},
     {"id":{"name":"obj_gb_light2","path":"objects/obj_gb_light2/obj_gb_light2.yy",},},

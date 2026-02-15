@@ -114,6 +114,7 @@
     {"name":"obj_bone_4","order":9,"path":"objects/obj_bone_4/obj_bone_4.yy",},
     {"name":"obj_dialogue_inbattle","order":1,"path":"objects/obj_dialogue_inbattle/obj_dialogue_inbattle.yy",},
     {"name":"obj_draw_ui","order":7,"path":"objects/obj_draw_ui/obj_draw_ui.yy",},
+    {"name":"obj_example_enemy","order":3,"path":"objects/obj_example_enemy/obj_example_enemy.yy",},
     {"name":"obj_gb_light","order":1,"path":"objects/obj_gb_light/obj_gb_light.yy",},
     {"name":"obj_gb_light2","order":1,"path":"objects/obj_gb_light2/obj_gb_light2.yy",},
     {"name":"obj_item_buttom","order":2,"path":"objects/obj_item_buttom/obj_item_buttom.yy",},

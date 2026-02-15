@@ -68,9 +68,7 @@ last_item_choice = 0;
 //战斗状态
 battle_state = BATTLE_STATE.PLAYER;
 //怪物
-Enemy_Add(320,160,obj_test_enemy);
-Enemy_Add(320,160,obj_test_enemy);
-Enemy_Add(320,160,obj_test_enemy);
+Enemy_Add(320,160,obj_example_enemy);
 
 //物品
 Item_Add(obj_item);

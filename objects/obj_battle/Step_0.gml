@@ -84,7 +84,9 @@ if battle_state = BATTLE_STATE.ENCOUNTER_TEXT {
     Player_Hide();
 	if not instance_exists(battle_ui_dialogue) {
 		if Battle_Dialogue_Size() > 0 {
-			battle_ui_dialogue = CreateText(52,270,DEPTH.UI_TOP,"* " + Battle_Dialogue_Get());
+            var struct = Battle_Dialogue_Get();
+            var text = GetLangStruct("* " + struct.text,struct.font,struct.size);
+			battle_ui_dialogue = CreateLangText(52,270,DEPTH.UI_TOP, + text);
 			battle_ui_dialogue.can_destroy = true;
 		}else {
 			battle_state = BATTLE_STATE.ENEMY_DIALOGUE;
