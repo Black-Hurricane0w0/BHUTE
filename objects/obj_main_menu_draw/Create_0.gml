@@ -10,13 +10,13 @@ choice = {
     c0 : {
         name : GetTranslationDetailed("ui.start_game"),
         c0 : {
-            name : GetLangStruct("第一阶段")
+            name : GetTranslationDetailed("ui.first_phase")
         },
         c1 : {
-            name : GetLangStruct("第二阶段")
+            name : GetTranslationDetailed("ui.second_phase")
         },
         c2 : {
-            name : GetLangStruct("最终阶段")
+            name : GetTranslationDetailed("ui.final_phase")
         }
     },
     c1 : {
