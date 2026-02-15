@@ -7,7 +7,8 @@ enum PLAYER_INFO{
 	X,
 	Y,
 	DAMAGE,
-    KR
+    KR,
+    DEFENSE
 }
 
 //定义回合

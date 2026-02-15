@@ -1,9 +1,10 @@
-var start_point = 290 + array_length(damage_bit) * 30 / 2 
+var start_point = 290 + array_length(damage_bit) * 30 / 2 ;
+var color = c_white;
 with (obj_target_choice) {
-	if distance_to_point(320,320) <= 2 {
-		var color = c_red;
+	if distance_to_point(320,320) <= 12 {
+		color = c_red;
 	}else{
-		var color = c_white;
+		color = c_white;
 	}
 }
 

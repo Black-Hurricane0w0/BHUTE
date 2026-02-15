@@ -1,5 +1,5 @@
 if action_index == 0 {
-	Battle_Dialogue_Add("Name : Basic Enemy&* HP : 100&* Attack Damage : 1&* Protition : 0");
+	Battle_Dialogue_Add("BASIC ENEMY 1 ATK 0 DEF");
 	Battle_Dialogue_Add("It is just a testing tool.");
 }else if action_index == 1 {
 	Battle_Dialogue_Add("What did you do!");

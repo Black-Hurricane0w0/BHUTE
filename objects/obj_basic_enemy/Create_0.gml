@@ -1,6 +1,6 @@
 enemy_name = "Basic Enemy";
 hp = 100;
-protection = 0;
+defense = 0;
 attack_damage = 1;
 max_hp = 100;
 miss = false;
@@ -20,7 +20,7 @@ Battle_TurnSetTime(turn_max_time);
 //创建dsmap
 Enemy_Infor_Init("enemy_name",enemy_name);
 Enemy_Infor_Init("hp",hp);
-Enemy_Infor_Init("protection",protection);
+Enemy_Infor_Init("defense",defense);
 Enemy_Infor_Init("attack_damage",attack_damage);
 Enemy_Infor_Init("max_hp",max_hp);
 Enemy_Infor_Init("miss",miss);

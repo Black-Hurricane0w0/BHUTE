@@ -251,20 +251,22 @@ if battle_state == BATTLE_STATE.PLAYER {
 		}
 	}else if battle_buttom_state == MENU.FIGHT_DAMAGE {
 		if battle_fight_over_time == 60 {
+			//伤害倍率
 			var attack_distance = 0
 			with(obj_target_choice){
-				attack_distance = -(1/300) * distance_to_point(320,320) + 1;
-				if distance_to_point(320,320) <= 2 {
-					attack_distance *= 1.5;
+				attack_distance = -(2.2/300) * distance_to_point(320,320) + 2.2;
+				if distance_to_point(320,320) <= 12 {
+					attack_distance *= 2.2;
 				}
 			}
-			target_health = Enemy_Infor_Get("hp",battle_target_choice) - round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",battle_target_choice)/100));
+			var edamage = ceil((File_Get(PLAYER_INFO.DAMAGE) - Enemy_Infor_Get("defense",battle_target_choice) + random_range(0, 2)) * attack_distance);
+			target_health = Enemy_Infor_Get("hp",battle_target_choice) - edamage;
 			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",battle_target_choice));
 			audio_play_sound(snd_damage,0,false);
 			instance_create_depth(0,0,DEPTH.UI_TOP,obj_damage_num)
             Gamepad_Set_Vibration(15,1)
 			with(obj_damage_num){
-				damage = round(File_Get(PLAYER_INFO.DAMAGE) * attack_distance * (1 - Enemy_Infor_Get("protection",obj_battle.battle_target_choice)/100));
+				damage = edamage;
 				event_user(0);
 			}
 			bm3 = CreateAnim().add(20,Enemy_Infor_Get("hp",battle_target_choice),target_health).anim(ac_fight_healthbar).execute(function(t){ 

@@ -22,6 +22,7 @@ function Init(){
 	File_Set(PLAYER_INFO.Y,0);
 	File_Set(PLAYER_INFO.DAMAGE,19);
     File_Set(PLAYER_INFO.KR,0);
+    File_Set(PLAYER_INFO.DEFENSE,0);
 
 	window_set_caption("BHUTE");
     
