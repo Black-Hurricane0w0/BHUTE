@@ -1,0 +1,54 @@
+var draw_bone = function() {
+	var orange = c_orange;
+	draw_set_color(orange);
+    var start_x = x + global.surface_wide;
+    var start_y = y + global.surface_wide;
+	draw_sprite_ext(spr_bottom_bone,0,start_x,start_y,1,1,image_angle,orange,1);
+	switch (facing) {
+		case 0 : {
+			for (i = 0;i < bone_long;i++){
+				draw_sprite_ext(spr_bone_pixel,0,start_x,start_y - 6 - i,1,1,image_angle,orange,1);
+			}
+			draw_sprite_ext(spr_top_bone,0,start_x,start_y - 6 - i,1,1,image_angle,orange,1);
+			break;
+		}
+		case 1 :{
+			for (i = 0;i < bone_long;i++){
+				draw_sprite_ext(spr_bone_pixel,0,start_x - 6 - i,start_y,1,1,image_angle,orange,1);
+			}
+			draw_sprite_ext(spr_top_bone,0,start_x - 6 - i,start_y,1,1,image_angle,orange,1);
+			break;
+		}
+		case 2 :{
+			for (i = 0;i < bone_long;i++){
+				draw_sprite_ext(spr_bone_pixel,0,start_x,start_y + 6 + i,1,1,image_angle,orange,1);
+			}
+			draw_sprite_ext(spr_top_bone,0,start_x,start_y + 6 + i,1,1,image_angle,orange,1);
+			break;
+		}
+		case 3 :{
+			for (i = 0;i < bone_long;i++){
+				draw_sprite_ext(spr_bone_pixel,0,start_x + 6 + i,start_y,1,1,image_angle,orange,1);
+			}
+			draw_sprite_ext(spr_top_bone,0,start_x + 6 + i,start_y,1,1,image_angle,orange,1);
+			break;
+		}
+	}
+	
+	
+	
+}
+
+surface_set_target(obj_arena_controller.mask_surface);
+if mask == true {
+    gpu_set_blendmode_ext_sepalpha(bm_src_alpha,bm_zero,bm_zero,bm_one);
+	if bone_long >= 0 {
+		draw_bone();
+	}
+	surface_reset_target();
+}else {
+	if bone_long >= 0 {
+		draw_bone();
+	}
+}
+surface_reset_target();

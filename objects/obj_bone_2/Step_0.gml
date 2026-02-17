@@ -11,9 +11,9 @@ sprite_set_offset(spr_bone_0,6,40);
 x += lengthdir_x(move_speed,direction);
 y += lengthdir_y(move_speed,direction);
 
-if place_meeting(x,y,obj_move_soul) and obj_move_soul.is_moved == true{
+if place_meeting(x,start_y,obj_move_soul) and obj_move_soul.is_moved == false{
 	Player_Damage(damage);
-    if !place_meeting(xprevious,yprevious,obj_move_soul){
+    if !place_meeting(xprevious,start_yprevious,obj_move_soul){
         Player_Kr(5);
     }else{
         Player_Kr(1);

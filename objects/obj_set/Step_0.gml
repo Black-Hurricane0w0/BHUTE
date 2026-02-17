@@ -9,11 +9,7 @@ if debug == true {
 	if instance_exists(obj_battle){
 		obj_battle.player_target_health = File_Get(PLAYER_INFO.MAX_HP);
 		if keyboard_check_pressed(vk_f1) {
-			if obj_battle.ui_enable == true {
-				obj_battle.ui_enable = false;
-			}else {
-				obj_battle.ui_enable = true;
-			}
+			obj_battle.ui_enable = !obj_battle.ui_enable;
 		}
 	}
 	

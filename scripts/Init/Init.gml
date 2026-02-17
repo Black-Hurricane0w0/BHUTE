@@ -32,7 +32,7 @@ function Init(){
     //遮罩延伸范围
     global.surface_wide = 300;
     //KR启用
-    global.kr_enable = false;
+    global.kr_enable = true;
     //手柄遥感触发阈值
     global.gamepad_value = 0.1;
     //主菜单背景音乐

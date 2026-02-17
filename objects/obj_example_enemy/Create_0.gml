@@ -15,7 +15,7 @@ obj_battle.ui_enable = true;
 obj_battle.buttom_enable = true;
 enemy = -1;
 
-Battle_TurnSet(obj_turn);
+Battle_TurnSet(obj_test_bone_0);
 Battle_TurnSetTime(turn_max_time);
 //创建dsmap
 Enemy_Infor_Init("enemy_name",enemy_name);

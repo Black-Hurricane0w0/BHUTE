@@ -1,5 +1,5 @@
 // Inherit the parent event
-if place_meeting(x,y,obj_move_soul) and obj_move_soul.is_moved == true{
+if place_meeting(x,y,obj_move_soul){
 	Player_Damage(damage);
     if !place_meeting(xprevious,yprevious,obj_move_soul){
         Player_Kr(5);

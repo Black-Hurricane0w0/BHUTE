@@ -29,14 +29,15 @@ if obj_battle.ui_enable = true {
 		draw_rectangle(x + 245,y,x + 245 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
         if global.kr_enable == true{
             draw_set_color(#FF00FF);
-            draw_rectangle(x + 245 + (File_Get(PLAYER_INFO.HP) - File_Get(PLAYER_INFO.KR)) * 1.2,y,x + 245 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
+            draw_rectangle(x + 245 + (File_Get(PLAYER_INFO.HP) - File_Get(PLAYER_INFO.KR)) * 1.2 + 1,y,x + 245 + File_Get(PLAYER_INFO.HP) * 1.2,y + 20,false);
             
         }
 	
 	//血量数字
 	draw_set_color(c_white);
     if global.kr_enable == true {
-        draw_sprite(spr_kr,0,x + 245 + File_Get(PLAYER_INFO.MAX_HP) + 30,y+10)
+        draw_sprite(spr_kr,0,x + 245 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 21,y+10)
+        draw_text(x + 245 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 50,y + 1,string(ceil(File_Get(PLAYER_INFO.HP)))+" / "+string(File_Get(PLAYER_INFO.MAX_HP)));
     }else{
         draw_text(x + 245 + File_Get(PLAYER_INFO.MAX_HP) * 1.2 + 15,y + 1,string(ceil(File_Get(PLAYER_INFO.HP)))+" / "+string(File_Get(PLAYER_INFO.MAX_HP)));
     }
