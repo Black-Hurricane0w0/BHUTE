@@ -6,10 +6,15 @@ time = floor(time);
 image_xscale = flat_count * size;
 image_yscale = size;
 mask_index = spr_gb;
-if time == 1 and ready_time = true {
-	if not (audio_is_playing(snd_gb_prepare) && audio_sound_get_track_position(global.music) = 0) {
-		global.music = audio_play_sound(snd_gb_prepare,0,false);
-	}
+//初始化
+if time == 1 {
+    if ready_time {
+        if not (audio_is_playing(snd_gb_prepare2) && audio_sound_get_track_position(global.music) = 0) {
+    		global.music = audio_play_sound(snd_gb_prepare2,0,false);
+    	}
+    }else{
+        time = 27;
+    }
 	target_x = x;
 	target_y = y;
 	visible = true;
