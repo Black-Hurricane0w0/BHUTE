@@ -33,8 +33,8 @@ if keep_time <= 0 {
 
 image_xscale = 1;
 image_yscale = (bone_long + 12) / 40;
-direction = facing * 90;
-image_angle = facing * 90;
+direction = facing;
+image_angle = facing;
 sprite_set_offset(spr_bone_0,6,40);
 
 
