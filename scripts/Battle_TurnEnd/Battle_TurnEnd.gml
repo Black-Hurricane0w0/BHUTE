@@ -5,6 +5,9 @@ function Battle_TurnEnd(){
 		obj_battle.battle_state = BATTLE_STATE.PLAYER;
 		obj_battle.battle_buttom_state = MENU.BUTTOM_CHOICE;
 		obj_battle.turn_time = Enemy_Infor_Get("id",0).turn_max_time;
+        instance_activate_object(obj_soul);
+        obj_soul.x = File_Get(PLAYER_INFO.X);
+        obj_soul.y = File_Get(PLAYER_INFO.Y);
 		Enemy_Infor_Get("id",0).turn ++;
 		instance_activate_object(obj_soul);
 		with(obj_battle.turn_inst){

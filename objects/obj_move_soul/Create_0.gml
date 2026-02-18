@@ -22,6 +22,7 @@ onplatform = false;
 outside = false;
 friction_coefficent = 45;//摩擦临界角度(角度制)
 kr_time = 0;//kr免疫阶段
+is_drawn = true//启用绘制
 
 gravity_jump = 0.15;
 gravity_fall = 0.15;

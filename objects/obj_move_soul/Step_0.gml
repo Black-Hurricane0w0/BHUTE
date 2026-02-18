@@ -73,14 +73,10 @@ if obj_battle.battle_state == BATTLE_STATE.ENEMY {
 if invulnerable > 0 {
 	invulnerable --;
 	if invulnerable mod 5 == 0 and invulnerable > 1 {
-		if image_alpha == 1 {
-			image_alpha = 0;
-		}else{
-			image_alpha = 1;
-		}
+		is_drawn = !is_drawn;
 	}
 }else {
-	image_alpha = 1;
+	is_drawn = true;
 }
 
 
