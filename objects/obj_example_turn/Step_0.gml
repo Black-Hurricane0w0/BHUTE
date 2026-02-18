@@ -8,7 +8,7 @@ if time == 1 {
 }
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY {
-    if time mod 60 == 1 {
-        BoneCreate(0,300,0,2,20);  
+    if time mod 120 == 1 {
+        GB2Create(100,300,0,1,60,60,1,false,0.5,0,ac_gb_default,false);
     }
 }
