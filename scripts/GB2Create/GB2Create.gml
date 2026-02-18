@@ -6,7 +6,7 @@ function GB2Create(_x,_y,facing = 0,size = 1,keep_time = 60,fire_time = 60,start
 		inst.y = _y;
 		inst.keep_time = keep_time;
 		inst.fire_time = fire_time;
-		inst.start_facing = start_facing * 90;
+		inst.start_facing = start_facing;
 		inst.ready_time = ready;
 		inst.flat_count = flat_count;
 		inst.time = -wait_time;

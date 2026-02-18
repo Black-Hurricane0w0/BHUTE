@@ -121,7 +121,7 @@ with(obj_bullet){
 with(obj_move_soul){
     if is_drawn and is_active{
         surface_set_target(obj_arena_controller.mask_surface);
-        draw_sprite(spr_move_soul,global.soul_color,obj_move_soul.x + global.surface_wide,obj_move_soul.y + global.surface_wide);
+        draw_sprite_ext(spr_move_soul,global.soul_color,obj_move_soul.x + global.surface_wide,obj_move_soul.y + global.surface_wide,1,1,image_angle,c_white,1);
         surface_reset_target();
     }
 }

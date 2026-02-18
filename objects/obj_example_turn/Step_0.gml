@@ -2,7 +2,7 @@ time ++
 if time == 1 {
 	//开始事件
 	ArenaSet(200,200,0,320,280);
-	Player_SetSoul(true,270,true);
+	Player_SetSoul(false,0,true);
     Player_Show();
 	obj_battle.ui_enable = true;
 }
