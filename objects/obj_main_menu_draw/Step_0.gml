@@ -9,10 +9,10 @@ if time > 120 and time < 220 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) 
     time = 220;
     // 跳过标题动画
     if variable_instance_exists(self, "bm") {
-        bm.skip(31);
+        bm.skip(30);
     }
 }
-if time >= 260 and time < 320 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
+if time > 260 and time < 320 and Input_Check(INPUT.CONFIRM,INPUT_STEAT.PRESSED) {
     time = 320;
     // 跳过菜单项动画
     if variable_instance_exists(self, "bm3") bm3.skip(30);
