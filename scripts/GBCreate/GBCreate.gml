@@ -1,5 +1,5 @@
-function GBCreate(_x,_y,facing = 0,size = 1,keep_time = 60,fire_time = 60,start_facing = 1,ready = true,flat_count = 1,wait_time = 0,ac_gb = ac_gb_default){
-	inst = instance_create_depth(0,0,0,obj_gb){
+function GBCreate(_x,_y,facing = 0,size = 1,keep_time = 60,fire_time = 60,start_facing = 1,ready = true,flat_count = 1,wait_time = 0,ac_gb = ac_gb_default,glowing = false){
+	var inst = instance_create_depth(0,0,0,obj_gb){
 		inst.facing = facing;
 		inst.size = size;
 		inst.x = _x;
@@ -11,6 +11,7 @@ function GBCreate(_x,_y,facing = 0,size = 1,keep_time = 60,fire_time = 60,start_
 		inst.flat_count = flat_count;
 		inst.time = -wait_time;
 		inst.ac_gb = ac_gb;
+        inst.glowing = glowing;
 	}
 	return inst;
 }

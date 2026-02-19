@@ -3,8 +3,8 @@ if obj_battle.battle_state != BATTLE_STATE.ENEMY {
 }
 time ++
 time = floor(time);
-image_xscale = flat_count * size;
-image_yscale = size;
+image_xscale = flat_count * size * 2;
+image_yscale = size * 2;
 mask_index = spr_gb;
 //初始化
 if time == 1 {
@@ -47,16 +47,17 @@ if time == 27 + fire_time {
 	if not (audio_is_playing(snd_gb_fire) && audio_sound_get_track_position(global.music) = 0) {
 		global.music = audio_play_sound(snd_gb_fire,0,false);
 	}
-	gb_light = GB_LightCreate(x,y,facing,1.2 * size,keep_time,flat_count,ac_gb);
+	gb_light = GB_LightCreate(x,y,facing,1.6 * size,keep_time,flat_count,ac_gb,glowing);
 	back_speed = 0;
 	gb_light.state = 0;
-	image_speed = 1 / 2;
-	Shook_Set(0.5 * size);
+	image_speed = 1;
+	Shook_Set(1 * size);
 }
 if time >= 27 + fire_time {
-	
-	if image_index == 3 {
-		image_speed = 0;
+	if image_index == 5 {
+		image_speed = 1;
+	}else if image_index == 6 {
+		image_speed = -1;
 	}
 	//后座
 	var t = (time - 27 - fire_time) / 60;
@@ -69,7 +70,7 @@ if time >= 27 + fire_time {
 		back_dis = 1000;
 	}
 	
-	var _back_dis = back_dis * size;
+	var _back_dis = back_dis * size * 2;
 	var _target_x = target_x;
 	var _target_y = target_y;
 	x = target_x + lengthdir_x(_back_dis,facing + 180);
