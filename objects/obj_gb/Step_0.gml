@@ -28,11 +28,7 @@ if time <= 27 and time >= 1 and ready_time = true  {
 	x = target_x + xx;
 	y = target_y + yy;
     var dir = 90;
-	if start_facing == 90 {
-        dir = 90 * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
-	}else if start_facing == -90 {
-        dir = -90 * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
-	}
+    dir = start_facing * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
 	image_angle = facing + 90 + dir;
 	
 	
