@@ -23,8 +23,8 @@ if time == 1 {
 
 if time <= 27 and time >= 1 and ready_time = true  {
     var dis = (200 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)) * 1.5 * size;
-	var xx = lengthdir_x(dis,facing + 1.5 * start_facing);
-	var yy = lengthdir_y(dis,facing + 1.5 * start_facing);
+	var xx = lengthdir_x(dis,facing + sign(start_facing) * 135);
+	var yy = lengthdir_y(dis,facing + sign(start_facing) * 135);
 	x = target_x + xx;
 	y = target_y + yy;
     var dir = 90;

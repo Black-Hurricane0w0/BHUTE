@@ -9,6 +9,6 @@ if time == 1 {
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY {
     if time mod 120 == 0 {
-        GBCreate(100,300,0,1,60,30,1910);
+        GBCreate(100,300,0,1,60,30,130,true,0.5,10,ac_gb_04,true);
     }
 }
