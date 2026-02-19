@@ -9,8 +9,8 @@ mask_index = spr_gb;
 //初始化
 if time == 1 {
     if ready_time {
-        if not (audio_is_playing(snd_gb_prepare2) && audio_sound_get_track_position(global.music) = 0) {
-    		global.music = audio_play_sound(snd_gb_prepare2,0,false);
+        if not (audio_is_playing(snd_gb_prepare) && audio_sound_get_track_position(global.music) = 0) {
+    		global.music = audio_play_sound(snd_gb_prepare,0,false);
     	}
     }else{
         time = 27;
@@ -27,10 +27,11 @@ if time <= 27 and time >= 1 and ready_time = true  {
 	var yy = lengthdir_y(dis,facing + 1.5 * start_facing);
 	x = target_x + xx;
 	y = target_y + yy;
+    var dir = 90;
 	if start_facing == 90 {
-		var dir = 90 * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
+        dir = 90 * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
 	}else if start_facing == -90 {
-		var dir = -90 * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
+        dir = -90 * (1 - animcurve_channel_evaluate(animcurve_get_channel(ac_gb_prepare,0),time / 27)/200);
 	}
 	image_angle = facing + 90 + dir;
 	
