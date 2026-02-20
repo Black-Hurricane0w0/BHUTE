@@ -16,10 +16,9 @@ image_yscale = (bone_long + 12) / 40;
 image_angle = rot;
 //每刻执行事件
 if step_func != undefined {
-	step_func(self);
+	step_func();
 }else {
 	image_xscale = 1;
-	visible = false;
 	if time <= cost_time {
 		var t = time / cost_time;
 		if bone_max_long <= bone_default_long {
@@ -42,7 +41,7 @@ if step_func != undefined {
 		}
     }
 }
-damage_func(self);
+damage_func();
 if mask == false {
     depth = DEPTH.BULLET_OUTSIDE
 }

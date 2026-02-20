@@ -16,7 +16,7 @@ bone_max_long = 10;
 cost_time = 0;
 visible = false;
 mask = false;
-keep_time = 0;
+keep_time = infinity;
 time = 0;
 offest_point = 0.5;
 alpha = 1;
@@ -25,7 +25,7 @@ tag = "";
 
 
 step_func = undefined;
-damage_func = function(self){
+damage_func = function(){
     //伤害判定
     for (var i=0;i<=1;i+=0.1) {
         var xx = lerp(x,xprevious,i);

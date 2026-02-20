@@ -66,18 +66,6 @@ function BoneNoAnimCreate(x,y,move_speed = 1,dir = 0,long = 10,max_long = 10,col
 /// @param {string} [tag]="" 骨头的标签
 /// @returns {id.Instance} 骨头的id
 function BoneCustomCreate(x,y,color = c_white,is_mask = true,step_func = undefined,damage_func = undefined,tag = ""){
-	var inst = instance_create_depth(0,0,0,obj_bone_4){
-		inst.x = x;
-        inst.y = y;
-		inst.color = color;
-		inst.mask = is_mask;
-        inst.tag = tag;
-		if step_func != undefined {
-			inst.step_func = step_func;
-		}
-        if damage_func != undefined {
-            inst.damage_func = damage_func;
-        }
-	}
+	var inst = BoneRotCreate(x,y,0,0,10,10,0,0,color,0.5,,,,,is_mask,infinity,step_func,damage_func,tag)
 	return inst;
 }

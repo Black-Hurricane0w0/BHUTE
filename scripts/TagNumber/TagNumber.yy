@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"TagNumber",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TagNumber",
+  "parent":{
+    "name":"Bullet",
+    "path":"folders/脚本/Bullet.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
