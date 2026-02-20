@@ -9,6 +9,6 @@ if time == 1 {
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY {
     if time mod 120 == 0 {
-        BoneRotCreate(100,300,10,0,100,100,2100,2,c_white,0.2,ac_bone_default,ac_bone_default,60,0,false,infinity)
+        BoneRotCreate(100,300,10,0,100,100,100,2,c_white,0.2,ac_bone_default,ac_bone_default,60,10000,false,infinity)
     }
 }
