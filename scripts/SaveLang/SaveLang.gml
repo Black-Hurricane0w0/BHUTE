@@ -3,6 +3,7 @@ function SaveLang(){
     if obj_set.debug == false exit;
     var en = {
         "language" : "en",
+        "language_name" : "English",
         "font" : fnt_mono,
         "size" : 1,
         "ui.start_game" : "Start game",
@@ -58,6 +59,7 @@ function SaveLang(){
     
     var zh = {
         "language" : "zh",
+        "language_name" : "简体中文",
         "font" : fnt_chinese,
         "size" : 1,
         "ui.start_game" : "开始游戏",
@@ -95,4 +97,5 @@ function SaveLang(){
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))
     file_text_close(zhtxt);
+    log("Lang saved...");
 }

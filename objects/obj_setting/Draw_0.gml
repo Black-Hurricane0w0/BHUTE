@@ -18,7 +18,16 @@ draw_healthbar(bm2.value - 80,340-5,bm2.value,340+7,Setting_Read("real","Music V
 draw_text_transformed(bm2.value + 30,400,string(Setting_Read("real","Sound Effect Volume")) + "%",1,1,0);
 draw_healthbar(bm2.value - 80,400-5,bm2.value,400+7,Setting_Read("real","Sound Effect Volume"),c_black,c_white,c_white,0,false,true);
 draw_text_transformed(bm2.value,460,Setting_Read("real","Full Screen Startup")?GetTranslation("ui.enable"):GetTranslation("ui.disable"),1,1,0);
-var language = ["English","简体中文"];
+var language = [];
+for (var i = 0; i < array_length(global.language_list); i++) {
+    var lang = Setting_Read("string","Language");
+    var txt = file_text_open_read(lang + ".json");
+    global.lang_map = json_parse(file_text_read_string(txt));
+    var langtext =  global.lang_map[$"language_name"];
+    file_text_close(txt);
+	array_push(language,langtext);
+}
+
 var index = array_get_index(global.language_list,Setting_Read("string","Language"));
 draw_text_transformed(bm2.value,520,language[index],1,1,0);
 

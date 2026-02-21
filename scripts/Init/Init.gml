@@ -20,7 +20,7 @@ function Init(){
 	File_Set(PLAYER_INFO.MAX_HP,92);
 	File_Set(PLAYER_INFO.X,0);
 	File_Set(PLAYER_INFO.Y,0);
-	File_Set(PLAYER_INFO.DAMAGE,19000);
+	File_Set(PLAYER_INFO.DAMAGE,19);
     File_Set(PLAYER_INFO.KR,0);
     File_Set(PLAYER_INFO.DEFENSE,0);
 
@@ -38,7 +38,19 @@ function Init(){
     //主菜单背景音乐
     global.main_menu_music = mus_waterfall;
     //语言选项
-    global.language_list = ["en","zh"];
+    global.language_list = [];
+    var f_name = file_find_first("*.json",0);
+    while (f_name != ""){
+        var name = string_split(f_name,".")[0];
+        var txt = file_text_open_read(f_name);
+        var list = json_parse(file_text_read_string(txt));
+        if list[$"language"] == name{
+            array_push(global.language_list, name);
+        }
+        file_text_close(txt);
+        f_name = file_find_next();
+    }
+    log("Language:" + string(global.language_list));
     //设置初始化
     Setting_Init();
     
