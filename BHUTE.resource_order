@@ -159,6 +159,7 @@
     {"name":"Battle_Dialogue_Size","order":2,"path":"scripts/Battle_Dialogue_Size/Battle_Dialogue_Size.yy",},
     {"name":"Battle_TurnSet","order":1,"path":"scripts/Battle_TurnSet/Battle_TurnSet.yy",},
     {"name":"Battle_TurnSetTime","order":2,"path":"scripts/Battle_TurnSetTime/Battle_TurnSetTime.yy",},
+    {"name":"Battle_TurnTimeGet","order":3,"path":"scripts/Battle_TurnTimeGet/Battle_TurnTimeGet.yy",},
     {"name":"Black_FadeIn","order":1,"path":"scripts/Black_FadeIn/Black_FadeIn.yy",},
     {"name":"Blur_Init","order":1,"path":"scripts/Blur_Init/Blur_Init.yy",},
     {"name":"Blur_Tick","order":2,"path":"scripts/Blur_Tick/Blur_Tick.yy",},

@@ -9,6 +9,12 @@ if time == 1 {
 
 if obj_battle.battle_state == BATTLE_STATE.ENEMY {
     if time mod 120 == 0 {
-        BoneRotCreate(100,300,10,0,100,100,100,2,c_white,0.2,ac_bone_default,ac_bone_default,60,10000,false,infinity)
+        BoneCustomCreate(100,300,c_white,false,function(){
+            with(other){
+                var t = Battle_TurnTimeGet();
+                bone_long = 60 * dsin(t) + 60;
+                x++;
+            }
+        })
     }
 }

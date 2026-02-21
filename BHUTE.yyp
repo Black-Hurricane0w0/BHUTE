@@ -219,6 +219,7 @@
     {"id":{"name":"Battle_TurnEnd","path":"scripts/Battle_TurnEnd/Battle_TurnEnd.yy",},},
     {"id":{"name":"Battle_TurnSet","path":"scripts/Battle_TurnSet/Battle_TurnSet.yy",},},
     {"id":{"name":"Battle_TurnSetTime","path":"scripts/Battle_TurnSetTime/Battle_TurnSetTime.yy",},},
+    {"id":{"name":"Battle_TurnTimeGet","path":"scripts/Battle_TurnTimeGet/Battle_TurnTimeGet.yy",},},
     {"id":{"name":"Bezier","path":"scripts/Bezier/Bezier.yy",},},
     {"id":{"name":"Black_FadeIn","path":"scripts/Black_FadeIn/Black_FadeIn.yy",},},
     {"id":{"name":"Black_FadeOut","path":"scripts/Black_FadeOut/Black_FadeOut.yy",},},

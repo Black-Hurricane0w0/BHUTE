@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_TurnTimeGet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_TurnTimeGet",
+  "parent":{
+    "name":"Turn",
+    "path":"folders/脚本/Turn.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
