@@ -51,7 +51,10 @@ function SaveLang(){
         "ui.final_phase" : {
             text : "Final Phase",
             size : 0.8
-        }
+        },
+        "example_enemy_dialogue.1" : "Hello",
+        "example_enemy_check.1" : "EXAMPLE ENEMY 100 ATK 0 DF",
+        "example_enemy_name" : "Example Enemy"
     };
     var entxt = file_text_open_write("en.json");
     file_text_write_string(entxt,json_stringify(en))
@@ -93,6 +96,9 @@ function SaveLang(){
         "ui.first_phase" : "第一阶段",
         "ui.second_phase" : "第二阶段",
         "ui.final_phase" : "最终阶段",
+        "example_enemy_dialogue.1" : "你好",
+        "example_enemy_check.1" : "示例敌人 1 攻击 1 防御",
+        "example_enemy_name" : "示例敌人"
     };
     var zhtxt = file_text_open_write("zh.json");
     file_text_write_string(zhtxt,json_stringify(zh))

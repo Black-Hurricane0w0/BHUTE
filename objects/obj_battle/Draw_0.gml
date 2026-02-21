@@ -1,6 +1,5 @@
 if battle_state == BATTLE_STATE.PLAYER {
 	if battle_buttom_state == MENU.FIGHT_MENU || battle_buttom_state == MENU.ACT_MENU || battle_buttom_state == MENU.MERCY_MENU {//FIGHT和ACT菜单
-		draw_set_font(fnt_mono);
         draw_set_valign(fa_middle);
         for (var i = 0; i < Enemy_Number(); i++) {
             if Enemy_Mercy(i) {
@@ -8,7 +7,9 @@ if battle_state == BATTLE_STATE.PLAYER {
     		}else {
     			draw_set_color(c_white);
     		}
-        	draw_text(90,285 + i * 30,"* " + string(Enemy_Infor_Get("enemy_name",i)));
+            var langstruct = GetTranslationDetailed(Enemy_Infor_Get("enemy_name",i));
+            draw_set_font(langstruct.font);
+        	draw_text(90,285 + i * 30,"* " + langstruct.text);
             if battle_buttom_state == MENU.FIGHT_MENU {
 			    var point_hp = (Enemy_Infor_Get("hp",i) / Enemy_Infor_Get("max_hp",i)) * 100;
 			    draw_healthbar(400,285 + i * 30,500,295 + i * 30,point_hp,c_red,make_color_rgb(0,205,0),make_color_rgb(0,255,0),0,true,false);

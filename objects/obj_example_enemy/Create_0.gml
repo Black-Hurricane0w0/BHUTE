@@ -1,4 +1,4 @@
-enemy_name = "Example enemy";
+enemy_name = "example_enemy_name";
 hp = 10000;
 defense = 0;
 attack_damage = 10;
@@ -26,4 +26,4 @@ Enemy_Infor_Init("max_hp",max_hp);
 Enemy_Infor_Init("miss",miss);
 Enemy_Infor_Init("id",enemy_id);
 
-Enemy_Dialogue_Add("你好");
+Enemy_Dialogue_Add(GetTranslation("example_enemy_dialogue.1"));
