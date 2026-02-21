@@ -256,11 +256,12 @@ if battle_state == BATTLE_STATE.PLAYER {
 			with(obj_target_choice){
 				attack_distance = -(2.2/300) * distance_to_point(320,320) + 2.2;
 				if distance_to_point(320,320) <= 12 {
-					attack_distance *= 2.2;
+					attack_distance = 2.2;
 				}
 			}
 			var edamage = ceil((File_Get(PLAYER_INFO.DAMAGE) - Enemy_Infor_Get("defense",battle_target_choice) + random_range(0, 2)) * attack_distance);
-			target_health = Enemy_Infor_Get("hp",battle_target_choice) - edamage;
+			log(edamage)
+            target_health = Enemy_Infor_Get("hp",battle_target_choice) - edamage;
 			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",battle_target_choice));
 			audio_play_sound(snd_damage,0,false);
 			instance_create_depth(0,0,DEPTH.UI_TOP,obj_damage_num)

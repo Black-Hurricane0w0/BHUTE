@@ -20,7 +20,7 @@ function Init(){
 	File_Set(PLAYER_INFO.MAX_HP,92);
 	File_Set(PLAYER_INFO.X,0);
 	File_Set(PLAYER_INFO.Y,0);
-	File_Set(PLAYER_INFO.DAMAGE,19);
+	File_Set(PLAYER_INFO.DAMAGE,19000);
     File_Set(PLAYER_INFO.KR,0);
     File_Set(PLAYER_INFO.DEFENSE,0);
 
