@@ -69,21 +69,31 @@ if battle_state == BATTLE_STATE.PLAYER {
         //act菜单选择
         battle_action_soul = clamp(battle_action_soul,0,3);
 		draw_set_color(c_white);
-		draw_set_font(fnt_mono);
         draw_set_valign(fa_middle);
 		var battle_action_print = 0;//打印变量
         var action_length = array_length(Enemy_Infor_Get("id",0).action);
 		for (var i = battle_action_choice;i < battle_action_choice + 4;i++) {//循环i为当前选择
 			if battle_action_print < 4 { //打印
 				if battle_action_print = battle_action_soul and i - battle_action_soul < action_length {
-					draw_set_color(c_yellow);
+                    draw_set_color(c_yellow);
 					draw_set_alpha(1);
-					draw_text(90,275 +battle_action_print * 30,"*" + Enemy_Infor_Get("id",0).action[i - battle_action_soul]);	
 				}else if i - battle_action_soul < action_length {
-					draw_set_color(c_white);
+                    draw_set_color(c_white);
 					draw_set_alpha(0.6 - 0.05 * battle_action_print);
-					draw_text(90,275 +battle_action_print * 30,"*" + Enemy_Infor_Get("id",0).action[i - battle_action_soul]);
 				}
+                var struct = Enemy_Infor_Get("id",0).action[i - battle_action_soul];
+                if is_string(struct) {
+                    // 检查翻译键是否存在
+                    if variable_struct_exists(global.lang_map, struct) {
+                        // 使用翻译
+                        struct = GetTranslationDetailed(struct);
+                    } else {
+                        // 使用原字符串
+                        struct = GetLangStruct(struct);
+                    }
+                }
+                draw_set_font(struct.font);
+                draw_text(90,275 +battle_action_print * 30,"*" + struct.text);	
                 battle_action_print ++;
 			}
 		}
@@ -261,7 +271,6 @@ if battle_state == BATTLE_STATE.PLAYER {
 				}
 			}
 			var edamage = ceil((File_Get(PLAYER_INFO.DAMAGE) - Enemy_Infor_Get("defense",battle_target_choice) + random_range(0, 2)) * attack_distance);
-			log(edamage)
             target_health = Enemy_Infor_Get("hp",battle_target_choice) - edamage;
 			target_health = clamp(target_health,0,Enemy_Infor_Get("max_hp",battle_target_choice));
 			audio_play_sound(snd_damage,0,false);

@@ -1,11 +1,11 @@
-enemy_name = "Test Enemy";
+enemy_name = "test_enemy_name";
 hp = 10000000;
 defense = 80;
 attack_damage = 1;
 max_hp = 10000000;
 miss = false;
 enemy_id = id;
-action = ["Check","Test1","Test2","Test3","Test4","Test5","Test6"]
+action = ["test_enemy_action_check","test_enemy_action_test1","test_enemy_action_test2","test_enemy_action_test3","test_enemy_action_test4","test_enemy_action_test5","test_enemy_action_test6"]
 action_index = -1;
 mercy = 0;
 turn = 0;

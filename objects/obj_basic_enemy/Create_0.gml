@@ -1,11 +1,11 @@
-enemy_name = "Basic Enemy";
+enemy_name = "basic_enemy_name";
 hp = 100;
 defense = 0;
 attack_damage = 1;
 max_hp = 100;
 miss = false;
 enemy_id = id;
-action = ["Check","Fuck","Eat","Sleep"]
+action = ["basic_enemy_action_check","basic_enemy_action_fuck","basic_enemy_action_eat","basic_enemy_action_sleep"]
 action_index = -1;
 mercy = 0
 turn = 0;
@@ -26,4 +26,4 @@ Enemy_Infor_Init("max_hp",max_hp);
 Enemy_Infor_Init("miss",miss);
 Enemy_Infor_Init("id",enemy_id);
 
-Enemy_Dialogue_Add("你好^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+Enemy_Dialogue_Add(GetTranslationDetailed("battle_dialogue"));

@@ -114,8 +114,6 @@
     {"name":"obj_dialogue_inbattle","order":1,"path":"objects/obj_dialogue_inbattle/obj_dialogue_inbattle.yy",},
     {"name":"obj_draw_ui","order":7,"path":"objects/obj_draw_ui/obj_draw_ui.yy",},
     {"name":"obj_example_bullet","order":12,"path":"objects/obj_example_bullet/obj_example_bullet.yy",},
-    {"name":"obj_example_enemy","order":3,"path":"objects/obj_example_enemy/obj_example_enemy.yy",},
-    {"name":"obj_example_turn","order":8,"path":"objects/obj_example_turn/obj_example_turn.yy",},
     {"name":"obj_gb_light","order":1,"path":"objects/obj_gb_light/obj_gb_light.yy",},
     {"name":"obj_item_buttom","order":2,"path":"objects/obj_item_buttom/obj_item_buttom.yy",},
     {"name":"obj_lightning","order":3,"path":"objects/obj_lightning/obj_lightning.yy",},

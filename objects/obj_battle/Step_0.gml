@@ -143,7 +143,10 @@ if battle_state == BATTLE_STATE.ENEMY {
 		turn_time --;
 	}
 }else {
-	Battle_TurnSetTime(Enemy_Infor_Get("id",0).turn_max_time);
+    var enemy_obj = Enemy_Infor_Get("id",0);
+    if enemy_obj != undefined {
+        Battle_TurnSetTime(enemy_obj.turn_max_time);
+    }
 }
 
 
